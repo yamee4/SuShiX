@@ -4,11 +4,13 @@ const port = 3000;
 
 const app = express();
 
-app.use(express.static('public'));
+app.use('/node_modules', express.static('node_modules'));
+app.use(express.static(__dirname + "/Assets"));
+
 
 app.engine(
     "hbs",
-    expressHB.engine({
+    expressHbs.engine({
         layoutsDir: __dirname + "/views/layouts",
         partialsDir:  __dirname + "/views/partials",
         extname: "hbs",
@@ -21,7 +23,7 @@ app.set("view engine", "hbs");
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.render("index", {title: "SushiX"})
 });
 
 app.listen(port, () => {    
