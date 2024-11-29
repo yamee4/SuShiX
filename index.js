@@ -22,9 +22,9 @@ app.set("view engine", "hbs");
 
 
 
-app.get('/', (req, res) => {
-  res.render("index", {title: "SushiX"})
-});
+app.get('/', (req, res) => res.redirect('/home'));
+
+app.use('/home', require('./routes/homeRouter'));
 
 app.listen(port, () => {    
   console.log('Server is running on port 3000');
