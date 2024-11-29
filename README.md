@@ -2,9 +2,8 @@
 ## Installation for NodeJS server
 Install NodeJS: https://nodejs.org/en
 
-
+##Open folder Nhom3_ADB
 Install all the packages in package.json
-Open folder Nhom3_ADB
 ```sh
 $ npm install
 ```
