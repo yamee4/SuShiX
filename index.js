@@ -25,6 +25,8 @@ app.set("view engine", "hbs");
 app.get('/', (req, res) => res.redirect('/home'));
 
 app.use('/home', require('./routes/homeRouter'));
+app.use('/signin', require('./routes/signinRouter'));
+app.use('/signup', require('./routes/signupRouter'));
 
 app.listen(port, () => {    
   console.log('Server is running on port 3000');
