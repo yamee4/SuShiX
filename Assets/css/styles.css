@@ -2,6 +2,24 @@
     list-style-type: none;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 8px;
+}
+
+.form-label {
+    font-size: 14px;
+}
+
+.btn {
+    font-size: 14px;
+}
+
+
 /*---------------------
   Blog Sidebar
 -----------------------*/
