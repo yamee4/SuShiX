@@ -1,6 +1,25 @@
 use Nhom3_QLSUSHI
 go
 
+INSERT INTO BRANCH (BranchID, BranchName, BranchAddress, OpeningTime, ClosedTime, isParkinglot, AreaName, DeliveryService) VALUES
+('1', N'Sushi Bình Thạnh', N'27A, đường Bạch Đằng, Quận Bình Thạnh, TP.HCM', N'8:00', N'17:30', 0, null, 1),
+('2', N'Sushi Quận 12', N'355, đường Tô Ký, Quận 12, TP.HCM', N'7:45', N'17:30', 1, null, 1),
+('3', N'Sushi Ánh Sao', N'15, đường 15, Quận 7, TP.HCM', N'15:45', N'21:30', 1, null, 1),
+('4', N'Sushi Quận 3', N'27A, đường Nguyễn Thị Minh Khai, Quận 3, TP.HCM', N'9:00', N'18:30', 0, null, 1),
+('5', N'Sushi Quận 4', N'355C, đường Bến Vân Đồn, Quận 4, TP.HCM', N'7:45', N'17:30', 0, null, 1),
+('6', N'Sushi Quận 5', N'27A, đường Bạch Đằng, Quận Bình Thạnh, TP.HCM', N'8:45', N'17:45', 1, null, 1),
+('7', N'Sushi Cầu Giấy', N'27A, đường Dịch Vọng, Quận Cầu Giấy, TP.Hà Nội', N'10:00', N'20:30', 1, null, 1),
+('8', N'Sushi Gò Vấp', N'27A, đường Bạch Đằng, Quận Bình Thạnh, TP.HCM', N'7:45', N'17:30', 1, null, 0),
+('9', N'Sushi Bến Thành', N'27A, đường Bạch Đằng, Quận Bình Thạnh, TP.HCM', N'9:45', N'17:30', 1, null, 0),
+('10', N'Sushi Gò Vấp 2', N'27A, đường Bạch Đằng, Quận Bình Thạnh, TP.HCM', N'10:45', N'17:30', 1, null, 1),
+('11', N'Sushi Tân Sơn Nhất', N'27A, đường Bạch Đằng, Quận Bình Thạnh, TP.HCM', N'5:45', N'17:30', 1, null, 0),
+('12', N'Sushi Nha Trang', N'55, Lê Thành Phương, Vạn Thắng, TP.Nha Trang', N'12:45', N'17:30', 1, null, 1),
+('13', N'Sushi Mạc Đĩnh Chi', N'19 – 21 – 23, Mạc Đĩnh Chi, Đa Kao, Quận 1, TP.HCM', N'13:45', N'16:30', 1, null, 0),
+('14', N'Sushi Phú Lâm', N'	1039 Hồng Bàng, Phường 12, TP.HCM', N'16:30', N'17:30', 1, null, 1),
+('15', N'Sushi Him Lam', N'121 – 123 Nguyễn Thị Thập, Khu Đô Thị Him Lam, Phường Tân Hưng, TP.HCM', N'9:15', N'18:30', 1, null, 0)
+
+
+
 INSERT INTO DISH (DishID, DishName, CurrentPrice, DishSection, isCombo, DeliveryAvailable)
 VALUES
 (1, 'Sushi California Roll', 50000, 'Sushi', 0, 1),
