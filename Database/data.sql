@@ -1,0 +1,71 @@
+use Nhom3_QLSUSHI
+go
+
+INSERT INTO DISH (DishID, DishName, CurrentPrice, DishSection, isCombo, DeliveryAvailable)
+VALUES
+(1, 'Sushi California Roll', 50000, 'Sushi', 0, 1),
+(2, 'Sushi Dragon Roll', 60000, 'Sushi', 0, 1),
+(3, 'Sushi Salmon Roll', 45000, 'Sushi', 0, 1),
+(4, 'Sushi Tuna Roll', 55000, 'Sushi', 0, 1),
+(5, 'Sushi Tempura Roll', 65000, 'Sushi', 0, 1),
+(6, 'Sushi Spicy Tuna Roll', 60000, 'Sushi', 0, 1),
+(7, 'Sushi Eel Roll', 70000, 'Sushi', 0, 1),
+(8, 'Sushi Rainbow Roll', 75000, 'Sushi', 0, 1),
+(9, 'Sashimi Salmon', 80000, 'Sashimi', 0, 1),
+(10, 'Sashimi Tuna', 85000, 'Sashimi', 0, 1),
+(11, 'Sashimi Mixed', 100000, 'Sashimi', 0, 1),
+(12, 'Nigiri Salmon', 30000, 'Nigiri', 0, 1),
+(13, 'Nigiri Tuna', 35000, 'Nigiri', 0, 1),
+(14, 'Nigiri Eel', 40000, 'Nigiri', 0, 1),
+(15, 'Nigiri Mixed', 50000, 'Nigiri', 0, 1),
+(16, 'Edamame', 20000, 'Appetizer', 0, 1),
+(17, 'Gyoza', 30000, 'Appetizer', 0, 1),
+(18, 'Miso Soup', 15000, 'Soup', 0, 1),
+(19, 'Ramen', 40000, 'Noodle', 0, 1),
+(20, 'Udon', 35000, 'Noodle', 0, 1),
+(21, 'Sushi Combo A', 150000, 'Combo', 1, 1),
+(22, 'Sushi Combo B', 200000, 'Combo', 1, 1),
+(23, 'Sashimi Combo', 250000, 'Combo', 1, 1),
+(24, 'Nigiri Combo', 180000, 'Combo', 1, 1),
+(25, 'Dessert Mochi', 25000, 'Dessert', 0, 1),
+(26, 'Dessert Matcha Ice Cream', 30000, 'Dessert', 0, 1),
+(27, 'Dessert Green Tea Cake', 35000, 'Dessert', 0, 1),
+(28, 'Drink Sake', 50000, 'Drink', 0, 1),
+(29, 'Drink Beer', 30000, 'Drink', 0, 1),
+(30, 'Drink Soda', 15000, 'Drink', 0, 1),
+(31, 'Tempura Shrimp', 40000, 'Tempura', 0, 1),
+(32, 'Tempura Vegetable', 35000, 'Tempura', 0, 1),
+(33, 'Tempura Mixed', 50000, 'Tempura', 0, 1),
+(34, 'Grilled Eel', 60000, 'Grilled', 0, 1),
+(35, 'Grilled Salmon', 55000, 'Grilled', 0, 1),
+(36, 'Grilled Chicken', 40000, 'Grilled', 0, 1),
+(37, 'Grilled Beef', 65000, 'Grilled', 0, 1),
+(38, 'Sushi Roll Special', 80000, 'Sushi', 0, 1),
+(39, 'Sashimi Platter', 150000, 'Sashimi', 0, 1),
+(40, 'Nigiri Platter', 120000, 'Nigiri', 0, 1);
+
+
+INSERT INTO COMBO
+VALUES
+(21),
+(22),
+(23),
+(24);
+
+INSERT INTO DISH_COMBO(ComboID, DishID, Quantity)
+VALUES
+(21, 1, 1),
+(21, 2, 1),
+(21, 3, 1),
+(21, 4, 1),
+(22, 5, 1),
+(22, 6, 1),
+(22, 7, 1),
+(22, 8, 1),
+(23, 9, 1),
+(23, 10, 1),
+(23, 11, 1),
+(24, 12, 1),
+(24, 13, 2),
+(24, 14, 1),
+(24, 15, 2);
