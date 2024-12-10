@@ -3,7 +3,7 @@ use Nhom3_QLSUSHI
 go
 create table BRANCH
 (
-	BranchID char(2),
+	BranchID int,
 	BranchName nvarchar(30),
 	BranchAddress nvarchar(100),
 	OpeningTime time,
@@ -17,7 +17,7 @@ create table BRANCH
 go
 create table BRANCH_PHONE_NUMBER
 (
-	BranchID char(2),
+	BranchID int,
 	PhoneNumber char(10)
 
 	primary key (BranchID, PhoneNumber)
@@ -25,7 +25,7 @@ create table BRANCH_PHONE_NUMBER
 go
 create table STATION_EMPLOYEE
 (
-	BranchID char(2),
+	BranchID int,
 	EmpID char(5),
 	StationName nvarchar(20)
 
@@ -95,7 +95,7 @@ create table DISH_COMBO
 go
 create table MENU_DETAIL
 (
-	BranchID char(2),
+	BranchID int,
 	DishID int,
 	isServing bit
 
@@ -120,7 +120,7 @@ create table WORK_HISTORY
 	EmpID char(5),
 	StartDate datetime,
 	EndDate datetime,
-	BranchID char(2)
+	BranchID int
 
 	primary key(EmpID, StartDate)
 )
@@ -174,7 +174,7 @@ create table ORDER_TICKET
 (
 	TicketID char(10),
 	TiketType char(3),
-	BranchID char(2),
+	BranchID int,
 	CCCD char(10),
 	EmpID char(5)
 
