@@ -1,4 +1,4 @@
-use Nhom3_QLSUSHI
+use Nhom3_ADB
 go
 
 INSERT INTO BRANCH (BranchID, BranchName, BranchAddress, OpeningTime, ClosedTime, isParkinglot, AreaName, DeliveryService) VALUES

@@ -10,7 +10,7 @@ app.use(express.static(__dirname + "/Assets"));
 app.engine(
     "hbs",
     expressHbs.engine({
-        layoutsDir: __dirname + "/views/layouts",
+        layoutsDir: __dirname + "/views/layouts", 
         partialsDir: __dirname + "/views/partials",
         extname: "hbs",
         defaultLayout: "layout",
@@ -26,6 +26,7 @@ app.use("/menu", require("./routes/menuRouter"));
 
 app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
+app.use("/profile", require("./routes/profileRouter"));
 
 app.listen(port, () => {
     console.log("Server is running on port 3000");

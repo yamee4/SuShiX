@@ -1,4 +1,4 @@
-use Nhom3_QLSUSHI
+use Nhom3_ADB
 
 go
 create table BRANCH
@@ -110,7 +110,7 @@ create table EMPLOYEE
 	EmpBirthDate datetime,
 	EmpGender nchar(3),
 	Salary int,
-	BranchManager char(2)
+	BranchManager int
 
 	primary key(EmpID)
 )
