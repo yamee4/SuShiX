@@ -1,5 +1,6 @@
 const express = require("express");
 const expressHbs = require("express-handlebars");
+const { createPagination } = require("express-handlebars-paginate");
 const port = 3000;
 
 const app = express();
@@ -19,13 +20,6 @@ app.engine(
         },
         helpers: {
             createPagination,
-            formatDate:(date) => {
-                return date.toLocaleDateString("en-US",{
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                });
-            }
         },
     })
 
