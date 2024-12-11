@@ -8,13 +8,27 @@ app.use("/node_modules", express.static("node_modules"));
 app.use(express.static(__dirname + "/Assets"));
 
 app.engine(
-    "hbs",
+    'hbs',
     expressHbs.engine({
-        layoutsDir: __dirname + "/views/layouts", 
-        partialsDir: __dirname + "/views/partials",
-        extname: "hbs",
-        defaultLayout: "layout",
+        extname: 'hbs',
+        defaultLayout: 'layout',
+        layoutsDir: __dirname + '/views/layouts',
+        partialsDir: __dirname + '/views/partials',
+        runtimeOptions: {
+            allowProtoPropertiesByDefault: true,
+        },
+        helpers: {
+            createPagination,
+            formatDate:(date) => {
+                return date.toLocaleDateString("en-US",{
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+        },
     })
+
 );
 
 app.set("view engine", "hbs");
