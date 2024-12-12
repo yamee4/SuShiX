@@ -9,20 +9,12 @@ class MENU_DETAIL extends Sequelize.Model {
     BranchID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'BRANCH',
-        key: 'BranchID'
-      }
+      primaryKey: true
     },
     DishID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'DISH',
-        key: 'DishID'
-      }
+      primaryKey: true
     },
     isServing: {
       type: DataTypes.BOOLEAN,

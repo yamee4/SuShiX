@@ -1,22 +1,12 @@
-use Nhom3_QLSUSHI
+use Nhom3_ADB
 go
 
-INSERT INTO MENU (MenuID, MenuName)
+INSERT INTO AREA (AreaName, MenuID, MenuName)
 VALUES
-('M001', 'Classic Menu'),
-('M002', 'Spring Menu'),
-('M003', 'Summer Menu'),
-('M004', 'Autumn Menu'),
-('M005', 'Winter Menu'),
-('M006', 'Vegetarian Menu'),
-('M007', 'Holiday Menu');
-
-INSERT INTO AREA (AreaName, MenuID)
-VALUES
-('Area 1', 'M001'),
-('Area 2', 'M003'),
-('Area 3', 'M007'),
-('Area 4', 'M004');
+('Area 1', 'M001', 'Classic Menu'),
+('Area 2', 'M002', 'Spring Menu'),
+('Area 3', 'M003', 'Summer Menu'),
+('Area 4', 'M004', 'Autumn Menu');
 
 INSERT INTO BRANCH (BranchID, BranchName, BranchAddress, OpeningTime, ClosedTime, isParkinglot, AreaName, DeliveryService) VALUES
 (1, N'Sushi Bình Thạnh', N'27A, đường Bạch Đằng, Quận Bình Thạnh, TP.HCM', N'8:00', N'17:30', 0, 'Area 1', 1),
@@ -162,31 +152,7 @@ VALUES
 ('M004', 4, 1),
 ('M004', 10, 1),
 ('M004', 11, 1),
-('M004', 12, 1),
-
-('M005', 5, 1),
-('M005', 6, 1),
-('M005', 8, 1),
-('M005', 9, 1),
-('M005', 13, 1),
-
-('M006', 14, 1),
-('M006', 15, 1),
-('M006', 16, 1),
-('M006', 17, 1),
-('M006', 18, 1),
-
-('M007', 1, 1),
-('M007', 7, 1),
-('M007', 8, 1),
-('M007', 11, 1),
-('M007', 13, 1),
-
-('M001', 14, 0),
-('M002', 15, 0),
-('M003', 16, 0),
-('M004', 17, 0),
-('M005', 18, 0);
+('M004', 12, 1);
 
 INSERT INTO MENU_DETAIL VALUES 
 (1, 1, 1),
@@ -263,6 +229,19 @@ INSERT INTO MENU_DETAIL VALUES
 (15, 19, 1),
 (15, 9, 1),
 (15, 12, 0);
+
+INSERT INTO STATION (StationName, StationSalary)
+VALUES
+('Sushi Chef', 15000000),
+('Teppanyaki Chef', 18000000),
+('Sushi Preparer', 10000000),
+('Server', 8000000),
+('Dishwasher', 7000000),
+('Cashier', 8500000),
+('Host/Hostess', 7500000);
+
+
+------------------------------------------------------------------------------------------------------------
 
 INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered)
 VALUES
@@ -387,15 +366,6 @@ VALUES
 ('EMP29', '2010-06-10', '2015-05-31', 14),
 ('EMP30', '2012-02-27', '2017-01-31', 15);	
 
-INSERT INTO STATION (StationName, StationSalary)
-VALUES
-('Sushi Chef', 15000000),
-('Teppanyaki Chef', 18000000),
-('Sushi Preparer', 10000000),
-('Server', 8000000),
-('Dishwasher', 7000000),
-('Cashier', 8500000),
-('Host/Hostess', 7500000);
 
 INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName)
 VALUES

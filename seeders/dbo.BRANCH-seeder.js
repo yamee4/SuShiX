@@ -12,7 +12,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": false,
-    "AreaName": null
+    "AreaName": "Area 1"
   },
   {
     "BranchID": 2,
@@ -22,7 +22,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 2"
   },
   {
     "BranchID": 3,
@@ -32,7 +32,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T21:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 4"
   },
   {
     "BranchID": 4,
@@ -42,7 +42,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T18:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": false,
-    "AreaName": null
+    "AreaName": "Area 4"
   },
   {
     "BranchID": 5,
@@ -52,7 +52,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": false,
-    "AreaName": null
+    "AreaName": "Area 2"
   },
   {
     "BranchID": 6,
@@ -62,7 +62,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:45:00.000Z",
     "DeliveryService": true,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 1"
   },
   {
     "BranchID": 7,
@@ -72,7 +72,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T20:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 3"
   },
   {
     "BranchID": 8,
@@ -82,7 +82,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": false,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 2"
   },
   {
     "BranchID": 9,
@@ -92,7 +92,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": false,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 1"
   },
   {
     "BranchID": 10,
@@ -102,7 +102,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 1"
   },
   {
     "BranchID": 11,
@@ -112,7 +112,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": false,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 3"
   },
   {
     "BranchID": 12,
@@ -122,7 +122,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 4"
   },
   {
     "BranchID": 13,
@@ -132,7 +132,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T16:30:00.000Z",
     "DeliveryService": false,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 2"
   },
   {
     "BranchID": 14,
@@ -142,7 +142,7 @@ module.exports = {
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": true,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 3"
   },
   {
     "BranchID": 15,
@@ -152,13 +152,13 @@ module.exports = {
     "ClosedTime": "1970-01-01T18:30:00.000Z",
     "DeliveryService": false,
     "isParkinglot": true,
-    "AreaName": null
+    "AreaName": "Area 3"
   }
 ], {});
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('dbo.BRANCH', null, {});
+    await queryInterface.bulkDelete('BRANCH', null, {});
   }
 };
   

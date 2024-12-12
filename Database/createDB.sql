@@ -1,5 +1,5 @@
--- CREATE DATABASE Nhom3_QLSUSHI
-use Nhom3_QLSUSHI
+-- CREATE DATABASE Nhom3_ADB
+use Nhom3_ADB
 
 go
 create table BRANCH
@@ -45,19 +45,11 @@ go
 create table AREA
 (
 	AreaName nvarchar(30),
-	MenuID char(4)
-
-	primary key(AreaName)
-)
-go
-create table MENU
-(
 	MenuID char(4),
 	MenuName nvarchar(30),
 
-	primary key(MenuID)
+	primary key(AreaName)
 )
-
 go
 create table DISH
 (

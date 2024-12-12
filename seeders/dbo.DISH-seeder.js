@@ -328,7 +328,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('dbo.DISH', null, {});
+    await queryInterface.bulkDelete('DISH', null, {});
   }
 };
   

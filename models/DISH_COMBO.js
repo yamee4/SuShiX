@@ -9,20 +9,12 @@ class DISH_COMBO extends Sequelize.Model {
     ComboID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'COMBO',
-        key: 'ComboID'
-      }
+      primaryKey: true
     },
     DishID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'DISH',
-        key: 'DishID'
-      }
+      primaryKey: true
     },
     Quantity: {
       type: DataTypes.INTEGER,

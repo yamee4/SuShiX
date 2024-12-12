@@ -9,11 +9,7 @@ class COMBO extends Sequelize.Model {
     ComboID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'DISH',
-        key: 'DishID'
-      }
+      primaryKey: true
     }
   }, {
     sequelize,

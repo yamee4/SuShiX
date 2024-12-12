@@ -13,11 +13,11 @@ class AREA extends Sequelize.Model {
     },
     MenuID: {
       type: DataTypes.CHAR(4),
-      allowNull: true,
-      references: {
-        model: 'MENU',
-        key: 'MenuID'
-      }
+      allowNull: true
+    },
+    MenuName: {
+      type: DataTypes.STRING(30),
+      allowNull: true
     }
   }, {
     sequelize,
@@ -26,7 +26,7 @@ class AREA extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__AREA__8EB6AF566B5E6BCB",
+        name: "PK__AREA__8EB6AF562088A14B",
         unique: true,
         fields: [
           { name: "AreaName" },

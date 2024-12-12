@@ -51,7 +51,8 @@ auto.run().then(async (data) => {
   }
 });
 
-// Generate seeder content based on table data
+
+// Function to generate seeder content with UPSERT logic
 function generateSeederContent(tableName, tableData) {
   return `
 'use strict';
