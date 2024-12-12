@@ -189,8 +189,8 @@ create table PRE_ORDER_TICKET
 	BranchName nvarchar(30),
 	Area nvarchar(30),
 	NumberofCustomer int,
-	PreOrderDate date,
-	PreOrderArrivalTime time,
+	PreOrderDate datetime,
+	PreOrderArrivalTime datetime,
 	PreOrderNote nvarchar(100)
 
 	primary key (PTicketID)
