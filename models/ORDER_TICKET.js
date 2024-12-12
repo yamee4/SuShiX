@@ -11,7 +11,7 @@ class ORDER_TICKET extends Sequelize.Model {
       allowNull: false,
       primaryKey: true
     },
-    TiketType: {
+    TicketType: {
       type: DataTypes.CHAR(3),
       allowNull: true
     },
