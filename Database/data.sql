@@ -245,16 +245,16 @@ VALUES
 
 INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered)
 VALUES
-('0123456789', 'Nguyen Van', 'A', '0987654321', 'vanan@gmail.com', 'Nam', 1, 1),
-('0234567890', 'Tran Thi', 'B', '0987654321', 'thib@gmail.com', 'Nu', 0, 1),
-('0345678901', 'Le Thi', 'C', '0987654321', 'thic@gmail.com', 'Nu', 1, 1),
-('0456789012', 'Hoang Van', 'D', '0987654321', 'vand@gmail.com', 'Nam', 0, 1),
-('0567890123', 'Nguyen Thi', 'E', '0987654321', 'thie@gmail.com', 'Nu', 1, 1),
-('0678901234', 'Tran Van', 'F', '0987654321', 'vanf@gmail.com', 'Nam', 0, 1),
-('0789012345', 'Le Van', 'G', '0987654321', 'vang@gmail.com', 'Nam', 1, 1),
-('0890123456', 'Hoang Thi', 'H', '0987654321', 'thih@gmail.com', 'Nu', 0, 1),
-('0901234567', 'Nguyen Van', 'I', '0987654321', 'vani@gmail.com', 'Nam', 1, 1),
-('1012345678', 'Tran Thi', 'J', '0987654321', 'thij@gmail.com', 'Nu', 0, 1);
+('0123456789', N'Nguyễn Văn', 'A', '0987654321', 'vanan@gmail.com', 'Nam', 1, 1),
+('0234567890', N'Trần Thị', 'B', '0987654321', 'thib@gmail.com', 'Nu', 0, 1),
+('0345678901', N'Lê Thị', 'C', '0987654321', 'thic@gmail.com', 'Nu', 1, 1),
+('0456789012', N'Hoàng Văn', 'D', '0987654321', 'vand@gmail.com', 'Nam', 0, 1),
+('0567890123', N'Nguyễn Thị', 'E', '0987654321', 'thie@gmail.com', 'Nu', 1, 1),
+('0678901234', N'Trần Văn', 'F', '0987654321', 'vanf@gmail.com', 'Nam', 0, 1),
+('0789012345', N'Lê Văn', 'G', '0987654321', 'vang@gmail.com', 'Nam', 1, 1),
+('0890123456', N'Hoàng Thị', 'H', '0987654321', 'thih@gmail.com', 'Nu', 0, 1),
+('0901234567', N'Nguyễn Văn', 'I', '0987654321', 'vani@gmail.com', 'Nam', 1, 1),
+('1012345678', N'Trần Thị', 'J', '0987654321', 'thij@gmail.com', 'Nu', 0, 1);
 
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager)
 VALUES
@@ -434,22 +434,22 @@ VALUES
 
 INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote)
 VALUES
-('TKT0002', 'Sushi Quận 12', 'Area 2', 4, '2023-12-13', '18:30:00', 'Please prepare a table for 4 people'),
-('TKT0005', 'Sushi Quận 4', 'Area 2', 2, '2023-12-14', '12:00:00', 'We would like to have a quiet table, please'),
-('TKT0008', 'Sushi Gò Vấp', 'Area 2', 6, '2023-12-15', '19:30:00', 'Please prepare a table near the window'),
-('TKT0011', 'Sushi Bình Thạnh', 'Area 1', 3, '2023-12-16', '17:00:00', 'We have a child with us, please prepare a high chair'),
-('TKT0014', 'Sushi Quận 3', 'Area 4', 5, '2023-12-17', '11:30:00', 'We would like to have a table near the sushi bar'),
-('TKT0017', 'Sushi Cầu Giấy', 'Area 3', 2, '2023-12-18', '13:00:00', 'Please prepare a table for two, no smoking area');
+('TKT0002', N'Sushi Quận 12', 'Area 2', 4, '2023-12-13', '18:30:00', 'Please prepare a table for 4 people'),
+('TKT0005', N'Sushi Quận 4', 'Area 2', 2, '2023-12-14', '12:00:00', 'We would like to have a quiet table, please'),
+('TKT0008', N'Sushi Gò Vấp', 'Area 2', 6, '2023-12-15', '19:30:00', 'Please prepare a table near the window'),
+('TKT0011', N'Sushi Bình Thạnh', 'Area 1', 3, '2023-12-16', '17:00:00', 'We have a child with us, please prepare a high chair'),
+('TKT0014', N'Sushi Quận 3', 'Area 4', 5, '2023-12-17', '11:30:00', 'We would like to have a table near the sushi bar'),
+('TKT0017', N'Sushi Cầu Giấy', 'Area 3', 2, '2023-12-18', '13:00:00', 'Please prepare a table for two, no smoking area');
 
 INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate)
 VALUES
 ('TKT0001', 'Table 1', 'EMP01', '2023-12-12 12:00:00'),
-('TKT0004', 'Table 2', 'EMP04', '2023-12-13 18:30:00'),
-('TKT0007', 'Table 3', 'EMP07', '2023-12-14 10:15:00'),
-('TKT0010', 'Table 4', 'EMP10', '2023-12-15 14:45:00'),
-('TKT0013', 'Table 5', 'EMP03', '2023-12-16 11:30:00'),
-('TKT0016', 'Table 6', 'EMP06', '2023-12-17 17:00:00'),
-('TKT0019', 'Table 7', 'EMP09', '2023-12-18 12:30:00');
+('TKT0004', 'Table 1', 'EMP04', '2023-12-13 18:30:00'),
+('TKT0007', 'Table 1', 'EMP07', '2023-12-14 10:15:00'),
+('TKT0010', 'Table 1', 'EMP10', '2023-12-15 14:45:00'),
+('TKT0013', 'Table 1', 'EMP03', '2023-12-16 11:30:00'),
+('TKT0016', 'Table 1', 'EMP06', '2023-12-17 17:00:00'),
+('TKT0019', 'Table 1', 'EMP09', '2023-12-18 12:30:00');
 
 INSERT INTO ONLINE_TICKET_DETAIL (OTicketID, DishID, OrderTime, Quantity, Price)
 VALUES
@@ -566,13 +566,13 @@ VALUES
 
 INSERT INTO FEEDBACK_TICKET (TicketID, FeedbackBranchLocation, FeedbackService, FeedbackFoodQuality, FeedbackPrice, FeedbackLocation, FeedbackNote)
 VALUES
-('TKT0001', '09', 'Excellent service', 'Delicious food', 'Reasonable price', 'Clean and comfortable', 'No specific notes'),
-('TKT0002', '10', 'Very good service', 'High-quality food', 'Fair price', 'Nice ambiance', 'No specific notes'),
-('TKT0003', '09', 'Friendly staff', 'Tasty food', 'Affordable price', 'Convenient location', 'No specific notes'),
-('TKT0004', '10', 'Prompt service', 'Fresh and flavorful food', 'Good value for money', 'Pleasant atmosphere', 'No specific notes'),
-('TKT0005', '09', 'Efficient service', 'Well-prepared dishes', 'Reasonable pricing', 'Clean and spacious', 'No specific notes'),
-('TKT0006', '10', 'Excellent customer service', 'Delicious and authentic food', 'Fair price', 'Nice ambiance', 'No specific notes'),
-('TKT0007', '09', 'Friendly and helpful staff', 'Tasty and fresh food', 'Affordable prices', 'Convenient location', 'No specific notes'),
-('TKT0008', '10', 'Prompt and efficient service', 'High-quality ingredients', 'Reasonable pricing', 'Pleasant atmosphere', 'No specific notes'),
-('TKT0009', '09', 'Excellent service', 'Delicious food', 'Reasonable price', 'Clean and comfortable', 'No specific notes'),
-('TKT0010', '10', 'Very good service', 'High-quality food', 'Fair price', 'Nice ambiance', 'No specific notes');
+('TKT0001', '09', N'Dịch vụ tuyệt vời', N'Món ăn ngon', N'Giá cả hợp lý', N'Không gian sạch sẽ và thoải mái', N'Không có ghi chú cụ thể'),
+('TKT0002', '10', N'Dịch vụ rất tốt', N'Món ăn chất lượng cao', N'Giá cả hợp lý', N'Không gian đẹp', N'Không có ghi chú cụ thể'),
+('TKT0003', '09', N'Nhân viên thân thiện', N'Món ăn ngon', N'Giá cả phải chăng', N'Vị trí thuận tiện', N'Không có ghi chú cụ thể'),
+('TKT0004', '10', N'Dịch vụ nhanh chóng', N'Món ăn tươi ngon', N'Giá trị tốt', N'Không khí dễ chịu', N'Không có ghi chú cụ thể'),
+('TKT0005', '09', N'Dịch vụ hiệu quả', N'Món ăn được chế biến tốt', N'Giá cả hợp lý', N'Không gian sạch sẽ và rộng rãi', N'Không có ghi chú cụ thể'),
+('TKT0006', '10', N'Dịch vụ khách hàng tuyệt vời', N'Món ăn ngon và chính gốc', N'Giá cả hợp lý', N'Không gian đẹp', N'Không có ghi chú cụ thể'),
+('TKT0007', '09', N'Nhân viên thân thiện và hữu ích', N'Món ăn ngon và tươi', N'Giá cả phải chăng', N'Vị trí thuận tiện', N'Không có ghi chú cụ thể'),
+('TKT0008', '10', N'Dịch vụ nhanh chóng và hiệu quả', N'Nguyên liệu chất lượng cao', N'Giá cả hợp lý', N'Không khí dễ chịu', N'Không có ghi chú cụ thể'),
+('TKT0009', '09', N'Dịch vụ tuyệt vời', N'Món ăn ngon', N'Giá cả hợp lý', N'Không gian sạch sẽ và thoải mái', N'Không có ghi chú cụ thể'),
+('TKT0010', '10', N'Dịch vụ rất tốt', N'Món ăn chất lượng cao', N'Giá cả hợp lý', N'Không gian đẹp', N'Không có ghi chú cụ thể');
