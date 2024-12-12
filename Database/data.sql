@@ -434,12 +434,12 @@ VALUES
 
 INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote)
 VALUES
-('TKT0002', N'Sushi Quận 12', 'Area 2', 4, '2023-12-13', '18:30:00', 'Please prepare a table for 4 people'),
-('TKT0005', N'Sushi Quận 4', 'Area 2', 2, '2023-12-14', '12:00:00', 'We would like to have a quiet table, please'),
-('TKT0008', N'Sushi Gò Vấp', 'Area 2', 6, '2023-12-15', '19:30:00', 'Please prepare a table near the window'),
-('TKT0011', N'Sushi Bình Thạnh', 'Area 1', 3, '2023-12-16', '17:00:00', 'We have a child with us, please prepare a high chair'),
-('TKT0014', N'Sushi Quận 3', 'Area 4', 5, '2023-12-17', '11:30:00', 'We would like to have a table near the sushi bar'),
-('TKT0017', N'Sushi Cầu Giấy', 'Area 3', 2, '2023-12-18', '13:00:00', 'Please prepare a table for two, no smoking area');
+('TKT0002', N'Sushi Quận 12', 'Area 2', 4, '2023-12-13 15:00:00', '2023-12-13 18:30:00', N'Xin vui lòng chuẩn bị bàn cho 4 người'),
+('TKT0005', N'Sushi Quận 4', 'Area 2', 2, '2023-12-14 9:00:00', '2023-12-14 12:00:00', N'Chúng tôi muốn có một bàn yên tĩnh, vui lòng'),
+('TKT0008', N'Sushi Gò Vấp', 'Area 2', 6, '2023-12-15 16:00:00', '2023-12-15 19:30:00', N'Xin vui lòng chuẩn bị bàn gần cửa sổ'),
+('TKT0011', N'Sushi Bình Thạnh', 'Area 1', 3, '2023-12-16 14:00:00', '2023-12-16 17:00:00', N'Chúng tôi có trẻ em, vui lòng chuẩn bị ghế cao'),
+('TKT0014', N'Sushi Quận 3', 'Area 4', 5, '2023-12-17 8:30:00', '2023-12-17 11:30:00', N'Chúng tôi muốn có bàn gần quầy sushi'),
+('TKT0017', N'Sushi Cầu Giấy', 'Area 3', 2, '2023-12-18 9:30:00', '2023-12-18 13:00:00', N'Xin vui lòng chuẩn bị bàn cho hai người, khu vực không hút thuốc');
 
 INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate)
 VALUES
