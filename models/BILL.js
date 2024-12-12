@@ -27,6 +27,7 @@ class BILL extends Sequelize.Model {
     sequelize,
     tableName: 'BILL',
     schema: 'dbo',
+    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
