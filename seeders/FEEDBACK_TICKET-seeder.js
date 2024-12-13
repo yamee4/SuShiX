@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('FEEDBACK_TICKET', [
+    const data = [
   {
     "TicketID": "TKT0001   ",
     "FeedbackBranchLocation": "09",
@@ -94,7 +94,17 @@ module.exports = {
     "FeedbackLocation": "Nice ambiance",
     "FeedbackNote": "No specific notes"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('FEEDBACK_TICKET', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into FEEDBACK_TICKET: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

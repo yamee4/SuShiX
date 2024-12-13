@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('CUSTOMER_MEMBER', [
+    const data = [
   {
     "MCCCD": "0123456789",
     "MemberCardNumber": "MC0001    ",
@@ -49,7 +49,17 @@ module.exports = {
     "MemberCardPoints": 150,
     "MemberCardAcquiredRankDate": "2023-12-10"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('CUSTOMER_MEMBER', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into CUSTOMER_MEMBER: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

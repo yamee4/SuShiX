@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('STATION', [
+    const data = [
   {
     "StationName": "Cashier",
     "StationSalary": 8500000
@@ -32,7 +32,17 @@ module.exports = {
     "StationName": "Teppanyaki Chef",
     "StationSalary": 18000000
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('STATION', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into STATION: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

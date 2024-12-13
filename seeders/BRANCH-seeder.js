@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('BRANCH', [
+    const data = [
   {
     "BranchID": 1,
     "BranchName": "Sushi Bình Thạnh",
@@ -154,7 +154,17 @@ module.exports = {
     "isParkinglot": true,
     "AreaName": "Area 3"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('BRANCH', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into BRANCH: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('ONLINE_CUSTOMER', [
+    const data = [
   {
     "OCCCD": "0123456789",
     "O_password": "password123"
@@ -44,7 +44,17 @@ module.exports = {
     "OCCCD": "1012345678",
     "O_password": "password890"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('ONLINE_CUSTOMER', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into ONLINE_CUSTOMER: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

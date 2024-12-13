@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('PRE_ORDER_TICKET', [
+    const data = [
   {
     "PTicketID": "TKT0002   ",
     "BranchName": "Sushi Qu?n 12",
@@ -58,7 +58,17 @@ module.exports = {
     "PreOrderArrivalTime": "1970-01-01T13:00:00.000Z",
     "PreOrderNote": "Please prepare a table for two, no smoking area"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('PRE_ORDER_TICKET', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into PRE_ORDER_TICKET: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

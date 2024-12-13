@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('BRANCH_PHONE_NUMBER', [
+    const data = [
   {
     "BranchID": 1,
     "PhoneNumber": "0912345678"
@@ -124,7 +124,17 @@ module.exports = {
     "BranchID": 15,
     "PhoneNumber": "0943210987"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('BRANCH_PHONE_NUMBER', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into BRANCH_PHONE_NUMBER: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {
