@@ -246,6 +246,7 @@ create table BILL
 	Discount int,
 	TotalPrice bigint,
 	TicketID char(10),
+	CreatedDate datetime,
 
 	primary key(BillID)
 )
