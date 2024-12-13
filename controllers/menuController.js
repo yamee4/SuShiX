@@ -29,7 +29,7 @@ controller.showPage = async (req, res) => {
     };
 
     let dishes = await models.DISH.findAll({ ...options, limit, offset });
-    res.render('menu', { dishes: dishes, pagination });
+    res.render('menu', { dishes: dishes, layout: 'layout', title: 'Menu', name: 'Menu' });
 };
 
 module.exports = controller;
