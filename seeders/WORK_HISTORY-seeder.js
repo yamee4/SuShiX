@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('WORK_HISTORY', [
+    const data = [
   {
     "EmpID": "EMP01",
     "StartDate": "2010-01-01T00:00:00.000Z",
@@ -184,7 +184,17 @@ module.exports = {
     "EndDate": "2017-01-31T00:00:00.000Z",
     "BranchID": 15
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('WORK_HISTORY', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into WORK_HISTORY: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

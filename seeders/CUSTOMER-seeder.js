@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('CUSTOMER', [
+    const data = [
   {
     "CCCD": "0123456789",
     "CustomerFirstName": "Nguyen Van",
@@ -104,7 +104,17 @@ module.exports = {
     "isMember": false,
     "isRegistered": true
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('CUSTOMER', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into CUSTOMER: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

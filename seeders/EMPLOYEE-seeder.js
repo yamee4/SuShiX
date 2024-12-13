@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('EMPLOYEE', [
+    const data = [
   {
     "EmpID": "EMP01",
     "EmpFirstName": "Nguyễn Văn",
@@ -274,7 +274,17 @@ module.exports = {
     "Salary": 12500000,
     "BranchManager": null
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('EMPLOYEE', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into EMPLOYEE: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

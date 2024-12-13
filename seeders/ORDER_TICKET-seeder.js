@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('ORDER_TICKET', [
+    const data = [
   {
     "TicketID": "TKT0001   ",
     "TicketType": "STD",
@@ -144,7 +144,17 @@ module.exports = {
     "CCCD": "1012345678",
     "EmpID": "EMP10"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('ORDER_TICKET', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into ORDER_TICKET: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

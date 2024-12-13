@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('AREA', [
+    const data = [
   {
     "AreaName": "Area 1",
     "MenuID": "M001",
@@ -24,7 +24,17 @@ module.exports = {
     "MenuID": "M004",
     "MenuName": "Autumn Menu"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('AREA', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into AREA: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

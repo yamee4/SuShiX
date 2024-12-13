@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('CUSTOMER_LOG', [
+    const data = [
   {
     "CCCD": "0123456789",
     "Accessed_datetime": "2023-11-12T10:30:00.000Z",
@@ -104,7 +104,17 @@ module.exports = {
     "Accessed_datetime": "2023-11-28T18:45:00.000Z",
     "Accessed_time_duration": 25
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('CUSTOMER_LOG', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into CUSTOMER_LOG: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

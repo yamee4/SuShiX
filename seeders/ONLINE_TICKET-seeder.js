@@ -3,7 +3,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('ONLINE_TICKET', [
+    const data = [
   {
     "OTicketID": "TKT0003   ",
     "DeliveryDate": "2023-12-15T12:00:00.000Z"
@@ -28,7 +28,17 @@ module.exports = {
     "OTicketID": "TKT0018   ",
     "DeliveryDate": "2023-12-20T17:00:00.000Z"
   }
-], {});
+];
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('ONLINE_TICKET', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(`Error inserting into ONLINE_TICKET: `, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {

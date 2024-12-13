@@ -1,3 +1,5 @@
+'use strict';
+
 const env = process.env.NODE_ENV || "development";
 const config = require("./config/config.json")[env];
 
@@ -33,8 +35,10 @@ auto.run().then(async (data) => {
   }
 
   // Generate seeders for each table
-  for (const tableName of Object.keys(data.tables)) {
+  for (const fullTableName of Object.keys(data.tables)) {
+    const tableName = removePrefix(fullTableName); // Remove "dbo." prefix
     console.log(`Fetching data for table: ${tableName}`);
+    
     const tableData = await sequelize.query(`SELECT * FROM ${tableName}`, {
       type: Sequelize.QueryTypes.SELECT,
     });
@@ -51,15 +55,29 @@ auto.run().then(async (data) => {
   }
 });
 
+// Function to remove "dbo." prefix
+function removePrefix(tableName) {
+  return tableName.includes('.') ? tableName.split('.')[1] : tableName;
+}
 
-// Function to generate seeder content with UPSERT logic
+// Function to generate seeder content with correct tableName reference
 function generateSeederContent(tableName, tableData) {
   return `
 'use strict';
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('${tableName}', ${JSON.stringify(tableData, null, 2)}, {});
+    const data = ${JSON.stringify(tableData, null, 2)};
+
+    for (const record of data) {
+      try {
+        await queryInterface.bulkInsert('${tableName}', [record], {
+          ignoreDuplicates: true // Skip if duplicate key exists
+        });
+      } catch (error) {
+        console.error(\`Error inserting into ${tableName}: \`, error.message);
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {
