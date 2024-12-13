@@ -254,14 +254,14 @@ go
 create table FEEDBACK_TICKET
 (
 	TicketID char(10),
-	FeedbackBranchLocation char(2),
-	FeedbackService nvarchar(100),
-	FeedbackFoodQuality nvarchar(100),
-	FeedbackPrice nvarchar(100),
-	FeedbackLocation nvarchar(100),
+	FeedbackTotalScore int,
+	FeedbackService int,
+	FeedbackFoodQuality int,
+	FeedbackPrice int,
+	FeedbackLocation int,
 	FeedbackNote nvarchar(100),
 
-	primary key(TicketID, FeedbackBranchLocation)
+	primary key(TicketID, FeedbackTotalScore)
 )
 go
 
