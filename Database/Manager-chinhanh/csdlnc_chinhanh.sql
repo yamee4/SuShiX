@@ -28,70 +28,87 @@ ON BILL
 AFTER INSERT 
 AS
 BEGIN
-DECLARE @TicketID CHAR(10), @Discount INT, @TotalPrice BIGINT;
+	DECLARE @TicketID CHAR(10), @Discount INT, @TotalPrice BIGINT;
+	SET @Discount = 0
+	SELECT @TicketID = i.TicketID
+	FROM INSERTED i;
 
-SELECT 
-    @TicketID = i.TicketID,
-    @Discount = i.Discount
-FROM INSERTED i;
+	DECLARE @Rank char(6)
 
-IF EXISTS (SELECT 1 FROM ONLINE_TICKET ot WHERE ot.OTicketID = @TicketID)
-    BEGIN
-        UPDATE B
-        SET TotalPrice = (
-            SELECT SUM(od.Quantity * od.Price) 
-            FROM ONLINE_TICKET_DETAIL od 
-            WHERE od.OTicketID = @TicketID
-        ) * (1 - @Discount / 100.0)
-        FROM BILL B
-        WHERE B.TicketID = @TicketID;
+	IF EXISTS(SELECT 1 FROM CUSTOMER c JOIN ORDER_TICKET ot ON ot.CCCD = c.CCCD WHERE ot.TicketID = @TicketID AND c.isMember = 1)
+	BEGIN
+		SELECT @Rank = cm.MemberCardRank
+		FROM ORDER_TICKET ot join CUSTOMER c on c.CCCD = ot.CCCD join CUSTOMER_MEMBER cm on cm.MCCCD = c.CCCD 
+		WHERE @TicketID = ot.TicketID
 
-		UPDATE B
-		SET CreatedDate = (
-			SELECT DeliveryDate
-			FROM ONLINE_TICKET
-			WHERE @TicketID = OTicketID)
-		FROM BILL B
-		WHERE B.TicketID = @TicketID
-    END
-ELSE IF EXISTS (SELECT 1 FROM PRE_ORDER_TICKET pt WHERE pt.PTicketID = @TicketID)
-    BEGIN
-        UPDATE B
-        SET TotalPrice = (
-            SELECT SUM(pd.Quantity * pd.Price) 
-            FROM PRE_ORDER_TICKET_DETAIL pd 
-            WHERE pd.PTicketID = @TicketID
-        ) * (1 - @Discount / 100.0)
-        FROM BILL B
-        WHERE B.TicketID = @TicketID;
+		SET @Discount = CASE 
+		WHEN @Rank = 'MEMBER' THEN 0
+		WHEN @Rank = 'SILVER' THEN 10
+		WHEN @Rank = 'GOLD' THEN 20
+		ELSE 0
+		END;
+	END
+	UPDATE BILL
+	SET Discount = @Discount
+	WHERE TicketID = @TicketID
 
-		UPDATE B
-		SET CreatedDate = (
-			SELECT PreOrderArrivalTime
-			FROM PRE_ORDER_TICKET
-			WHERE @TicketID = PTicketID)
-		FROM BILL B
-		WHERE B.TicketID = @TicketID
-    END
-ELSE IF EXISTS (SELECT 1 FROM STANDARD_ORDER_TICKET st WHERE st.SOTicketID = @TicketID)
-    BEGIN
-        UPDATE B
-        SET TotalPrice = (
-            SELECT SUM(sd.Quantity * sd.Price) 
-            FROM STANDARD_ORDER_DETAIL sd 
-            WHERE sd.SOTicketID = @TicketID
-        ) * (1 - @Discount / 100.0)
-        FROM BILL B
-        WHERE B.TicketID = @TicketID;
+	IF EXISTS (SELECT 1 FROM ONLINE_TICKET ot WHERE ot.OTicketID = @TicketID)
+		BEGIN
+			UPDATE B
+			SET TotalPrice = (
+				SELECT SUM(od.Quantity * od.Price) 
+				FROM ONLINE_TICKET_DETAIL od 
+				WHERE od.OTicketID = @TicketID
+			) * (1 - @Discount / 100.0)
+			FROM BILL B
+			WHERE B.TicketID = @TicketID;
 
-		UPDATE B
-		SET CreatedDate = (
-			SELECT CreatedDate
-			FROM STANDARD_ORDER_TICKET
-			WHERE @TicketID = SOTicketID)
-		FROM BILL B
-		WHERE B.TicketID = @TicketID
-    END
+			UPDATE B
+			SET CreatedDate = (
+				SELECT DeliveryDate
+				FROM ONLINE_TICKET
+				WHERE @TicketID = OTicketID)
+			FROM BILL B
+			WHERE B.TicketID = @TicketID
+		END
+	ELSE IF EXISTS (SELECT 1 FROM PRE_ORDER_TICKET pt WHERE pt.PTicketID = @TicketID)
+		BEGIN
+			UPDATE B
+			SET TotalPrice = (
+				SELECT SUM(pd.Quantity * pd.Price) 
+				FROM PRE_ORDER_TICKET_DETAIL pd 
+				WHERE pd.PTicketID = @TicketID
+			) * (1 - @Discount / 100.0)
+			FROM BILL B
+			WHERE B.TicketID = @TicketID;
+
+			UPDATE B
+			SET CreatedDate = (
+				SELECT PreOrderArrivalTime
+				FROM PRE_ORDER_TICKET
+				WHERE @TicketID = PTicketID)
+			FROM BILL B
+			WHERE B.TicketID = @TicketID
+		END
+	ELSE IF EXISTS (SELECT 1 FROM STANDARD_ORDER_TICKET st WHERE st.SOTicketID = @TicketID)
+		BEGIN
+			UPDATE B
+			SET TotalPrice = (
+				SELECT SUM(sd.Quantity * sd.Price) 
+				FROM STANDARD_ORDER_DETAIL sd 
+				WHERE sd.SOTicketID = @TicketID
+			) * (1 - @Discount / 100.0)
+			FROM BILL B
+			WHERE B.TicketID = @TicketID;
+
+			UPDATE B
+			SET CreatedDate = (
+				SELECT CreatedDate
+				FROM STANDARD_ORDER_TICKET
+				WHERE @TicketID = SOTicketID)
+			FROM BILL B
+			WHERE B.TicketID = @TicketID
+		END
 END;
 GO
 
@@ -266,7 +283,6 @@ END
 
 GO
 CREATE OR ALTER PROCEDURE usp_ADD_ORDER_TICKET 
-	@TicketID char(10),
 	@CCCD char(10),
 	@TicketType char(3),
 	@BranchID int,
@@ -278,23 +294,23 @@ CREATE OR ALTER PROCEDURE usp_ADD_ORDER_TICKET
 	@PreOrderNote nvarchar(100),
 	@TableName nvarchar(30),
 	@CreateDate datetime,
-	@BillID char(10),
-	@Discount int,
 	@DSDonHang DSTicket READONLY
 AS
 BEGIN
 	BEGIN TRY
-    IF EXISTS (SELECT 1 FROM ORDER_TICKET WHERE TicketID = @TicketID)
-    BEGIN
-        RAISERROR(N'TicketID đã tồn tại', 16, 1);
-        RETURN
-    END
-
     IF @TicketType NOT IN ('ONL', 'PRE', 'STD')
     BEGIN
         RAISERROR(N'TicketType không hợp lệ', 16, 1);
         RETURN
     END
+
+	DECLARE @TicketID char(10)
+	-- Find a new ticketID
+	declare @temp char(10)
+	select @temp = cast(max(cast(substring(TicketID, 4, len(TicketID) - 3) as int)) + 1 as char(10))
+	from ORDER_TICKET
+	where TicketID like 'TKT%'
+	set @TicketID = 'TKT' + REPLICATE('0', 4 - len(@temp)) + @temp
 
     INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID)
     VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID)
@@ -320,17 +336,25 @@ BEGIN
 
 	EXEC usp_ADD_DETAIL_ORDER @DSDonHang, @TicketID
 
-	INSERT INTO BILL VALUES (@BillID, @Discount, NULL, @TicketID, NULL)
+	DECLARE @BillID char(10)
+	declare @temp1 char(10)
+	select @temp = cast(max(cast(substring(BillID, 4, len(BillID) - 3) as int)) + 1 as char(10))
+	from BILL
+	where BillID like 'BIL%'
+	set @BillID = 'BIL' + REPLICATE('0', 4 - len(@temp)) + @temp
+
+	INSERT INTO BILL VALUES (@BillID, NULL, NULL, @TicketID, NULL)
 	END TRY
-BEGIN CATCH
-    PRINT(N'Lỗi: ' + ERROR_MESSAGE())
-END CATCH
+	BEGIN CATCH
+		PRINT(N'Lỗi: ' + ERROR_MESSAGE())
+	END CATCH
 
 END
-
 GO
 
 /*
+exec usp_ADD_CUSTOMER '1111111111', N'Đinh Việt', N'Đức', '0902510445', 'dinhzitduck@gmail.com', 'Nam', 1,1
+exec usp_ADD_MEMBER_CUSTOMER '1111111111', 'MC0006', '2024-12-13', 'EMP01'
 DECLARE @DSOnline DSTicket
 
 INSERT INTO @DSOnline (DishID, OrderTime, Quantity, Price)
@@ -351,15 +375,17 @@ INSERT INTO @DSStandard (DishID, OrderTime, Quantity, Price)
 VALUES (1, '2024-12-13 12:00:00', 2, 50000),
        (2, '2024-12-13 12:05:00', 1, 30000)
 
+
+exec usp_ADD_ORDER_TICKET '0123456789', 'ONL', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00',  @DSOnline
+exec usp_ADD_ORDER_TICKET '0123456789', 'PRE', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00',  @DSPreOrder
+exec usp_ADD_ORDER_TICKET '0123456789', 'STD', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00', @DSStandard
+
+
+exec usp_XoaOrderTicket 'TKT0021'
+delete BILL where BillID = 'BIL0021'
+delete BILL where BillID = 'BIL0022'
+delete BILL where BillID = 'BIL0023'
 */
-
-
--- exec usp_ADD_ORDER_TICKET 'TKT0021', '0123456789', 'ONL', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00','BIL0021', 10,  @DSOnline
--- exec usp_ADD_ORDER_TICKET 'TKT0022', '0123456789', 'PRE', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00','BIL0022, 10,  @DSPreOrder
--- exec usp_ADD_ORDER_TICKET 'TKT0023', '0123456789', 'STD', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00', 'BIL0023', 10, @DSStandard
-
--- delete ORDER_TICKET where TicketID = 'TKT0022'
-
 -----------------------------XÓA 1 ORDER TICKET VÀ CÁC DỮ LIỆU LIÊN QUAN TỚI NÓ Ở CÁC BẢNG KHÁC-------------------------------------
 GO
 CREATE OR ALTER PROCEDURE usp_XoaOrderTicket
@@ -840,3 +866,5 @@ exec usp_XoaOrderTicket 'TKT0022'
 exec usp_XoaOrderTicket 'TKT0023'
 exec usp_DELETE_CUSTOMER '1111111111'
 */
+
+
