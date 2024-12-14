@@ -1,73 +1,6 @@
 use Nhom3_ADB
 go
 
-CREATE OR ALTER TRIGGER TR_CalculateTotalScore
-ON FEEDBACK_TICKET
-AFTER INSERT
-AS
-BEGIN
-    DECLARE @InsertedID CHAR(10);
-    DECLARE @TotalScore INT;
-
-    SELECT @InsertedID = inserted.TicketID,
-           @TotalScore = (inserted.FeedbackService + inserted.FeedbackFoodQuality + inserted.FeedbackPrice + inserted.FeedbackLocation) / 4
-    FROM inserted;
-
-    UPDATE FEEDBACK_TICKET
-    SET FeedbackTotalScore = @TotalScore
-    WHERE TicketID = @InsertedID;
-END;
-GO
-
-CREATE TRIGGER TR_UpdateBillTotal
-ON BILL
-AFTER INSERT 
-AS
-BEGIN
-DECLARE @TicketID CHAR(10), @Discount INT, @TotalPrice BIGINT;
-
-SELECT 
-    @TicketID = i.TicketID,
-    @Discount = i.Discount
-FROM INSERTED i;
-
--- Calculate total price based on order type
-IF EXISTS (SELECT 1 FROM ONLINE_TICKET ot WHERE ot.OTicketID = @TicketID)
-    BEGIN
-        UPDATE B
-        SET TotalPrice = (
-            SELECT SUM(od.Quantity * od.Price) 
-            FROM ONLINE_TICKET_DETAIL od 
-            WHERE od.OTicketID = @TicketID
-        ) * (1 - @Discount / 100.0)
-        FROM BILL B
-        WHERE B.TicketID = @TicketID;
-    END
-ELSE IF EXISTS (SELECT 1 FROM PRE_ORDER_TICKET pt WHERE pt.PTicketID = @TicketID)
-    BEGIN
-        UPDATE B
-        SET TotalPrice = (
-            SELECT SUM(pd.Quantity * pd.Price) 
-            FROM PRE_ORDER_TICKET_DETAIL pd 
-            WHERE pd.PTicketID = @TicketID
-        ) * (1 - @Discount / 100.0)
-        FROM BILL B
-        WHERE B.TicketID = @TicketID;
-    END
-ELSE IF EXISTS (SELECT 1 FROM STANDARD_ORDER_TICKET st WHERE st.SOTicketID = @TicketID)
-    BEGIN
-        UPDATE B
-        SET TotalPrice = (
-            SELECT SUM(sd.Quantity * sd.Price) 
-            FROM STANDARD_ORDER_DETAIL sd 
-            WHERE sd.SOTicketID = @TicketID
-        ) * (1 - @Discount / 100.0)
-        FROM BILL B
-        WHERE B.TicketID = @TicketID;
-    END
-END;
-GO
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO AREA (AreaName, MenuID, MenuName) VALUES ('Area 1', 'M001', 'Classic Menu');
@@ -295,55 +228,55 @@ INSERT INTO STATION (StationName, StationSalary) VALUES ('Host/Hostess', 7500000
 ------------------------------------------------------------------------------------------------------------
 
 INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0123456789', N'Nguyễn Văn', 'A', '0987654321', 'vanan@gmail.com', 'Nam', 1, 1);
-INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0234567890', N'Trần Thị', 'B', '0987654321', 'thib@gmail.com', 'Nu', 0, 1);
-INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0345678901', N'Lê Thị', 'C', '0987654321', 'thic@gmail.com', 'Nu', 1, 1);
+INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0234567890', N'Trần Thị', 'B', '0987654321', 'thib@gmail.com', N'Nữ', 0, 1);
+INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0345678901', N'Lê Thị', 'C', '0987654321', 'thic@gmail.com', N'Nữ', 1, 1);
 INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0456789012', N'Hoàng Văn', 'D', '0987654321', 'vand@gmail.com', 'Nam', 0, 1);
-INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0567890123', N'Nguyễn Thị', 'E', '0987654321', 'thie@gmail.com', 'Nu', 1, 1);
+INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0567890123', N'Nguyễn Thị', 'E', '0987654321', 'thie@gmail.com', N'Nữ', 1, 1);
 INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0678901234', N'Trần Văn', 'F', '0987654321', 'vanf@gmail.com', 'Nam', 0, 1);
 INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0789012345', N'Lê Văn', 'G', '0987654321', 'vang@gmail.com', 'Nam', 1, 1);
-INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0890123456', N'Hoàng Thị', 'H', '0987654321', 'thih@gmail.com', 'Nu', 0, 1);
+INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0890123456', N'Hoàng Thị', 'H', '0987654321', 'thih@gmail.com', N'Nữ', 0, 1);
 INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('0901234567', N'Nguyễn Văn', 'I', '0987654321', 'vani@gmail.com', 'Nam', 1, 1);
-INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('1012345678', N'Trần Thị', 'J', '0987654321', 'thij@gmail.com', 'Nu', 0, 1);
+INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered) VALUES ('1012345678', N'Trần Thị', 'J', '0987654321', 'thij@gmail.com', N'Nữ', 0, 1);
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP01', N'Nguyễn Văn', N'A', '1985-01-01', 'Nam', 15000000, 1);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP02', N'Trần Thị', N'B', '1990-03-15', 'Nữ', 12000000, 2);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP02', N'Trần Thị', N'B', '1990-03-15', N'Nữ', 12000000, 2);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP03', N'Lê Văn', N'C', '1988-07-20', 'Nam', 13500000, 3);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP04', N'Hoàng Thị', N'D', '1992-11-05', 'Nữ', 11000000, 4);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP04', N'Hoàng Thị', N'D', '1992-11-05', N'Nữ', 11000000, 4);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP05', N'Nguyễn Văn', N'E', '1987-09-28', 'Nam', 14000000, 5);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP06', N'Trần Thị', N'F', '1989-05-12', 'Nữ', 12500000, 6);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP06', N'Trần Thị', N'F', '1989-05-12', N'Nữ', 12500000, 6);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP07', N'Lê Văn', N'G', '1991-08-25', 'Nam', 13000000, 7);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP08', N'Hoàng Thị', N'H', '1986-02-18', 'Nữ', 11500000, 8);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP08', N'Hoàng Thị', N'H', '1986-02-18', N'Nữ', 11500000, 8);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP09', N'Nguyễn Văn', N'I', '1993-04-10', 'Nam', 14500000, 9);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP10', N'Trần Thị', N'J', '1988-12-23', 'Nữ', 12000000, 10);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP10', N'Trần Thị', N'J', '1988-12-23', N'Nữ', 12000000, 10);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP11', N'Lê Văn', N'K', '1990-06-17', 'Nam', 13500000, 11);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP12', N'Hoàng Thị', N'L', '1992-10-02', 'Nữ', 11000000, 12);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP12', N'Hoàng Thị', N'L', '1992-10-02', N'Nữ', 11000000, 12);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP13', N'Nguyễn Văn', N'M', '1987-08-15', 'Nam', 14000000, 13);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP14', N'Trần Thị', N'N', '1989-04-29', 'Nữ', 12500000, 14);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP14', N'Trần Thị', N'N', '1989-04-29', N'Nữ', 12500000, 14);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP15', N'Lê Văn', N'O', '1991-07-13', 'Nam', 13000000, 15);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP16', N'Hoàng Thị', N'P', '1986-01-25', 'Nữ', 11500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP16', N'Hoàng Thị', N'P', '1986-01-25', N'Nữ', 11500000, NULL);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP17', N'Nguyễn Văn', N'Q', '1993-03-12', 'Nam', 14500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP18', N'Trần Thị', N'R', '1988-11-19', 'Nữ', 12000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP18', N'Trần Thị', N'R', '1988-11-19', N'Nữ', 12000000, NULL);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP19', N'Lê Văn', N'S', '1990-05-26', 'Nam', 13500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP20', N'Hoàng Thị', N'T', '1992-09-11', 'Nữ', 11000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP20', N'Hoàng Thị', N'T', '1992-09-11', N'Nữ', 11000000, NULL);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP21', N'Nguyễn Văn', N'U', '1987-07-28', 'Nam', 14000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP22', N'Trần Thị', N'V', '1989-03-14', 'Nữ', 12500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP22', N'Trần Thị', N'V', '1989-03-14', N'Nữ', 12500000, NULL);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP23', N'Lê Văn', N'W', '1991-06-22', 'Nam', 13000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP24', N'Hoàng Thị', N'X', '1986-01-07', 'Nữ', 11500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP24', N'Hoàng Thị', N'X', '1986-01-07', N'Nữ', 11500000, NULL);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP25', N'Nguyễn Văn', N'Y', '1993-02-25', 'Nam', 14500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP26', N'Trần Thị', N'Z', '1988-10-28', 'Nữ', 12000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP26', N'Trần Thị', N'Z', '1988-10-28', N'Nữ', 12000000, NULL);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP27', N'Lê Văn', N'A', '1990-04-13', 'Nam', 13500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP28', N'Hoàng Thị', N'B', '1992-08-21', 'Nữ', 11000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP28', N'Hoàng Thị', N'B', '1992-08-21', N'Nữ', 11000000, NULL);
 INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP29', N'Nguyễn Văn', N'C', '1987-06-10', 'Nam', 14000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP30', N'Trần Thị', N'D', '1989-02-27', 'Nữ', 12500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP30', N'Trần Thị', N'D', '1989-02-27', N'Nữ', 12500000, NULL);
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0123456789', 'MC0001', '2023-11-12 10:30:00', 'EMP01', 'BRONZE', 100, '2023-11-12');
+INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0123456789', 'MC0001', '2023-11-12 10:30:00', 'EMP01', 'MEMBER', 100, '2023-11-12');
 INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0345678901', 'MC0002', '2023-12-01 13:15:00', 'EMP02', 'SILVER', 250, '2023-12-01');
 INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0567890123', 'MC0003', '2023-10-25 15:45:00', 'EMP01', 'GOLD', 500, '2023-10-25');
-INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0789012345', 'MC0004', '2023-11-20 09:15:00', 'EMP02', 'BRONZE', 75, '2023-11-20');
+INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0789012345', 'MC0004', '2023-11-20 09:15:00', 'EMP02', 'MEMBER', 75, '2023-11-20');
 INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0901234567', 'MC0005', '2023-12-10 11:30:00', 'EMP01', 'SILVER', 150, '2023-12-10');
 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -488,7 +421,7 @@ INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, Pre
 INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0011', N'Sushi Bình Thạnh', 'Area 1', 3, '2023-12-16 14:00:00', '2023-12-16 17:00:00', N'Chúng tôi có trẻ em, vui lòng chuẩn bị ghế cao');
 INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0014', N'Sushi Quận 3', 'Area 4', 5, '2023-12-17 8:30:00', '2023-12-17 11:30:00', N'Chúng tôi muốn có bàn gần quầy sushi');
 INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0017', N'Sushi Cầu Giấy', 'Area 3', 2, '2023-12-18 9:30:00', '2023-12-18 13:00:00', N'Xin vui lòng chuẩn bị bàn cho hai người, khu vực không hút thuốc');
-
+INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0020', N'Sushi Cầu Giấy', 'Area 3', 2, '2023-12-18 9:30:00', '2023-12-18 13:00:00', N'Chúng tôi muốn miễn phí');
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate) VALUES ('TKT0001', 'Table 1', 'EMP01', '2023-12-12 12:00:00');
@@ -524,6 +457,8 @@ INSERT INTO PRE_ORDER_TICKET_DETAIL (PTicketID, DishID, OrderTime, Quantity, Pri
 INSERT INTO PRE_ORDER_TICKET_DETAIL (PTicketID, DishID, OrderTime, Quantity, Price) VALUES ('TKT0014', 8, '2023-12-17 11:30:00', 3, 45000);
 INSERT INTO PRE_ORDER_TICKET_DETAIL (PTicketID, DishID, OrderTime, Quantity, Price) VALUES ('TKT0017', 9, '2023-12-18 13:00:00', 2, 55000);
 INSERT INTO PRE_ORDER_TICKET_DETAIL (PTicketID, DishID, OrderTime, Quantity, Price) VALUES ('TKT0017', 10, '2023-12-18 13:00:00', 1, 30000);
+INSERT INTO PRE_ORDER_TICKET_DETAIL (PTicketID, DishID, OrderTime, Quantity, Price) VALUES ('TKT0020', 7, '2023-12-16 17:00:00', 1, 20000);
+INSERT INTO PRE_ORDER_TICKET_DETAIL (PTicketID, DishID, OrderTime, Quantity, Price) VALUES ('TKT0020', 8, '2023-12-17 11:30:00', 3, 45000);
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
