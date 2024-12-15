@@ -22,16 +22,19 @@ class BILL extends Sequelize.Model {
     TicketID: {
       type: DataTypes.CHAR(10),
       allowNull: true
+    },
+    CreatedDate: {
+      type: DataTypes.DATE,
+      allowNull: true
     }
   }, {
     sequelize,
     tableName: 'BILL',
     schema: 'dbo',
-    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
-        name: "PK__BILL__11F2FC4A0B280CFD",
+        name: "PK__BILL__11F2FC4A5554AE94",
         unique: true,
         fields: [
           { name: "BillID" },
