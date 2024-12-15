@@ -281,3 +281,91 @@ Pagination
 }
 
 
+.button-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the right */
+    margin-top: 20px; /* Optional: Add some space above the button */
+    padding: 0 70px; /* Optional: Add some horizontal padding */
+}
+
+.view-cart-btn {
+    background-color: #741d1d; /* Bootstrap primary color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+.view-cart-btn:hover {
+    background-color: #e78e64; 
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8 px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+}
+
+/* Cart Items List */
+#cart-items {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Individual Cart Item */
+#cart-items li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Last Item without Bottom Border */
+#cart-items li:last-child {
+    border-bottom: none;
+}
+
+/* Clear Cart Button */
+#clear-cart {
+    background-color: #ff4d4d; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    margin-top: 15px; /* Margin on top */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+/* Clear Cart Button Hover Effect */
+#clear-cart:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
+}

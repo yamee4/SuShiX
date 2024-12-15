@@ -9,12 +9,20 @@ class DISH_MENU extends Sequelize.Model {
     MenuID: {
       type: DataTypes.CHAR(4),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'AREA',
+        key: 'MenuID'
+      }
     },
     DishID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'DISH',
+        key: 'DishID'
+      }
     },
     inMenu: {
       type: DataTypes.BOOLEAN,
@@ -27,7 +35,7 @@ class DISH_MENU extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__DISH_MEN__D816E6A7E5CB460B",
+        name: "PK__DISH_MEN__D816E6A75B7A0EAC",
         unique: true,
         fields: [
           { name: "MenuID" },

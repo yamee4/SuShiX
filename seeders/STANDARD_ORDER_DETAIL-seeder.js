@@ -87,6 +87,20 @@ module.exports = {
     "OrderTime": "2023-12-18T12:30:00.000Z",
     "Quantity": 1,
     "Price": 30000
+  },
+  {
+    "SOTicketID": "TKT0032   ",
+    "DishID": 1,
+    "OrderTime": "2024-12-13T12:00:00.000Z",
+    "Quantity": 2,
+    "Price": 50000
+  },
+  {
+    "SOTicketID": "TKT0032   ",
+    "DishID": 2,
+    "OrderTime": "2024-12-13T12:05:00.000Z",
+    "Quantity": 1,
+    "Price": 30000
   }
 ];
 

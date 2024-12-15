@@ -6,10 +6,10 @@ module.exports = {
     const data = [
   {
     "MCCCD": "0123456789",
-    "MemberCardNumber": "MC0007    ",
-    "CreatedDate": "2024-11-12T00:00:00.000Z",
-    "SupportEmp": "EMP02",
-    "MemberCardRank": "BRONZE",
+    "MemberCardNumber": "MC0001    ",
+    "CreatedDate": "2023-11-12T10:30:00.000Z",
+    "SupportEmp": "EMP01",
+    "MemberCardRank": "MEMBER",
     "MemberCardPoints": 100,
     "MemberCardAcquiredRankDate": "2023-11-12"
   },
@@ -32,20 +32,11 @@ module.exports = {
     "MemberCardAcquiredRankDate": "2023-10-25"
   },
   {
-    "MCCCD": "0678901234",
-    "MemberCardNumber": "MC0006    ",
-    "CreatedDate": "2023-12-12T00:00:00.000Z",
-    "SupportEmp": "EMP01",
-    "MemberCardRank": "SILVER",
-    "MemberCardPoints": 120,
-    "MemberCardAcquiredRankDate": "2023-12-10"
-  },
-  {
     "MCCCD": "0789012345",
     "MemberCardNumber": "MC0004    ",
     "CreatedDate": "2023-11-20T09:15:00.000Z",
     "SupportEmp": "EMP02",
-    "MemberCardRank": "BRONZE",
+    "MemberCardRank": "MEMBER",
     "MemberCardPoints": 75,
     "MemberCardAcquiredRankDate": "2023-11-20"
   },
@@ -57,6 +48,15 @@ module.exports = {
     "MemberCardRank": "SILVER",
     "MemberCardPoints": 150,
     "MemberCardAcquiredRankDate": "2023-12-10"
+  },
+  {
+    "MCCCD": "1111111111",
+    "MemberCardNumber": "MC0006    ",
+    "CreatedDate": "2024-12-13T00:00:00.000Z",
+    "SupportEmp": "EMP01",
+    "MemberCardRank": "MEMBER",
+    "MemberCardPoints": 0,
+    "MemberCardAcquiredRankDate": "2024-12-13"
   }
 ];
 
