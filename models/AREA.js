@@ -26,7 +26,7 @@ class AREA extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__AREA__8EB6AF562088A14B",
+        name: "PK__AREA__8EB6AF56DEF18112",
         unique: true,
         fields: [
           { name: "AreaName" },

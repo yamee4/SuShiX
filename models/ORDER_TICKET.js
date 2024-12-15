@@ -34,7 +34,7 @@ class ORDER_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ORDER_TI__712CC627887591EA",
+        name: "PK__ORDER_TI__712CC6273F0F5566",
         unique: true,
         fields: [
           { name: "TicketID" },

@@ -120,7 +120,7 @@ create table WORK_HISTORY
 go
 create table CUSTOMER
 (
-	CCCD char(10),
+	CCCD char(10),		
 	CustomerFirstName nvarchar(20),
 	CustomerLastName nvarchar(20),
 	PhoneNumber char(10),

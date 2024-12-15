@@ -31,10 +31,11 @@ class BILL extends Sequelize.Model {
     sequelize,
     tableName: 'BILL',
     schema: 'dbo',
+    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
-        name: "PK__BILL__11F2FC4A5554AE94",
+        name: "PK__BILL__11F2FC4A0B280CFD",
         unique: true,
         fields: [
           { name: "BillID" },

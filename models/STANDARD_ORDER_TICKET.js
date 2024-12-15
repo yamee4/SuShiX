@@ -30,7 +30,7 @@ class STANDARD_ORDER_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__STANDARD__EE0B2E719F20E1CA",
+        name: "PK__STANDARD__EE0B2E711F9FA321",
         unique: true,
         fields: [
           { name: "SOTicketID" },

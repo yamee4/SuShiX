@@ -23,7 +23,6 @@ const _STANDARD_ORDER_DETAIL = require("./STANDARD_ORDER_DETAIL");
 const _STANDARD_ORDER_TICKET = require("./STANDARD_ORDER_TICKET");
 const _STATION = require("./STATION");
 const _STATION_EMPLOYEE = require("./STATION_EMPLOYEE");
-const _SequelizeMeta = require("./SequelizeMeta");
 const _WORK_HISTORY = require("./WORK_HISTORY");
 
 function initModels(sequelize) {
@@ -51,7 +50,6 @@ function initModels(sequelize) {
   const STANDARD_ORDER_TICKET = _STANDARD_ORDER_TICKET(sequelize, DataTypes);
   const STATION = _STATION(sequelize, DataTypes);
   const STATION_EMPLOYEE = _STATION_EMPLOYEE(sequelize, DataTypes);
-  const SequelizeMeta = _SequelizeMeta(sequelize, DataTypes);
   const WORK_HISTORY = _WORK_HISTORY(sequelize, DataTypes);
 
 
@@ -80,7 +78,6 @@ function initModels(sequelize) {
     STANDARD_ORDER_TICKET,
     STATION,
     STATION_EMPLOYEE,
-    SequelizeMeta,
     WORK_HISTORY,
   };
 }

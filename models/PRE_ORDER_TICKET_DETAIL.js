@@ -36,7 +36,7 @@ class PRE_ORDER_TICKET_DETAIL extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__PRE_ORDE__E8A527E8981A5B52",
+        name: "PK__PRE_ORDE__E8A527E86EB13844",
         unique: true,
         fields: [
           { name: "PTicketID" },

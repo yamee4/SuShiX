@@ -1,9 +1,9 @@
-const controller = {}
-const models = require('../models');
+const controller = {};
+const models = require("../models");
 
 controller.init = async (req, res, next) => {
     next();
-}
+};
 
 controller.showPage = async (req, res) => {
     let limit = 5;
@@ -12,8 +12,13 @@ controller.showPage = async (req, res) => {
     page = isNaN(page) ? 1 : parseInt(page);
 
     let options = {
-        attributes: ['DishName', 'CurrentPrice', 'DishSection', 'DeliveryAvailable'],
-        where: {}
+        attributes: [
+            "DishName",
+            "CurrentPrice",
+            "DishSection",
+            "DeliveryAvailable",
+        ],
+        where: {},
     };
 
     let totalRows = await models.sequelize.query(
@@ -29,7 +34,12 @@ controller.showPage = async (req, res) => {
     };
 
     let dishes = await models.DISH.findAll({ ...options, limit, offset });
-    res.render('menu', { dishes: dishes, layout: 'layout', title: 'Menu', name: 'Menu' });
+    res.render("menu", {
+        dishes: dishes,
+        layout: "layout",
+        title: "Menu",
+        name: "Menu",
+    });
 };
 
 module.exports = controller;

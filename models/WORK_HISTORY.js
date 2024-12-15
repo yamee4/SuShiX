@@ -31,7 +31,7 @@ class WORK_HISTORY extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__WORK_HIS__CBCC25B6E0C0E1F6",
+        name: "PK__WORK_HIS__CBCC25B61539ADB9",
         unique: true,
         fields: [
           { name: "EmpID" },

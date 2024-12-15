@@ -22,7 +22,7 @@ class ONLINE_CUSTOMER extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ONLINE_C__09DEF8605D20EF72",
+        name: "PK__ONLINE_C__09DEF860B60DB814",
         unique: true,
         fields: [
           { name: "OCCCD" },
