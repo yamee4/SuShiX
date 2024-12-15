@@ -36,7 +36,7 @@ class ONLINE_TICKET_DETAIL extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ONLINE_T__9CD92C91CC4152A9",
+        name: "PK__ONLINE_T__9CD92C91B4417440",
         unique: true,
         fields: [
           { name: "OTicketID" },

@@ -6,93 +6,93 @@ module.exports = {
     const data = [
   {
     "TicketID": "TKT0001   ",
-    "FeedbackBranchLocation": "09",
-    "FeedbackService": "Excellent service",
-    "FeedbackFoodQuality": "Delicious food",
-    "FeedbackPrice": "Reasonable price",
-    "FeedbackLocation": "Clean and comfortable",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 10,
+    "FeedbackFoodQuality": 10,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 10,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0002   ",
-    "FeedbackBranchLocation": "10",
-    "FeedbackService": "Very good service",
-    "FeedbackFoodQuality": "High-quality food",
-    "FeedbackPrice": "Fair price",
-    "FeedbackLocation": "Nice ambiance",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 9,
+    "FeedbackFoodQuality": 10,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 9,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0003   ",
-    "FeedbackBranchLocation": "09",
-    "FeedbackService": "Friendly staff",
-    "FeedbackFoodQuality": "Tasty food",
-    "FeedbackPrice": "Affordable price",
-    "FeedbackLocation": "Convenient location",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 10,
+    "FeedbackFoodQuality": 9,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 10,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0004   ",
-    "FeedbackBranchLocation": "10",
-    "FeedbackService": "Prompt service",
-    "FeedbackFoodQuality": "Fresh and flavorful food",
-    "FeedbackPrice": "Good value for money",
-    "FeedbackLocation": "Pleasant atmosphere",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 10,
+    "FeedbackFoodQuality": 9,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 10,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0005   ",
-    "FeedbackBranchLocation": "09",
-    "FeedbackService": "Efficient service",
-    "FeedbackFoodQuality": "Well-prepared dishes",
-    "FeedbackPrice": "Reasonable pricing",
-    "FeedbackLocation": "Clean and spacious",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 9,
+    "FeedbackFoodQuality": 10,
+    "FeedbackPrice": 9,
+    "FeedbackLocation": 10,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0006   ",
-    "FeedbackBranchLocation": "10",
-    "FeedbackService": "Excellent customer service",
-    "FeedbackFoodQuality": "Delicious and authentic food",
-    "FeedbackPrice": "Fair price",
-    "FeedbackLocation": "Nice ambiance",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 10,
+    "FeedbackFoodQuality": 10,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 9,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0007   ",
-    "FeedbackBranchLocation": "09",
-    "FeedbackService": "Friendly and helpful staff",
-    "FeedbackFoodQuality": "Tasty and fresh food",
-    "FeedbackPrice": "Affordable prices",
-    "FeedbackLocation": "Convenient location",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 9,
+    "FeedbackFoodQuality": 10,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 10,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0008   ",
-    "FeedbackBranchLocation": "10",
-    "FeedbackService": "Prompt and efficient service",
-    "FeedbackFoodQuality": "High-quality ingredients",
-    "FeedbackPrice": "Reasonable pricing",
-    "FeedbackLocation": "Pleasant atmosphere",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 10,
+    "FeedbackFoodQuality": 7,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 10,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0009   ",
-    "FeedbackBranchLocation": "09",
-    "FeedbackService": "Excellent service",
-    "FeedbackFoodQuality": "Delicious food",
-    "FeedbackPrice": "Reasonable price",
-    "FeedbackLocation": "Clean and comfortable",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 10,
+    "FeedbackFoodQuality": 10,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 8,
+    "FeedbackNote": null
   },
   {
     "TicketID": "TKT0010   ",
-    "FeedbackBranchLocation": "10",
-    "FeedbackService": "Very good service",
-    "FeedbackFoodQuality": "High-quality food",
-    "FeedbackPrice": "Fair price",
-    "FeedbackLocation": "Nice ambiance",
-    "FeedbackNote": "No specific notes"
+    "FeedbackTotalScore": 10,
+    "FeedbackService": 10,
+    "FeedbackFoodQuality": 9,
+    "FeedbackPrice": 10,
+    "FeedbackLocation": 10,
+    "FeedbackNote": null
   }
 ];
 

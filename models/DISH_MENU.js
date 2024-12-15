@@ -27,7 +27,7 @@ class DISH_MENU extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__DISH_MEN__D816E6A7AFC5C4CF",
+        name: "PK__DISH_MEN__D816E6A7E5CB460B",
         unique: true,
         fields: [
           { name: "MenuID" },

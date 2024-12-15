@@ -6,9 +6,9 @@ module.exports = {
     const data = [
   {
     "MCCCD": "0123456789",
-    "MemberCardNumber": "MC0001    ",
-    "CreatedDate": "2023-11-12T10:30:00.000Z",
-    "SupportEmp": "EMP01",
+    "MemberCardNumber": "MC0007    ",
+    "CreatedDate": "2024-11-12T00:00:00.000Z",
+    "SupportEmp": "EMP02",
     "MemberCardRank": "BRONZE",
     "MemberCardPoints": 100,
     "MemberCardAcquiredRankDate": "2023-11-12"
@@ -30,6 +30,15 @@ module.exports = {
     "MemberCardRank": "GOLD  ",
     "MemberCardPoints": 500,
     "MemberCardAcquiredRankDate": "2023-10-25"
+  },
+  {
+    "MCCCD": "0678901234",
+    "MemberCardNumber": "MC0006    ",
+    "CreatedDate": "2023-12-12T00:00:00.000Z",
+    "SupportEmp": "EMP01",
+    "MemberCardRank": "SILVER",
+    "MemberCardPoints": 120,
+    "MemberCardAcquiredRankDate": "2023-12-10"
   },
   {
     "MCCCD": "0789012345",

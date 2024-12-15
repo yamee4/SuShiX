@@ -11,12 +11,12 @@ module.exports = {
   },
   {
     "AreaName": "Area 2",
-    "MenuID": "M002",
+    "MenuID": "M003",
     "MenuName": "Spring Menu"
   },
   {
     "AreaName": "Area 3",
-    "MenuID": "M003",
+    "MenuID": "M007",
     "MenuName": "Summer Menu"
   },
   {

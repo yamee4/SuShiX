@@ -11,25 +11,25 @@ class FEEDBACK_TICKET extends Sequelize.Model {
       allowNull: false,
       primaryKey: true
     },
-    FeedbackBranchLocation: {
-      type: DataTypes.CHAR(2),
+    FeedbackTotalScore: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
     FeedbackService: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     FeedbackFoodQuality: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     FeedbackPrice: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     FeedbackLocation: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     FeedbackNote: {
@@ -40,14 +40,15 @@ class FEEDBACK_TICKET extends Sequelize.Model {
     sequelize,
     tableName: 'FEEDBACK_TICKET',
     schema: 'dbo',
+    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
-        name: "PK__FEEDBACK__CB006343CB0EC7DF",
+        name: "PK__FEEDBACK__4DC1746C5FE340B3",
         unique: true,
         fields: [
           { name: "TicketID" },
-          { name: "FeedbackBranchLocation" },
+          { name: "FeedbackTotalScore" },
         ]
       },
     ]

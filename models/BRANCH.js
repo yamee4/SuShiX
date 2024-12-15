@@ -46,7 +46,7 @@ class BRANCH extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__BRANCH__A1682FA597F9C539",
+        name: "PK__BRANCH__A1682FA566378304",
         unique: true,
         fields: [
           { name: "BranchID" },

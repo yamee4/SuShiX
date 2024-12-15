@@ -36,7 +36,7 @@ class STANDARD_ORDER_DETAIL extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__STANDARD__4E6A796335F9C1F6",
+        name: "PK__STANDARD__4E6A79635059D86D",
         unique: true,
         fields: [
           { name: "SOTicketID" },

@@ -23,7 +23,7 @@ class BRANCH_PHONE_NUMBER extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__BRANCH_P__29379B4652598304",
+        name: "PK__BRANCH_P__29379B462D521AB5",
         unique: true,
         fields: [
           { name: "BranchID" },

@@ -28,7 +28,7 @@ class STATION_EMPLOYEE extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__STATION___6CAEE20ADCE08B35",
+        name: "PK__STATION___6CAEE20A824F87A7",
         unique: true,
         fields: [
           { name: "BranchID" },
