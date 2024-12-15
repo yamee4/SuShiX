@@ -36,6 +36,24 @@ app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
 app.use("/profile", require("./routes/profileRouter"));
 
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 app.listen(port, () => {
     console.log("Server is running on port 3000");
 });
+
+const Handlebars = require("handlebars");
+
+Handlebars.registerHelper("formatCurrency", function (price) {
+    return `${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND`;
+}); 
+
+Handlebars.registerHelper("formatDelivery", function (deliveryAvailable) {
+    if (deliveryAvailable === 1 || deliveryAvailable === true) {
+        return "Can deliver";
+    } else if (deliveryAvailable === 0 || deliveryAvailable === false) {
+        return "Can't deliver";
+    }
+    return "Unknown"; 
+});
+

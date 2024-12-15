@@ -15,12 +15,12 @@
                                 <div class="blog__item__text">
                                     <ul>
                                         <li><i class="fa fa-calendar-o"></i> {{DishSection}}</li>
-                                        <li><i class="fa fa-comment-o"></i> {{DeliveryAvailable}}</li>
+                                        <li><i class="fa fa-comment-o"></i> {{formatDelivery DeliveryAvailable}}</li>
                                     </ul>
                                     <h5>{{DishName}}</h5>
-                                    <p>{{CurrentPrice}}</p>
-                                    <a href="/blogs/{{id}}" class="blog__btn">ADD TO CART<span
-                                            class="arrow_right"></span></a>
+                                    <p>{{formatCurrency CurrentPrice}}</p>
+                                    <a href="/blogs/{{id}}" class="blog__btn d-flex justify-content-center align-items-center">ADD TO CART<span class="arrow_right"></span></a>
+
                                 </div>
                             </div>
                     </div>
