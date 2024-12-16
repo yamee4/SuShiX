@@ -9,17 +9,29 @@ class STATION_EMPLOYEE extends Sequelize.Model {
     BranchID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'BRANCH',
+        key: 'BranchID'
+      }
     },
     EmpID: {
       type: DataTypes.CHAR(5),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'EMPLOYEE',
+        key: 'EmpID'
+      }
     },
     StationName: {
       type: DataTypes.STRING(20),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'STATION',
+        key: 'StationName'
+      }
     }
   }, {
     sequelize,
@@ -28,7 +40,7 @@ class STATION_EMPLOYEE extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__STATION___6CAEE20A824F87A7",
+        name: "PK__STATION___6CAEE20A76DD1933",
         unique: true,
         fields: [
           { name: "BranchID" },

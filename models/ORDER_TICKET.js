@@ -17,15 +17,27 @@ class ORDER_TICKET extends Sequelize.Model {
     },
     BranchID: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'BRANCH',
+        key: 'BranchID'
+      }
     },
     CCCD: {
       type: DataTypes.CHAR(10),
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'CUSTOMER',
+        key: 'CCCD'
+      }
     },
     EmpID: {
       type: DataTypes.CHAR(5),
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'EMPLOYEE',
+        key: 'EmpID'
+      }
     }
   }, {
     sequelize,
@@ -34,7 +46,7 @@ class ORDER_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ORDER_TI__712CC6273F0F5566",
+        name: "PK__ORDER_TI__712CC627A2745EDA",
         unique: true,
         fields: [
           { name: "TicketID" },

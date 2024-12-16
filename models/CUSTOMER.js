@@ -46,7 +46,7 @@ class CUSTOMER extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__CUSTOMER__A955A0ABD84DA664",
+        name: "PK__CUSTOMER__A955A0ABA4D8EFBE",
         unique: true,
         fields: [
           { name: "CCCD" },

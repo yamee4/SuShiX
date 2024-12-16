@@ -22,7 +22,7 @@ class STATION extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__STATION__34160846766CB82E",
+        name: "PK__STATION__341608467A4A787F",
         unique: true,
         fields: [
           { name: "StationName" },

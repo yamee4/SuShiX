@@ -9,7 +9,11 @@ class CUSTOMER_MEMBER extends Sequelize.Model {
     MCCCD: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'CUSTOMER',
+        key: 'CCCD'
+      }
     },
     MemberCardNumber: {
       type: DataTypes.CHAR(10),
@@ -21,7 +25,11 @@ class CUSTOMER_MEMBER extends Sequelize.Model {
     },
     SupportEmp: {
       type: DataTypes.CHAR(5),
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'EMPLOYEE',
+        key: 'EmpID'
+      }
     },
     MemberCardRank: {
       type: DataTypes.CHAR(6),
@@ -42,7 +50,7 @@ class CUSTOMER_MEMBER extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__CUSTOMER__A8F17D63D457C84D",
+        name: "PK__CUSTOMER__A8F17D6354D1F03D",
         unique: true,
         fields: [
           { name: "MCCCD" },
