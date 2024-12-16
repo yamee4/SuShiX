@@ -169,7 +169,10 @@ create table ORDER_TICKET
 	TicketType char(3),
 	BranchID int,
 	CCCD char(10),
-	EmpID char(5)
+	EmpID char(5),
+	Discount int,
+	TotalPrice bigint,
+	CreatedDate datetime,
 
 	primary key(TicketID)
 )
@@ -238,18 +241,7 @@ create table  STANDARD_ORDER_DETAIL
 
 	primary key(SOTicketID, DishID, OrderTime)
 )
-go
 
-create table BILL
-(
-	BillID char(10),
-	Discount int,
-	TotalPrice bigint,
-	TicketID char(10),
-	CreatedDate datetime,
-
-	primary key(BillID)
-)
 go
 
 create table FEEDBACK_TICKET
