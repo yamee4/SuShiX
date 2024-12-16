@@ -1,45 +1,51 @@
 <body>
-    <div class="card p-3 shadow-sm mt-4 mx-auto" style="max-width: 400px;">
+    <div class="card p-3 shadow-sm mt-4 mx-auto" style="max-width: 550px;">
         <h2 class="text-center">SIGN UP</h2>
-        <form action="/signup" method="POST">
+        <form action= "/signup" method="POST" id="signupForm">
+            <div class="mb-3">
+                <label for="citizenId" class="form-label">Citizen Nation ID:</label>
+                <input type="text" class="form-control form-control-sm" id="citizenId" name="citizenId" oninput="checkContentLength()" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="citizenId" class="form-label">Member Card:</label>
+                <input type="text" class="form-control form-control-sm" id="memberCard" name="memberCard" oninput="checkContentLength()">
+            </div>
+
             <div class="mb-3">
                 <label for="firstname" class="form-label">First Name:</label>
-                <input type="text" class="form-control form-control-sm" id="firstname" name="firstname" required>
+                <input type="text" class="form-control form-control-sm" id="firstname" name="firstname">
             </div>
             <div class="mb-3">
                 <label for="lastname" class="form-label">Last Name:</label>
-                <input type="text" class="form-control form-control-sm" id="lastname" name="lastname" required>
+                <input type="text" class="form-control form-control-sm" id="lastname" name="lastname">
             </div>
             <div class="mb-3">
                 <label for="gender" class="form-label">Gender:</label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="male" name="gender" value="male" required>
+                    <input class="form-check-input" type="radio" id="male" name="gender" value="1" required>
                     <label class="form-check-label" for="male">Male</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="female" name="gender" value="female" required>
+                    <input class="form-check-input" type="radio" id="female" name="gender" value="0" required>
                     <label class="form-check-label" for="female">Female</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="other" name="gender" value="other" required>
-                    <label class="form-check-label" for="other">Other</label>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone Number:</label>
-                <input type="tel" class="form-control form-control-sm" id="phone" name="phone" required>
+                <input type="tel" class="form-control form-control-sm" id="phone" name="phone">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control form-control-sm" id="email" name="email" required>
+                <input type="email" class="form-control form-control-sm" id="email" name="email">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
                 <input type="password" class="form-control form-control-sm" id="password" name="password" required>
             </div>
             <div class="mb-3">
-                <label for="citizenId" class="form-label">Citizen Nation ID:</label>
-                <input type="text" class="form-control form-control-sm" id="citizenId" name="citizenId" required>
+                <label for="confirmPassword" class="form-label">Confirm Password:</label>
+                <input type="password" class="form-control form-control-sm" id="confirmPassword" name="confirmPassword" placeholder="" oninput="checkPassword()" required>
             </div>
             <button type="submit" class="btn btn-success w-100">Sign Up</button>
         </form>
@@ -49,3 +55,4 @@
         </div>
     </div>
 </body>
+<script src = "/js/signup.js"></script>

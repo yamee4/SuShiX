@@ -9,7 +9,8 @@ $ npm install
 ```
 Run server
 ```sh
-$ nodemon index
+$ cd Nhom3_ADB
+$ nodemon index or npm start
 ```
 
 Access: http://localhost:3000/

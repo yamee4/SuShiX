@@ -1,4 +1,5 @@
-use Nhom3_QLSUSHI
+-- CREATE DATABASE Nhom3_ADB
+use Nhom3_ADB
 
 go
 create table BRANCH
@@ -44,19 +45,11 @@ go
 create table AREA
 (
 	AreaName nvarchar(30),
-	MenuID char(4)
+	MenuID char(4) UNIQUE,
+	MenuName nvarchar(30),
 
 	primary key(AreaName)
 )
-go
-create table MENU
-(
-	MenuID char(4),
-	MenuName nvarchar(30),
-
-	primary key(MenuID)
-)
-
 go
 create table DISH
 (
@@ -110,7 +103,7 @@ create table EMPLOYEE
 	EmpBirthDate datetime,
 	EmpGender nchar(3),
 	Salary int,
-	BranchManager char(2)
+	BranchManager int
 
 	primary key(EmpID)
 )
@@ -127,7 +120,7 @@ create table WORK_HISTORY
 go
 create table CUSTOMER
 (
-	CCCD char(10),
+	CCCD char(10),		
 	CustomerFirstName nvarchar(20),
 	CustomerLastName nvarchar(20),
 	PhoneNumber char(10),
@@ -173,7 +166,7 @@ go
 create table ORDER_TICKET
 (
 	TicketID char(10),
-	TiketType char(3),
+	TicketType char(3),
 	BranchID int,
 	CCCD char(10),
 	EmpID char(5)
@@ -181,6 +174,7 @@ create table ORDER_TICKET
 	primary key(TicketID)
 )
 go
+
 create table ONLINE_TICKET
 (
 	OTicketID char(10),
@@ -195,8 +189,8 @@ create table PRE_ORDER_TICKET
 	BranchName nvarchar(30),
 	Area nvarchar(30),
 	NumberofCustomer int,
-	PreOrderDate date,
-	PreOrderArrivalTime time,
+	PreOrderDate datetime,
+	PreOrderArrivalTime datetime,
 	PreOrderNote nvarchar(100)
 
 	primary key (PTicketID)
@@ -252,6 +246,7 @@ create table BILL
 	Discount int,
 	TotalPrice bigint,
 	TicketID char(10),
+	CreatedDate datetime,
 
 	primary key(BillID)
 )
@@ -260,14 +255,14 @@ go
 create table FEEDBACK_TICKET
 (
 	TicketID char(10),
-	FeedbackBranchLocation char(2),
-	FeedbackService nvarchar(100),
-	FeedbackFoodQuality nvarchar(100),
-	FeedbackPrice nvarchar(100),
-	FeedbackLocation nvarchar(100),
+	FeedbackTotalScore int,
+	FeedbackService int,
+	FeedbackFoodQuality int,
+	FeedbackPrice int,
+	FeedbackLocation int,
 	FeedbackNote nvarchar(100),
 
-	primary key(TicketID, FeedbackBranchLocation)
+	primary key(TicketID, FeedbackTotalScore)
 )
 go
 
@@ -291,17 +286,13 @@ ALTER TABLE STATION_EMPLOYEE
 ADD CONSTRAINT FK_STATION_EMPLOYEE_STATION
 FOREIGN KEY (StationName) REFERENCES STATION(StationName);
 
-ALTER TABLE AREA
-ADD CONSTRAINT FK_AREA_MENU
-FOREIGN KEY (MenuID) REFERENCES MENU(MenuID);
-
 ALTER TABLE COMBO
 ADD CONSTRAINT FK_COMBO_DISH
 FOREIGN KEY (ComboID) REFERENCES DISH(DishID)
 
 ALTER TABLE DISH_MENU
 ADD CONSTRAINT FK_DISH_MENU_MENU
-FOREIGN KEY (MenuID) REFERENCES MENU(MenuID);
+FOREIGN KEY (MenuID) REFERENCES AREA(MenuID);
 
 ALTER TABLE DISH_MENU
 ADD CONSTRAINT FK_DISH_MENU_DISH
@@ -349,7 +340,7 @@ FOREIGN KEY (OCCCD) REFERENCES CUSTOMER(CCCD);
 
 ALTER TABLE CUSTOMER_LOG
 ADD CONSTRAINT FK_CUSTOMER_LOG_CUSTOMER
-FOREIGN KEY (CCCD) REFERENCES CUSTOMER(CCCD);
+FOREIGN KEY (CCCD) REFERENCES ONLINE_CUSTOMER(OCCCD);
 
 ALTER TABLE ORDER_TICKET
 ADD CONSTRAINT FK_ORDER_TICKET_BRANCH
