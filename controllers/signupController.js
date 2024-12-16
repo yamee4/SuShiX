@@ -8,4 +8,9 @@ contoller.showPage = (req, res) => {
     });
 };
 
+contoller.signUp = async (req, res) => {
+    const { citizenId, username, password } = req.body;
+    const user = await User.findOne({ where: { citizenId } });
+};
+
 module.exports = contoller;
