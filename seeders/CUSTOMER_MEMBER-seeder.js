@@ -9,7 +9,7 @@ module.exports = {
     "MemberCardNumber": "MC0001    ",
     "CreatedDate": "2023-11-12T10:30:00.000Z",
     "SupportEmp": "EMP01",
-    "MemberCardRank": "MEMBER",
+    "MemberCardRank": "BRONZE",
     "MemberCardPoints": 100,
     "MemberCardAcquiredRankDate": "2023-11-12"
   },
@@ -36,7 +36,7 @@ module.exports = {
     "MemberCardNumber": "MC0004    ",
     "CreatedDate": "2023-11-20T09:15:00.000Z",
     "SupportEmp": "EMP02",
-    "MemberCardRank": "MEMBER",
+    "MemberCardRank": "BRONZE",
     "MemberCardPoints": 75,
     "MemberCardAcquiredRankDate": "2023-11-20"
   },
@@ -48,15 +48,6 @@ module.exports = {
     "MemberCardRank": "SILVER",
     "MemberCardPoints": 150,
     "MemberCardAcquiredRankDate": "2023-12-10"
-  },
-  {
-    "MCCCD": "1111111111",
-    "MemberCardNumber": "MC0006    ",
-    "CreatedDate": "2024-12-13T00:00:00.000Z",
-    "SupportEmp": "EMP01",
-    "MemberCardRank": "MEMBER",
-    "MemberCardPoints": 0,
-    "MemberCardAcquiredRankDate": "2024-12-13"
   }
 ];
 

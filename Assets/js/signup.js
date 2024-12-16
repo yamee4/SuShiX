@@ -29,18 +29,32 @@ function checkPassword(){
 
 
 function checkContentLength() {
-    let cccd = document.getElementById("citizenId").value;
+    // Get values from both inputs
+    let citizenId = document.getElementById("citizenId").value;
+    let memberCard = document.getElementById("memberCard").value;
     let valid = true;
 
-    if (cccd.length !== 10) {
+    // Check Citizen Nation ID length
+    if (citizenId.length !== 10) {
         valid = false;
-        document.getElementById("citizenId").setCustomValidity("Invalid Citizen ID");
+        document.getElementById("citizenId").setCustomValidity("Invalid Citizen ID.");
         document.getElementById("citizenId").reportValidity();
-    }
-    else{
+    } else {
         document.getElementById("citizenId").setCustomValidity("");
     }
+
+    // Check Member Card length
+    // if (memberCard.length !== 10) { // Adjust the required length as needed
+    //     valid = false;
+    //     document.getElementById("memberCard").setCustomValidity("Invalid Member Card.");
+    //     document.getElementById("memberCard").reportValidity();
+    // } else {
+    //     document.getElementById("memberCard").setCustomValidity("");
+    // }
+
+    // return valid; // Return the result
 }
+
 
 function process(e) {
     e.preventDefault();

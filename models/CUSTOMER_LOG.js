@@ -9,11 +9,7 @@ class CUSTOMER_LOG extends Sequelize.Model {
     CCCD: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'ONLINE_CUSTOMER',
-        key: 'OCCCD'
-      }
+      primaryKey: true
     },
     Accessed_datetime: {
       type: DataTypes.DATE,
@@ -31,7 +27,7 @@ class CUSTOMER_LOG extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__CUSTOMER__FABFFE7B5BEE61BB",
+        name: "PK__CUSTOMER__FABFFE7BEA390ADA",
         unique: true,
         fields: [
           { name: "CCCD" },

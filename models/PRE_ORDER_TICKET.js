@@ -9,11 +9,7 @@ class PRE_ORDER_TICKET extends Sequelize.Model {
     PTicketID: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'ORDER_TICKET',
-        key: 'TicketID'
-      }
+      primaryKey: true
     },
     BranchName: {
       type: DataTypes.STRING(30),
@@ -28,11 +24,11 @@ class PRE_ORDER_TICKET extends Sequelize.Model {
       allowNull: true
     },
     PreOrderDate: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: true
     },
     PreOrderArrivalTime: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
       allowNull: true
     },
     PreOrderNote: {
@@ -46,7 +42,7 @@ class PRE_ORDER_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__PRE_ORDE__48C470FA347092D0",
+        name: "PK__PRE_ORDE__48C470FA2EEBDA54",
         unique: true,
         fields: [
           { name: "PTicketID" },

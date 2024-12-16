@@ -18,7 +18,7 @@ module.exports = {
     "EmpFirstName": "Trần Thị",
     "EmpLastName": "B",
     "EmpBirthDate": "1990-03-15T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 12000000,
     "BranchManager": 2
   },
@@ -36,7 +36,7 @@ module.exports = {
     "EmpFirstName": "Hoàng Thị",
     "EmpLastName": "D",
     "EmpBirthDate": "1992-11-05T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 11000000,
     "BranchManager": 4
   },
@@ -54,7 +54,7 @@ module.exports = {
     "EmpFirstName": "Trần Thị",
     "EmpLastName": "F",
     "EmpBirthDate": "1989-05-12T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 12500000,
     "BranchManager": 6
   },
@@ -72,7 +72,7 @@ module.exports = {
     "EmpFirstName": "Hoàng Thị",
     "EmpLastName": "H",
     "EmpBirthDate": "1986-02-18T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 11500000,
     "BranchManager": 8
   },
@@ -90,7 +90,7 @@ module.exports = {
     "EmpFirstName": "Trần Thị",
     "EmpLastName": "J",
     "EmpBirthDate": "1988-12-23T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 12000000,
     "BranchManager": 10
   },
@@ -108,7 +108,7 @@ module.exports = {
     "EmpFirstName": "Hoàng Thị",
     "EmpLastName": "L",
     "EmpBirthDate": "1992-10-02T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 11000000,
     "BranchManager": 12
   },
@@ -126,7 +126,7 @@ module.exports = {
     "EmpFirstName": "Trần Thị",
     "EmpLastName": "N",
     "EmpBirthDate": "1989-04-29T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 12500000,
     "BranchManager": 14
   },
@@ -144,7 +144,7 @@ module.exports = {
     "EmpFirstName": "Hoàng Thị",
     "EmpLastName": "P",
     "EmpBirthDate": "1986-01-25T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 11500000,
     "BranchManager": null
   },
@@ -162,7 +162,7 @@ module.exports = {
     "EmpFirstName": "Trần Thị",
     "EmpLastName": "R",
     "EmpBirthDate": "1988-11-19T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 12000000,
     "BranchManager": null
   },
@@ -180,7 +180,7 @@ module.exports = {
     "EmpFirstName": "Hoàng Thị",
     "EmpLastName": "T",
     "EmpBirthDate": "1992-09-11T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 11000000,
     "BranchManager": null
   },
@@ -198,7 +198,7 @@ module.exports = {
     "EmpFirstName": "Trần Thị",
     "EmpLastName": "V",
     "EmpBirthDate": "1989-03-14T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 12500000,
     "BranchManager": null
   },
@@ -216,7 +216,7 @@ module.exports = {
     "EmpFirstName": "Hoàng Thị",
     "EmpLastName": "X",
     "EmpBirthDate": "1986-01-07T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 11500000,
     "BranchManager": null
   },
@@ -234,7 +234,7 @@ module.exports = {
     "EmpFirstName": "Trần Thị",
     "EmpLastName": "Z",
     "EmpBirthDate": "1988-10-28T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 12000000,
     "BranchManager": null
   },
@@ -252,7 +252,7 @@ module.exports = {
     "EmpFirstName": "Hoàng Thị",
     "EmpLastName": "B",
     "EmpBirthDate": "1992-08-21T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 11000000,
     "BranchManager": null
   },
@@ -270,7 +270,7 @@ module.exports = {
     "EmpFirstName": "Trần Thị",
     "EmpLastName": "D",
     "EmpBirthDate": "1989-02-27T00:00:00.000Z",
-    "EmpGender": "Nữ ",
+    "EmpGender": "N? ",
     "Salary": 12500000,
     "BranchManager": null
   }

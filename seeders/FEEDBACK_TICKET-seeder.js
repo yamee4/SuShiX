@@ -15,7 +15,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0002   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 9,
     "FeedbackFoodQuality": 10,
     "FeedbackPrice": 10,
@@ -24,7 +24,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0003   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 10,
     "FeedbackFoodQuality": 9,
     "FeedbackPrice": 10,
@@ -33,7 +33,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0004   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 10,
     "FeedbackFoodQuality": 9,
     "FeedbackPrice": 10,
@@ -42,7 +42,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0005   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 9,
     "FeedbackFoodQuality": 10,
     "FeedbackPrice": 9,
@@ -51,7 +51,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0006   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 10,
     "FeedbackFoodQuality": 10,
     "FeedbackPrice": 10,
@@ -60,7 +60,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0007   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 9,
     "FeedbackFoodQuality": 10,
     "FeedbackPrice": 10,
@@ -69,7 +69,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0008   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 10,
     "FeedbackFoodQuality": 7,
     "FeedbackPrice": 10,
@@ -78,7 +78,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0009   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 10,
     "FeedbackFoodQuality": 10,
     "FeedbackPrice": 10,
@@ -87,7 +87,7 @@ module.exports = {
   },
   {
     "TicketID": "TKT0010   ",
-    "FeedbackTotalScore": 9,
+    "FeedbackTotalScore": 10,
     "FeedbackService": 10,
     "FeedbackFoodQuality": 9,
     "FeedbackPrice": 10,

@@ -143,27 +143,6 @@ module.exports = {
     "BranchID": 10,
     "CCCD": "1012345678",
     "EmpID": "EMP10"
-  },
-  {
-    "TicketID": "TKT0031   ",
-    "TicketType": "PRE",
-    "BranchID": 1,
-    "CCCD": "0123456789",
-    "EmpID": "EMP01"
-  },
-  {
-    "TicketID": "TKT0032   ",
-    "TicketType": "STD",
-    "BranchID": 1,
-    "CCCD": "0123456789",
-    "EmpID": "EMP01"
-  },
-  {
-    "TicketID": "TKT0033   ",
-    "TicketType": "ONL",
-    "BranchID": 1,
-    "CCCD": "0123456789",
-    "EmpID": "EMP01"
   }
 ];
 

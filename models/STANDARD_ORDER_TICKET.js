@@ -9,11 +9,7 @@ class STANDARD_ORDER_TICKET extends Sequelize.Model {
     SOTicketID: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'ORDER_TICKET',
-        key: 'TicketID'
-      }
+      primaryKey: true
     },
     TableName: {
       type: DataTypes.STRING(30),
@@ -34,7 +30,7 @@ class STANDARD_ORDER_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__STANDARD__EE0B2E715F5AA0C3",
+        name: "PK__STANDARD__EE0B2E719F20E1CA",
         unique: true,
         fields: [
           { name: "SOTicketID" },

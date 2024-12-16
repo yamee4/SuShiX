@@ -33,11 +33,7 @@ class EMPLOYEE extends Sequelize.Model {
     },
     BranchManager: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'BRANCH',
-        key: 'BranchID'
-      }
+      allowNull: true
     }
   }, {
     sequelize,
@@ -46,7 +42,7 @@ class EMPLOYEE extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__EMPLOYEE__AF2DBA793CBD529C",
+        name: "PK__EMPLOYEE__AF2DBA798AB4E7E9",
         unique: true,
         fields: [
           { name: "EmpID" },

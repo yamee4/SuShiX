@@ -38,7 +38,7 @@ class DISH extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__DISH__18834F700529A075",
+        name: "PK__DISH__18834F704B2EAC80",
         unique: true,
         fields: [
           { name: "DishID" },

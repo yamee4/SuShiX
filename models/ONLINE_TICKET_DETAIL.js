@@ -9,20 +9,12 @@ class ONLINE_TICKET_DETAIL extends Sequelize.Model {
     OTicketID: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'ONLINE_TICKET',
-        key: 'OTicketID'
-      }
+      primaryKey: true
     },
     DishID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'DISH',
-        key: 'DishID'
-      }
+      primaryKey: true
     },
     OrderTime: {
       type: DataTypes.DATE,
@@ -44,7 +36,7 @@ class ONLINE_TICKET_DETAIL extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ONLINE_T__9CD92C9114877414",
+        name: "PK__ONLINE_T__9CD92C91CC4152A9",
         unique: true,
         fields: [
           { name: "OTicketID" },

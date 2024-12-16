@@ -9,11 +9,7 @@ class BRANCH_PHONE_NUMBER extends Sequelize.Model {
     BranchID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'BRANCH',
-        key: 'BranchID'
-      }
+      primaryKey: true
     },
     PhoneNumber: {
       type: DataTypes.CHAR(10),
@@ -27,7 +23,7 @@ class BRANCH_PHONE_NUMBER extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__BRANCH_P__29379B469EC43DCB",
+        name: "PK__BRANCH_P__29379B4652598304",
         unique: true,
         fields: [
           { name: "BranchID" },

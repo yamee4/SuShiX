@@ -21,11 +21,7 @@ class BILL extends Sequelize.Model {
     },
     TicketID: {
       type: DataTypes.CHAR(10),
-      allowNull: true,
-      references: {
-        model: 'ORDER_TICKET',
-        key: 'TicketID'
-      }
+      allowNull: true
     },
     CreatedDate: {
       type: DataTypes.DATE,
@@ -35,11 +31,10 @@ class BILL extends Sequelize.Model {
     sequelize,
     tableName: 'BILL',
     schema: 'dbo',
-    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
-        name: "PK__BILL__11F2FC4A67C69052",
+        name: "PK__BILL__11F2FC4A5554AE94",
         unique: true,
         fields: [
           { name: "BillID" },

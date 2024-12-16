@@ -9,11 +9,7 @@ class ONLINE_CUSTOMER extends Sequelize.Model {
     OCCCD: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'CUSTOMER',
-        key: 'CCCD'
-      }
+      primaryKey: true
     },
     O_password: {
       type: DataTypes.STRING(50),
@@ -26,7 +22,7 @@ class ONLINE_CUSTOMER extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ONLINE_C__09DEF860ADF68B14",
+        name: "PK__ONLINE_C__09DEF8605D20EF72",
         unique: true,
         fields: [
           { name: "OCCCD" },

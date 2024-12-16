@@ -1,18 +1,29 @@
 use Nhom3_ADB
 
 GO
-CREATE OR ALTER PROCEDURE UserSignup
+CREATE OR ALTER PROCEDURE UserSignUp
     @cccd char(10),
     @firstname NVARCHAR(20),
     @lastname NVARCHAR(20),
     @password varchar(50),
     @phone char(10),
     @email varchar(50),
-    @gender bit,
+    @gender int,
     @membercard char(10)
 AS
 BEGIN
     declare @isMember bit = 0; 
+    declare @genderVal nchar(3);
+
+    IF (@gender = 1)
+    BEGIN
+        SET @genderVal = N'Nam'; 
+    END
+    ELSE
+
+    BEGIN
+        SET @genderVal = N'Nữ';
+    END
     -- Check if the username already exists
     IF EXISTS (SELECT 1 FROM CUSTOMER WHERE CCCD = @cccd)
     BEGIN
@@ -25,9 +36,10 @@ BEGIN
         SET @isMember = 1;
     END
 
+
     -- Insert new user into customer table
     INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Email, Gender, isMember, isRegistered)
-    VALUES (@cccd, @firstname, @lastname, @phone, @email, @gender, @isMember, 1);
+    VALUES (@cccd, @firstname, @lastname, @phone, @email, @genderVal, @isMember, 1);
 
     -- Insert new user into online_customer table
     INSERT INTO ONLINE_CUSTOMER (OCCCD, O_password)
@@ -39,7 +51,7 @@ GO
 
 CREATE OR ALTER PROCEDURE UserLogin
     @cccd char(10),
-    @password NVARCHAR(50)
+    @password varchar(50)
 AS
 BEGIN
     -- Check if the username and password match
