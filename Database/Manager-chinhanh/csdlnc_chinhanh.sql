@@ -20,12 +20,11 @@ BEGIN
 END;
 GO
 
------------------------TRIGGER UPDATE TỰ ĐỘNG TỔNG TIỀN HÓA ĐƠN KHI INSERT BILL--------------------------------------------
-
+-----------------------TRIGGER UPDATE TỰ ĐỘNG DISCOUNT CHO ORDER--------------------------------------------
 GO
-CREATE OR ALTER TRIGGER TR_UpdateBillTotal
-ON BILL
-AFTER INSERT 
+CREATE OR ALTER TRIGGER TR_UpdateOrderDiscount
+ON ORDER_TICKET
+AFTER INSERT
 AS
 BEGIN
 	DECLARE @TicketID CHAR(10), @Discount INT, @TotalPrice BIGINT;
@@ -48,67 +47,113 @@ BEGIN
 		ELSE 0
 		END;
 	END
-	UPDATE BILL
+	UPDATE ORDER_TICKET
 	SET Discount = @Discount
 	WHERE TicketID = @TicketID
+END
 
-	IF EXISTS (SELECT 1 FROM ONLINE_TICKET ot WHERE ot.OTicketID = @TicketID)
-		BEGIN
-			UPDATE B
-			SET TotalPrice = (
-				SELECT SUM(od.Quantity * od.Price) 
-				FROM ONLINE_TICKET_DETAIL od 
-				WHERE od.OTicketID = @TicketID
-			) * (1 - @Discount / 100.0)
-			FROM BILL B
-			WHERE B.TicketID = @TicketID;
 
-			UPDATE B
-			SET CreatedDate = (
-				SELECT DeliveryDate
-				FROM ONLINE_TICKET
-				WHERE @TicketID = OTicketID)
-			FROM BILL B
-			WHERE B.TicketID = @TicketID
-		END
-	ELSE IF EXISTS (SELECT 1 FROM PRE_ORDER_TICKET pt WHERE pt.PTicketID = @TicketID)
-		BEGIN
-			UPDATE B
-			SET TotalPrice = (
-				SELECT SUM(pd.Quantity * pd.Price) 
-				FROM PRE_ORDER_TICKET_DETAIL pd 
-				WHERE pd.PTicketID = @TicketID
-			) * (1 - @Discount / 100.0)
-			FROM BILL B
-			WHERE B.TicketID = @TicketID;
+-----------------------TRIGGER UPDATE TỰ ĐỘNG TỔNG TIỀN HÓA ĐƠN KHI INSERT TICKET DETAIL--------------------------------------------
+-----------------------------------------------ONLINE TICKET------------------------------------------------------------------------
 
-			UPDATE B
-			SET CreatedDate = (
-				SELECT PreOrderArrivalTime
-				FROM PRE_ORDER_TICKET
-				WHERE @TicketID = PTicketID)
-			FROM BILL B
-			WHERE B.TicketID = @TicketID
-		END
-	ELSE IF EXISTS (SELECT 1 FROM STANDARD_ORDER_TICKET st WHERE st.SOTicketID = @TicketID)
-		BEGIN
-			UPDATE B
-			SET TotalPrice = (
-				SELECT SUM(sd.Quantity * sd.Price) 
-				FROM STANDARD_ORDER_DETAIL sd 
-				WHERE sd.SOTicketID = @TicketID
-			) * (1 - @Discount / 100.0)
-			FROM BILL B
-			WHERE B.TicketID = @TicketID;
+GO
+CREATE OR ALTER TRIGGER trg_UpdateTotalPriceOnlineTicket
+ON ONLINE_TICKET_DETAIL
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @OTicketID CHAR(10);
+    DECLARE @TotalPrice BIGINT;
 
-			UPDATE B
-			SET CreatedDate = (
-				SELECT CreatedDate
-				FROM STANDARD_ORDER_TICKET
-				WHERE @TicketID = SOTicketID)
-			FROM BILL B
-			WHERE B.TicketID = @TicketID
-		END
+    DECLARE cur CURSOR FOR
+    SELECT OTicketID FROM inserted;
+
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @OTicketID;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        SELECT @TotalPrice = SUM(Quantity * Price)
+        FROM ONLINE_TICKET_DETAIL
+        WHERE OTicketID = @OTicketID;
+
+        UPDATE ORDER_TICKET
+        SET TotalPrice = @TotalPrice * (1 - Discount/100.0)
+        WHERE TicketID = @OTicketID; 
+
+        FETCH NEXT FROM cur INTO @OTicketID;
+    END;
+
+    CLOSE cur;
+    DEALLOCATE cur;
+END;
+GO
+
+-----------------------------------------------PRE ORDER TICKET---------------------------------------------------------------
+CREATE OR ALTER TRIGGER trg_UpdateTotalPricePreOrder
+ON PRE_ORDER_TICKET_DETAIL
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @PTicketID CHAR(10);
+    DECLARE @TotalPrice BIGINT;
+
+    DECLARE cur CURSOR FOR
+    SELECT PTicketID FROM inserted;
+
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @PTicketID;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        SELECT @TotalPrice = SUM(Quantity * Price)
+        FROM PRE_ORDER_TICKET_DETAIL
+        WHERE PTicketID = @PTicketID;
+
+        UPDATE ORDER_TICKET
+        SET TotalPrice = @TotalPrice * (1 - Discount/100.0)
+        WHERE TicketID = @PTicketID;
+
+        FETCH NEXT FROM cur INTO @PTicketID;
+    END;
+
+    CLOSE cur;
+    DEALLOCATE cur;
+END;
+GO
+
+
+-----------------------------------------------STANDARD TICKET---------------------------------------------------------------
+CREATE OR ALTER TRIGGER trg_UpdateStandardOrderTotalPrice
+ON STANDARD_ORDER_DETAIL
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @SOTicketID CHAR(10);
+    DECLARE @TotalPrice BIGINT;
+
+    DECLARE cur CURSOR FOR
+    SELECT SOTicketID FROM inserted;
+
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @SOTicketID;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        SELECT @TotalPrice = SUM(Quantity * Price)
+        FROM STANDARD_ORDER_DETAIL
+        WHERE SOTicketID = @SOTicketID;
+
+
+        UPDATE ORDER_TICKET
+        SET TotalPrice = @TotalPrice * (1 - Discount/100.0)
+        WHERE TicketID = @SOTicketID;
+
+        FETCH NEXT FROM cur INTO @SOTicketID;
+    END;
+
+    CLOSE cur;
+    DEALLOCATE cur;
 END;
 GO
 
@@ -131,14 +176,13 @@ CREATE OR ALTER PROCEDURE usp_GetBranchRevenue
     @endDate DATETIME
 AS
 BEGIN
-    -- Calculate the total revenue by summing the TotalPrice from the BILL table
-    SELECT SUM(b.TotalPrice) AS N'Tổng doanh thu trong khoảng thời gian đã chọn'
-    FROM BILL b
-    JOIN ORDER_TICKET ot ON b.TicketID = ot.TicketID
-	JOIN BRANCH br ON br.BranchID = ot.BranchID
+    -- Calculate the total revenue by summing the TotalPrice from the ORDER_TICKET table
+    SELECT SUM(ODT.TotalPrice) AS N'Tổng doanh thu trong khoảng thời gian đã chọn'
+    FROM ORDER_TICKET ODT
+	JOIN BRANCH br ON br.BranchID = ODT.BranchID
 	WHERE @BranchID = br.BranchID
-	AND b.CreatedDate >= @startDate 
-	AND b.CreatedDate <= @endDate
+	AND ODT.CreatedDate >= @startDate 
+	AND ODT.CreatedDate <= @endDate
 END
 
 
@@ -312,8 +356,8 @@ BEGIN
 	where TicketID like 'TKT%'
 	set @TicketID = 'TKT' + REPLICATE('0', 4 - len(@temp)) + @temp
 
-    INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID)
-    VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID)
+    INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID, CreatedDate)
+    VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID,  GETDATE())
     
     
     IF @TicketType = 'ONL'
@@ -336,14 +380,6 @@ BEGIN
 
 	EXEC usp_ADD_DETAIL_ORDER @DSDonHang, @TicketID
 
-	DECLARE @BillID char(10)
-	declare @temp1 char(10)
-	select @temp = cast(max(cast(substring(BillID, 4, len(BillID) - 3) as int)) + 1 as char(10))
-	from BILL
-	where BillID like 'BIL%'
-	set @BillID = 'BIL' + REPLICATE('0', 4 - len(@temp)) + @temp
-
-	INSERT INTO BILL VALUES (@BillID, NULL, NULL, @TicketID, NULL)
 	END TRY
 	BEGIN CATCH
 		PRINT(N'Lỗi: ' + ERROR_MESSAGE())
@@ -382,9 +418,6 @@ exec usp_ADD_ORDER_TICKET '0123456789', 'STD', 1, 'EMP01', '2024 - 1 -1', 2, '20
 
 
 exec usp_XoaOrderTicket 'TKT0021'
-delete BILL where BillID = 'BIL0021'
-delete BILL where BillID = 'BIL0022'
-delete BILL where BillID = 'BIL0023'
 */
 -----------------------------XÓA 1 ORDER TICKET VÀ CÁC DỮ LIỆU LIÊN QUAN TỚI NÓ Ở CÁC BẢNG KHÁC-------------------------------------
 GO
@@ -397,9 +430,6 @@ BEGIN
 	SELECT @OrderType = TicketType
 	FROM ORDER_TICKET 
 	WHERE TicketID =@TicketID
-
-	DELETE BILL
-	WHERE TicketID = @TicketID
 
 	IF @OrderType = 'ONL'
 	BEGIN
@@ -726,13 +756,12 @@ BEGIN
 
         DECLARE @POINT INT;
 
-        SELECT @POINT = ISNULL(SUM(b.TotalPrice)/100000, 0)
-		FROM BILL b
-		JOIN ORDER_TICKET ot ON b.TicketID = ot.TicketID
+        SELECT @POINT = ISNULL(SUM(ODT.TotalPrice)/100000, 0)
+		FROM ORDER_TICKET ODT
 		WHERE 
-        b.CreatedDate >= @STARTDATE
-		AND b.CreatedDate <= @ENDDATE
-        AND ot.CCCD = @CCCD
+        ODT.CreatedDate >= @STARTDATE
+		AND ODT.CreatedDate <= @ENDDATE
+        AND ODT.CCCD = @CCCD
 
         UPDATE CUSTOMER_MEMBER
         SET MemberCardPoints = @POINT

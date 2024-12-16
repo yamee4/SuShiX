@@ -81,10 +81,10 @@ CREATE OR ALTER PROCEDURE usp_GetCompanyRevenue
     @endDate DATETIME
 AS
 BEGIN
-    SELECT SUM(b.TotalPrice) AS N'Tổng doanh thu trong khoảng thời gian đã chọn'
-    FROM BILL b
-	WHERE b.CreatedDate >= @startDate 
-	AND b.CreatedDate <= @endDate
+    SELECT SUM(ODT.TotalPrice) AS N'Tổng doanh thu trong khoảng thời gian đã chọn'
+    FROM ORDER_TICKET ODT
+	WHERE ODT.CreatedDate >= @startDate 
+	AND ODT.CreatedDate <= @endDate
 END
 
 --exec usp_GetCompanyRevenue '1900-01-01', '2023-12-31'

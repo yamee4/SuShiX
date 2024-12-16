@@ -477,29 +477,6 @@ INSERT INTO STANDARD_ORDER_DETAIL (SOTicketID, DishID, OrderTime, Quantity, Pric
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0001', 10, 200000, 'TKT0001');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0002', 5, 150000, 'TKT0002');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0003', 0, 180000, 'TKT0003');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0004', 15, 220000, 'TKT0004');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0005', 8, 170000, 'TKT0005');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0006', 20, 160000, 'TKT0006');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0007', 5, 250000, 'TKT0007');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0008', 12, 190000, 'TKT0008');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0009', 10, 210000, 'TKT0009');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0010', 8, 180000, 'TKT0010');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0011', 15, 230000, 'TKT0011');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0012', 5, 160000, 'TKT0012');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0013', 10, 200000, 'TKT0013');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0014', 8, 190000, 'TKT0014');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0015', 12, 170000, 'TKT0015');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0016', 20, 150000, 'TKT0016');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0017', 5, 240000, 'TKT0017');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0018', 10, 180000, 'TKT0018');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0019', 15, 220000, 'TKT0019');
-INSERT INTO BILL (BillID, Discount, TotalPrice, TicketID) VALUES ('BIL0020', 8, 190000, 'TKT0020');
-
------------------------------------------------------------------------------------------------------------------------------------------
-
 INSERT INTO FEEDBACK_TICKET (TicketID, FeedbackTotalScore, FeedbackService, FeedbackFoodQuality, FeedbackPrice, FeedbackLocation, FeedbackNote) VALUES ('TKT0001', 10, 10, 10, 10, 10, NULL);
 INSERT INTO FEEDBACK_TICKET (TicketID, FeedbackTotalScore, FeedbackService, FeedbackFoodQuality, FeedbackPrice, FeedbackLocation, FeedbackNote) VALUES ('TKT0002', 10, 9, 10, 10, 9, NULL);
 INSERT INTO FEEDBACK_TICKET (TicketID, FeedbackTotalScore, FeedbackService, FeedbackFoodQuality, FeedbackPrice, FeedbackLocation, FeedbackNote) VALUES ('TKT0003', 10, 10, 9, 10, 10, NULL);
