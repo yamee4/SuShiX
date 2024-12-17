@@ -57,26 +57,6 @@ app.use(
     })
 );
 
-
-//Cấu hình các router
-app.get("/", (req, res) => res.redirect("/home"));
-
-app.use("/home", require("./routes/homeRouter"));
-app.use("/menu", require("./routes/menuRouter"));
-
-app.use("/signin", require("./routes/signinRouter"));
-app.use("/signup", require("./routes/signupRouter"));
-app.use("/profile", require("./routes/profileRouter"));
-app.use('/branchRevenue', require('./routes/branchRevenueRouter'));
-app.use('/empScore', require('./routes/empScoreRouter'));
-app.use('/searchEmp', require('./routes/searchEmpRouter'));
-app.use('/compRevenue', require('./routes/compRevenueRouter'));
-app.use('/dishRevenue', require('./routes/dishRevenueRouter'));
-
-app.listen(port, () => {
-    console.log("Server is running on port 3000");
-});
-
 const Handlebars = require("handlebars");
 
 Handlebars.registerHelper("formatCurrency", function (price) {
@@ -108,6 +88,10 @@ app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
 app.use("/profile", require("./routes/profileRouter"));
 app.use('/branchRevenue', require('./routes/branchRevenueRouter'));
+app.use('/empScore', require('./routes/empScoreRouter'));
+app.use('/searchEmp', require('./routes/searchEmpRouter'));
+app.use('/compRevenue', require('./routes/compRevenueRouter'));
+app.use('/dishRevenue', require('./routes/dishRevenueRouter'));
 
 app.listen(port, () => {
     console.log("Server is running on port 3000");
