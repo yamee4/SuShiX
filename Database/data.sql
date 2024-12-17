@@ -240,44 +240,44 @@ INSERT INTO CUSTOMER (CCCD, CustomerFirstName, CustomerLastName, PhoneNumber, Em
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP01', N'Nguyễn Văn', N'A', '1985-01-01', 'Nam', 15000000, 1);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP02', N'Trần Thị', N'B', '1990-03-15', N'Nữ', 12000000, 2);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP03', N'Lê Văn', N'C', '1988-07-20', 'Nam', 13500000, 3);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP04', N'Hoàng Thị', N'D', '1992-11-05', N'Nữ', 11000000, 4);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP05', N'Nguyễn Văn', N'E', '1987-09-28', 'Nam', 14000000, 5);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP06', N'Trần Thị', N'F', '1989-05-12', N'Nữ', 12500000, 6);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP07', N'Lê Văn', N'G', '1991-08-25', 'Nam', 13000000, 7);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP08', N'Hoàng Thị', N'H', '1986-02-18', N'Nữ', 11500000, 8);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP09', N'Nguyễn Văn', N'I', '1993-04-10', 'Nam', 14500000, 9);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP10', N'Trần Thị', N'J', '1988-12-23', N'Nữ', 12000000, 10);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP11', N'Lê Văn', N'K', '1990-06-17', 'Nam', 13500000, 11);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP12', N'Hoàng Thị', N'L', '1992-10-02', N'Nữ', 11000000, 12);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP13', N'Nguyễn Văn', N'M', '1987-08-15', 'Nam', 14000000, 13);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP14', N'Trần Thị', N'N', '1989-04-29', N'Nữ', 12500000, 14);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP15', N'Lê Văn', N'O', '1991-07-13', 'Nam', 13000000, 15);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP16', N'Hoàng Thị', N'P', '1986-01-25', N'Nữ', 11500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP17', N'Nguyễn Văn', N'Q', '1993-03-12', 'Nam', 14500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP18', N'Trần Thị', N'R', '1988-11-19', N'Nữ', 12000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP19', N'Lê Văn', N'S', '1990-05-26', 'Nam', 13500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP20', N'Hoàng Thị', N'T', '1992-09-11', N'Nữ', 11000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP21', N'Nguyễn Văn', N'U', '1987-07-28', 'Nam', 14000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP22', N'Trần Thị', N'V', '1989-03-14', N'Nữ', 12500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP23', N'Lê Văn', N'W', '1991-06-22', 'Nam', 13000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP24', N'Hoàng Thị', N'X', '1986-01-07', N'Nữ', 11500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP25', N'Nguyễn Văn', N'Y', '1993-02-25', 'Nam', 14500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP26', N'Trần Thị', N'Z', '1988-10-28', N'Nữ', 12000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP27', N'Lê Văn', N'A', '1990-04-13', 'Nam', 13500000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP28', N'Hoàng Thị', N'B', '1992-08-21', N'Nữ', 11000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP29', N'Nguyễn Văn', N'C', '1987-06-10', 'Nam', 14000000, NULL);
-INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('EMP30', N'Trần Thị', N'D', '1989-02-27', N'Nữ', 12500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00001', N'Nguyễn Văn', N'A', '1985-01-01', 'Nam', 15000000, 1);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00002', N'Trần Thị', N'B', '1990-03-15', N'Nữ', 12000000, 2);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00003', N'Lê Văn', N'C', '1988-07-20', 'Nam', 13500000, 3);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00004', N'Hoàng Thị', N'D', '1992-11-05', N'Nữ', 11000000, 4);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00005', N'Nguyễn Văn', N'E', '1987-09-28', 'Nam', 14000000, 5);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00006', N'Trần Thị', N'F', '1989-05-12', N'Nữ', 12500000, 6);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00007', N'Lê Văn', N'G', '1991-08-25', 'Nam', 13000000, 7);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00008', N'Hoàng Thị', N'H', '1986-02-18', N'Nữ', 11500000, 8);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00009', N'Nguyễn Văn', N'I', '1993-04-10', 'Nam', 14500000, 9);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00010', N'Trần Thị', N'J', '1988-12-23', N'Nữ', 12000000, 10);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00011', N'Lê Văn', N'K', '1990-06-17', 'Nam', 13500000, 11);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00012', N'Hoàng Thị', N'L', '1992-10-02', N'Nữ', 11000000, 12);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00013', N'Nguyễn Văn', N'M', '1987-08-15', 'Nam', 14000000, 13);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00014', N'Trần Thị', N'N', '1989-04-29', N'Nữ', 12500000, 14);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00015', N'Lê Văn', N'O', '1991-07-13', 'Nam', 13000000, 15);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00016', N'Hoàng Thị', N'P', '1986-01-25', N'Nữ', 11500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00017', N'Nguyễn Văn', N'Q', '1993-03-12', 'Nam', 14500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00018', N'Trần Thị', N'R', '1988-11-19', N'Nữ', 12000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00019', N'Lê Văn', N'S', '1990-05-26', 'Nam', 13500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00020', N'Hoàng Thị', N'T', '1992-09-11', N'Nữ', 11000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00021', N'Nguyễn Văn', N'U', '1987-07-28', 'Nam', 14000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00022', N'Trần Thị', N'V', '1989-03-14', N'Nữ', 12500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00023', N'Lê Văn', N'W', '1991-06-22', 'Nam', 13000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00024', N'Hoàng Thị', N'X', '1986-01-07', N'Nữ', 11500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00025', N'Nguyễn Văn', N'Y', '1993-02-25', 'Nam', 14500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00026', N'Trần Thị', N'Z', '1988-10-28', N'Nữ', 12000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00027', N'Lê Văn', N'A', '1990-04-13', 'Nam', 13500000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00028', N'Hoàng Thị', N'B', '1992-08-21', N'Nữ', 11000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00029', N'Nguyễn Văn', N'C', '1987-06-10', 'Nam', 14000000, NULL);
+INSERT INTO EMPLOYEE (EmpID, EmpFirstName, EmpLastName, EmpBirthDate, EmpGender, Salary, BranchManager) VALUES ('00030', N'Trần Thị', N'D', '1989-02-27', N'Nữ', 12500000, NULL);
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0123456789', 'MC0001', '2023-11-12 10:30:00', 'EMP01', 'MEMBER', 100, '2023-11-12');
-INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0345678901', 'MC0002', '2023-12-01 13:15:00', 'EMP02', 'SILVER', 250, '2023-12-01');
-INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0567890123', 'MC0003', '2023-10-25 15:45:00', 'EMP01', 'GOLD', 500, '2023-10-25');
-INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0789012345', 'MC0004', '2023-11-20 09:15:00', 'EMP02', 'MEMBER', 75, '2023-11-20');
-INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0901234567', 'MC0005', '2023-12-10 11:30:00', 'EMP01', 'SILVER', 150, '2023-12-10');
+INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0123456789', 'MC0001', '2023-11-12 10:30:00', '00001', 'MEMBER', 100, '2023-11-12');
+INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0345678901', 'MC0002', '2023-12-01 13:15:00', '00002', 'SILVER', 250, '2023-12-01');
+INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0567890123', 'MC0003', '2023-10-25 15:45:00', '00001', 'GOLD', 500, '2023-10-25');
+INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0789012345', 'MC0004', '2023-11-20 09:15:00', '00002', 'MEMBER', 75, '2023-11-20');
+INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate) VALUES ('0901234567', 'MC0005', '2023-12-10 11:30:00', '00001', 'SILVER', 150, '2023-12-10');
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -317,92 +317,92 @@ INSERT INTO CUSTOMER_LOG (CCCD, Accessed_datetime, Accessed_time_duration) VALUE
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP01', '2010-01-01', NULL, 1);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP02', '2012-03-15', NULL, 2);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP03', '2011-07-20', NULL, 3);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP04', '2013-11-05', NULL, 4);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP05', '2009-09-28', NULL, 5);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP06', '2011-05-12', NULL, 6);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP07', '2013-08-25', NULL, 7);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP08', '2010-02-18', NULL, 8);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP09', '2014-04-10', NULL, 9);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP10', '2011-12-23', NULL, 10);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP11', '2013-06-17', NULL, 11);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP12', '2014-10-02', NULL, 12);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP13', '2010-08-15', NULL, 13);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP14', '2012-04-29', NULL, 14);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP15', '2014-07-13', NULL, 15);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP16', '2010-01-25', '2015-12-31', 1);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP17', '2013-03-12', '2018-06-30', 2);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP18', '2011-11-19', '2016-09-30', 3);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP19', '2014-05-26', '2019-03-31', 4);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP20', '2012-09-11', '2017-07-31', 5);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP21', '2010-07-28', '2015-06-30', 6);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP22', '2012-03-14', '2017-01-31', 7);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP23', '2014-06-22', '2019-04-30', 8);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP24', '2010-01-07', '2015-11-30', 9);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP25', '2013-02-25', '2018-12-31', 10);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP26', '2011-10-28', '2016-09-30', 11);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP27', '2014-04-13', '2019-02-28', 12);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP28', '2012-08-21', '2017-07-31', 13);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP29', '2010-06-10', '2015-05-31', 14);
-INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('EMP30', '2012-02-27', '2017-01-31', 15);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00001', '2010-01-01', NULL, 1);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00002', '2012-03-15', NULL, 2);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00003', '2011-07-20', NULL, 3);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00004', '2013-11-05', NULL, 4);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00005', '2009-09-28', NULL, 5);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00006', '2011-05-12', NULL, 6);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00007', '2013-08-25', NULL, 7);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00008', '2010-02-18', NULL, 8);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00009', '2014-04-10', NULL, 9);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00010', '2011-12-23', NULL, 10);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00011', '2013-06-17', NULL, 11);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00012', '2014-10-02', NULL, 12);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00013', '2010-08-15', NULL, 13);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00014', '2012-04-29', NULL, 14);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00015', '2014-07-13', NULL, 15);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00016', '2010-01-25', '2015-12-31', 1);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00017', '2013-03-12', '2018-06-30', 2);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00018', '2011-11-19', '2016-09-30', 3);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00019', '2014-05-26', '2019-03-31', 4);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00020', '2012-09-11', '2017-07-31', 5);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00021', '2010-07-28', '2015-06-30', 6);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00022', '2012-03-14', '2017-01-31', 7);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00023', '2014-06-22', '2019-04-30', 8);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00024', '2010-01-07', '2015-11-30', 9);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00025', '2013-02-25', '2018-12-31', 10);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00026', '2011-10-28', '2016-09-30', 11);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00027', '2014-04-13', '2019-02-28', 12);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00028', '2012-08-21', '2017-07-31', 13);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00029', '2010-06-10', '2015-05-31', 14);
+INSERT INTO WORK_HISTORY (EmpID, StartDate, EndDate, BranchID) VALUES ('00030', '2012-02-27', '2017-01-31', 15);
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (1, 'EMP01', 'Sushi Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (2, 'EMP02', 'Teppanyaki Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (3, 'EMP03', 'Sushi Preparer');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (4, 'EMP04', 'Server');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (5, 'EMP05', 'Dishwasher');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (6, 'EMP06', 'Cashier');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (7, 'EMP07', 'Host/Hostess');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (8, 'EMP08', 'Sushi Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (9, 'EMP09', 'Teppanyaki Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (10, 'EMP10', 'Sushi Preparer');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (11, 'EMP11', 'Server');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (12, 'EMP12', 'Dishwasher');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (13, 'EMP13', 'Cashier');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (14, 'EMP14', 'Host/Hostess');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (15, 'EMP15', 'Sushi Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (1, 'EMP16', 'Sushi Preparer');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (2, 'EMP17', 'Server');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (3, 'EMP18', 'Dishwasher');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (4, 'EMP19', 'Cashier');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (5, 'EMP20', 'Host/Hostess');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (6, 'EMP21', 'Sushi Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (7, 'EMP22', 'Teppanyaki Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (8, 'EMP23', 'Sushi Preparer');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (9, 'EMP24', 'Server');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (10, 'EMP25', 'Dishwasher');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (11, 'EMP26', 'Cashier');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (12, 'EMP27', 'Host/Hostess');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (13, 'EMP28', 'Sushi Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (14, 'EMP29', 'Teppanyaki Chef');
-INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (15, 'EMP30', 'Sushi Preparer');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (1, '00001', 'Sushi Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (2, '00002', 'Teppanyaki Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (3, '00003', 'Sushi Preparer');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (4, '00004', 'Server');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (5, '00005', 'Dishwasher');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (6, '00006', 'Cashier');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (7, '00007', 'Host/Hostess');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (8, '00008', 'Sushi Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (9, '00009', 'Teppanyaki Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (10, '00010', 'Sushi Preparer');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (11, '00011', 'Server');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (12, '00012', 'Dishwasher');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (13, '00013', 'Cashier');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (14, '00014', 'Host/Hostess');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (15, '00015', 'Sushi Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (1, '00006', 'Sushi Preparer');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (2, '00017', 'Server');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (3, '00018', 'Dishwasher');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (4, '00019', 'Cashier');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (5, '00020', 'Host/Hostess');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (6, '00021', 'Sushi Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (7, '00022', 'Teppanyaki Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (8, '00023', 'Sushi Preparer');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (9, '00024', 'Server');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (10, '00025', 'Dishwasher');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (11, '00026', 'Cashier');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (12, '00027', 'Host/Hostess');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (13, '00028', 'Sushi Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (14, '00029', 'Teppanyaki Chef');
+INSERT INTO STATION_EMPLOYEE (BranchID, EmpID, StationName) VALUES (15, '00030', 'Sushi Preparer');
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0001', 'STD', 1, '0123456789', 'EMP01');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0002', 'PRE', 2, '0234567890', 'EMP02');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0003', 'ONL', 3, '0345678901', 'EMP03');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0004', 'STD', 4, '0456789012', 'EMP04');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0005', 'PRE', 5, '0567890123', 'EMP05');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0006', 'ONL', 6, '0678901234', 'EMP06');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0007', 'STD', 7, '0789012345', 'EMP07');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0008', 'PRE', 8, '0890123456', 'EMP08');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0009', 'ONL', 9, '0901234567', 'EMP09');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0010', 'STD', 10, '1012345678', 'EMP10');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0011', 'PRE', 1, '0123456789', 'EMP01');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0012', 'ONL', 2, '0234567890', 'EMP02');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0013', 'STD', 3, '0345678901', 'EMP03');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0014', 'PRE', 4, '0456789012', 'EMP04');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0015', 'ONL', 5, '0567890123', 'EMP05');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0016', 'STD', 6, '0678901234', 'EMP06');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0017', 'PRE', 7, '0789012345', 'EMP07');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0018', 'ONL', 8, '0890123456', 'EMP08');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0019', 'STD', 9, '0901234567', 'EMP09');
-INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0020', 'PRE', 10, '1012345678', 'EMP10');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0001', 'STD', 1, '0123456789', '00001');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0002', 'PRE', 2, '0234567890', '00002');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0003', 'ONL', 3, '0345678901', '00003');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0004', 'STD', 4, '0456789012', '00004');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0005', 'PRE', 5, '0567890123', '00005');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0006', 'ONL', 6, '0678901234', '00006');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0007', 'STD', 7, '0789012345', '00007');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0008', 'PRE', 8, '0890123456', '00008');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0009', 'ONL', 9, '0901234567', '00009');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0010', 'STD', 10, '1012345678', '00010');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0011', 'PRE', 1, '0123456789', '00001');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0012', 'ONL', 2, '0234567890', '00002');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0013', 'STD', 3, '0345678901', '00003');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0014', 'PRE', 4, '0456789012', '00004');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0015', 'ONL', 5, '0567890123', '00005');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0016', 'STD', 6, '0678901234', '00006');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0017', 'PRE', 7, '0789012345', '00007');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0018', 'ONL', 8, '0890123456', '00008');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0019', 'STD', 9, '0901234567', '00009');
+INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('TKT0020', 'PRE', 10, '1012345678', '00010');
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -424,13 +424,13 @@ INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, Pre
 INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderNote) VALUES ('TKT0020', N'Sushi Cầu Giấy', 'Area 3', 2, N'Chúng tôi muốn miễn phí');
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0001', 'Table 1', 'EMP01');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0004', 'Table 1', 'EMP04');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0007', 'Table 1', 'EMP07');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0010', 'Table 1', 'EMP10');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0013', 'Table 1', 'EMP03');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0016', 'Table 1', 'EMP06');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0019', 'Table 1', 'EMP09');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0001', 'Table 1', '00001');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0004', 'Table 1', '00004');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0007', 'Table 1', '00007');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0010', 'Table 1', '00010');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0013', 'Table 1', '00003');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0016', 'Table 1', '00006');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0019', 'Table 1', '00009');
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
