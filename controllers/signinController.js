@@ -1,7 +1,7 @@
-const contoller = {};
+let controller = {};
 const { sequelize } = require('../models');
 
-contoller.showPage = (req, res) => {
+controller.showPage = (req, res) => {
     res.render("signin", {
         layout: "layout",
         title: "Sign In",
@@ -9,20 +9,21 @@ contoller.showPage = (req, res) => {
     });
 };
 
-contoller.signIn = async (req, res) => {
-    const { cccd, password } = req.body;
+controller.signIn = async (req, res) => {
+    const { username, password } = req.body;
+    console.log(req.body);
 
     const sanitizeInput = (value) => (value === undefined || value === '') ? null : value;
 
     // Sanitize inputs
     const sanitizedInputs = {
-        cccd: sanitizeInput(cccd),
+        username: sanitizeInput(username),
         password: sanitizeInput(password),
     };
 
     sequelize.query(
-        `EXEC [dbo].[UserSignIn]
-            @cccd = :cccd,
+        `EXEC [dbo].[UserLogin]
+            @username = :username,
             @password = :password`,
         {
             replacements: sanitizedInputs,
@@ -30,14 +31,25 @@ contoller.signIn = async (req, res) => {
         }
     ).then(results => {
         if (results.length === 0) {
-            res.status(401).send({ message: 'Sign in failed', results });
+            res.render("signin", {
+                layout: "layout",
+                title: "Sign In",
+                name: "Sign In",
+                message: 'Sign in failed'
+            });
         } else {
-            res.status(200).send({ message: 'Sign in successful', results });
+           req.session.user = {
+                
+           };
         }
     }).catch(error => {
-        console.error('Error executing stored procedure:', error);
-        res.status(500).send({ message: 'Sign in failed', error });
+       res.render("signin", {
+            layout: "layout",
+            title: "Sign In",
+            name: "Sign In",
+            message: error.message
+        });
     });
 }
 
-module.exports = contoller;
+module.exports = controller;

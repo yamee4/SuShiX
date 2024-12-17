@@ -103,6 +103,16 @@ module.exports = {
     "Gender": "Nu ",
     "isMember": false,
     "isRegistered": true
+  },
+  {
+    "CCCD": "1234567890",
+    "CustomerFirstName": "Huy",
+    "CustomerLastName": "Phan Thanh",
+    "PhoneNumber": null,
+    "Email": null,
+    "Gender": "N? ",
+    "isMember": false,
+    "isRegistered": true
   }
 ];
 

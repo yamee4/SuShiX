@@ -12,7 +12,7 @@ begin
 					select 1
 					from CUSTOMER_MEMBER
 					where MCCCD = @mcccd
-			      )p
+			      )
 		begin
 			;throw 51000, N'Khách hàng này chưa tạo thẻ', 1
 			return

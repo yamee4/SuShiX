@@ -25,13 +25,13 @@ BEGIN
         SET @genderVal = N'Nữ';
     END
     -- Check if the username already exists
-    IF EXISTS (SELECT 1 FROM CUSTOMER WHERE CCCD = @cccd)
+    IF EXISTS (SELECT * FROM CUSTOMER WHERE CCCD = @cccd)
     BEGIN
         RAISERROR('This user is already exists', 16, 1);
         RETURN;
     END
 
-    IF EXISTS (SELECT 1 FROM CUSTOMER_MEMBER WHERE  MemberCardNumber = @membercard)
+    IF EXISTS (SELECT * FROM CUSTOMER_MEMBER WHERE  MemberCardNumber = @membercard)
     BEGIN
         SET @isMember = 1;
     END
@@ -50,18 +50,19 @@ END
 GO
 
 CREATE OR ALTER PROCEDURE UserLogin
-    @cccd char(10),
+    @username char(10),
     @password varchar(50)
 AS
 BEGIN
     -- Check if the username and password match
-    IF EXISTS (SELECT 1 FROM ONLINE_CUSTOMER WHERE OCCCD = @cccd AND O_Password = @password)
+    IF EXISTS (SELECT * FROM ONLINE_CUSTOMER WHERE OCCCD = @username AND O_Password = @password)
     BEGIN
-        PRINT 'User logged in successfully';
+        SELECT * FROM ONLINE_CUSTOMER WHERE OCCCD = @username AND O_Password = @password
     END
     ELSE
     BEGIN
         RAISERROR('Invalid username or password', 16, 1);
+		return
     END
 END
 GO
