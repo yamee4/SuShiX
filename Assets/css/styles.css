@@ -3,8 +3,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif; /* Modern and clean font for readability */
+    background-color: #fdfaf6; /* Soft off-white, mimicking rice */
+    color: #333; /* Dark gray for text for better contrast */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Improved readability */
 }
 
 .card {

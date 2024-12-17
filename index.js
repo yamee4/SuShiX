@@ -5,7 +5,7 @@ const express = require("express");
 const expressHbs = require("express-handlebars");
 const { createPagination } = require("express-handlebars-paginate");
 const session = require("express-session");
-const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser");  
 const port = 3000;
 
 const app = express();
@@ -65,9 +65,8 @@ app.use("/menu", require("./routes/menuRouter"));
 app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
 app.use("/profile", require("./routes/profileRouter"));
+app.use('/branchRevenue', require('./routes/branchRevenueRouter'));
 
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
 app.listen(port, () => {
     console.log("Server is running on port 3000");
 });
@@ -87,3 +86,6 @@ Handlebars.registerHelper("formatDelivery", function (deliveryAvailable) {
     return "Unknown"; 
 });
 
+Handlebars.registerHelper("formatDate", function (date) {
+    return new Date(date).toLocaleDateString(); // Example date formatting
+});

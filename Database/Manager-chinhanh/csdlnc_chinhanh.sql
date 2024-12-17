@@ -48,7 +48,7 @@ BEGIN
 		END;
 	END
 	UPDATE ORDER_TICKET
-	SET Discount = @Discount
+	SET Discount = @Discount, CreatedDate = GETDATE()
 	WHERE TicketID = @TicketID
 END
 
@@ -215,17 +215,14 @@ BEGIN
 	WHERE e.EmpID = @EmpID and se.BranchID = @BrachID
 END
 
-exec usp_SearchEmployee 1, 'EMP01'
-
 --------------------------HÀM HỖ TRỢ THÊM DÒNG ONLINE ORDER-----------------------------------------
 GO
 CREATE OR ALTER PROCEDURE usp_ThemOnlineOrder
-    @TicketID char(10),
-    @DeliveryDate datetime
+    @TicketID char(10)
 AS
 BEGIN
-    INSERT INTO ONLINE_TICKET (OTicketID, DeliveryDate)
-    VALUES (@TicketID, @DeliveryDate)
+    INSERT INTO ONLINE_TICKET (OTicketID)
+    VALUES (@TicketID)
 END
 
 -------------------------HÀM HỖ TRỢ THÊM DÒNG PRE ORDER------------------------------------------
@@ -235,8 +232,6 @@ CREATE OR ALTER PROCEDURE usp_ThemPreOrder
     @TicketID char(10),
     @BranchID int,
     @NumberOfCustomer int,
-    @PreOrderDate datetime,
-    @PreOrderArrivalTime date,
     @PreOrderNote nvarchar(100)
 AS
 BEGIN
@@ -247,8 +242,8 @@ BEGIN
     FROM BRANCH 
     WHERE BranchID = @BranchID
 
-    INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote)
-    VALUES (@TicketID, @BranchName, @AreaName, @NumberOfCustomer, @PreOrderDate, @PreOrderArrivalTime, @PreOrderNote)
+    INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer,  PreOrderNote)
+    VALUES (@TicketID, @BranchName, @AreaName, @NumberOfCustomer, @PreOrderNote)
 END
 
 
@@ -258,12 +253,11 @@ GO
 CREATE OR ALTER PROCEDURE usp_ThemStandardOrder
     @TicketID char(10),
     @TableName nvarchar(30),
-    @EmpID char(5),
-    @CreateDate datetime
+    @EmpID char(5)
 AS
 BEGIN
-    INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate)
-    VALUES (@TicketID, @TableName, @EmpID, @CreateDate)
+    INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee)
+    VALUES (@TicketID, @TableName, @EmpID)
 END
 
 
@@ -331,13 +325,9 @@ CREATE OR ALTER PROCEDURE usp_ADD_ORDER_TICKET
 	@TicketType char(3),
 	@BranchID int,
 	@EmpID char(5),
-	@DeliveryDate datetime,
 	@NumberOfCustomer int,
-	@PreOrderDate datetime,
-	@PreOrderArrivalTime date,
 	@PreOrderNote nvarchar(100),
 	@TableName nvarchar(30),
-	@CreateDate datetime,
 	@DSDonHang DSTicket READONLY
 AS
 BEGIN
@@ -356,29 +346,36 @@ BEGIN
 	where TicketID like 'TKT%'
 	set @TicketID = 'TKT' + REPLICATE('0', 4 - len(@temp)) + @temp
 
-    INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID, CreatedDate)
-    VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID,  GETDATE())
+    INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID)
+    VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID)
     
     
     IF @TicketType = 'ONL'
     BEGIN
-        EXEC usp_ThemOnlineOrder @TicketID, @DeliveryDate
+        EXEC usp_ThemOnlineOrder @TicketID
         PRINT(N'Thêm thành công order')
     END
 
     IF @TicketType = 'PRE'
     BEGIN
-        EXEC usp_ThemPreOrder @TicketID, @BranchID, @NumberOfCustomer, @PreOrderDate, @PreOrderArrivalTime, @PreOrderNote
+        EXEC usp_ThemPreOrder @TicketID, @BranchID, @NumberOfCustomer, @PreOrderNote
         PRINT(N'Thêm thành công order')
     END
 
     IF @TicketType = 'STD'
     BEGIN
-        EXEC usp_ThemStandardOrder @TicketID, @TableName, @EmpID, @CreateDate
+        EXEC usp_ThemStandardOrder @TicketID, @TableName, @EmpID
         PRINT(N'Thêm thành công order')
     END
 
 	EXEC usp_ADD_DETAIL_ORDER @DSDonHang, @TicketID
+
+	IF 1 = (SELECT isMember FROM CUSTOMER WHERE CCCD = @CCCD)
+	BEGIN 
+		UPDATE CUSTOMER_MEMBER
+		SET MemberCardPoints = MemberCardPoints + (SELECT TotalPrice /100000 FROM ORDER_TICKET WHERE TicketID = @TicketID)
+		WHERE MCCCD = @CCCD;
+	END
 
 	END TRY
 	BEGIN CATCH
@@ -388,37 +385,6 @@ BEGIN
 END
 GO
 
-/*
-exec usp_ADD_CUSTOMER '1111111111', N'Đinh Việt', N'Đức', '0902510445', 'dinhzitduck@gmail.com', 'Nam', 1,1
-exec usp_ADD_MEMBER_CUSTOMER '1111111111', 'MC0006', '2024-12-13', 'EMP01'
-DECLARE @DSOnline DSTicket
-
-INSERT INTO @DSOnline (DishID, OrderTime, Quantity, Price)
-VALUES (1, '2024-12-13 12:00:00', 2, 50000),
-       (2, '2024-12-13 12:05:00', 1, 30000)
-
-------------------------------------------------------------------
-DECLARE @DSPreOrder DSTicket
-
-INSERT INTO @DSPreOrder (DishID, OrderTime, Quantity, Price)
-VALUES (1, '2024-12-13 12:00:00', 2, 50000),
-       (2, '2024-12-13 12:05:00', 1, 30000)
-
-------------------------------------------------------------------
-DECLARE @DSStandard DSTicket
-
-INSERT INTO @DSStandard (DishID, OrderTime, Quantity, Price)
-VALUES (1, '2024-12-13 12:00:00', 2, 50000),
-       (2, '2024-12-13 12:05:00', 1, 30000)
-
-
-exec usp_ADD_ORDER_TICKET '0123456789', 'ONL', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00',  @DSOnline
-exec usp_ADD_ORDER_TICKET '0123456789', 'PRE', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00',  @DSPreOrder
-exec usp_ADD_ORDER_TICKET '0123456789', 'STD', 1, 'EMP01', '2024 - 1 -1', 2, '2024 - 1 -1 14:00:00', '2024 - 1 -1 18:00:00', NULL, 'Table 1', '2024 - 1 -1 14:00:00', @DSStandard
-
-
-exec usp_XoaOrderTicket 'TKT0021'
-*/
 -----------------------------XÓA 1 ORDER TICKET VÀ CÁC DỮ LIỆU LIÊN QUAN TỚI NÓ Ở CÁC BẢNG KHÁC-------------------------------------
 GO
 CREATE OR ALTER PROCEDURE usp_XoaOrderTicket
@@ -740,6 +706,7 @@ exec usp_DELETE_CUSTOMER '1111111111'
 */
 
 -----------------------------TÍNH ĐIỂM TÍCH LŨY CHO KHÁCH HÀNG--------------------------------------
+-------- update straight to member ---------
 GO
 CREATE OR ALTER PROCEDURE usp_ACCUMULATE_POINTS
     @CCCD CHAR(10),
@@ -763,9 +730,7 @@ BEGIN
 		AND ODT.CreatedDate <= @ENDDATE
         AND ODT.CCCD = @CCCD
 
-        UPDATE CUSTOMER_MEMBER
-        SET MemberCardPoints = @POINT
-        WHERE MCCCD = @CCCD;
+        RETURN @POINT
 
     END TRY
     BEGIN CATCH
@@ -790,15 +755,21 @@ BEGIN
 
 	DECLARE @CurrentRank char(6)
 	DECLARE @GetRankDate datetime
+
 	SELECT @CurrentRank = MemberCardRank, @GetRankDate = MemberCardAcquiredRankDate
 	FROM CUSTOMER_MEMBER 
 	WHERE MCCCD = @CCCD
 
+	DECLARE @Today DATE SET @Today = CAST(GETDATE() AS DATE)
+	DECLARE @NextYearDate datetime
+	SET @NextYearDate = DATEADD(year, 1, @GetRankDate)
+
+	DECLARE @aYearPoint int
+	SET @aYearPoint = dbo.usp_ACCUMULATE_POINTS(@CCCD, @Today, @NextYearDate);
+
+
 	IF (@CurrentRank = 'MEMBER')
 	BEGIN
-		DECLARE @Today DATE SET @Today = CAST(GETDATE() AS DATE)
-		EXEC usp_ACCUMULATE_POINTS @CCCD, '1900-01-01', @Today;
-
 		IF 100 <= (SELECT MemberCardPoints FROM CUSTOMER_MEMBER WHERE MCCCD = @CCCD)
 		BEGIN 
 			UPDATE CUSTOMER_MEMBER
@@ -813,12 +784,7 @@ BEGIN
 
 	IF(@CurrentRank = 'SILVER')
 	BEGIN
-
-		DECLARE @NextYearDate datetime
-		SET @NextYearDate = DATEADD(year, 1, @GetRankDate)
-		EXEC usp_ACCUMULATE_POINTS @CCCD, @GetRankDate, @NextYearDate
-
-		IF 50 > (SELECT MemberCardPoints FROM CUSTOMER_MEMBER WHERE MCCCD = @CCCD) 
+		IF 50 > @aYearPoint
 		BEGIN 
 			UPDATE CUSTOMER_MEMBER
 			SET MemberCardRank = 'MEMBER', MemberCardAcquiredRankDate = getdate()
@@ -827,7 +793,7 @@ BEGIN
 			RETURN
 		END
 
-		ELSE IF 100 <= (SELECT MemberCardPoints FROM CUSTOMER_MEMBER WHERE MCCCD = @CCCD) 
+		ELSE IF 100 <= @aYearPoint
 		BEGIN 
 			UPDATE CUSTOMER_MEMBER
 			SET MemberCardRank = 'GOLD', MemberCardAcquiredRankDate = getdate()
@@ -839,11 +805,7 @@ BEGIN
 
 	IF(@CurrentRank = 'GOLD')
 	BEGIN
-		DECLARE @NextYearDate1 datetime
-		SET @NextYearDate = DATEADD(year, 1, @GetRankDate)
-		EXEC usp_ACCUMULATE_POINTS @CCCD, @GetRankDate, @NextYearDate1
-
-		IF 100 > (SELECT MemberCardPoints FROM CUSTOMER_MEMBER WHERE MCCCD = @CCCD) 
+		IF 100 > @aYearPoint
 		BEGIN 
 			UPDATE CUSTOMER_MEMBER
 			SET MemberCardRank = 'SILVER', MemberCardAcquiredRankDate = getdate()
@@ -861,39 +823,4 @@ END
 
 -------------------------------------------------------------------
 GO
-
-/*
-exec usp_ADD_CUSTOMER '1111111111', N'Đinh Việt', N'Đức', '0902510445', 'dinhzitduck@gmail.com', 'Nam', 1,0
-exec usp_ADD_MEMBER_CUSTOMER '1111111111', 'MC0006', '2024-12-13', 'EMP01'
-
-
-DECLARE @DSOnline DSTicket
-INSERT INTO @DSOnline (DishID, OrderTime, Quantity, Price)
-VALUES (1, '2024-12-13 12:00:00', 200, 50000),
-       (2, '2024-12-13 12:05:00', 10, 30000)
-
-exec usp_ADD_ORDER_TICKET 'TKT0021', '1111111111', 'ONL', 1, 'EMP01', '2024 - 12 -10', 2, '2024 - 12 -10 14:00:00', '2024 - 12 -10 18:00:00', NULL, 'Table 1', '2024 - 12 -10 14:00:00','BIL0021', 0,  @DSOnline
-
-exec usp_UPDATE_MEMBER_RANK '1111111111'
-
-DECLARE @DSOnline1 DSTicket
-INSERT INTO @DSOnline1 (DishID, OrderTime, Quantity, Price)
-VALUES (11, '2024-12-13 12:00:00', 200, 50000),
-       (21, '2024-12-13 12:05:00', 10, 30000)
-
-exec usp_ADD_ORDER_TICKET 'TKT0022', '1111111111', 'ONL', 1, 'EMP01', '2025 - 01 -01', 2, '2025 - 01 -01 14:00:00', '2025 - 01 -01 18:00:00', NULL, 'Table 1', '2025 - 01 -01 14:00:00','BIL0022', 0,  @DSOnline1
-
-DECLARE @DSOnline2 DSTicket
-INSERT INTO @DSOnline2 (DishID, OrderTime, Quantity, Price)
-VALUES (11, '2024-12-13 12:00:00', 200, 50000),
-       (21, '2024-12-13 12:05:00', 10, 30000)
-
-exec usp_ADD_ORDER_TICKET 'TKT0023', '1111111111', 'ONL', 1, 'EMP01', '2025 - 01 -01', 2, '2025 - 01 -01 14:00:00', '2025 - 01 -01 18:00:00', NULL, 'Table 1', '2025 - 01 -01 14:00:00','BIL0023', 0,  @DSOnline2
-
-exec usp_XoaOrderTicket 'TKT0021'
-exec usp_XoaOrderTicket 'TKT0022'
-exec usp_XoaOrderTicket 'TKT0023'
-exec usp_DELETE_CUSTOMER '1111111111'
-*/
-
 

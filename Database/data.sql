@@ -406,31 +406,31 @@ INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID) VALUES ('
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO ONLINE_TICKET (OTicketID, DeliveryDate) VALUES ('TKT0003', '2023-12-15 12:00:00');
-INSERT INTO ONLINE_TICKET (OTicketID, DeliveryDate) VALUES ('TKT0006', '2023-12-16 18:30:00');
-INSERT INTO ONLINE_TICKET (OTicketID, DeliveryDate) VALUES ('TKT0009', '2023-12-17 10:15:00');
-INSERT INTO ONLINE_TICKET (OTicketID, DeliveryDate) VALUES ('TKT0012', '2023-12-18 14:45:00');
-INSERT INTO ONLINE_TICKET (OTicketID, DeliveryDate) VALUES ('TKT0015', '2023-12-19 11:30:00');
-INSERT INTO ONLINE_TICKET (OTicketID, DeliveryDate) VALUES ('TKT0018', '2023-12-20 17:00:00');
+INSERT INTO ONLINE_TICKET (OTicketID) VALUES ('TKT0003');
+INSERT INTO ONLINE_TICKET (OTicketID) VALUES ('TKT0006');
+INSERT INTO ONLINE_TICKET (OTicketID) VALUES ('TKT0009');
+INSERT INTO ONLINE_TICKET (OTicketID) VALUES ('TKT0012');
+INSERT INTO ONLINE_TICKET (OTicketID) VALUES ('TKT0015');
+INSERT INTO ONLINE_TICKET (OTicketID) VALUES ('TKT0018');
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0002', N'Sushi Quận 12', 'Area 2', 4, '2023-12-13 15:00:00', '2023-12-13 18:30:00', N'Xin vui lòng chuẩn bị bàn cho 4 người');
-INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0005', N'Sushi Quận 4', 'Area 2', 2, '2023-12-14 9:00:00', '2023-12-14 12:00:00', N'Chúng tôi muốn có một bàn yên tĩnh, vui lòng');
-INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0008', N'Sushi Gò Vấp', 'Area 2', 6, '2023-12-15 16:00:00', '2023-12-15 19:30:00', N'Xin vui lòng chuẩn bị bàn gần cửa sổ');
-INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0011', N'Sushi Bình Thạnh', 'Area 1', 3, '2023-12-16 14:00:00', '2023-12-16 17:00:00', N'Chúng tôi có trẻ em, vui lòng chuẩn bị ghế cao');
-INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0014', N'Sushi Quận 3', 'Area 4', 5, '2023-12-17 8:30:00', '2023-12-17 11:30:00', N'Chúng tôi muốn có bàn gần quầy sushi');
-INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0017', N'Sushi Cầu Giấy', 'Area 3', 2, '2023-12-18 9:30:00', '2023-12-18 13:00:00', N'Xin vui lòng chuẩn bị bàn cho hai người, khu vực không hút thuốc');
-INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderDate, PreOrderArrivalTime, PreOrderNote) VALUES ('TKT0020', N'Sushi Cầu Giấy', 'Area 3', 2, '2023-12-18 9:30:00', '2023-12-18 13:00:00', N'Chúng tôi muốn miễn phí');
+INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderNote) VALUES ('TKT0002', N'Sushi Quận 12', 'Area 2', 4, N'Xin vui lòng chuẩn bị bàn cho 4 người');
+INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderNote) VALUES ('TKT0005', N'Sushi Quận 4', 'Area 2', 2, N'Chúng tôi muốn có một bàn yên tĩnh, vui lòng');
+INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderNote) VALUES ('TKT0008', N'Sushi Gò Vấp', 'Area 2', 6, N'Xin vui lòng chuẩn bị bàn gần cửa sổ');
+INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderNote) VALUES ('TKT0011', N'Sushi Bình Thạnh', 'Area 1',3,  N'Chúng tôi có trẻ em, vui lòng chuẩn bị ghế cao');
+INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderNote) VALUES ('TKT0014', N'Sushi Quận 3', 'Area 4', 5, N'Chúng tôi muốn có bàn gần quầy sushi');
+INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderNote) VALUES ('TKT0017', N'Sushi Cầu Giấy', 'Area 3', 2, N'Xin vui lòng chuẩn bị bàn cho hai người, khu vực không hút thuốc');
+INSERT INTO PRE_ORDER_TICKET (PTicketID, BranchName, Area, NumberofCustomer, PreOrderNote) VALUES ('TKT0020', N'Sushi Cầu Giấy', 'Area 3', 2, N'Chúng tôi muốn miễn phí');
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate) VALUES ('TKT0001', 'Table 1', 'EMP01', '2023-12-12 12:00:00');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate) VALUES ('TKT0004', 'Table 1', 'EMP04', '2023-12-13 18:30:00');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate) VALUES ('TKT0007', 'Table 1', 'EMP07', '2023-12-14 10:15:00');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate) VALUES ('TKT0010', 'Table 1', 'EMP10', '2023-12-15 14:45:00');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate) VALUES ('TKT0013', 'Table 1', 'EMP03', '2023-12-16 11:30:00');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate) VALUES ('TKT0016', 'Table 1', 'EMP06', '2023-12-17 17:00:00');
-INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee, CreatedDate) VALUES ('TKT0019', 'Table 1', 'EMP09', '2023-12-18 12:30:00');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0001', 'Table 1', 'EMP01');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0004', 'Table 1', 'EMP04');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0007', 'Table 1', 'EMP07');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0010', 'Table 1', 'EMP10');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0013', 'Table 1', 'EMP03');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0016', 'Table 1', 'EMP06');
+INSERT INTO STANDARD_ORDER_TICKET (SOTicketID, TableName, SupportEmployee) VALUES ('TKT0019', 'Table 1', 'EMP09');
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 

@@ -181,7 +181,6 @@ go
 create table ONLINE_TICKET
 (
 	OTicketID char(10),
-	DeliveryDate datetime
 
 	primary key (OTicketID)
 )
@@ -192,8 +191,6 @@ create table PRE_ORDER_TICKET
 	BranchName nvarchar(30),
 	Area nvarchar(30),
 	NumberofCustomer int,
-	PreOrderDate datetime,
-	PreOrderArrivalTime datetime,
 	PreOrderNote nvarchar(100)
 
 	primary key (PTicketID)
@@ -204,7 +201,6 @@ create table STANDARD_ORDER_TICKET
 	SOTicketID char(10),
 	TableName nvarchar(30),
 	SupportEmployee char(5),
-	CreatedDate datetime
 
 	primary key (SOTicketID)
 )
