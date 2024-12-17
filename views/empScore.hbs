@@ -1,0 +1,32 @@
+<body>
+    <div class="container">
+        <h1>{{name}}</h1>
+        
+        <form id="empScoreForm" method="POST" action="/empScore">
+            <div>
+                <label for="EmpID">Employee ID:</label>
+                <input type="t" id="EmpID" name="EmpID" required>
+            </div>
+            <button type="submit">Get Employee Score</button>
+        </form>
+
+        {{#if results}}
+            <div class="results-container">
+                <h2>Score Results for Employee ID: {{EmpID}}</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Average Score:  </th> 
+                            <th class ="right-align"> {{results.[0].[Điểm dịch vụ trung bình của nhân viên cần tìm]}}</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        {{/if}}
+
+        {{#if error}}
+            <div class="error">{{error}}</div>
+        {{/if}}
+    </div>
+</body>
+</html>

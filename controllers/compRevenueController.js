@@ -2,24 +2,23 @@ const controller = {};
 const { SELECT } = require('sequelize/lib/query-types');
 const { sequelize } = require('../models')
 
-controller.showBranchRevenue = async (req, res) => {
-    res.render("branchRevenue", {
+controller.showCompRevenue = async (req, res) => {
+    res.render("compRevenue", {
         layout: "layout",
-        title: "Branch Revenue",
-        name: "Branch Revenue"
+        title: "Company Revenue",
+        name: "Company Revenue"
     });
 }
 
-controller.getBranchRevenue = async (req, res) => {
-    const { branchID, startDate, endDate } = req.body;
+controller.getCompRevenue = async (req, res) => {
+    const {startDate, endDate } = req.body;
     try {
         const results = await sequelize.query(
-            `EXEC [dbo].[usp_GetBranchRevenue]
-                @BranchID = :branchID,
+            `EXEC [dbo].[usp_GetCompanyRevenue]
                 @startDate = :startDate,
                 @endDate = :endDate`,
             {
-                replacements: { branchID, startDate, endDate },
+                replacements: {startDate, endDate },
                 type: sequelize.QueryTypes.SELECT,
             }
         );
@@ -27,19 +26,18 @@ controller.getBranchRevenue = async (req, res) => {
         console.log(results);
 
         // Render the view with results
-        res.render("branchRevenue", {
+        res.render("compRevenue", {
             layout: "layout",
-            title: "Branch Revenue",
-            name: "Branch Revenue",
+            title: "Company Revenue",
+            name: "Company Revenue",
             results: results,
-            branchID: branchID,
         });
     } catch (error) {
         console.error('Error executing stored procedure:', error);
-        res.render("branchRevenue", {
+        res.render("compRevenue", {
             layout: "layout",
-            title: "Branch Revenue",
-            name: "Branch Revenue",
+            title: "Company Revenue",
+            name: "Company Revenue",
             error: 'Failed to fetch revenue data.',
         });
     }

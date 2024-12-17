@@ -206,13 +206,13 @@ END
 
 GO
 CREATE OR ALTER PROCEDURE usp_SearchEmployee
-	@BrachID INT,
+	@BranchID INT,
 	@EmpID CHAR(5)
 AS
 BEGIN 
 	SELECT e.*
 	FROM EMPLOYEE e join STATION_EMPLOYEE se on e.EmpID = se.EmpID 
-	WHERE e.EmpID = @EmpID and se.BranchID = @BrachID
+	WHERE e.EmpID = @EmpID and se.BranchID = @BranchID
 END
 
 --------------------------HÀM HỖ TRỢ THÊM DÒNG ONLINE ORDER-----------------------------------------

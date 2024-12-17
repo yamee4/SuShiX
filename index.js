@@ -66,6 +66,10 @@ app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
 app.use("/profile", require("./routes/profileRouter"));
 app.use('/branchRevenue', require('./routes/branchRevenueRouter'));
+app.use('/empScore', require('./routes/empScoreRouter'));
+app.use('/searchEmp', require('./routes/searchEmpRouter'));
+app.use('/compRevenue', require('./routes/compRevenueRouter'));
+app.use('/dishRevenue', require('./routes/dishRevenueRouter'));
 
 app.listen(port, () => {
     console.log("Server is running on port 3000");

@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Roboto', sans-serif; /* Modern and clean font for readability */
-    background-color: #fdfaf6; /* Soft off-white, mimicking rice */
+    background-color: #fff8e1; /* Soft off-white, mimicking rice */
     color: #333; /* Dark gray for text for better contrast */
     margin: 0;
     padding: 0;
@@ -299,8 +299,11 @@ Pagination
     border-radius: 5px; /* Rounded corners */
     padding: 10px 15px; /* Padding */
     cursor: pointer; /* Pointer cursor */
-    font-size: 16px; /* Font size */
+    font-size: 20px; /* Font size */
     transition: background-color 0.3s; /* Transition effect */
+	max-width: 200px;
+	margin-top: 35px;
+	margin-right: 100px;
 }
 
 .view-cart-btn:hover {
@@ -372,4 +375,121 @@ Pagination
 /* Clear Cart Button Hover Effect */
 #clear-cart:hover {
     background-color: #ff1a1a; /* Darker red on hover */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 10px auto;
+    padding: 20px;
+    background: #ffffff; /* White background for the container */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #ff5722; /* Orange color for headings */
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="date"],
+button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff5722; /* Orange border */
+    border-radius: 4px;
+}
+
+button {
+    background-color: #ff5722; /* Orange button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #ffccbc; /* Light cream for table header */
+}
+
+.error {
+    color: red;
+    margin-top: 20px;
+}
+
+#empScoreForm {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Label styling */
+label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Make labels bold */
+}
+
+/* Input field styling */
+input[type="text"], input[type="number"] {
+    padding: 10px; /* Add padding inside the input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below the input */
+    font-size: 16px; /* Font size */
+}
+
+.results-container {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    margin: 20px 0; /* Add some margin above and below */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.right-align {
+    text-align: right; /* Right-align the text */
 }
