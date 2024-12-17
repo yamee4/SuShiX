@@ -6,6 +6,8 @@ const expressHbs = require("express-handlebars");
 const { createPagination } = require("express-handlebars-paginate");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");  
+const Handlebars = require("handlebars");
+
 const port = 3000;
 
 const app = express();
@@ -56,23 +58,6 @@ app.use(
 );
 
 
-//Cấu hình các router
-app.get("/", (req, res) => res.redirect("/home"));
-
-app.use("/home", require("./routes/homeRouter"));
-app.use("/menu", require("./routes/menuRouter"));
-
-app.use("/signin", require("./routes/signinRouter"));
-app.use("/signup", require("./routes/signupRouter"));
-app.use("/profile", require("./routes/profileRouter"));
-app.use('/branchRevenue', require('./routes/branchRevenueRouter'));
-
-app.listen(port, () => {
-    console.log("Server is running on port 3000");
-});
-
-const Handlebars = require("handlebars");
-
 Handlebars.registerHelper("formatCurrency", function (price) {
     return `${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND`;
 }); 
@@ -89,3 +74,21 @@ Handlebars.registerHelper("formatDelivery", function (deliveryAvailable) {
 Handlebars.registerHelper("formatDate", function (date) {
     return new Date(date).toLocaleDateString(); // Example date formatting
 });
+
+
+
+//Cấu hình các router
+app.get("/", (req, res) => res.redirect("/home"));
+
+app.use("/home", require("./routes/homeRouter"));
+app.use("/menu", require("./routes/menuRouter"));
+
+app.use("/signin", require("./routes/signinRouter"));
+app.use("/signup", require("./routes/signupRouter"));
+app.use("/profile", require("./routes/profileRouter"));
+app.use('/branchRevenue', require('./routes/branchRevenueRouter'));
+
+app.listen(port, () => {
+    console.log("Server is running on port 3000");
+});
+
