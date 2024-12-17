@@ -1,8 +1,8 @@
 const { sequelize } = require('../models'); // Adjust the path as needed
 
-let contoller = {}
+let controller = {}
 
-contoller.showPage = (req, res) => {
+controller.showPage = (req, res) => {
     res.render("signup", {
         layout: "layout",
         title: "Sign Up",
@@ -10,7 +10,7 @@ contoller.showPage = (req, res) => {
     });
 };
 
-contoller.signUp = async (req, res) => {
+controller.signUp = async (req, res) => {
     const { 
         citizenId,
         memberCard, 
@@ -50,11 +50,21 @@ contoller.signUp = async (req, res) => {
             type: sequelize.QueryTypes.INSERT,
         }
     ).then(results => {
-        res.status(200).send({ message: 'Sign up successful', results });
-    }).catch(error => {
-        console.error('Error executing stored procedure:', error);
-        res.status(500).send({ message: 'Sign up failed', error });
+        res.render("signup", {
+            layout: "layout",
+            title: "Sign Up",
+            name: "Sign Up",
+            message: 'Sign up successful' 
+        });
+
+    }).catch(error => {;
+        res.render("signup", {
+            layout: "layout",
+            title: "Sign Up",
+            name: "Sign Up",
+            message: error.message
+        });
     });
 }
 
-module.exports = contoller;
+module.exports = controller;
