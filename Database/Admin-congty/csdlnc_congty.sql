@@ -92,7 +92,6 @@ END
 -----------------------------------TẠO EMPLOYEE--------------------------------
 GO
 CREATE OR ALTER PROCEDURE usp_ADD_EMPLOYEE
-	@EmpID char(5),
 	@EmpFirstName nvarchar(20),
 	@EmpLastName nvarchar(20),
 	@EmpDOB datetime,
@@ -101,11 +100,11 @@ CREATE OR ALTER PROCEDURE usp_ADD_EMPLOYEE
 AS
 BEGIN
 	BEGIN TRY
-		IF EXISTS (SELECT 1 FROM EMPLOYEE WHERE EmpID = @EmpID)
-		BEGIN
-			RAISERROR(N'Đã tồn tại nhân viên này rồi', 16,1);
-			RETURN;
-		END
+		DECLARE @EmpID char(5), @temp char(5)
+
+		select @temp = cast(max(cast(EmpID as int)) + 1 as char(5))
+		from EMPLOYEE
+		set @EmpID = replicate('0', 5 - len(@temp)) + @temp
 
 		INSERT INTO EMPLOYEE VALUES(@EmpID, @EmpFirstName, @EmpLastName, @EmpDOB, @EmpGender, @Salary, NULL)
 	END TRY
