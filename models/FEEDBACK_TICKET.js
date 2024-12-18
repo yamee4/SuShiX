@@ -9,7 +9,11 @@ class FEEDBACK_TICKET extends Sequelize.Model {
     TicketID: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'ORDER_TICKET',
+        key: 'TicketID'
+      }
     },
     FeedbackTotalScore: {
       type: DataTypes.INTEGER,
@@ -43,7 +47,7 @@ class FEEDBACK_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__FEEDBACK__4DC1746C70A64542",
+        name: "PK__FEEDBACK__4DC1746C10EA1DD1",
         unique: true,
         fields: [
           { name: "TicketID" },

@@ -5,7 +5,7 @@ const express = require("express");
 const expressHbs = require("express-handlebars");
 const { createPagination } = require("express-handlebars-paginate");
 const session = require("express-session");
-const cookieParser = require("cookie-parser");  
+const cookieParser = require("cookie-parser");
 const Handlebars = require("handlebars");
 
 const port = 3000;
@@ -18,12 +18,12 @@ app.use(express.static(__dirname + "/Assets"));
 
 //Thiết lập Template Engine
 app.engine(
-    'hbs',
+    "hbs",
     expressHbs.engine({
-        extname: 'hbs',
-        defaultLayout: 'layout',
-        layoutsDir: __dirname + '/views/layouts',
-        partialsDir: __dirname + '/views/partials',
+        extname: "hbs",
+        defaultLayout: "layout",
+        layoutsDir: __dirname + "/views/layouts",
+        partialsDir: __dirname + "/views/partials",
         runtimeOptions: {
             allowProtoPropertiesByDefault: true,
         },
@@ -31,7 +31,6 @@ app.engine(
             createPagination,
         },
     })
-
 );
 
 app.set("view engine", "hbs");
@@ -49,7 +48,7 @@ app.use(
         secret: process.env.SESSION_SECRET || "keyboard dog",
         resave: false,
         saveUninitialized: false,
-        cookie: { 
+        cookie: {
             maxAge: 20 * 60 * 1000,
             httpOnly: true,
             secret: false,
@@ -59,7 +58,7 @@ app.use(
 
 Handlebars.registerHelper("formatCurrency", function (price) {
     return `${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND`;
-}); 
+});
 
 Handlebars.registerHelper("formatDelivery", function (deliveryAvailable) {
     if (deliveryAvailable === 1 || deliveryAvailable === true) {
@@ -67,14 +66,12 @@ Handlebars.registerHelper("formatDelivery", function (deliveryAvailable) {
     } else if (deliveryAvailable === 0 || deliveryAvailable === false) {
         return "Can't deliver";
     }
-    return "Unknown"; 
+    return "Unknown";
 });
 
 Handlebars.registerHelper("formatDate", function (date) {
     return new Date(date).toLocaleDateString(); // Example date formatting
 });
-
-
 
 //Cấu hình các router
 app.get("/", (req, res) => res.redirect("/home"));
@@ -85,13 +82,15 @@ app.use("/menu", require("./routes/menuRouter"));
 app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
 app.use("/profile", require("./routes/profileRouter"));
-app.use('/branchRevenue', require('./routes/branchRevenueRouter'));
-app.use('/empScore', require('./routes/empScoreRouter'));
-app.use('/searchEmp', require('./routes/searchEmpRouter'));
-app.use('/compRevenue', require('./routes/compRevenueRouter'));
-app.use('/dishRevenue', require('./routes/dishRevenueRouter'));
+app.use("/branchRevenue", require("./routes/branchRevenueRouter"));
+app.use("/empScore", require("./routes/empScoreRouter"));
+app.use("/searchEmp", require("./routes/searchEmpRouter"));
+app.use("/compRevenue", require("./routes/compRevenueRouter"));
+app.use("/dishRevenue", require("./routes/dishRevenueRouter"));
+
+app.use("/feedback", require("./routes/feedBackRouter"));
+app.use("/cardRecover", require("./routes/cardRecoveryRouter"));
 
 app.listen(port, () => {
-    console.log("Server is running on port 3000");
+    console.log(`Server is running on ${port}`);
 });
-

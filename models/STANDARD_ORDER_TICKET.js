@@ -9,7 +9,11 @@ class STANDARD_ORDER_TICKET extends Sequelize.Model {
     SOTicketID: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'ORDER_TICKET',
+        key: 'TicketID'
+      }
     },
     TableName: {
       type: DataTypes.STRING(30),

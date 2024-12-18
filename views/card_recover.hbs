@@ -1,0 +1,49 @@
+<body>
+    <div class="container">
+        <h1>{{name}}</h1>
+
+        <form id="cardRecoverForm" method="POST" action="/cardRecover">
+            <div class="mb-3">
+                <label for="citizenId" class="form-label">Citizen Nation ID:</label>
+                <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    id="citizenId"
+                    name="citizenId"
+                    oninput="checkContentLength()"
+                    required
+                />
+            </div>
+
+            <div>
+                <label for="issuedDate">Issued Date</label>
+                <input type="date" id="issuedDate" name="issuedDate" required />
+            </div>
+
+            <div>
+                <label for="EmpID">Employee ID</label>
+                <input type="t" id="EmpID" name="EmpID" required />
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="notification-container">
+        {{#if results}}
+            <div class="alert alert-success" role="alert">
+                Replace member card for
+                <strong>{{citizenId}}</strong>
+                successfully
+            </div>
+        {{/if}}
+
+        {{#if error}}
+            <div class="alert alert-danger" role="alert">
+                <strong>Error:</strong>
+                {{error}}
+            </div>
+        {{/if}}
+    </div>
+
+</body>

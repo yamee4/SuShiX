@@ -37,7 +37,11 @@ class BRANCH extends Sequelize.Model {
     },
     AreaName: {
       type: DataTypes.STRING(30),
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'AREA',
+        key: 'AreaName'
+      }
     }
   }, {
     sequelize,
@@ -46,7 +50,7 @@ class BRANCH extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__BRANCH__A1682FA597F9C539",
+        name: "PK__BRANCH__A1682FA55C1F52FD",
         unique: true,
         fields: [
           { name: "BranchID" },
