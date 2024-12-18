@@ -169,7 +169,10 @@ create table ORDER_TICKET
 	TicketType char(3),
 	BranchID int,
 	CCCD char(10),
-	EmpID char(5)
+	EmpID char(5),
+	Discount int,
+	TotalPrice bigint,
+	CreatedDate datetime,
 
 	primary key(TicketID)
 )
@@ -178,7 +181,6 @@ go
 create table ONLINE_TICKET
 (
 	OTicketID char(10),
-	DeliveryDate datetime
 
 	primary key (OTicketID)
 )
@@ -189,8 +191,6 @@ create table PRE_ORDER_TICKET
 	BranchName nvarchar(30),
 	Area nvarchar(30),
 	NumberofCustomer int,
-	PreOrderDate datetime,
-	PreOrderArrivalTime datetime,
 	PreOrderNote nvarchar(100)
 
 	primary key (PTicketID)
@@ -201,7 +201,6 @@ create table STANDARD_ORDER_TICKET
 	SOTicketID char(10),
 	TableName nvarchar(30),
 	SupportEmployee char(5),
-	CreatedDate datetime
 
 	primary key (SOTicketID)
 )
@@ -238,18 +237,7 @@ create table  STANDARD_ORDER_DETAIL
 
 	primary key(SOTicketID, DishID, OrderTime)
 )
-go
 
-create table BILL
-(
-	BillID char(10),
-	Discount int,
-	TotalPrice bigint,
-	TicketID char(10),
-	CreatedDate datetime,
-
-	primary key(BillID)
-)
 go
 
 create table FEEDBACK_TICKET
@@ -392,8 +380,4 @@ FOREIGN KEY (DishID) REFERENCES DISH(DishID);
 
 ALTER TABLE FEEDBACK_TICKET
 ADD CONSTRAINT FK_FEEDBACK_TICKET_ORDER_TICKET
-FOREIGN KEY (TicketID) REFERENCES ORDER_TICKET(TicketID)
-
-ALTER TABLE BILL
-ADD CONSTRAINT FK_BILL_ORDER_TICKET
-FOREIGN KEY(TicketID) REFERENCES ORDER_TICKET(TicketID)
+FOREIGN KEY (TicketID) REFERENCES ORDER_TICKET(TicketID);

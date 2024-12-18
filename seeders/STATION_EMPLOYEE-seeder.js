@@ -6,152 +6,152 @@ module.exports = {
     const data = [
   {
     "BranchID": 1,
-    "EmpID": "EMP01",
+    "EmpID": "00001",
     "StationName": "Sushi Chef"
   },
   {
     "BranchID": 1,
-    "EmpID": "EMP16",
+    "EmpID": "00006",
     "StationName": "Sushi Preparer"
   },
   {
     "BranchID": 2,
-    "EmpID": "EMP02",
+    "EmpID": "00002",
     "StationName": "Teppanyaki Chef"
   },
   {
     "BranchID": 2,
-    "EmpID": "EMP17",
+    "EmpID": "00017",
     "StationName": "Server"
   },
   {
     "BranchID": 3,
-    "EmpID": "EMP03",
+    "EmpID": "00003",
     "StationName": "Sushi Preparer"
   },
   {
     "BranchID": 3,
-    "EmpID": "EMP18",
+    "EmpID": "00018",
     "StationName": "Dishwasher"
   },
   {
     "BranchID": 4,
-    "EmpID": "EMP04",
+    "EmpID": "00004",
     "StationName": "Server"
   },
   {
     "BranchID": 4,
-    "EmpID": "EMP19",
+    "EmpID": "00019",
     "StationName": "Cashier"
   },
   {
     "BranchID": 5,
-    "EmpID": "EMP05",
+    "EmpID": "00005",
     "StationName": "Dishwasher"
   },
   {
     "BranchID": 5,
-    "EmpID": "EMP20",
+    "EmpID": "00020",
     "StationName": "Host/Hostess"
   },
   {
     "BranchID": 6,
-    "EmpID": "EMP06",
+    "EmpID": "00006",
     "StationName": "Cashier"
   },
   {
     "BranchID": 6,
-    "EmpID": "EMP21",
+    "EmpID": "00021",
     "StationName": "Sushi Chef"
   },
   {
     "BranchID": 7,
-    "EmpID": "EMP07",
+    "EmpID": "00007",
     "StationName": "Host/Hostess"
   },
   {
     "BranchID": 7,
-    "EmpID": "EMP22",
+    "EmpID": "00022",
     "StationName": "Teppanyaki Chef"
   },
   {
     "BranchID": 8,
-    "EmpID": "EMP08",
+    "EmpID": "00008",
     "StationName": "Sushi Chef"
   },
   {
     "BranchID": 8,
-    "EmpID": "EMP23",
+    "EmpID": "00023",
     "StationName": "Sushi Preparer"
   },
   {
     "BranchID": 9,
-    "EmpID": "EMP09",
+    "EmpID": "00009",
     "StationName": "Teppanyaki Chef"
   },
   {
     "BranchID": 9,
-    "EmpID": "EMP24",
+    "EmpID": "00024",
     "StationName": "Server"
   },
   {
     "BranchID": 10,
-    "EmpID": "EMP10",
+    "EmpID": "00010",
     "StationName": "Sushi Preparer"
   },
   {
     "BranchID": 10,
-    "EmpID": "EMP25",
+    "EmpID": "00025",
     "StationName": "Dishwasher"
   },
   {
     "BranchID": 11,
-    "EmpID": "EMP11",
+    "EmpID": "00011",
     "StationName": "Server"
   },
   {
     "BranchID": 11,
-    "EmpID": "EMP26",
+    "EmpID": "00026",
     "StationName": "Cashier"
   },
   {
     "BranchID": 12,
-    "EmpID": "EMP12",
+    "EmpID": "00012",
     "StationName": "Dishwasher"
   },
   {
     "BranchID": 12,
-    "EmpID": "EMP27",
+    "EmpID": "00027",
     "StationName": "Host/Hostess"
   },
   {
     "BranchID": 13,
-    "EmpID": "EMP13",
+    "EmpID": "00013",
     "StationName": "Cashier"
   },
   {
     "BranchID": 13,
-    "EmpID": "EMP28",
+    "EmpID": "00028",
     "StationName": "Sushi Chef"
   },
   {
     "BranchID": 14,
-    "EmpID": "EMP14",
+    "EmpID": "00014",
     "StationName": "Host/Hostess"
   },
   {
     "BranchID": 14,
-    "EmpID": "EMP29",
+    "EmpID": "00029",
     "StationName": "Teppanyaki Chef"
   },
   {
     "BranchID": 15,
-    "EmpID": "EMP15",
+    "EmpID": "00015",
     "StationName": "Sushi Chef"
   },
   {
     "BranchID": 15,
-    "EmpID": "EMP30",
+    "EmpID": "00030",
     "StationName": "Sushi Preparer"
   }
 ];

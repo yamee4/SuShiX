@@ -1,6 +1,6 @@
 USE Nhom3_ADB
 
--- ===== Replace Membership Card =====
+-- ===== TẠO THẺ KH MỚI KHI KH LÀM MẤT =====
 go
 create or alter proc  usp_ReplaceMemberShipCard
 	 @mcccd char(10),
@@ -12,7 +12,7 @@ begin
 					select 1
 					from CUSTOMER_MEMBER
 					where MCCCD = @mcccd
-			      )p
+			      )
 		begin
 			;throw 51000, N'Khách hàng này chưa tạo thẻ', 1
 			return
@@ -58,34 +58,4 @@ begin
 		@MemberCardAcquiredRankDate
 	)
 end
-go
-
---exec dbo.usp_ReplaceMemberShipCard '0123456789', '2024-11-12', 'EMP02'
-
-
--- ===== Calculate Total Order =====
-go
-create or alter proc usp_CalculateTotalOrderAmount
-	@CCCD char(10)
-as
-begin 
-	select ot.CCCD, sum(td.Price) as TotalPrice
-	from ORDER_TICKET ot 
-	join (
-			select potd.PTicketID as TicketID, potd.quantity * potd.price as Price
-			from PRE_ORDER_TICKET_DETAIL potd
-			union all
-			select sod.SOTicketID as TicketID, sod.quantity * sod.price as Price
-			from STANDARD_ORDER_DETAIL sod
-			union all
-			select otd.OTicketID as TicketID, otd.quantity * otd.price as Price
-			from ONLINE_TICKET_DETAIL otd
-	) td
-	on ot.TicketID = td.TicketID
-	where ot.CCCD = @CCCD
-	group by ot.CCCD
-end
-
---go
---exec dbo.usp_CalculateTotalOrderAmount '0123456789'
 go

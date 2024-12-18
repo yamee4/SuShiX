@@ -1,0 +1,32 @@
+<body>
+    <div class="container">
+        <h1>{{name}}</h1>
+        <form id="revenueCompForm" method="POST" action="/compRevenue">
+            <div>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div>
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+            <button type="submit">Get Revenue</button>
+        </form>
+
+        {{#if results}}
+            <h2>Revenue Results of the Company</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Total Revenue:  </th> 
+                        <th class ="right-align"> {{results.[0].[Tổng doanh thu trong khoảng thời gian đã chọn]}}</th>
+                    </tr>
+                </thead>
+            </table>
+        {{/if}}
+
+        {{#if error}}
+            <div class="error">{{error}}</div>
+        {{/if}}
+    </div>
+</body>

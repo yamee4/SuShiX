@@ -25,13 +25,13 @@ BEGIN
         SET @genderVal = N'Nữ';
     END
     -- Check if the username already exists
-    IF EXISTS (SELECT 1 FROM CUSTOMER WHERE CCCD = @cccd)
+    IF EXISTS (SELECT * FROM CUSTOMER WHERE CCCD = @cccd)
     BEGIN
         RAISERROR('This user is already exists', 16, 1);
         RETURN;
     END
 
-    IF EXISTS (SELECT 1 FROM CUSTOMER_MEMBER WHERE  MemberCardNumber = @membercard)
+    IF EXISTS (SELECT * FROM CUSTOMER_MEMBER WHERE  MemberCardNumber = @membercard)
     BEGIN
         SET @isMember = 1;
     END
@@ -50,18 +50,45 @@ END
 GO
 
 CREATE OR ALTER PROCEDURE UserLogin
-    @cccd char(10),
-    @password varchar(50)
+    @username char(50),
+    @password char(50)
 AS
 BEGIN
-    -- Check if the username and password match
-    IF EXISTS (SELECT 1 FROM ONLINE_CUSTOMER WHERE OCCCD = @cccd AND O_Password = @password)
+    -- Check if user exists in EMPLOYEE table
+    IF EXISTS (SELECT * FROM EMPLOYEE WHERE EmpID = @username and @password = 'emp')
     BEGIN
-        PRINT 'User logged in successfully';
-    END
-    ELSE
+		 SELECT 
+            EmpID AS ID,
+            EmpFirstName + ' ' + EmpLastName AS Username,
+			BranchManager as userType,
+            'employee' AS Role
+        FROM EMPLOYEE
+        WHERE EmpID = @username;
+	END
+
+	ELSE IF EXISTS (SELECT * FROM ONLINE_CUSTOMER WHERE OCCCD = @username and O_password = @password)
+	BEGIN
+        SELECT 
+            CCCD AS ID,
+            CustomerFirstName + ' ' + CustomerLastName AS Username,
+			isMember as userType,
+            'customer' AS Role
+        FROM CUSTOMER
+        WHERE CCCD = @username;
+	END
+
+    ELSE IF @username = 'admin' and @password = 'diziduckhuyson'
     BEGIN
-        RAISERROR('Invalid username or password', 16, 1);
-    END
-END
-GO
+		select 'admin' as Role
+	END
+
+	ELSE
+	BEGIN
+		 SELECT 
+            NULL AS ID,
+            NULL AS Username,
+            NULL AS Role;
+	END
+
+    -- Check if user exists in CUSTOMER table
+END;

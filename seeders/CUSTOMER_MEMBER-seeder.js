@@ -8,8 +8,8 @@ module.exports = {
     "MCCCD": "0123456789",
     "MemberCardNumber": "MC0001    ",
     "CreatedDate": "2023-11-12T10:30:00.000Z",
-    "SupportEmp": "EMP01",
-    "MemberCardRank": "BRONZE",
+    "SupportEmp": "00001",
+    "MemberCardRank": "MEMBER",
     "MemberCardPoints": 100,
     "MemberCardAcquiredRankDate": "2023-11-12"
   },
@@ -17,7 +17,7 @@ module.exports = {
     "MCCCD": "0345678901",
     "MemberCardNumber": "MC0002    ",
     "CreatedDate": "2023-12-01T13:15:00.000Z",
-    "SupportEmp": "EMP02",
+    "SupportEmp": "00002",
     "MemberCardRank": "SILVER",
     "MemberCardPoints": 250,
     "MemberCardAcquiredRankDate": "2023-12-01"
@@ -26,7 +26,7 @@ module.exports = {
     "MCCCD": "0567890123",
     "MemberCardNumber": "MC0003    ",
     "CreatedDate": "2023-10-25T15:45:00.000Z",
-    "SupportEmp": "EMP01",
+    "SupportEmp": "00001",
     "MemberCardRank": "GOLD  ",
     "MemberCardPoints": 500,
     "MemberCardAcquiredRankDate": "2023-10-25"
@@ -35,8 +35,8 @@ module.exports = {
     "MCCCD": "0789012345",
     "MemberCardNumber": "MC0004    ",
     "CreatedDate": "2023-11-20T09:15:00.000Z",
-    "SupportEmp": "EMP02",
-    "MemberCardRank": "BRONZE",
+    "SupportEmp": "00002",
+    "MemberCardRank": "MEMBER",
     "MemberCardPoints": 75,
     "MemberCardAcquiredRankDate": "2023-11-20"
   },
@@ -44,7 +44,7 @@ module.exports = {
     "MCCCD": "0901234567",
     "MemberCardNumber": "MC0005    ",
     "CreatedDate": "2023-12-10T11:30:00.000Z",
-    "SupportEmp": "EMP01",
+    "SupportEmp": "00001",
     "MemberCardRank": "SILVER",
     "MemberCardPoints": 150,
     "MemberCardAcquiredRankDate": "2023-12-10"

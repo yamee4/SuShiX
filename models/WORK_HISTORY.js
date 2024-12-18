@@ -9,7 +9,11 @@ class WORK_HISTORY extends Sequelize.Model {
     EmpID: {
       type: DataTypes.CHAR(5),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'EMPLOYEE',
+        key: 'EmpID'
+      }
     },
     StartDate: {
       type: DataTypes.DATE,
@@ -22,7 +26,11 @@ class WORK_HISTORY extends Sequelize.Model {
     },
     BranchID: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'BRANCH',
+        key: 'BranchID'
+      }
     }
   }, {
     sequelize,
@@ -31,7 +39,7 @@ class WORK_HISTORY extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__WORK_HIS__CBCC25B6E0C0E1F6",
+        name: "PK__WORK_HIS__CBCC25B6EF9FEFBD",
         unique: true,
         fields: [
           { name: "EmpID" },

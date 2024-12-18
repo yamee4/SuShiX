@@ -31,49 +31,91 @@ END
 
 
 
------------------------------LẤY DOANH THU CỦA MỖI MÓN ĂN ĐÃ BÁN ĐƯỢC TỪ NGÀY X TỚI Y CỦA 1 CHI NHÁNH, XUẤT RA BẢNG VỚI MỖI LOẠI ĐƠN HÀNG-----------------------
+---------LẤY DOANH THU CỦA MỖI MÓN ĂN ĐÃ BÁN ĐƯỢC TỪ NGÀY X TỚI Y CỦA 1 CHI NHÁNH, XUẤT RA BẢNG VỚI MỖI LOẠI ĐƠN HÀNG-----------
+--------------------------------------------------------STANDARD ORDER----------------------------------------------------------
 GO
-CREATE OR ALTER PROCEDURE usp_GetDishRevenue
-	@BranchID int,
-	@startDate datetime,
-	@endDate datetime
+CREATE OR ALTER PROCEDURE usp_CalculateStandardOrderRevenue
+    @StartDate DATETIME,
+    @EndDate DATETIME
 AS
 BEGIN
-	BEGIN TRY
-		IF NOT EXISTS (SELECT 1 FROM BRANCH WHERE BranchID = @BranchID)
-		BEGIN
-			RAISERROR(N'Không tồn tại chi nhánh đó trong hệ thống cửa hàng', 16, 1);
-			RETURN
-		END
+    SET NOCOUNT ON;
 
-		SELECT otd.DishID as N'Mã Món', d.DishName as N'Tên Món', sum(otd.Price * otd.Quantity) as N'Tổng doanh thu món trong đơn online-order'
-		FROM (SELECT * FROM ORDER_TICKET WHERE BranchID = @BranchID) as SubTable join ONLINE_TICKET_DETAIL otd on SubTable.TicketID = otd.OTicketID join Dish d on d.DishID = otd.DishID join ONLINE_TICKET olt on olt.OTicketID = SubTable.TicketID
-		GROUP BY otd.DishID, d.DishName, olt.DeliveryDate
-		HAVING olt.DeliveryDate BETWEEN @startDate AND @endDate
-		ORDER BY sum(otd.Price * otd.Quantity) DESC
-
-		SELECT pot.DishID as N'Mã Món', d.DishName as N'Tên Món', sum(pot.Price * pot.Quantity) as N'Tổng doanh thu món trong đơn pre-order'
-		FROM (SELECT * FROM ORDER_TICKET WHERE BranchID = @BranchID) as SubTable join PRE_ORDER_TICKET_DETAIL pot on SubTable.TicketID = pot.PTicketID join Dish d on d.DishID = pot.DishID join PRE_ORDER_TICKET prt on prt.PTicketID = SubTable.TicketID
-		GROUP BY pot.DishID, d.DishName, prt.PreOrderArrivalTime
-		HAVING prt.PreOrderArrivalTime BETWEEN @startDate AND @endDate
-		ORDER BY sum(pot.Price * pot.Quantity) DESC
-
-		SELECT sod.DishID as N'Mã Món', d.DishName as N'Tên Món', sum(sod.Price * sod.Quantity) as N'Tổng doanh thu món trong đơn standard-order'
-		FROM (SELECT * FROM ORDER_TICKET WHERE BranchID = @BranchID) as SubTable join STANDARD_ORDER_DETAIL sod on SubTable.TicketID = sod.SOTicketID join Dish d on d.DishID = sod.DishID join STANDARD_ORDER_TICKET sot on sot.SOTicketID = SubTable.TicketID
-		GROUP BY sod.DishID, d.DishName, sot.CreatedDate
-		HAVING sot.CreatedDate BETWEEN @startDate AND @endDate
-		ORDER BY sum(sod.Price * sod.Quantity) DESC
-
-	END TRY
-	BEGIN CATCH
-		PRINT(N'Lỗi:' + ERROR_MESSAGE());
-	END CATCH
+    SELECT 
+        sod.DishID, 
+        d.DishName,
+        SUM(sod.Quantity * sod.Price) AS TotalRevenue,
+        SUM(sod.Quantity) AS TotalQuantity
+    FROM 
+        STANDARD_ORDER_DETAIL sod
+    JOIN 
+        ORDER_TICKET ot ON sod.SOTicketID = ot.TicketID
+    JOIN
+        DISH d ON sod.DishID = d.DishID
+    WHERE 
+        ot.CreatedDate BETWEEN @StartDate AND @EndDate
+    GROUP BY 
+        sod.DishID, d.DishName
+    ORDER BY 
+        TotalRevenue DESC;
 END
 
--- exec usp_GetDishRevenue 1, '1900-01-01', '2025-1-1'
+--------------------------------------------------------PRE ORDER----------------------------------------------------------
+GO
+CREATE OR ALTER PROCEDURE usp_CalculatePreOrderRevenue
+    @StartDate DATETIME,
+    @EndDate DATETIME
+AS
+BEGIN
+    SET NOCOUNT ON;
 
+    SELECT 
+        pod.DishID, 
+        d.DishName,
+        SUM(pod.Quantity * pod.Price) AS TotalRevenue,
+        SUM(pod.Quantity) AS TotalQuantity
+    FROM 
+        PRE_ORDER_TICKET_DETAIL pod
+    JOIN 
+        ORDER_TICKET ot ON pod.PTicketID = ot.TicketID
+    JOIN
+        DISH d ON pod.DishID = d.DishID
+    WHERE 
+        ot.CreatedDate BETWEEN @StartDate AND @EndDate
+    GROUP BY 
+        pod.DishID, d.DishName
+    ORDER BY 
+        TotalRevenue DESC;
+END
 
-GO 
+--------------------------------------------------------ONLINE ORDER----------------------------------------------------------
+GO
+CREATE OR ALTER PROCEDURE usp_CalculateOnlineOrderRevenue
+    @StartDate DATETIME,
+    @EndDate DATETIME
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        od.DishID, 
+        d.DishName,
+        SUM(od.Quantity * od.Price) AS TotalRevenue,
+        SUM(od.Quantity) AS TotalQuantity
+    FROM 
+        ONLINE_TICKET_DETAIL od
+    JOIN 
+        ORDER_TICKET ot ON od.OTicketID = ot.TicketID
+    JOIN
+        DISH d ON od.DishID = d.DishID
+    WHERE 
+        ot.CreatedDate BETWEEN @StartDate AND @EndDate
+    GROUP BY 
+        od.DishID, d.DishName
+    ORDER BY 
+        TotalRevenue DESC;
+END
+GO
 
 ----------------------LẤY TỔNG DOANH THU CỦA CÔNG TY(aka TẤT CẢ BRANCH)-------------------------
 CREATE OR ALTER PROCEDURE usp_GetCompanyRevenue 
@@ -81,10 +123,10 @@ CREATE OR ALTER PROCEDURE usp_GetCompanyRevenue
     @endDate DATETIME
 AS
 BEGIN
-    SELECT SUM(b.TotalPrice) AS N'Tổng doanh thu trong khoảng thời gian đã chọn'
-    FROM BILL b
-	WHERE b.CreatedDate >= @startDate 
-	AND b.CreatedDate <= @endDate
+    SELECT SUM(ODT.TotalPrice) AS N'Tổng doanh thu trong khoảng thời gian đã chọn'
+    FROM ORDER_TICKET ODT
+	WHERE ODT.CreatedDate >= @startDate 
+	AND ODT.CreatedDate <= @endDate
 END
 
 --exec usp_GetCompanyRevenue '1900-01-01', '2023-12-31'
@@ -92,7 +134,6 @@ END
 -----------------------------------TẠO EMPLOYEE--------------------------------
 GO
 CREATE OR ALTER PROCEDURE usp_ADD_EMPLOYEE
-	@EmpID char(5),
 	@EmpFirstName nvarchar(20),
 	@EmpLastName nvarchar(20),
 	@EmpDOB datetime,
@@ -101,11 +142,11 @@ CREATE OR ALTER PROCEDURE usp_ADD_EMPLOYEE
 AS
 BEGIN
 	BEGIN TRY
-		IF EXISTS (SELECT 1 FROM EMPLOYEE WHERE EmpID = @EmpID)
-		BEGIN
-			RAISERROR(N'Đã tồn tại nhân viên này rồi', 16,1);
-			RETURN;
-		END
+		DECLARE @EmpID char(5), @temp char(5)
+
+		select @temp = cast(max(cast(EmpID as int)) + 1 as char(5))
+		from EMPLOYEE
+		set @EmpID = replicate('0', 5 - len(@temp)) + @temp
 
 		INSERT INTO EMPLOYEE VALUES(@EmpID, @EmpFirstName, @EmpLastName, @EmpDOB, @EmpGender, @Salary, NULL)
 	END TRY

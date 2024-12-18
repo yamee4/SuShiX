@@ -34,11 +34,40 @@ controller.showPage = async (req, res) => {
     };
 
     let dishes = await models.DISH.findAll({ ...options, limit, offset });
-    res.render("menu", {
-        dishes: dishes,
-        layout: "layout",
-        title: "Menu",
-        name: "Menu",
+    
+    const user = req.session.user;
+
+    if (!user) {
+        res.render('index', {
+            layout: 'layout',
+            title: 'Home',
+            name: 'Home',
+        });
+        return;
+    }
+
+    const { role } = user;
+
+    let layout;
+    switch (role) {
+        case 'employee':
+            layout = user.usertype != null ? 'manager' : 'emp';
+            break;
+        case 'customer':
+            layout = 'customer';
+            break;
+        case 'admin':
+            layout = 'admin';
+            break;
+        default:
+            layout = 'layout';
+    }
+
+    res.render('menu', {
+        layout,
+        title: 'Home',
+        name: 'Home',
+        dishes,
     });
 };
 

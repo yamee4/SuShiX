@@ -1,0 +1,104 @@
+<body>
+    <div class="container">
+        <h1>{{name}}</h1>
+
+        <form method="POST" action="/dishRevenue">
+            <div>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div>
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+            <button type="submit">Get Revenue</button>
+        </form>
+
+        {{#if error}}
+            <div class="error">{{error}}</div>
+        {{/if}}
+
+        <h2>Standard Order Revenue</h2>
+        {{#if results}}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dish ID</th>
+                        <th>Dish Name</th>
+                        <th>Quantity</th>
+                        <th>Total Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each results}}
+                        <tr>
+                            <td>{{this.DishID}}</td>
+                            <td>{{this.DishName}}</td>
+                            <td>{{this.TotalQuantity}}</td>
+                            <td>{{this.TotalRevenue}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <p>No data available for standard orders.</p>
+        {{/if}}
+
+        <h2>Pre-Order Revenue</h2>
+        {{#if results1}}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dish ID</th>
+                        <th>Dish Name</th>
+                        <th>Quantity</th>
+                        <th>Total Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each results1}}
+                        <tr>
+                            <td>{{this.DishID}}</td>
+                            <td>{{this.DishName}}</td>
+                            <td>{{this.TotalQuantity}}</td>
+                            <td>{{this.TotalRevenue}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <p>No data available for pre-orders.</p>
+        {{/if}}
+
+        <h2>Online Order Revenue</h2>
+        {{#if results2}}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dish ID</th>
+                        <th>Dish Name</th>
+                        <th>Quantity</th>
+                        <th>Total Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each results2}}
+                        <tr>
+                            <td>{{this.DishID}}</td>
+                            <td>{{this.DishName}}</td>
+                            <td>{{this.TotalQuantity}}</td>
+                            <td>{{this.TotalRevenue}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <p>No data available for online orders.</p>
+        {{/if}}
+    </div>
+
+    <script>
+        // Optional: Add any JavaScript here if needed
+    </script>
+</body>
+</html>

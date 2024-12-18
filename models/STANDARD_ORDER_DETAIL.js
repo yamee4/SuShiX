@@ -9,12 +9,20 @@ class STANDARD_ORDER_DETAIL extends Sequelize.Model {
     SOTicketID: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'STANDARD_ORDER_TICKET',
+        key: 'SOTicketID'
+      }
     },
     DishID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'DISH',
+        key: 'DishID'
+      }
     },
     OrderTime: {
       type: DataTypes.DATE,
@@ -36,7 +44,7 @@ class STANDARD_ORDER_DETAIL extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__STANDARD__4E6A796335F9C1F6",
+        name: "PK__STANDARD__4E6A7963037F7E0D",
         unique: true,
         fields: [
           { name: "SOTicketID" },
