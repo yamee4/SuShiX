@@ -39,3 +39,13 @@ begin
 	values (@TicketID, @FeedbackTotalScore, @FeedbackFoodQuality, @FeedbackLocation, @FeedbackNote, @FeedbackPrice, @FeedbackService)
 end
 go
+
+create or alter proc usp_SearchMenu
+	@DishName nvarchar(30) = null
+as
+begin
+	select DishID, DishName, DishType, Price
+	from DISH
+	where 
+		(@DishName is null or DishName like '%' + @DishName + '%')
+end

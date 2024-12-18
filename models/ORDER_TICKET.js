@@ -17,50 +17,14 @@ class ORDER_TICKET extends Sequelize.Model {
     },
     BranchID: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'BRANCH',
-        key: 'BranchID'
-      }
+      allowNull: true
     },
     CCCD: {
       type: DataTypes.CHAR(10),
-      allowNull: true,
-      references: {
-        model: 'CUSTOMER',
-        key: 'CCCD'
-      }
+      allowNull: true
     },
     EmpID: {
       type: DataTypes.CHAR(5),
-      allowNull: true,
-      references: {
-        model: 'EMPLOYEE',
-        key: 'EmpID'
-      }
-    },
-    Discount: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    TotalPrice: {
-      type: DataTypes.BIGINT,
-      allowNull: true
-    },
-    CreatedDate: {
-      type: DataTypes.DATE,
-      allowNull: true
-    },
-    Discount: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    TotalPrice: {
-      type: DataTypes.BIGINT,
-      allowNull: true
-    },
-    CreatedDate: {
-      type: DataTypes.DATE,
       allowNull: true
     },
     Discount: {

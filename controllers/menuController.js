@@ -34,6 +34,7 @@ controller.showPage = async (req, res) => {
     };
 
     let dishes = await models.DISH.findAll({ ...options, limit, offset });
+    
     const user = req.session.user;
 
     if (!user) {
