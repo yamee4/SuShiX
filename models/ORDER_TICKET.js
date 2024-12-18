@@ -26,6 +26,18 @@ class ORDER_TICKET extends Sequelize.Model {
     EmpID: {
       type: DataTypes.CHAR(5),
       allowNull: true
+    },
+    Discount: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    TotalPrice: {
+      type: DataTypes.BIGINT,
+      allowNull: true
+    },
+    CreatedDate: {
+      type: DataTypes.DATE,
+      allowNull: true
     }
   }, {
     sequelize,
@@ -34,7 +46,7 @@ class ORDER_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ORDER_TI__712CC627887591EA",
+        name: "PK__ORDER_TI__712CC6273D55E95D",
         unique: true,
         fields: [
           { name: "TicketID" },

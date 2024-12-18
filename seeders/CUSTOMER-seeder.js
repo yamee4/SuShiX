@@ -105,6 +105,16 @@ module.exports = {
     "isRegistered": true
   },
   {
+    "CCCD": "1111111111",
+    "CustomerFirstName": "Huy",
+    "CustomerLastName": "Phan Thanh Quang",
+    "PhoneNumber": null,
+    "Email": "sontungmtp@gmail.com",
+    "Gender": "Nữ ",
+    "isMember": false,
+    "isRegistered": true
+  },
+  {
     "CCCD": "1234567890",
     "CustomerFirstName": "Huy",
     "CustomerLastName": "Phan Thanh",

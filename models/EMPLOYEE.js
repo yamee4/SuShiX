@@ -42,7 +42,7 @@ class EMPLOYEE extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__EMPLOYEE__AF2DBA798AB4E7E9",
+        name: "PK__EMPLOYEE__AF2DBA79BF80F258",
         unique: true,
         fields: [
           { name: "EmpID" },

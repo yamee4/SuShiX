@@ -42,7 +42,7 @@ class CUSTOMER_MEMBER extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__CUSTOMER__A8F17D63F95F9FB0",
+        name: "PK__CUSTOMER__A8F17D63036708C2",
         unique: true,
         fields: [
           { name: "MCCCD" },

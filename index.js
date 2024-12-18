@@ -57,8 +57,6 @@ app.use(
     })
 );
 
-const Handlebars = require("handlebars");
-
 Handlebars.registerHelper("formatCurrency", function (price) {
     return `${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND`;
 }); 

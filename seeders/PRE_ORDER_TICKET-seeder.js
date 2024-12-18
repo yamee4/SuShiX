@@ -57,6 +57,15 @@ module.exports = {
     "PreOrderDate": "2023-12-18",
     "PreOrderArrivalTime": "1970-01-01T13:00:00.000Z",
     "PreOrderNote": "Please prepare a table for two, no smoking area"
+  },
+  {
+    "PTicketID": "TKT0020   ",
+    "BranchName": "Sushi Cầu Giấy",
+    "Area": "Area 3",
+    "NumberofCustomer": 2,
+    "PreOrderDate": null,
+    "PreOrderArrivalTime": null,
+    "PreOrderNote": "Chúng tôi muốn miễn phí"
   }
 ];
 

@@ -18,10 +18,6 @@ class STANDARD_ORDER_TICKET extends Sequelize.Model {
     SupportEmployee: {
       type: DataTypes.CHAR(5),
       allowNull: true
-    },
-    CreatedDate: {
-      type: DataTypes.DATE,
-      allowNull: true
     }
   }, {
     sequelize,
@@ -30,7 +26,7 @@ class STANDARD_ORDER_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__STANDARD__EE0B2E719F20E1CA",
+        name: "PK__STANDARD__EE0B2E7176330799",
         unique: true,
         fields: [
           { name: "SOTicketID" },

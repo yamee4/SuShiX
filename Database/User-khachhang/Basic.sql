@@ -50,19 +50,45 @@ END
 GO
 
 CREATE OR ALTER PROCEDURE UserLogin
-    @username char(10),
-    @password varchar(50)
+    @username char(50),
+    @password char(50)
 AS
 BEGIN
-    -- Check if the username and password match
-    IF EXISTS (SELECT * FROM ONLINE_CUSTOMER WHERE OCCCD = @username AND O_Password = @password)
+    -- Check if user exists in EMPLOYEE table
+    IF EXISTS (SELECT * FROM EMPLOYEE WHERE EmpID = @username and @password = 'emp')
     BEGIN
-        SELECT * FROM ONLINE_CUSTOMER WHERE OCCCD = @username AND O_Password = @password
-    END
-    ELSE
+		 SELECT 
+            EmpID AS ID,
+            EmpFirstName + ' ' + EmpLastName AS Username,
+			BranchManager as userType,
+            'employee' AS Role
+        FROM EMPLOYEE
+        WHERE EmpID = @username;
+	END
+
+	ELSE IF EXISTS (SELECT * FROM ONLINE_CUSTOMER WHERE OCCCD = @username and O_password = @password)
+	BEGIN
+        SELECT 
+            CCCD AS ID,
+            CustomerFirstName + ' ' + CustomerLastName AS Username,
+			isMember as userType,
+            'customer' AS Role
+        FROM CUSTOMER
+        WHERE CCCD = @username;
+	END
+
+    ELSE IF @username = 'admin' and @password = 'diziduckhuyson'
     BEGIN
-        RAISERROR('Invalid username or password', 16, 1);
-		return
-    END
-END
-GO
+		select 'admin' as Role
+	END
+
+	ELSE
+	BEGIN
+		 SELECT 
+            NULL AS ID,
+            NULL AS Username,
+            NULL AS Role;
+	END
+
+    -- Check if user exists in CUSTOMER table
+END;
