@@ -1,9 +1,9 @@
-#carouselId ol li{
+#carouselId ol li {
     list-style-type: none;
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Modern and clean font for readability */
+    font-family: "Roboto", sans-serif; /* Modern and clean font for readability */
     background-color: #fff8e1; /* Soft off-white, mimicking rice */
     color: #333; /* Dark gray for text for better contrast */
     margin: 0;
@@ -23,259 +23,251 @@ body {
     font-size: 14px;
 }
 
-
-
 /*---------------------
 Pagination
 -----------------------*/
 .product__pagination,
 .blog__pagination {
-	padding-top: 10px;
-	list-style-type: none;
+    padding-top: 10px;
+    list-style-type: none;
 }
 
 .blog__pagination li,
-.product__pagination li
-{
-	display: inline-block;
-	margin-right: 1rem;
+.product__pagination li {
+    display: inline-block;
+    margin-right: 1rem;
 }
 
 .blog__pagination li.active a,
-.product__pagination li.active a
-{
-	background-color: green;
-	color: white;
+.product__pagination li.active a {
+    background-color: green;
+    color: white;
 }
-
 
 .product__pagination a,
 .blog__pagination a {
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	border: 1px solid #b2b2b2;
-	font-size: 14px;
-	color: #b2b2b2;
-	font-weight: 700;
-	line-height: 28px;
-	text-align: center;
-	margin-right: 16px;
-	-webkit-transition: all, 0.3s;
-	-moz-transition: all, 0.3s;
-	-ms-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #b2b2b2;
+    font-size: 14px;
+    color: #b2b2b2;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 16px;
+    -webkit-transition: all, 0.3s;
+    -moz-transition: all, 0.3s;
+    -ms-transition: all, 0.3s;
+    -o-transition: all, 0.3s;
+    transition: all, 0.3s;
 }
 
 .product__pagination a:hover,
 .blog__pagination a:hover {
-	background: #7fad39;
-	border-color: #7fad39;
-	color: #ffffff;
+    background: #7fad39;
+    border-color: #7fad39;
+    color: #ffffff;
 }
 
 .product__pagination a:last-child,
 .blog__pagination a:last-child {
-	margin-right: 0;
+    margin-right: 0;
 }
-
 
 /*---------------------
   Blog
 -----------------------*/
 
 .blog__item {
-	margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .blog__item__pic img {
-	min-width: 100%;
+    min-width: 100%;
 }
 
 .blog__item__text {
-	padding-top: 25px;
+    padding-top: 25px;
 }
 
 .blog__item__text ul {
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .blog__item__text ul li {
-	font-size: 16px;
-	color: #b2b2b2;
-	list-style: none;
-	display: inline-block;
-	margin-right: 15px;
+    font-size: 16px;
+    color: #b2b2b2;
+    list-style: none;
+    display: inline-block;
+    margin-right: 15px;
 }
 
 .blog__item__text ul li:last-child {
-	margin-right: 0;
+    margin-right: 0;
 }
 
 .blog__item__text h5 {
-	margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .blog__item__text h5 a {
-	font-size: 20px;
-	color: #1c1c1c;
-	font-weight: 700;
+    font-size: 20px;
+    color: #1c1c1c;
+    font-weight: 700;
 }
 
 .blog__item__text p {
-	margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .blog__item__text .blog__btn {
-	display: inline-block;
-	font-size: 14px;
-	color: #1c1c1c;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	border: 1px solid #b2b2b2;
-	padding: 14px 20px 12px;
-	border-radius: 25px;
+    display: inline-block;
+    font-size: 14px;
+    color: #1c1c1c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #b2b2b2;
+    padding: 14px 20px 12px;
+    border-radius: 25px;
 }
 
 .blog__item__text .blog__btn span {
-	position: relative;
-	top: 1px;
-	margin-left: 5px;
+    position: relative;
+    top: 1px;
+    margin-left: 5px;
 }
 
 .blog__pagination {
-	padding-top: 5px;
-	position: relative;
+    padding-top: 5px;
+    position: relative;
 }
 
 .blog__pagination:before {
-	position: absolute;
-	left: 0;
-	top: -29px;
-	height: 1px;
-	width: 100%;
-	background: #000000;
-	opacity: 0.1;
-	content: "";
+    position: absolute;
+    left: 0;
+    top: -29px;
+    height: 1px;
+    width: 100%;
+    background: #000000;
+    opacity: 0.1;
+    content: "";
 }
-
-
 
 /*---------------------
   Blog Sidebar
 -----------------------*/
 
 .blog__sidebar {
-	padding-top: 50px;
+    padding-top: 50px;
 }
 
 .blog__sidebar__item {
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .blog__sidebar__item h4 {
-	color: #1c1c1c;
-	font-weight: 700;
-	margin-bottom: 25px;
+    color: #1c1c1c;
+    font-weight: 700;
+    margin-bottom: 25px;
 }
 
 .blog__sidebar__item ul li {
-	list-style: none;
+    list-style: none;
 }
 
 .blog__sidebar__item ul li a {
-	font-size: 16px;
-	color: #666666;
-	line-height: 48px;
-	-webkit-transition: all, 0.3s;
-	-moz-transition: all, 0.3s;
-	-ms-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
+    font-size: 16px;
+    color: #666666;
+    line-height: 48px;
+    -webkit-transition: all, 0.3s;
+    -moz-transition: all, 0.3s;
+    -ms-transition: all, 0.3s;
+    -o-transition: all, 0.3s;
+    transition: all, 0.3s;
 }
 
 .blog__sidebar__item ul li a:hover {
-	color: #7fad39;
+    color: #7fad39;
 }
 
 .blog__sidebar__search {
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .blog__sidebar__search form {
-	position: relative;
+    position: relative;
 }
 
 .blog__sidebar__search form input {
-	width: 100%;
-	height: 46px;
-	font-size: 16px;
-	color: #6f6f6f;
-	padding-left: 15px;
-	border: 1px solid #e1e1e1;
-	border-radius: 20px;
+    width: 100%;
+    height: 46px;
+    font-size: 16px;
+    color: #6f6f6f;
+    padding-left: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 20px;
 }
 
 .blog__sidebar__search form input::placeholder {
-	color: #6f6f6f;
+    color: #6f6f6f;
 }
 
 .blog__sidebar__search form button {
-	font-size: 16px;
-	color: #6f6f6f;
-	background: transparent;
-	border: none;
-	position: absolute;
-	right: 0;
-	top: 0;
-	height: 100%;
-	padding: 0px 18px;
+    font-size: 16px;
+    color: #6f6f6f;
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0px 18px;
 }
 
 .blog__sidebar__recent .blog__sidebar__recent__item {
-	display: block;
+    display: block;
 }
 
 .blog__sidebar__recent .blog__sidebar__recent__item:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .blog__sidebar__recent__item {
-	overflow: hidden;
-	margin-bottom: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .blog__sidebar__recent__item__pic {
-	float: left;
-	margin-right: 20px;
+    float: left;
+    margin-right: 20px;
 }
 
 .blog__sidebar__recent__item__text {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .blog__sidebar__recent__item__text h6 {
-	font-weight: 700;
-	color: #333333;
-	line-height: 20px;
-	margin-bottom: 5px;
+    font-weight: 700;
+    color: #333333;
+    line-height: 20px;
+    margin-bottom: 5px;
 }
 
 .blog__sidebar__recent__item__text span {
-	font-size: 12px;
-	color: #999999;
-	text-transform: uppercase;
+    font-size: 12px;
+    color: #999999;
+    text-transform: uppercase;
 }
 
 .blog__sidebar__item__tags a {
-	font-size: 16px;
-	color: #6f6f6f;
-	background: #f5f5f5;
-	display: inline-block;
-	padding: 7px 26px 5px;
-	margin-right: 6px;
-	margin-bottom: 10px;
+    font-size: 16px;
+    color: #6f6f6f;
+    background: #f5f5f5;
+    display: inline-block;
+    padding: 7px 26px 5px;
+    margin-right: 6px;
+    margin-bottom: 10px;
 }
 
 .card-border {
@@ -283,7 +275,6 @@ Pagination
     border-radius: 15px;
     overflow: hidden;
 }
-
 
 .button-container {
     display: flex; /* Use flexbox for layout */
@@ -301,13 +292,13 @@ Pagination
     cursor: pointer; /* Pointer cursor */
     font-size: 20px; /* Font size */
     transition: background-color 0.3s; /* Transition effect */
-	max-width: 200px;
-	margin-top: 35px;
-	margin-right: 100px;
+    max-width: 200px;
+    margin-top: 35px;
+    margin-right: 100px;
 }
 
 .view-cart-btn:hover {
-    background-color: #e78e64; 
+    background-color: #e78e64;
 }
 
 /* Popup Styles */
@@ -377,7 +368,6 @@ Pagination
     background-color: #ff1a1a; /* Darker red on hover */
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -394,7 +384,8 @@ Pagination
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #ff5722; /* Orange color for headings */
     margin-bottom: 20px;
 }
@@ -440,11 +431,14 @@ table {
     margin-top: 20px;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ddd;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     text-align: left;
 }
@@ -463,6 +457,11 @@ th {
     flex-direction: column; /* Stack elements vertically */
 }
 
+#feedbackForm {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+
 /* Label styling */
 label {
     margin-bottom: 5px; /* Space between label and input */
@@ -470,7 +469,8 @@ label {
 }
 
 /* Input field styling */
-input[type="text"], input[type="number"] {
+input[type="text"],
+input[type="number"] {
     padding: 10px; /* Add padding inside the input */
     border: 1px solid #ccc; /* Light border */
     border-radius: 4px; /* Rounded corners */
@@ -492,4 +492,13 @@ input[type="text"], input[type="number"] {
 
 .right-align {
     text-align: right; /* Right-align the text */
+}
+
+.notification-container {
+    position: fixed;
+    top: 20px; /* Distance from the bottom of the viewport */
+    right: 0%; /* Center horizontally */
+    z-index: 1050; /* Ensure it's above other elements */
+    width: 100%; /* Optional: Adjust width as needed */
+    max-width: 350px; /* Optional: Limit maximum width */
 }

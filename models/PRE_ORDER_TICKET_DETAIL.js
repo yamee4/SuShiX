@@ -9,12 +9,20 @@ class PRE_ORDER_TICKET_DETAIL extends Sequelize.Model {
     PTicketID: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'PRE_ORDER_TICKET',
+        key: 'PTicketID'
+      }
     },
     DishID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'DISH',
+        key: 'DishID'
+      }
     },
     OrderTime: {
       type: DataTypes.DATE,
@@ -36,7 +44,7 @@ class PRE_ORDER_TICKET_DETAIL extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__PRE_ORDE__E8A527E8981A5B52",
+        name: "PK__PRE_ORDE__E8A527E8A61C08B9",
         unique: true,
         fields: [
           { name: "PTicketID" },

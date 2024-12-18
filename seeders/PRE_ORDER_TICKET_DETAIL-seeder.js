@@ -73,6 +73,20 @@ module.exports = {
     "OrderTime": "2023-12-18T13:00:00.000Z",
     "Quantity": 1,
     "Price": 30000
+  },
+  {
+    "PTicketID": "TKT0020   ",
+    "DishID": 7,
+    "OrderTime": "2023-12-16T17:00:00.000Z",
+    "Quantity": 1,
+    "Price": 20000
+  },
+  {
+    "PTicketID": "TKT0020   ",
+    "DishID": 8,
+    "OrderTime": "2023-12-17T11:30:00.000Z",
+    "Quantity": 3,
+    "Price": 45000
   }
 ];
 

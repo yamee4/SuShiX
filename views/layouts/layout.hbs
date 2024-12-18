@@ -1,107 +1,159 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{{title}}}</title>
-    <link href= "/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href = "/css/styles.css" rel="stylesheet"/>
-</head>
-<body>
-    <header class="container">
-        <div class="row">
-            <div class="col">
-                <nav class=" navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="/">SuShiX</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/">Home</a>
-                            </li>
-                           <li class="nav-item dropdown">
-                                <a
-                                    class="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="dropdownId"
-                                    data-bs-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    >Order</a
-                                >
-                                <div
-                                    class="dropdown-menu"
-                                    aria-labelledby="dropdownId"
-                                >
-                                    <a class="dropdown-item" href="/menu"
-                                        >Menu</a
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{{title}}}</title>
+        <link
+            href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+            rel="stylesheet"
+        />
+        <link href="/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="container">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="/">SuShiX</a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarNav"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        id="dropdownId"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >Order</a>
+                                    <div
+                                        class="dropdown-menu"
+                                        aria-labelledby="dropdownId"
                                     >
-                                    <a class="dropdown-item" href="/"
-                                        >Online menu</a
+                                        <a
+                                            class="dropdown-item"
+                                            href="/menu"
+                                        >Menu</a>
+                                        <a class="dropdown-item" href="/">Online
+                                            menu</a>
+                                        <a class="dropdown-item" href="/">Book
+                                            Table</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarNav"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/cart">
+                                        <i class="bi bi-cart"></i>
+                                        Cart
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/feedBack">
+                                        Feedback
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/cardRecover">
+                                        Card Recovery
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        id="statisticsDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >Statistics</a>
+                                    <div
+                                        class="dropdown-menu"
+                                        aria-labelledby="statisticsDropdown"
                                     >
-                                    <a class="dropdown-item" href="/"
-                                        >Book Table</a
-                                    >
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/branchRevenue"
+                                        >Branch Revenue</a>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/compRevenue"
+                                        >Company Revenue</a>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/dishRevenue"
+                                        >Dish Revenue</a>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/empScore"
+                                        >Employee Score</a>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/searchEmp"
+                                        >Search Employee</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/signup">Sign up</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/signin">Sign in</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
+        </header>
 
-            <div class="col">
-                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/cart">
-                                    <i class="bi bi-cart"></i> Cart
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a
-                                    class="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="statisticsDropdown"
-                                    data-bs-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                >Statistics</a>
-                                <div class="dropdown-menu" aria-labelledby="statisticsDropdown">
-                                    <a class="dropdown-item" href="/branchRevenue">Branch Revenue</a>
-                                    <a class="dropdown-item" href="/compRevenue">Company Revenue</a>
-                                    <a class="dropdown-item" href="/dishRevenue">Dish Revenue</a>
-                                    <a class="dropdown-item" href="/empScore">Employee Score</a>
-                                    <a class="dropdown-item" href="/searchEmp">Search Employee</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/signup">Sign up</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/signin">Sign in</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+        {{{body}}}
+
+        <footer>
+            <div
+                class="container text-center bg-opacity-75 py-3 text-secondary"
+            >
+                <p>&copy;SuShiX-Ho Chi Minh. All rights reserved.</p>
             </div>
-        </div>
-    </header>
+        </footer>
 
-    {{{body}}}
-
-    <footer>
-       <div class="container text-center bg-opacity-75 py-3 text-secondary">
-            <p>&copy;SuShiX-Ho Chi Minh. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script
+            src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+        ></script>
+    </body>
 </html>
