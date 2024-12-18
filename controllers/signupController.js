@@ -3,10 +3,38 @@ const { sequelize } = require('../models'); // Adjust the path as needed
 let controller = {}
 
 controller.showPage = (req, res) => {
-    res.render("signup", {
-        layout: "layout",
-        title: "Sign Up",
-        name: "Sign Up"
+    const user = req.session.user;
+
+    if (!user) {
+        res.render('index', {
+            layout: 'layout',
+            title: 'Home',
+            name: 'Home',
+        });
+        return;
+    }
+
+    const { role } = user;
+
+    let layout;
+    switch (role) {
+        case 'employee':
+            layout = user.usertype != null ? 'manager' : 'emp';
+            break;
+        case 'customer':
+            layout = 'customer';
+            break;
+        case 'admin':
+            layout = 'admin';
+            break;
+        default:
+            layout = 'layout';
+    }
+
+    res.render('signup', {
+        layout,
+        title: 'Home',
+        name: 'Home',
     });
 };
 

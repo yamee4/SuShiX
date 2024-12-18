@@ -3,10 +3,38 @@ const { SELECT } = require("sequelize/lib/query-types");
 const { sequelize } = require("../models");
 
 controller.showFeedBackForm = async (req, res) => {
-    res.render("feedback", {
-        layout: "layout",
-        title: "Feedback Form",
-        name: "Feedback Form",
+    const user = req.session.user;
+
+    if (!user) {
+        res.render('index', {
+            layout: 'layout',
+            title: 'Home',
+            name: 'Home',
+        });
+        return;
+    }
+
+    const { role } = user;
+
+    let layout;
+    switch (role) {
+        case 'employee':
+            layout = user.usertype != null ? 'manager' : 'emp';
+            break;
+        case 'customer':
+            layout = 'customer';
+            break;
+        case 'admin':
+            layout = 'admin';
+            break;
+        default:
+            layout = 'layout';
+    }
+
+    res.render('feedback', {
+        layout,
+        title: 'Home',
+        name: 'Home',
     });
 };
 

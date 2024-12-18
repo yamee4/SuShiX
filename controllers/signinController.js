@@ -42,50 +42,12 @@ controller.signIn = async (req, res) => {
 
             if(rememberMe) {
                 // Set cookie
-                res.cookie(username, results[0].Username);
-                res.cookie(password, results[0].Password);
+                res.cookie("username", results[0].Username);
+                res.cookie("password", results[0].Password);
             }
     
             // Redirect based on role
-            switch (Role) {
-                case 'employee':
-                    if (userType !== null) {
-                        res.render("index", {
-                            layout: "manager",
-                            title: "Home",
-                            name: "Home"
-                        });
-                    } else {
-                        res.render("index", {
-                            layout: "emp",
-                            title: "Home",
-                            name: "Home"
-                        });
-                    }
-                    break;
-                case 'customer':
-                    res.render("index", {
-                        layout: "customer",
-                        title: "Home",
-                        name: "Home"
-                    });
-                    break;
-                case 'admin':
-                    res.render("index", {
-                        layout: "admin",
-                        title: "Home",
-                        name: "Home"
-                    });
-                    break;
-                default:
-                    res.render("signin", {
-                        layout: "layout",
-                        title: "Sign In",
-                        name: "Sign In",
-                        message: "Invalid Role"
-                });
-            }
-            
+            res.redirect('/home');
         } 
             
         else {

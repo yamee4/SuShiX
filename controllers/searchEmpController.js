@@ -3,10 +3,38 @@ const { SELECT } = require('sequelize/lib/query-types');
 const { sequelize } = require('../models')
 
 controller.showSearchEmp = async (req, res) => {
-    res.render("searchEmp", {
-        layout: "layout",
-        title: "Employee Searcher",
-        name: "Employee Searcher"
+    const user = req.session.user;
+
+    if (!user) {
+        res.render('index', {
+            layout: 'layout',
+            title: 'Home',
+            name: 'Home',
+        });
+        return;
+    }
+
+    const { role } = user;
+
+    let layout;
+    switch (role) {
+        case 'employee':
+            layout = user.usertype != null ? 'manager' : 'emp';
+            break;
+        case 'customer':
+            layout = 'customer';
+            break;
+        case 'admin':
+            layout = 'admin';
+            break;
+        default:
+            layout = 'layout';
+    }
+
+    res.render('searchEmp', {
+        layout,
+        title: 'Home',
+        name: 'Home',
     });
 }
 

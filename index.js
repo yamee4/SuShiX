@@ -73,11 +73,18 @@ Handlebars.registerHelper("formatDate", function (date) {
     return new Date(date).toLocaleDateString(); // Example date formatting
 });
 
+//middleware lay thong tin user da dang nhap
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    next();
+});
+
 //Cấu hình các router
 app.get("/", (req, res) => res.redirect("/home"));
 
 app.use("/home", require("./routes/homeRouter"));
 app.use("/menu", require("./routes/menuRouter"));
+
 
 app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
@@ -90,6 +97,7 @@ app.use("/dishRevenue", require("./routes/dishRevenueRouter"));
 
 app.use("/feedback", require("./routes/feedBackRouter"));
 app.use("/cardRecover", require("./routes/cardRecoveryRouter"));
+
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);

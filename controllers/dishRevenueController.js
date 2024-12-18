@@ -3,10 +3,38 @@ const { SELECT } = require('sequelize/lib/query-types');
 const { sequelize } = require('../models')
 
 controller.showDishRevenue = async (req, res) => {
-    res.render("dishRevenue", {
-        layout: "layout",
-        title: "Dish Revenue",
-        name: "Dish Revenue"
+    const user = req.session.user;
+
+    if (!user) {
+        res.render('index', {
+            layout: 'layout',
+            title: 'Home',
+            name: 'Home',
+        });
+        return;
+    }
+
+    const { role } = user;
+
+    let layout;
+    switch (role) {
+        case 'employee':
+            layout = user.usertype != null ? 'manager' : 'emp';
+            break;
+        case 'customer':
+            layout = 'customer';
+            break;
+        case 'admin':
+            layout = 'admin';
+            break;
+        default:
+            layout = 'layout';
+    }
+
+    res.render('dishRevenue', {
+        layout,
+        title: 'Home',
+        name: 'Home',
     });
 }
 

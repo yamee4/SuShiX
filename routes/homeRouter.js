@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const {showHome} = require('../controllers/homeController');
+const {showHome, logout} = require('../controllers/homeController');
 
 router.get('/', showHome);
+
+router.get('/logout', logout);
 
 module.exports = router;

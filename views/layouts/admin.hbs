@@ -62,35 +62,49 @@
                                         >Create a new member</a
                                     >
                                     <a class="dropdown-item" href="/"
-                                        >Member card</a
+                                        >Rank Member card</a
                                     >
-                                </div>
+
+                                    <a class="nav-link" href="/cardRecover">
+                                        Card Recovery</a
+                                    >
                             </li>   
-                            <li class="nav-item dropdown">
-                                <a
-                                    class="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="dropdownId"
-                                    data-bs-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    >Statistics</a
-                                >
-                                <div
-                                    class="dropdown-menu"
-                                    aria-labelledby="dropdownId"
-                                >
-                                    <a class="dropdown-item" href="/"
-                                        >Branch Revenue</a
+
+                             <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        id="statisticsDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >Statistics</a>
+                                    <div
+                                        class="dropdown-menu"
+                                        aria-labelledby="statisticsDropdown"
                                     >
-                                    <a class="dropdown-item" href="/"
-                                        >Employee Revenue</a
-                                    >
-                                    <a class="dropdown-item" href="/"
-                                        >Branch Management</a
-                                    >
-                                </div>
-                            </li>   
+                                        <a
+                                            class="dropdown-item"
+                                            href="/branchRevenue"
+                                        >Branch Revenue</a>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/compRevenue"
+                                        >Company Revenue</a>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/dishRevenue"
+                                        >Dish Revenue</a>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/empScore"
+                                        >Employee Score</a>
+                                        <a
+                                            class="dropdown-item"
+                                            href="/searchEmp"
+                                        >Search Employee</a>
+                                    </div>
+                                </li>
                         </ul>
                     </div>
                 </nav>
@@ -124,7 +138,7 @@
                                     aria-labelledby="profileDropdown"
                                 >
                                     <a class="dropdown-item" href="/profile">View Profile</a>
-                                    <a class="dropdown-item" href="/logout">Logout</a>
+                                    <a class="dropdown-item" href="/home/logout">Logout</a>
                                 </div>
                             </li>
                         </ul>

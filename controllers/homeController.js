@@ -1,10 +1,15 @@
-let contoller = {}
+let controller = {}
 
-contoller.showHome = (req, res) => {
+controller.showHome = (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        return res.redirect('/signin'); // Redirect to sign-in if no session
+        res.render('index', {
+            layout: 'layout',
+            title: 'Home',
+            name: 'Home',
+        });
+        return;
     }
 
     const { role } = user;
@@ -31,4 +36,9 @@ contoller.showHome = (req, res) => {
     });
 };
 
-module.exports = contoller;
+controller.logout = (req, res) => {
+    req.session.destroy();
+    res.redirect('/signin');
+};
+
+module.exports = controller;
