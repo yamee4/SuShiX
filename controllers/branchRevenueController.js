@@ -52,7 +52,6 @@ controller.getBranchRevenue = async (req, res) => {
             }
         );
 
-        console.log(results);
 
         // Render the view with results
         res.render("branchRevenue", {

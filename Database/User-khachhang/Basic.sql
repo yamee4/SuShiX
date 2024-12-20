@@ -92,3 +92,23 @@ BEGIN
 
     -- Check if user exists in CUSTOMER table
 END;
+
+go
+CREATE OR ALTER PROCEDURE usp_showDishFromBranch
+    @branchID int
+AS
+BEGIN
+    IF @branchID = 0
+    BEGIN
+        SELECT COUNT(*) FROM DISH;
+    END
+    ELSE
+    BEGIN
+        SELECT COUNT(*) 
+        FROM DISH d JOIN MENU_DETAIL md ON d.DishID = md.DishID
+        JOIN BRANCH b ON md.branchID = b.BranchID
+        WHERE b.BranchID = @branchID;
+    END
+END;
+
+go

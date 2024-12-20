@@ -23,14 +23,32 @@ body {
     font-size: 14px;
 }
 
+
+
 /*---------------------
 Pagination
 -----------------------*/
+/* Style for the pagination container */
 .product__pagination,
 .blog__pagination {
-    padding-top: 10px;
-    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 10px; /* Space between pagination items */
+    padding: 10px; /* Optional: Padding for spacing */
 }
+
+.product__pagination .bi-arrow-left,
+.blog__pagination .bi-arrow-left,
+.product__pagination .bi-arrow-right,
+.blog__pagination .bi-arrow-right {
+    display: flex;
+    justify-content: center; /* Ensure icons are centered in their box */
+    align-items: center;
+    font-size: 18px; /* Adjust size of the arrows */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
 
 .blog__pagination li,
 .product__pagination li {

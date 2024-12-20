@@ -41,11 +41,12 @@ end
 go
 
 create or alter proc usp_SearchMenu
-	@DishName nvarchar(30) = null
+	@DishName nvarchar(30)
 as
 begin
-	select DishID, DishName, DishSection, CurrentPrice
+	select DishID, DishName, DishSection, CurrentPrice, DeliveryAvailable
 	from DISH
 	where 
 		(@DishName is null or DishName like '%' + @DishName + '%')
 end
+
