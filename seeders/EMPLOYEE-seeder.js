@@ -273,15 +273,6 @@ module.exports = {
     "EmpGender": "Nữ ",
     "Salary": 12500000,
     "BranchManager": null
-  },
-  {
-    "EmpID": "00031",
-    "EmpFirstName": "Nguyễn Xạo",
-    "EmpLastName": "Loz",
-    "EmpBirthDate": "2002-02-02T00:00:00.000Z",
-    "EmpGender": "Nam",
-    "Salary": 20000,
-    "BranchManager": null
   }
 ];
 

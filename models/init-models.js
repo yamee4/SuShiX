@@ -1,5 +1,6 @@
 const DataTypes = require("sequelize").DataTypes;
 const _AREA = require("./AREA");
+const _BILL = require("./BILL");
 const _BRANCH = require("./BRANCH");
 const _BRANCH_PHONE_NUMBER = require("./BRANCH_PHONE_NUMBER");
 const _COMBO = require("./COMBO");
@@ -22,10 +23,12 @@ const _STANDARD_ORDER_DETAIL = require("./STANDARD_ORDER_DETAIL");
 const _STANDARD_ORDER_TICKET = require("./STANDARD_ORDER_TICKET");
 const _STATION = require("./STATION");
 const _STATION_EMPLOYEE = require("./STATION_EMPLOYEE");
+const _SequelizeMeta = require("./SequelizeMeta");
 const _WORK_HISTORY = require("./WORK_HISTORY");
 
 function initModels(sequelize) {
   const AREA = _AREA(sequelize, DataTypes);
+  const BILL = _BILL(sequelize, DataTypes);
   const BRANCH = _BRANCH(sequelize, DataTypes);
   const BRANCH_PHONE_NUMBER = _BRANCH_PHONE_NUMBER(sequelize, DataTypes);
   const COMBO = _COMBO(sequelize, DataTypes);
@@ -48,12 +51,11 @@ function initModels(sequelize) {
   const STANDARD_ORDER_TICKET = _STANDARD_ORDER_TICKET(sequelize, DataTypes);
   const STATION = _STATION(sequelize, DataTypes);
   const STATION_EMPLOYEE = _STATION_EMPLOYEE(sequelize, DataTypes);
+  const SequelizeMeta = _SequelizeMeta(sequelize, DataTypes);
   const WORK_HISTORY = _WORK_HISTORY(sequelize, DataTypes);
 
-  AREA.belongsToMany(DISH, { as: 'DishID_DISH_DISH_MENUs', through: DISH_MENU, foreignKey: "MenuID", otherKey: "DishID" });
   BRANCH.belongsToMany(DISH, { as: 'DishID_DISH_MENU_DETAILs', through: MENU_DETAIL, foreignKey: "BranchID", otherKey: "DishID" });
   COMBO.belongsToMany(DISH, { as: 'DishID_DISHes', through: DISH_COMBO, foreignKey: "ComboID", otherKey: "DishID" });
-  DISH.belongsToMany(AREA, { as: 'MenuID_AREAs', through: DISH_MENU, foreignKey: "DishID", otherKey: "MenuID" });
   DISH.belongsToMany(BRANCH, { as: 'BranchID_BRANCHes', through: MENU_DETAIL, foreignKey: "DishID", otherKey: "BranchID" });
   DISH.belongsToMany(COMBO, { as: 'ComboID_COMBOs', through: DISH_COMBO, foreignKey: "DishID", otherKey: "ComboID" });
   DISH.belongsToMany(ONLINE_TICKET, { as: 'OTicketID_ONLINE_TICKETs', through: ONLINE_TICKET_DETAIL, foreignKey: "DishID", otherKey: "OTicketID" });
@@ -64,8 +66,6 @@ function initModels(sequelize) {
   STANDARD_ORDER_TICKET.belongsToMany(DISH, { as: 'DishID_DISH_STANDARD_ORDER_DETAILs', through: STANDARD_ORDER_DETAIL, foreignKey: "SOTicketID", otherKey: "DishID" });
   BRANCH.belongsTo(AREA, { as: "AreaName_AREA", foreignKey: "AreaName"});
   AREA.hasMany(BRANCH, { as: "BRANCHes", foreignKey: "AreaName"});
-  DISH_MENU.belongsTo(AREA, { as: "Menu", foreignKey: "MenuID"});
-  AREA.hasMany(DISH_MENU, { as: "DISH_MENUs", foreignKey: "MenuID"});
   BRANCH_PHONE_NUMBER.belongsTo(BRANCH, { as: "Branch", foreignKey: "BranchID"});
   BRANCH.hasMany(BRANCH_PHONE_NUMBER, { as: "BRANCH_PHONE_NUMBERs", foreignKey: "BranchID"});
   EMPLOYEE.belongsTo(BRANCH, { as: "BranchManager_BRANCH", foreignKey: "BranchManager"});
@@ -129,6 +129,7 @@ function initModels(sequelize) {
 
   return {
     AREA,
+    BILL,
     BRANCH,
     BRANCH_PHONE_NUMBER,
     COMBO,
@@ -151,6 +152,7 @@ function initModels(sequelize) {
     STANDARD_ORDER_TICKET,
     STATION,
     STATION_EMPLOYEE,
+    SequelizeMeta,
     WORK_HISTORY,
   };
 }

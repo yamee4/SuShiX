@@ -35,7 +35,7 @@ class MENU_DETAIL extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__MENU_DET__B0E01B52C35B22AF",
+        name: "PK__MENU_DET__B0E01B52AE0D3754",
         unique: true,
         fields: [
           { name: "BranchID" },

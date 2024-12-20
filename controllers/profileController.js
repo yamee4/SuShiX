@@ -4,7 +4,7 @@ contoller.showProfile = (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('profile', {
             layout: 'layout',
             title: 'Home',
             name: 'Home',

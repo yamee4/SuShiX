@@ -31,7 +31,7 @@ class CUSTOMER_LOG extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__CUSTOMER__FABFFE7B84628EC7",
+        name: "PK__CUSTOMER__FABFFE7BEA390ADA",
         unique: true,
         fields: [
           { name: "CCCD" },

@@ -27,6 +27,14 @@ class PRE_ORDER_TICKET extends Sequelize.Model {
       type: DataTypes.INTEGER,
       allowNull: true
     },
+    PreOrderDate: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    PreOrderArrivalTime: {
+      type: DataTypes.TIME,
+      allowNull: true
+    },
     PreOrderNote: {
       type: DataTypes.STRING(100),
       allowNull: true
@@ -38,7 +46,7 @@ class PRE_ORDER_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__PRE_ORDE__48C470FA69F99289",
+        name: "PK__PRE_ORDE__48C470FA2EEBDA54",
         unique: true,
         fields: [
           { name: "PTicketID" },

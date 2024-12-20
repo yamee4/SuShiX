@@ -26,7 +26,7 @@ class ONLINE_CUSTOMER extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ONLINE_C__09DEF8609B3EBEFE",
+        name: "PK__ONLINE_C__09DEF8605D20EF72",
         unique: true,
         fields: [
           { name: "OCCCD" },

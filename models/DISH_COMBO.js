@@ -35,7 +35,7 @@ class DISH_COMBO extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__DISH_COM__CCCA6CF913E5DC4D",
+        name: "PK__DISH_COM__CCCA6CF933009AB5",
         unique: true,
         fields: [
           { name: "ComboID" },

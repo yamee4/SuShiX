@@ -6,7 +6,7 @@ controller.showCompRevenue = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('compRevenue', {
             layout: 'layout',
             title: 'Home',
             name: 'Home',

@@ -6,7 +6,7 @@ controller.showCardRecoverForm = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('card_recover', {
             layout: 'layout',
             title: 'Home',
             name: 'Home',

@@ -2,6 +2,7 @@ const controller = {};
 const models = require("../models");
 
 controller.init = async (req, res, next) => {
+    res.locals.branches = await models.BRANCH.findAll();
     next();
 };
 
@@ -38,10 +39,11 @@ controller.showPage = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('menu', {
             layout: 'layout',
-            title: 'Home',
-            name: 'Home',
+            title: 'Menu',
+            name: 'Menu',
+            dishes,
         });
         return;
     }
@@ -65,8 +67,8 @@ controller.showPage = async (req, res) => {
 
     res.render('menu', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Menu',
+        name: 'Menu',
         dishes,
     });
 };

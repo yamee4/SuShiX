@@ -41,10 +41,11 @@ class ONLINE_TICKET_DETAIL extends Sequelize.Model {
     sequelize,
     tableName: 'ONLINE_TICKET_DETAIL',
     schema: 'dbo',
+    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
-        name: "PK__ONLINE_T__9CD92C91D8D896A0",
+        name: "PK__ONLINE_T__9CD92C91CC4152A9",
         unique: true,
         fields: [
           { name: "OTicketID" },

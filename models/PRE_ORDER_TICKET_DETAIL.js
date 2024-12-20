@@ -41,10 +41,11 @@ class PRE_ORDER_TICKET_DETAIL extends Sequelize.Model {
     sequelize,
     tableName: 'PRE_ORDER_TICKET_DETAIL',
     schema: 'dbo',
+    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
-        name: "PK__PRE_ORDE__E8A527E8A61C08B9",
+        name: "PK__PRE_ORDE__E8A527E8981A5B52",
         unique: true,
         fields: [
           { name: "PTicketID" },

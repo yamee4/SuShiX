@@ -6,7 +6,7 @@ controller.showEmpScore = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('empScore', {
             layout: 'layout',
             title: 'Home',
             name: 'Home',

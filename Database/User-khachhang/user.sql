@@ -44,7 +44,7 @@ create or alter proc usp_SearchMenu
 	@DishName nvarchar(30) = null
 as
 begin
-	select DishID, DishName, DishType, Price
+	select DishID, DishName, DishSection, CurrentPrice
 	from DISH
 	where 
 		(@DishName is null or DishName like '%' + @DishName + '%')
