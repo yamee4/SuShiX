@@ -85,7 +85,6 @@ app.get("/", (req, res) => res.redirect("/home"));
 app.use("/home", require("./routes/homeRouter"));
 app.use("/menu", require("./routes/menuRouter"));
 
-
 app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
 app.use("/profile", require("./routes/profileRouter"));
@@ -97,7 +96,6 @@ app.use("/dishRevenue", require("./routes/dishRevenueRouter"));
 
 app.use("/feedback", require("./routes/feedBackRouter"));
 app.use("/cardRecover", require("./routes/cardRecoveryRouter"));
-
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
