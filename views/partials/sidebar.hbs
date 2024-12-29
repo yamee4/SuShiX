@@ -1,43 +1,27 @@
 <div class="blog__sidebar">
-    <div class="dropdown">
-        <button
-            class="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="triggerId"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-        >
-            Choose a branch
-        </button>
-        <div class="dropdown-menu" aria-labelledby="triggerId">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item disabled" href="#">Disabled action</a>
-            <h6 class="dropdown-header">Section header</h6>
-            <a class="dropdown-item" href="#">Action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">After divider action</a>
-        </div>
-    </div>
-    
-    <div class="blog__sidebar__search py-5">
-        <form action="/blogs" method = "GET">
-            <input type="text" placeholder="Search..." name = "keyword">
-            <button type="submit"><span class="icon_search"></span></button>
+    <!-- Sidebar search -->
+    <div class="blog__sidebar__search">
+        <form action="/menu" method="POST" class="search-form">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." name="keyword" class="search-input">
+            </div>
         </form>
     </div>
 
+        <!-- Sidebar item -->
     <div class="blog__sidebar__item">
         <h4>DISH SECTION</h4>
-            <ul>
-                <li><a href="#">All</a></li>
-                <li><a href="#">Appertizer</a></li> 
-                <li><a href="#">Sushi</a></li>
-                <li><a href="#">Sasimi</a></li>
-                <li><a href="#">Nigiri</a></li> 
-                <li><a href="#">Soup</a></li>
-                <li><a href="#">Drinks</a></li>
-                <li><a href="#">Desert</a></li>  
-            </ul>
+        <ul>
+            <li><a href="#">All</a></li>
+            <li><a href="#">Appetizer</a></li>
+            <li><a href="#">Sushi</a></li>
+            <li><a href="#">Sashimi</a></li>
+            <li><a href="#">Nigiri</a></li>
+            <li><a href="#">Soup</a></li>
+            <li><a href="#">Drinks</a></li>
+            <li><a href="#">Dessert</a></li>
+        </ul>
     </div>
 </div>
+
+<script src="/js/sidebar.js"></script>

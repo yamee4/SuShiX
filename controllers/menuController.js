@@ -1,54 +1,122 @@
 const controller = {};
-const models = require("../models");
+const { raw } = require("body-parser");
+const { sequelize } = require("../models");
+const { fn, col } = require('sequelize'); // Ensure you import fn and col from Sequelize
 
 controller.init = async (req, res, next) => {
+    //res.locals.branches = await models.BRANCH.findAll();
     next();
 };
 
 controller.showPage = async (req, res) => {
     let limit = 5;
     let page = isNaN(req.query.page) ? 1 : parseInt(req.query.page);
-    let offset = (page - 1) * limit;
     page = isNaN(page) ? 1 : parseInt(page);
 
-    let options = {
-        attributes: [
-            "DishName",
-            "CurrentPrice",
-            "DishSection",
-            "DeliveryAvailable",
-        ],
-        where: {},
-    };
+    let offset = (page - 1) * limit;
 
-    let totalRows = await models.sequelize.query(
-        `SELECT COUNT(*) AS count FROM (SELECT DISTINCT DishName, CurrentPrice, DishSection, DeliveryAvailable FROM DISH) AS temp`,
-        { type: models.sequelize.QueryTypes.SELECT }
+    try {
+        // Fetch the total number of rows in the DISH table
+        const totalRowsResult = await sequelize.query(
+            `SELECT COUNT(*) AS totalRows FROM DISH`,
+            { type: sequelize.QueryTypes.SELECT }
+        );
+        const totalRows = totalRowsResult[0]?.totalRows || 0;
+
+        // Fetch paginated data
+        const dishes = await sequelize.query(
+            `SELECT * FROM DISH ORDER BY DishID OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY`,
+            {
+                type: sequelize.QueryTypes.SELECT,
+                replacements: { limit, offset }, // Use replacements for parameterized queries
+            }
+        );
+
+        const totalPages = Math.ceil(totalRows / limit);
+
+        res.locals.pagination = {
+            page,
+            limit,
+            totalRows,
+            totalPages,
+            queryParams: req.query,
+        };
+
+        const user = req.session.user;
+
+        if (!user) {
+            res.render('menu', {
+                layout: 'layout',
+                title: 'Menu',
+                name: 'Menu',
+                dishes,
+                pagination: res.locals.pagination,
+            });
+            return;
+        }
+
+        const { role } = user;
+        let layout;
+        switch (role) {
+            case 'employee':
+                layout = user.usertype != null ? 'manager' : 'emp';
+                break;
+            case 'customer':
+                layout = 'customer';
+                break;
+            case 'admin':
+                layout = 'admin';
+                break;
+            default:
+                layout = 'layout';
+        }
+
+        // Render the menu view with the appropriate layout
+        res.render('menu', {
+            layout,
+            title: 'Menu',
+            name: 'Menu',
+            dishes,
+            pagination: res.locals.pagination,
+        });
+    } catch (error) {
+        console.error("Error fetching paginated data:", error);
+        res.status(500).send("An error occurred while fetching the menu.");
+    }
+};
+
+controller.searchDish = async (req, res) => {
+    const { keyword } = req.body;
+    let limit = 5;
+    let page = isNaN(req.query.page) ? 1 : parseInt(req.query.page);
+    let offset = (page - 1) * limit;
+    page = isNaN(page) ? 1 : parseInt(page);
+    let layout;
+
+    let dishes = await sequelize.query(
+        `EXEC [dbo].[usp_SearchMenu]
+            @DishName = :keyword`,
+        {
+            replacements: { keyword },
+            type: sequelize.QueryTypes.SELECT,
+        }
     );
 
-    res.locals.pagination = {
-        page,
-        limit,
-        totalRows,
-        queryParams: req.query,
-    };
 
-    let dishes = await models.DISH.findAll({ ...options, limit, offset });
-    
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('menu', {
             layout: 'layout',
-            title: 'Home',
-            name: 'Home',
+            title: 'Menu',
+            name: 'Menu',
+            dishes,
         });
         return;
     }
 
     const { role } = user;
 
-    let layout;
     switch (role) {
         case 'employee':
             layout = user.usertype != null ? 'manager' : 'emp';
@@ -65,10 +133,98 @@ controller.showPage = async (req, res) => {
 
     res.render('menu', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Menu',
+        name: 'Menu',
         dishes,
     });
+
+};
+
+controller.CheckOut = async (req, res) => {
+    const cartItems = req.body.cartItems; // Array of cart items sent from the frontend
+    const userInfo = req.session.user; 
+
+    if (!cartItems || cartItems.length === 0) {
+        return res.status(400).json({ message: "Cart is empty." });
+    }
+
+    try {
+       if (userInfo.role === 'customer') {
+
+        const dsdonhang = cartItems.map(item => ({
+            DishID: item.id,
+            OrderTime: fn('GETDATE'),  // This will be replaced by the actual function in the query
+            Quantity: item.quantity,
+            Price: item.price,
+        }));
+        
+        await sequelize.query(`
+            CREATE TABLE ##DSTicket (
+                DishID INT,
+                OrderTime DATETIME,
+                Quantity INT,
+                Price INT
+            );
+        `);
+        
+        const values = dsdonhang
+        .map(() => '(?, GETDATE(), ?, ?)')
+        .join(', '); // Generate placeholders for all rows
+
+        const replacements = dsdonhang.flatMap(item => [item.DishID, item.Quantity, item.Price]); // Flattened array of all replacements
+
+        await sequelize.query(
+            `INSERT INTO ##DSTicket (DishID, OrderTime, Quantity, Price) VALUES ${values}`,
+            {
+                    replacements,
+                    type: sequelize.QueryTypes.INSERT,
+            }
+        );  
+
+            const cccd = userInfo.id;
+            const TicketType = 'ONL';
+            const BranchID = null;
+            const EmpID = null;
+            const NumberOfCustomer = 0;
+            const PreOrderNote  = '';
+            const TableName = '';
+
+            const result = await sequelize.query(
+                `EXEC [dbo].[usp_ADD_ORDER_TICKET ]
+                    @CCCD = :cccd,
+                    @TicketType = :ticketType,
+                    @BranchID = :branchID,
+                    @EmpID = :empID,
+                    @NumberOfCustomer = :numberOfCustomer,
+                    @PreOrderNote = :preOrderNote,
+                    @TableName = :tableName`,
+                {
+                    replacements: {
+                        cccd,
+                        ticketType: TicketType,
+                        branchID: BranchID,
+                        empID: EmpID,
+                        numberOfCustomer: NumberOfCustomer,
+                        preOrderNote: PreOrderNote,
+                        tableName: TableName,
+                        DSTicket: dsdonhang // Pass the array of order items,
+                    },
+                    type: sequelize.QueryTypes.INSERT,
+                    raw: true,
+                }
+            );
+
+            await sequelize.query(`DROP TABLE ##DSTicket`);
+
+            return res.json({ message: "Order processed successfully." });
+        } 
+        else {
+            return res.status(403).json({ message: "User is not authorized to place an order." });
+        }
+    } catch (error) {
+        console.error("Error during checkout:", error);
+        res.status(500).json({ message: "An error occurred while processing the order." });
+    }
 };
 
 module.exports = controller;

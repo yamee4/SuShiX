@@ -1,6 +1,6 @@
 <!-- Button to Open Cart -->
-<div class="button-container">
-    <button id="open-cart" class="view-cart-btn" onclick="openCart()">View Cart</button>
+<div class="button-container " id="cart-icon" class="cart-icon">
+    <button id="open-cart" class="view-cart-btn" onclick="openCart()"><i class="bi bi-cart3"></i> View Cart</button>
 </div>
 
 <section class="blog spad py-5">
@@ -24,27 +24,31 @@
                                 </ul>
                                 <h5>{{DishName}}</h5>
                                 <p>{{formatCurrency CurrentPrice}}</p>
-                                <a href="#" 
-                                   class="blog__btn d-flex justify-content-center align-items-center add-to-cart" 
-                                   data-id="{{id}}" 
-                                   data-name="{{DishName}}" 
-                                   data-price="{{CurrentPrice}}" 
-                                   data-section="{{DishSection}}">
-                                   ADD TO CART<span class="arrow_right"></span>
-                                </a>
+                               <div class="quantity-container d-flex justify-content-between align-items-center">
+                                    <input type="number" class="quantity-input" value="1" min="1">
+                                    <a href="#" 
+                                        class="blog__btn d-flex justify-content-center align-items-center add-to-cart"
+                                        data-id="{{DishID}}"
+                                        data-name="{{DishName}}"
+                                        data-price="{{CurrentPrice}}"
+                                        data-section="{{DishSection}}"
+                                        style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; background-color: #e64a19; color: #fff; padding: 10px 15px; border-radius: 5px; transition: background-color 0.3s ease, transform 0.2s ease;">
+                                        <i class="bi bi-cart-plus" style="margin-right: 5px;"></i> Add to Cart
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {{/each}}
                 </div>
             </div>
-            <div class="col-lg-12 d-flex justify-content-center align-items-center">
-                {{{createPagination pagination  
-                    paginationClass = "product__pagination blog__pagination d-flex align-items-center" 
-                    leftText = '<i class="bi bi-arrow-left mx-2"></i>'
-                    rightText = '<i class="bi bi-arrow-right mx-2"></i>'
-                    currentPage = currentPage
-                }}}
+           <div class="col-lg-12 d-flex justify-content-center align-items-center mt-4">
+                    {{{createPagination pagination
+                        paginationClass = "product__pagination blog__pagination d-flex align-items-center"
+                        leftText = '<i class="bi bi-arrow-left mx-2"></i>'
+                        rightText = '<i class="bi bi-arrow-right mx-2"></i>'
+                        currentPage = currentPage
+                    }}}
             </div>
         </div>  
     </div> 
@@ -53,153 +57,19 @@
 <!-- Cart Popup -->
 <div id="cart-popup" class="popup" style="display: none;">
     <div class="popup-content">
-        <span class="close-btn" onclick="closeCart()">&times;</span>
+         <button type="button" class="btn-close" aria-label="Close" onclick="closeCart()"><i class="bi bi-x"></i></button>
         <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
+        <div id="cart-items-container" class="cart-items-container">
+            <ul id="cart-items"></ul>
+        </div>
         <p id="total-price">Total: $0.00</p> <!-- Total price display -->
-        <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
+        <div class="py-3">
+            <button id="checkout" onclick="checkout()">Checkout</button>
+        </div>
+        <div class="py-3">
+            <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
+        </div>
     </div>
 </div>
 
-<style>
-    /* Popup Styles */
-    .popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .popup-content {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        width: 300px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .close-btn {
-        cursor: pointer;
-        float: right;
-        font-size: 20px;
-    }
-
-    /* Cart Items List */
-    #cart-items {
-        list-style-type: none; /* Remove bullet points */
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
-    }
-
-    /* Individual Cart Item */
-    #cart-items li {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    /* Last Item without Bottom Border */
-    #cart-items li:last-child {
-        border-bottom: none;
-    }
-
-    /* Clear Cart Button */
-    #clear-cart {
-        background-color: #ff4d4d; /* Red background */
-        color: white; /* White text */
-        border: none; /* No border */
-        border-radius: 5px; /* Rounded corners */
-        padding: 10px 15px; /* Padding */
-        cursor: pointer; /* Pointer cursor */
-        font-size: 16px; /* Font size */
-        margin-top: 15px; /* Margin on top */
-        transition: background-color 0.3s; /* Transition effect */
-    }
-
-    /* Clear Cart Button Hover Effect */
-    #clear-cart:hover {
-        background-color: #ff1a1a; /* Darker red on hover */
-    }
-</style>
-
-<script>
-    // Initialize an empty cart
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Function to add item to cart
-    function addToCart(item) {
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert(item.name + ' has been added to your cart!');
-        displayCart();
-    }
-
-    // Function to open the cart popup
-    function openCart() {
-        document.getElementById('cart-popup').style.display = 'flex';
-        displayCart();
-    }
-
-    // Function to close the cart popup
-    function closeCart() {
-        document.getElementById('cart-popup').style.display = 'none';
-    }
-
-    // Function to display cart items in the popup
-    // Function to display cart items in the popup
-    function displayCart() {
-        const cartItemsContainer = document.getElementById('cart-items');
-        cartItemsContainer.innerHTML = ''; // Clear previous items
-        let totalPrice = 0; // Initialize total price
-
-        cart.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = `${item.name} - ${item.price} VND`;
-            cartItemsContainer.appendChild(li);
-            totalPrice += parseFloat(item.price); // Add item price to total
-        });
-
-        // Display total price
-        const totalElement = document.getElementById('total-price');
-        totalElement.textContent = `Total: ${totalPrice} VND`; // Format to 2 decimal places
-    }
-
-    // Function to clear the cart
-    function clearCart() {
-        cart = [];
-        localStorage.removeItem('cart');
-        displayCart(); // Update the cart display
-        alert('Cart has been cleared!');
-    }
-
-    // Event delegation to handle clicks on dynamically generated buttons
-    document.addEventListener('click', function(event) {
-        if (event.target.classList.contains('add-to-cart')) {
-            event.preventDefault(); // Prevent default anchor behavior
-
-            // Get data attributes from the button
-            const id = event.target.getAttribute('data-id');
-            const name = event.target.getAttribute('data-name');
-            const price = event.target.getAttribute('data-price');
-            const section = event.target.getAttribute('data-section');
-
-            // Create an item object
-            const item = {
-                id: id,
-                name: name,
-                price: price,
-                section: section
-            };
-            // Add item to cart
-            addToCart(item);
-        }
-    });
-</script>
+<script src="/js/menu.js"></script>

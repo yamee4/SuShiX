@@ -17,15 +17,27 @@ class ORDER_TICKET extends Sequelize.Model {
     },
     BranchID: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'BRANCH',
+        key: 'BranchID'
+      }
     },
     CCCD: {
       type: DataTypes.CHAR(10),
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'CUSTOMER',
+        key: 'CCCD'
+      }
     },
     EmpID: {
       type: DataTypes.CHAR(5),
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'EMPLOYEE',
+        key: 'EmpID'
+      }
     },
     Discount: {
       type: DataTypes.INTEGER,
@@ -43,6 +55,7 @@ class ORDER_TICKET extends Sequelize.Model {
     sequelize,
     tableName: 'ORDER_TICKET',
     schema: 'dbo',
+    hasTrigger: true,
     timestamps: false,
     indexes: [
       {

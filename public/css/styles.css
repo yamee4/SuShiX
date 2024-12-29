@@ -23,14 +23,32 @@ body {
     font-size: 14px;
 }
 
+
+
 /*---------------------
 Pagination
 -----------------------*/
+/* Style for the pagination container */
 .product__pagination,
 .blog__pagination {
-    padding-top: 10px;
-    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 10px; /* Space between pagination items */
+    padding: 10px; /* Optional: Padding for spacing */
 }
+
+.product__pagination .bi-arrow-left,
+.blog__pagination .bi-arrow-left,
+.product__pagination .bi-arrow-right,
+.blog__pagination .bi-arrow-right {
+    display: flex;
+    justify-content: center; /* Ensure icons are centered in their box */
+    align-items: center;
+    font-size: 18px; /* Adjust size of the arrows */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
 
 .blog__pagination li,
 .product__pagination li {
@@ -308,71 +326,75 @@ Pagination
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
 .popup-content {
-    background-color: white;
+    background: #fff;
     padding: 20px;
-    border-radius: 8 px;
-    width: 300px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-height: 80%; /* Restrict height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
     cursor: pointer;
-    float: right;
-    font-size: 20px;
 }
 
-/* Cart Items List */
-#cart-items {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+.cart-items-container {
+    max-height: 300px; /* Restrict the height of the item list */
+    overflow-y: auto; /* Enable scrolling for the list */
+    margin-bottom: 20px;
 }
 
-/* Individual Cart Item */
-#cart-items li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+.cart-items-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-items-container li {
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Last Item without Bottom Border */
-#cart-items li:last-child {
-    border-bottom: none;
+.cart-items-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
 }
 
-/* Clear Cart Button */
-#clear-cart {
-    background-color: #ff4d4d; /* Red background */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 15px; /* Padding */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 16px; /* Font size */
-    margin-top: 15px; /* Margin on top */
-    transition: background-color 0.3s; /* Transition effect */
+.popup-content .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
 }
 
-/* Clear Cart Button Hover Effect */
-#clear-cart:hover {
-    background-color: #ff1a1a; /* Darker red on hover */
+/* Optional: Hover effect */
+.popup-content .btn-close:hover {
+    color: #ff5722; /* Change color on hover */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/*Other styling*/
 
 .container {
     width: 80%;
@@ -501,4 +523,74 @@ input[type="number"] {
     z-index: 1050; /* Ensure it's above other elements */
     width: 100%; /* Optional: Adjust width as needed */
     max-width: 350px; /* Optional: Limit maximum width */
+}
+
+/*Cart Styles*/
+.quantity-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between the input and button */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Add spacing between elements */
+}
+
+.quantity-input {
+    width: 60px; /* Adjust width as needed */
+    text-align: center; /* Center the input text */
+    padding: 5px; /* Add padding for better appearance */
+    border: 1px solid #ddd; /* Match other input styles */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+.add-to-cart {
+    padding: 8px 12px; /* Adjust padding for better alignment */
+    border-radius: 4px; /* Match input's rounded corners */
+    font-size: 14px; /* Match font size */
+    text-align: center; /* Center the text inside the button */
+    background-color: #e64a19; /* Button color */
+    color: #fff; /* Text color */
+    text-transform: uppercase; /* Optional: Add uppercase for consistency */
+    cursor: pointer; /* Change cursor to pointer */
+    display: inline-flex; /* Align text and span */
+    align-items: center; /* Vertical alignment */
+}
+
+.add-to-cart:hover {
+    background-color: #e4a72c; /* Darker shade of green */
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+.cart-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.fly-item {
+    position: fixed; /* Ensure it stays on screen relative to the viewport */
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background-color: #e64a19;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fly-to-cart 1s ease-in-out forwards;
+    pointer-events: none; /* Prevent interaction with the flying element */
+}
+
+/* Keyframes for the flying animation */
+@keyframes fly-to-cart {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--fly-x), var(--fly-y));
+        opacity: 0;
+    }
 }

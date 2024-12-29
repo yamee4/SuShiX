@@ -44,10 +44,11 @@ class FEEDBACK_TICKET extends Sequelize.Model {
     sequelize,
     tableName: 'FEEDBACK_TICKET',
     schema: 'dbo',
+    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
-        name: "PK__FEEDBACK__4DC1746C10EA1DD1",
+        name: "PK__FEEDBACK__4DC1746C70A64542",
         unique: true,
         fields: [
           { name: "TicketID" },

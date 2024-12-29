@@ -6,7 +6,7 @@ controller.showSearchEmp = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('searchEmp', {
             layout: 'layout',
             title: 'Home',
             name: 'Home',

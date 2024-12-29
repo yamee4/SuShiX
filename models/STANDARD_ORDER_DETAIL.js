@@ -41,10 +41,11 @@ class STANDARD_ORDER_DETAIL extends Sequelize.Model {
     sequelize,
     tableName: 'STANDARD_ORDER_DETAIL',
     schema: 'dbo',
+    hasTrigger: true,
     timestamps: false,
     indexes: [
       {
-        name: "PK__STANDARD__4E6A7963037F7E0D",
+        name: "PK__STANDARD__4E6A796335F9C1F6",
         unique: true,
         fields: [
           { name: "SOTicketID" },

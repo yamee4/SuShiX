@@ -22,7 +22,7 @@ class COMBO extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__COMBO__DD42580EB8563EE9",
+        name: "PK__COMBO__DD42580EB0827C73",
         unique: true,
         fields: [
           { name: "ComboID" },

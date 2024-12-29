@@ -6,49 +6,52 @@ module.exports = {
     const data = [
   {
     "PTicketID": "TKT0002   ",
-    "BranchName": "Sushi Quận 12",
+    "BranchName": "Sushi Qu?n 12",
     "Area": "Area 2",
     "NumberofCustomer": 4,
-    "PreOrderNote": "Xin vui lòng chuẩn bị bàn cho 4 người"
+    "PreOrderDate": "2023-12-13",
+    "PreOrderArrivalTime": "1970-01-01T18:30:00.000Z",
+    "PreOrderNote": "Please prepare a table for 4 people"
   },
   {
     "PTicketID": "TKT0005   ",
-    "BranchName": "Sushi Quận 4",
+    "BranchName": "Sushi Qu?n 4",
     "Area": "Area 2",
     "NumberofCustomer": 2,
-    "PreOrderNote": "Chúng tôi muốn có một bàn yên tĩnh, vui lòng"
+    "PreOrderDate": "2023-12-14",
+    "PreOrderArrivalTime": "1970-01-01T12:00:00.000Z",
+    "PreOrderNote": "We would like to have a quiet table, please"
   },
   {
     "PTicketID": "TKT0008   ",
-    "BranchName": "Sushi Gò Vấp",
+    "BranchName": "Sushi Gò V?p",
     "Area": "Area 2",
     "NumberofCustomer": 6,
-    "PreOrderNote": "Xin vui lòng chuẩn bị bàn gần cửa sổ"
+    "PreOrderDate": "2023-12-15",
+    "PreOrderArrivalTime": "1970-01-01T19:30:00.000Z",
+    "PreOrderNote": "Please prepare a table near the window"
   },
   {
     "PTicketID": "TKT0011   ",
-    "BranchName": "Sushi Bình Thạnh",
+    "BranchName": "Sushi Bình Th?nh",
     "Area": "Area 1",
     "NumberofCustomer": 3,
-    "PreOrderNote": "Chúng tôi có trẻ em, vui lòng chuẩn bị ghế cao"
+    "PreOrderDate": "2023-12-16",
+    "PreOrderArrivalTime": "1970-01-01T17:00:00.000Z",
+    "PreOrderNote": "We have a child with us, please prepare a high chair"
   },
   {
     "PTicketID": "TKT0014   ",
-    "BranchName": "Sushi Quận 3",
+    "BranchName": "Sushi Qu?n 3",
     "Area": "Area 4",
     "NumberofCustomer": 5,
-    "PreOrderNote": "Chúng tôi muốn có bàn gần quầy sushi"
+    "PreOrderDate": "2023-12-17",
+    "PreOrderArrivalTime": "1970-01-01T11:30:00.000Z",
+    "PreOrderNote": "We would like to have a table near the sushi bar"
   },
   {
     "PTicketID": "TKT0017   ",
-    "BranchName": "Sushi Cầu Giấy",
-    "Area": "Area 3",
-    "NumberofCustomer": 2,
-    "PreOrderNote": "Xin vui lòng chuẩn bị bàn cho hai người, khu vực không hút thuốc"
-  },
-  {
-    "PTicketID": "TKT0020   ",
-    "BranchName": "Sushi Cầu Giấy",
+    "BranchName": "Sushi C?u Gi?y",
     "Area": "Area 3",
     "NumberofCustomer": 2,
     "PreOrderDate": "2023-12-18",

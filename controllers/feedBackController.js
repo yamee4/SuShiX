@@ -6,7 +6,7 @@ controller.showFeedBackForm = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('feedback', {
             layout: 'layout',
             title: 'Home',
             name: 'Home',

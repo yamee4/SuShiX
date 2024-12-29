@@ -6,7 +6,7 @@ controller.showDishRevenue = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('dishRevenue', {
             layout: 'layout',
             title: 'Home',
             name: 'Home',

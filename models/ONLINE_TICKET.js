@@ -14,6 +14,10 @@ class ONLINE_TICKET extends Sequelize.Model {
         model: 'ORDER_TICKET',
         key: 'TicketID'
       }
+    },
+    DeliveryDate: {
+      type: DataTypes.DATE,
+      allowNull: true
     }
   }, {
     sequelize,
@@ -22,7 +26,7 @@ class ONLINE_TICKET extends Sequelize.Model {
     timestamps: false,
     indexes: [
       {
-        name: "PK__ONLINE_T__3CB87B83ACEDB287",
+        name: "PK__ONLINE_T__3CB87B8341045F2F",
         unique: true,
         fields: [
           { name: "OTicketID" },

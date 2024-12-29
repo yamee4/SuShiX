@@ -1,0 +1,67 @@
+<body>
+    <div class="container">
+        <h1>{{name}}</h1>
+
+        <form
+            id="TransferEmployeeForm"
+            method="POST"
+            action="/transferEmployee"
+        >
+            <div class="mb-3">
+                <label for="EmpID" class="form-label">Employee ID</label>
+                <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    id="EmpID"
+                    name="EmpID"
+                    oninput="checkContentLength()"
+                    required
+                />
+            </div>
+
+            <div class="mb-3">
+                <label for="BranchID" class="form-label">BranchID</label>
+                <input
+                    type="t"
+                    id="branchID"
+                    name="BranchID"
+                    class="form-control form-control-sm"
+                    oninput="checkContentLength()"
+                    required
+                />
+            </div>
+
+            <div class="mb-3">
+                <label for="Position" class="form-label">Position</label>
+                <input
+                    type="t"
+                    id="position"
+                    name="position"
+                    class="form-control form-control-sm"
+                    oninput="checkContentLength()"
+                    required
+                />
+            </div>
+
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
+
+    <div class="notification-container">
+        {{#if results}}
+            <div class="alert alert-success" role="alert">
+                Replace member card for
+                <strong>{{citizenId}}</strong>
+                successfully
+            </div>
+        {{/if}}
+
+        {{#if error}}
+            <div class="alert alert-danger" role="alert">
+                <strong>Error:</strong>
+                {{error}}
+            </div>
+        {{/if}}
+    </div>
+
+</body>

@@ -137,7 +137,7 @@ module.exports = {
   {
     "BranchID": 14,
     "BranchName": "Sushi Phú Lâm",
-    "BranchAddress": "1039 Hồng Bàng, Phường 12, TP.HCM",
+    "BranchAddress": "\t1039 Hồng Bàng, Phường 12, TP.HCM",
     "OpeningTime": "1970-01-01T16:30:00.000Z",
     "ClosedTime": "1970-01-01T17:30:00.000Z",
     "DeliveryService": true,

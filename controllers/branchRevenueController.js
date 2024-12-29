@@ -1,12 +1,13 @@
 const controller = {};
 const { SELECT } = require('sequelize/lib/query-types');
 const { sequelize } = require('../models')
+var layout;
 
 controller.showBranchRevenue = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('branchRevenue', {
             layout: 'layout',
             title: 'Home',
             name: 'Home',
@@ -16,7 +17,6 @@ controller.showBranchRevenue = async (req, res) => {
 
     const { role } = user;
 
-    let layout;
     switch (role) {
         case 'employee':
             layout = user.usertype != null ? 'manager' : 'emp';
@@ -52,7 +52,6 @@ controller.getBranchRevenue = async (req, res) => {
             }
         );
 
-        console.log(results);
 
         // Render the view with results
         res.render("branchRevenue", {
