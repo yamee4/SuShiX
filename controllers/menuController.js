@@ -1,7 +1,7 @@
 const controller = {};
 const { raw } = require("body-parser");
 const { sequelize } = require("../models");
-const {fn} = require('sequelize');
+const { fn, col } = require('sequelize'); // Ensure you import fn and col from Sequelize
 
 controller.init = async (req, res, next) => {
     //res.locals.branches = await models.BRANCH.findAll();
@@ -150,7 +150,6 @@ controller.CheckOut = async (req, res) => {
 
     try {
        if (userInfo.role === 'customer') {
-        const { fn, col } = require('sequelize'); // Ensure you import fn and col from Sequelize
 
         const dsdonhang = cartItems.map(item => ({
             DishID: item.id,
@@ -159,22 +158,30 @@ controller.CheckOut = async (req, res) => {
             Price: item.price,
         }));
         
-        // Assuming you want to insert these values into a table:
+        await sequelize.query(`
+            CREATE TABLE ##DSTicket (
+                DishID INT,
+                OrderTime DATETIME,
+                Quantity INT,
+                Price INT
+            );
+        `);
+        
+        const values = dsdonhang
+        .map(() => '(?, GETDATE(), ?, ?)')
+        .join(', '); // Generate placeholders for all rows
+
+        const replacements = dsdonhang.flatMap(item => [item.DishID, item.Quantity, item.Price]); // Flattened array of all replacements
+
         await sequelize.query(
-            `INSERT INTO your_table (DishID, OrderTime, Quantity, Price)
-             VALUES (:dishID, GETDATE(), :quantity, :price)`,
+            `INSERT INTO ##DSTicket (DishID, OrderTime, Quantity, Price) VALUES ${values}`,
             {
-                replacements: dsdonhang.map(item => ({
-                    dishID: item.DishID,
-                    quantity: item.Quantity,
-                    price: item.Price
-                })),
-                type: sequelize.QueryTypes.INSERT
+                    replacements,
+                    type: sequelize.QueryTypes.INSERT,
             }
-        );
+        );  
 
-
-            const cccd = userInfo.username;
+            const cccd = userInfo.id;
             const TicketType = 'ONL';
             const BranchID = null;
             const EmpID = null;
@@ -190,8 +197,7 @@ controller.CheckOut = async (req, res) => {
                     @EmpID = :empID,
                     @NumberOfCustomer = :numberOfCustomer,
                     @PreOrderNote = :preOrderNote,
-                    @TableName = :tableName,
-                    @DSDonHang = :DSTicket`,
+                    @TableName = :tableName`,
                 {
                     replacements: {
                         cccd,
