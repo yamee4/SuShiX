@@ -1,5 +1,7 @@
 const controller = {};
+const { raw } = require("body-parser");
 const { sequelize } = require("../models");
+const {fn} = require('sequelize');
 
 controller.init = async (req, res, next) => {
     //res.locals.branches = await models.BRANCH.findAll();
@@ -136,6 +138,87 @@ controller.searchDish = async (req, res) => {
         dishes,
     });
 
+};
+
+controller.CheckOut = async (req, res) => {
+    const cartItems = req.body.cartItems; // Array of cart items sent from the frontend
+    const userInfo = req.session.user; 
+
+    if (!cartItems || cartItems.length === 0) {
+        return res.status(400).json({ message: "Cart is empty." });
+    }
+
+    try {
+       if (userInfo.role === 'customer') {
+        const { fn, col } = require('sequelize'); // Ensure you import fn and col from Sequelize
+
+        const dsdonhang = cartItems.map(item => ({
+            DishID: item.id,
+            OrderTime: fn('GETDATE'),  // This will be replaced by the actual function in the query
+            Quantity: item.quantity,
+            Price: item.price,
+        }));
+        
+        // Assuming you want to insert these values into a table:
+        await sequelize.query(
+            `INSERT INTO your_table (DishID, OrderTime, Quantity, Price)
+             VALUES (:dishID, GETDATE(), :quantity, :price)`,
+            {
+                replacements: dsdonhang.map(item => ({
+                    dishID: item.DishID,
+                    quantity: item.Quantity,
+                    price: item.Price
+                })),
+                type: sequelize.QueryTypes.INSERT
+            }
+        );
+
+
+            const cccd = userInfo.username;
+            const TicketType = 'ONL';
+            const BranchID = null;
+            const EmpID = null;
+            const NumberOfCustomer = 0;
+            const PreOrderNote  = '';
+            const TableName = '';
+
+            const result = await sequelize.query(
+                `EXEC [dbo].[usp_ADD_ORDER_TICKET ]
+                    @CCCD = :cccd,
+                    @TicketType = :ticketType,
+                    @BranchID = :branchID,
+                    @EmpID = :empID,
+                    @NumberOfCustomer = :numberOfCustomer,
+                    @PreOrderNote = :preOrderNote,
+                    @TableName = :tableName,
+                    @DSDonHang = :DSTicket`,
+                {
+                    replacements: {
+                        cccd,
+                        ticketType: TicketType,
+                        branchID: BranchID,
+                        empID: EmpID,
+                        numberOfCustomer: NumberOfCustomer,
+                        preOrderNote: PreOrderNote,
+                        tableName: TableName,
+                        DSTicket: dsdonhang // Pass the array of order items,
+                    },
+                    type: sequelize.QueryTypes.INSERT,
+                    raw: true,
+                }
+            );
+
+            await sequelize.query(`DROP TABLE ##DSTicket`);
+
+            return res.json({ message: "Order processed successfully." });
+        } 
+        else {
+            return res.status(403).json({ message: "User is not authorized to place an order." });
+        }
+    } catch (error) {
+        console.error("Error during checkout:", error);
+        res.status(500).json({ message: "An error occurred while processing the order." });
+    }
 };
 
 module.exports = controller;

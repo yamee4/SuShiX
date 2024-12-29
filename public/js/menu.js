@@ -39,11 +39,23 @@
      let totalPrice = 0; // Initialize total price
 
      cart.forEach(item => {
-         const li = document.createElement('li');
-         li.textContent = `${item.name} - ${item.price} VND x ${item.quantity}`;
-         cartItemsContainer.appendChild(li);
-         totalPrice += parseFloat(item.price) * item.quantity; // Add item price to total
-     });
+        const li = document.createElement('li');
+        li.setAttribute('data-id', item.id);
+        li.setAttribute('data-name', item.name);
+        li.setAttribute('data-price', item.price);
+
+        li.textContent = `${item.name} - ${item.price} VND x `;
+        
+        // Add quantity input
+        const quantityInput = document.createElement('input');
+        quantityInput.type = 'number';
+        quantityInput.classList.add('quantity');
+        quantityInput.value = item.quantity;
+        li.appendChild(quantityInput);
+
+        cartItemsContainer.appendChild(li);
+        totalPrice += parseFloat(item.price) * item.quantity; // Add item price to total
+    });
 
      // Display total price
      const totalElement = document.getElementById('total-price');
@@ -84,16 +96,16 @@
      }
  });
 
- function checkout() {
-     if (cart.length === 0) {
-         alert('Your cart is empty!');
-     } else {
-         alert('Checkout successful!');
-         cart = [];
-         localStorage.removeItem('cart');
-         displayCart();
-     }
-}
+//  function checkout() {
+//      if (cart.length === 0) {
+//          alert('Your cart is empty!');
+//      } else {
+//          alert('Checkout successful!');
+//          cart = [];
+//          localStorage.removeItem('cart');
+//          displayCart();
+//      }
+// }
 
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', function (e) {
@@ -122,3 +134,42 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         });
     });
 });
+
+async function checkout() {
+    const cartItems = []; // Array to store cart data
+    const cartElements = document.querySelectorAll("#cart-items li");
+
+    cartElements.forEach(item => {
+        const id = item.dataset.id;
+        const name = item.dataset.name;
+        const quantity = item.querySelector(".quantity").value;
+        const price = item.dataset.price;
+
+        cartItems.push({ id, name, quantity, price });
+    });
+
+    try {
+        const response = await fetch("/menu/checkout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ cartItems }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert('Checkout successful!');
+            cart = [];
+            localStorage.removeItem('cart');
+            displayCart();
+        } else {
+            alert(`Error: ${data.message}`);
+        }
+    } catch (error) {
+        console.error("Error during checkout:", error);
+        alert("An error occurred during checkout.");
+    }
+}
+
