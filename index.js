@@ -14,7 +14,7 @@ const app = express();
 
 //Cấu hình các thư mục static
 app.use("/node_modules", express.static("node_modules"));
-app.use(express.static(__dirname + "/Assets"));
+app.use(express.static(__dirname + "/public"));
 
 //Thiết lập Template Engine
 app.engine(

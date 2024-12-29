@@ -3,10 +3,21 @@
 
  // Function to add item to cart
  function addToCart(item) {
-     cart.push(item);
-     localStorage.setItem('cart', JSON.stringify(cart));
-     //alert(item.name + ' has been added to your cart!');
-     displayCart();
+    const quantity = parseInt(item.quantity, 10);
+
+    // Check if the item already exists in the cart
+    const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+  
+    if (existingItemIndex >= 0) {
+        // Update quantity if item already exists
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        // Add new item with the selected quantity
+        cart.push(item);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart)); // Save to localStorage
+    displayCart(); // Update the cart display
  }
 
  // Function to open the cart popup
@@ -29,9 +40,9 @@
 
      cart.forEach(item => {
          const li = document.createElement('li');
-         li.textContent = `${item.name} - ${item.price} VND`;
+         li.textContent = `${item.name} - ${item.price} VND x ${item.quantity}`;
          cartItemsContainer.appendChild(li);
-         totalPrice += parseFloat(item.price); // Add item price to total
+         totalPrice += parseFloat(item.price) * item.quantity; // Add item price to total
      });
 
      // Display total price
@@ -57,13 +68,16 @@
          const name = event.target.getAttribute('data-name');
          const price = event.target.getAttribute('data-price');
          const section = event.target.getAttribute('data-section');
-
+        
+         const quantityInput = event.target.previousElementSibling;  // Assumes quantity input is right before the button
+         const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 1
          // Create an item object
          const item = {
              id: id,
              name: name,
              price: price,
-             section: section
+             section: section,
+             quantity: quantity
          };
          // Add item to cart
          addToCart(item);
@@ -79,4 +93,32 @@
          localStorage.removeItem('cart');
          displayCart();
      }
- }
+}
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const cartIcon = document.getElementById('cart-icon'); // Target the cart icon
+        const cartRect = cartIcon.getBoundingClientRect(); // Get the position of the cart icon
+        const buttonRect = this.getBoundingClientRect(); // Get the position of the clicked button
+
+        // Calculate the distance to fly
+        const flyX = cartRect.left - buttonRect.left;
+        const flyY = cartRect.top - buttonRect.top;
+
+        // Create a clone element to animate
+        const flyItem = document.createElement('div');
+        flyItem.classList.add('fly-item');
+        flyItem.style.left = `${buttonRect.left + buttonRect.width / 2}px`;
+        flyItem.style.top = `${buttonRect.top + buttonRect.height / 2}px`;
+        flyItem.style.setProperty('--fly-x', `${flyX}px`);
+        flyItem.style.setProperty('--fly-y', `${flyY}px`);
+        document.body.appendChild(flyItem);
+
+        // Clean up the clone after animation
+        flyItem.addEventListener('animationend', () => {
+            flyItem.remove();
+        });
+    });
+});
