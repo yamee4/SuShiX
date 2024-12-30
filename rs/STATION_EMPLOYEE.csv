@@ -1,0 +1,5001 @@
+BranchID,EmpID,StationID
+5,00001,Teppanyaki Chef
+4,00002,Cashier
+12,00003,Dishwasher
+10,00004,Cashier
+8,00005,Dishwasher
+9,00006,Dishwasher
+14,00007,Teppanyaki Chef
+7,00008,Teppanyaki Chef
+2,00009,Teppanyaki Chef
+6,00010,Dishwasher
+9,00011,Dishwasher
+14,00012,Server
+7,00013,Dishwasher
+4,00014,Teppanyaki Chef
+3,00015,Cashier
+10,00016,Sushi Preparer
+8,00017,Teppanyaki Chef
+4,00018,Cashier
+15,00019,Sushi Chef
+4,00020,Server
+15,00021,Cashier
+14,00022,Host/Hostess
+3,00023,Teppanyaki Chef
+4,00024,Sushi Preparer
+7,00025,Sushi Chef
+12,00026,Teppanyaki Chef
+9,00027,Teppanyaki Chef
+13,00028,Teppanyaki Chef
+14,00029,Dishwasher
+2,00030,Cashier
+3,00031,Sushi Chef
+3,00032,Sushi Preparer
+11,00033,Sushi Preparer
+10,00034,Cashier
+5,00035,Server
+1,00036,Teppanyaki Chef
+15,00037,Sushi Chef
+15,00038,Sushi Chef
+12,00039,Teppanyaki Chef
+3,00040,Server
+4,00041,Host/Hostess
+9,00042,Server
+3,00043,Cashier
+11,00044,Server
+13,00045,Sushi Preparer
+15,00046,Sushi Chef
+3,00047,Host/Hostess
+11,00048,Sushi Preparer
+7,00049,Sushi Preparer
+2,00050,Dishwasher
+11,00051,Sushi Preparer
+2,00052,Sushi Preparer
+7,00053,Host/Hostess
+3,00054,Cashier
+11,00055,Teppanyaki Chef
+2,00056,Host/Hostess
+15,00057,Teppanyaki Chef
+2,00058,Teppanyaki Chef
+12,00059,Host/Hostess
+4,00060,Sushi Chef
+12,00061,Sushi Chef
+7,00062,Server
+11,00063,Cashier
+12,00064,Cashier
+2,00065,Sushi Chef
+2,00066,Sushi Preparer
+11,00067,Sushi Chef
+9,00068,Sushi Chef
+9,00069,Sushi Preparer
+3,00070,Sushi Chef
+5,00071,Sushi Preparer
+10,00072,Teppanyaki Chef
+5,00073,Host/Hostess
+11,00074,Cashier
+2,00075,Cashier
+13,00076,Sushi Chef
+12,00077,Sushi Preparer
+6,00078,Teppanyaki Chef
+11,00079,Teppanyaki Chef
+8,00080,Host/Hostess
+8,00081,Dishwasher
+8,00082,Cashier
+9,00083,Teppanyaki Chef
+8,00084,Dishwasher
+14,00085,Server
+6,00086,Teppanyaki Chef
+1,00087,Dishwasher
+11,00088,Host/Hostess
+7,00089,Teppanyaki Chef
+10,00090,Server
+14,00091,Teppanyaki Chef
+15,00092,Dishwasher
+6,00093,Server
+7,00094,Dishwasher
+11,00095,Sushi Preparer
+6,00096,Dishwasher
+4,00097,Host/Hostess
+8,00098,Sushi Chef
+9,00099,Host/Hostess
+8,00100,Host/Hostess
+8,00101,Teppanyaki Chef
+11,00102,Server
+7,00103,Dishwasher
+14,00104,Sushi Preparer
+10,00105,Host/Hostess
+4,00106,Sushi Preparer
+13,00107,Server
+7,00108,Teppanyaki Chef
+3,00109,Sushi Chef
+4,00110,Host/Hostess
+1,00111,Host/Hostess
+10,00112,Cashier
+9,00113,Dishwasher
+6,00114,Server
+8,00115,Host/Hostess
+14,00116,Server
+3,00117,Sushi Chef
+14,00118,Cashier
+10,00119,Server
+9,00120,Server
+11,00121,Dishwasher
+7,00122,Server
+12,00123,Dishwasher
+7,00124,Sushi Preparer
+10,00125,Cashier
+10,00126,Cashier
+6,00127,Sushi Preparer
+2,00128,Dishwasher
+5,00129,Server
+13,00130,Dishwasher
+12,00131,Sushi Chef
+7,00132,Server
+6,00133,Sushi Preparer
+11,00134,Sushi Chef
+4,00135,Teppanyaki Chef
+6,00136,Host/Hostess
+14,00137,Sushi Preparer
+15,00138,Dishwasher
+8,00139,Cashier
+1,00140,Server
+6,00141,Teppanyaki Chef
+6,00142,Sushi Chef
+7,00143,Sushi Chef
+1,00144,Sushi Preparer
+10,00145,Dishwasher
+13,00146,Dishwasher
+3,00147,Teppanyaki Chef
+8,00148,Server
+12,00149,Cashier
+4,00150,Server
+2,00151,Cashier
+10,00152,Teppanyaki Chef
+12,00153,Cashier
+4,00154,Dishwasher
+14,00155,Dishwasher
+1,00156,Teppanyaki Chef
+13,00157,Teppanyaki Chef
+9,00158,Teppanyaki Chef
+8,00159,Sushi Chef
+4,00160,Dishwasher
+12,00161,Cashier
+12,00162,Sushi Chef
+14,00163,Cashier
+15,00164,Cashier
+13,00165,Dishwasher
+12,00166,Sushi Chef
+8,00167,Host/Hostess
+7,00168,Server
+6,00169,Host/Hostess
+14,00170,Sushi Preparer
+1,00171,Sushi Chef
+9,00172,Cashier
+4,00173,Teppanyaki Chef
+2,00174,Sushi Preparer
+12,00175,Dishwasher
+7,00176,Dishwasher
+13,00177,Cashier
+2,00178,Teppanyaki Chef
+5,00179,Host/Hostess
+14,00180,Teppanyaki Chef
+7,00181,Sushi Chef
+5,00182,Sushi Chef
+1,00183,Host/Hostess
+4,00184,Cashier
+4,00185,Server
+12,00186,Sushi Preparer
+1,00187,Server
+2,00188,Dishwasher
+6,00189,Cashier
+1,00190,Sushi Chef
+12,00191,Host/Hostess
+9,00192,Host/Hostess
+8,00193,Sushi Preparer
+13,00194,Dishwasher
+9,00195,Dishwasher
+10,00196,Sushi Chef
+6,00197,Sushi Chef
+4,00198,Teppanyaki Chef
+14,00199,Teppanyaki Chef
+7,00200,Cashier
+12,00201,Cashier
+14,00202,Dishwasher
+2,00203,Teppanyaki Chef
+4,00204,Sushi Preparer
+14,00205,Host/Hostess
+10,00206,Teppanyaki Chef
+1,00207,Dishwasher
+12,00208,Sushi Chef
+7,00209,Host/Hostess
+3,00210,Server
+13,00211,Sushi Chef
+14,00212,Sushi Preparer
+3,00213,Sushi Preparer
+15,00214,Host/Hostess
+1,00215,Cashier
+5,00216,Server
+7,00217,Dishwasher
+15,00218,Sushi Preparer
+4,00219,Sushi Preparer
+7,00220,Host/Hostess
+12,00221,Dishwasher
+10,00222,Dishwasher
+14,00223,Cashier
+1,00224,Dishwasher
+10,00225,Host/Hostess
+4,00226,Dishwasher
+8,00227,Host/Hostess
+5,00228,Sushi Chef
+2,00229,Cashier
+14,00230,Cashier
+8,00231,Host/Hostess
+7,00232,Dishwasher
+1,00233,Sushi Preparer
+1,00234,Cashier
+15,00235,Teppanyaki Chef
+10,00236,Server
+15,00237,Server
+6,00238,Sushi Preparer
+12,00239,Server
+8,00240,Sushi Chef
+3,00241,Server
+15,00242,Teppanyaki Chef
+2,00243,Sushi Chef
+11,00244,Host/Hostess
+15,00245,Sushi Chef
+11,00246,Teppanyaki Chef
+9,00247,Server
+13,00248,Sushi Chef
+13,00249,Dishwasher
+15,00250,Cashier
+12,00251,Host/Hostess
+4,00252,Host/Hostess
+13,00253,Dishwasher
+2,00254,Teppanyaki Chef
+12,00255,Cashier
+11,00256,Dishwasher
+9,00257,Server
+3,00258,Teppanyaki Chef
+2,00259,Host/Hostess
+2,00260,Sushi Chef
+12,00261,Sushi Chef
+9,00262,Cashier
+12,00263,Cashier
+9,00264,Teppanyaki Chef
+12,00265,Cashier
+9,00266,Dishwasher
+8,00267,Cashier
+10,00268,Sushi Preparer
+1,00269,Sushi Preparer
+14,00270,Teppanyaki Chef
+10,00271,Host/Hostess
+14,00272,Sushi Chef
+2,00273,Dishwasher
+11,00274,Server
+8,00275,Sushi Chef
+2,00276,Teppanyaki Chef
+12,00277,Sushi Chef
+14,00278,Cashier
+10,00279,Sushi Chef
+8,00280,Sushi Chef
+15,00281,Sushi Chef
+14,00282,Host/Hostess
+8,00283,Host/Hostess
+4,00284,Teppanyaki Chef
+1,00285,Cashier
+5,00286,Sushi Chef
+6,00287,Host/Hostess
+12,00288,Host/Hostess
+7,00289,Sushi Chef
+15,00290,Cashier
+10,00291,Teppanyaki Chef
+4,00292,Dishwasher
+10,00293,Dishwasher
+9,00294,Dishwasher
+15,00295,Server
+5,00296,Server
+5,00297,Teppanyaki Chef
+5,00298,Host/Hostess
+9,00299,Host/Hostess
+6,00300,Host/Hostess
+6,00301,Cashier
+5,00302,Server
+10,00303,Dishwasher
+2,00304,Sushi Chef
+8,00305,Sushi Preparer
+5,00306,Host/Hostess
+3,00307,Sushi Chef
+5,00308,Server
+4,00309,Sushi Chef
+6,00310,Sushi Chef
+14,00311,Cashier
+15,00312,Server
+10,00313,Server
+5,00314,Server
+3,00315,Server
+13,00316,Teppanyaki Chef
+6,00317,Sushi Chef
+12,00318,Host/Hostess
+12,00319,Sushi Preparer
+15,00320,Dishwasher
+8,00321,Server
+12,00322,Host/Hostess
+4,00323,Sushi Preparer
+6,00324,Cashier
+1,00325,Sushi Preparer
+13,00326,Sushi Preparer
+12,00327,Host/Hostess
+2,00328,Dishwasher
+9,00329,Server
+9,00330,Server
+14,00331,Teppanyaki Chef
+9,00332,Teppanyaki Chef
+5,00333,Host/Hostess
+11,00334,Sushi Chef
+1,00335,Dishwasher
+9,00336,Dishwasher
+7,00337,Sushi Preparer
+15,00338,Host/Hostess
+3,00339,Teppanyaki Chef
+3,00340,Cashier
+6,00341,Teppanyaki Chef
+4,00342,Host/Hostess
+7,00343,Sushi Preparer
+13,00344,Teppanyaki Chef
+15,00345,Cashier
+6,00346,Dishwasher
+7,00347,Teppanyaki Chef
+10,00348,Dishwasher
+6,00349,Sushi Chef
+1,00350,Sushi Chef
+5,00351,Server
+11,00352,Teppanyaki Chef
+13,00353,Dishwasher
+5,00354,Cashier
+14,00355,Sushi Preparer
+4,00356,Host/Hostess
+8,00357,Teppanyaki Chef
+10,00358,Sushi Preparer
+10,00359,Dishwasher
+10,00360,Sushi Preparer
+6,00361,Host/Hostess
+13,00362,Sushi Chef
+13,00363,Server
+2,00364,Dishwasher
+3,00365,Host/Hostess
+13,00366,Sushi Chef
+13,00367,Cashier
+10,00368,Teppanyaki Chef
+8,00369,Sushi Chef
+7,00370,Dishwasher
+6,00371,Sushi Preparer
+1,00372,Dishwasher
+5,00373,Server
+1,00374,Teppanyaki Chef
+13,00375,Sushi Chef
+4,00376,Sushi Preparer
+6,00377,Cashier
+9,00378,Sushi Chef
+1,00379,Cashier
+6,00380,Sushi Preparer
+15,00381,Dishwasher
+3,00382,Teppanyaki Chef
+10,00383,Host/Hostess
+2,00384,Sushi Chef
+7,00385,Sushi Chef
+3,00386,Teppanyaki Chef
+6,00387,Sushi Preparer
+3,00388,Cashier
+2,00389,Sushi Preparer
+2,00390,Teppanyaki Chef
+15,00391,Dishwasher
+2,00392,Sushi Chef
+3,00393,Sushi Chef
+10,00394,Server
+11,00395,Teppanyaki Chef
+5,00396,Host/Hostess
+12,00397,Cashier
+4,00398,Sushi Preparer
+4,00399,Sushi Chef
+5,00400,Cashier
+1,00401,Sushi Chef
+3,00402,Dishwasher
+12,00403,Sushi Chef
+7,00404,Dishwasher
+8,00405,Sushi Chef
+13,00406,Teppanyaki Chef
+14,00407,Teppanyaki Chef
+3,00408,Dishwasher
+9,00409,Sushi Preparer
+2,00410,Cashier
+14,00411,Sushi Chef
+14,00412,Dishwasher
+8,00413,Cashier
+4,00414,Dishwasher
+10,00415,Teppanyaki Chef
+5,00416,Host/Hostess
+9,00417,Server
+11,00418,Cashier
+1,00419,Server
+11,00420,Server
+10,00421,Dishwasher
+8,00422,Dishwasher
+9,00423,Sushi Preparer
+1,00424,Teppanyaki Chef
+6,00425,Teppanyaki Chef
+4,00426,Host/Hostess
+6,00427,Sushi Chef
+3,00428,Server
+11,00429,Sushi Chef
+15,00430,Server
+7,00431,Cashier
+4,00432,Dishwasher
+1,00433,Sushi Chef
+1,00434,Sushi Preparer
+7,00435,Dishwasher
+3,00436,Cashier
+13,00437,Teppanyaki Chef
+11,00438,Teppanyaki Chef
+3,00439,Sushi Chef
+15,00440,Teppanyaki Chef
+9,00441,Teppanyaki Chef
+5,00442,Sushi Chef
+8,00443,Server
+4,00444,Host/Hostess
+4,00445,Teppanyaki Chef
+14,00446,Dishwasher
+10,00447,Sushi Chef
+6,00448,Server
+10,00449,Dishwasher
+7,00450,Teppanyaki Chef
+3,00451,Server
+4,00452,Cashier
+8,00453,Teppanyaki Chef
+11,00454,Sushi Preparer
+11,00455,Dishwasher
+12,00456,Sushi Preparer
+5,00457,Host/Hostess
+11,00458,Dishwasher
+10,00459,Host/Hostess
+1,00460,Server
+8,00461,Sushi Preparer
+4,00462,Cashier
+12,00463,Server
+10,00464,Cashier
+13,00465,Server
+11,00466,Host/Hostess
+10,00467,Sushi Preparer
+8,00468,Server
+3,00469,Host/Hostess
+11,00470,Sushi Chef
+14,00471,Host/Hostess
+3,00472,Sushi Chef
+10,00473,Dishwasher
+11,00474,Dishwasher
+3,00475,Dishwasher
+3,00476,Host/Hostess
+7,00477,Teppanyaki Chef
+2,00478,Teppanyaki Chef
+11,00479,Dishwasher
+2,00480,Sushi Preparer
+11,00481,Sushi Preparer
+15,00482,Sushi Preparer
+15,00483,Sushi Chef
+15,00484,Sushi Chef
+4,00485,Sushi Preparer
+3,00486,Cashier
+15,00487,Host/Hostess
+2,00488,Dishwasher
+15,00489,Sushi Chef
+6,00490,Sushi Chef
+4,00491,Dishwasher
+11,00492,Sushi Chef
+6,00493,Server
+7,00494,Sushi Chef
+8,00495,Sushi Preparer
+2,00496,Teppanyaki Chef
+6,00497,Cashier
+10,00498,Server
+11,00499,Cashier
+9,00500,Host/Hostess
+9,00501,Cashier
+13,00502,Cashier
+14,00503,Sushi Chef
+2,00504,Cashier
+12,00505,Cashier
+11,00506,Sushi Preparer
+14,00507,Cashier
+7,00508,Sushi Chef
+4,00509,Cashier
+5,00510,Cashier
+5,00511,Server
+12,00512,Cashier
+3,00513,Cashier
+10,00514,Dishwasher
+7,00515,Cashier
+8,00516,Dishwasher
+1,00517,Teppanyaki Chef
+10,00518,Server
+7,00519,Teppanyaki Chef
+4,00520,Server
+15,00521,Server
+7,00522,Teppanyaki Chef
+6,00523,Cashier
+9,00524,Host/Hostess
+11,00525,Teppanyaki Chef
+9,00526,Teppanyaki Chef
+2,00527,Server
+4,00528,Cashier
+14,00529,Sushi Preparer
+13,00530,Dishwasher
+1,00531,Dishwasher
+9,00532,Host/Hostess
+11,00533,Cashier
+12,00534,Sushi Preparer
+10,00535,Cashier
+7,00536,Sushi Chef
+8,00537,Server
+14,00538,Cashier
+3,00539,Sushi Preparer
+11,00540,Cashier
+10,00541,Sushi Chef
+14,00542,Dishwasher
+4,00543,Sushi Chef
+11,00544,Sushi Chef
+9,00545,Host/Hostess
+7,00546,Host/Hostess
+8,00547,Dishwasher
+12,00548,Host/Hostess
+12,00549,Host/Hostess
+6,00550,Sushi Preparer
+1,00551,Cashier
+4,00552,Dishwasher
+9,00553,Teppanyaki Chef
+11,00554,Host/Hostess
+15,00555,Cashier
+10,00556,Dishwasher
+14,00557,Sushi Preparer
+12,00558,Teppanyaki Chef
+8,00559,Server
+5,00560,Sushi Preparer
+13,00561,Dishwasher
+5,00562,Server
+3,00563,Sushi Chef
+3,00564,Host/Hostess
+10,00565,Server
+15,00566,Host/Hostess
+14,00567,Server
+2,00568,Dishwasher
+10,00569,Server
+3,00570,Cashier
+15,00571,Sushi Preparer
+5,00572,Sushi Chef
+1,00573,Server
+5,00574,Dishwasher
+7,00575,Server
+4,00576,Sushi Preparer
+14,00577,Dishwasher
+5,00578,Server
+15,00579,Dishwasher
+7,00580,Teppanyaki Chef
+7,00581,Sushi Preparer
+9,00582,Cashier
+3,00583,Dishwasher
+6,00584,Dishwasher
+12,00585,Server
+15,00586,Teppanyaki Chef
+12,00587,Dishwasher
+12,00588,Host/Hostess
+10,00589,Teppanyaki Chef
+5,00590,Teppanyaki Chef
+13,00591,Server
+15,00592,Sushi Preparer
+5,00593,Teppanyaki Chef
+2,00594,Host/Hostess
+12,00595,Cashier
+6,00596,Cashier
+3,00597,Server
+12,00598,Teppanyaki Chef
+14,00599,Server
+13,00600,Host/Hostess
+13,00601,Host/Hostess
+7,00602,Sushi Preparer
+1,00603,Teppanyaki Chef
+12,00604,Host/Hostess
+13,00605,Sushi Preparer
+12,00606,Sushi Chef
+11,00607,Sushi Chef
+8,00608,Server
+12,00609,Server
+1,00610,Sushi Preparer
+11,00611,Sushi Chef
+9,00612,Cashier
+5,00613,Server
+6,00614,Cashier
+2,00615,Server
+9,00616,Sushi Chef
+9,00617,Server
+11,00618,Host/Hostess
+6,00619,Server
+9,00620,Host/Hostess
+6,00621,Dishwasher
+11,00622,Dishwasher
+4,00623,Dishwasher
+10,00624,Sushi Chef
+9,00625,Teppanyaki Chef
+13,00626,Sushi Preparer
+9,00627,Sushi Chef
+2,00628,Teppanyaki Chef
+12,00629,Host/Hostess
+15,00630,Cashier
+13,00631,Sushi Chef
+15,00632,Dishwasher
+14,00633,Dishwasher
+5,00634,Dishwasher
+5,00635,Teppanyaki Chef
+13,00636,Server
+12,00637,Sushi Preparer
+5,00638,Server
+12,00639,Sushi Chef
+1,00640,Host/Hostess
+12,00641,Cashier
+5,00642,Sushi Preparer
+6,00643,Teppanyaki Chef
+5,00644,Teppanyaki Chef
+9,00645,Cashier
+12,00646,Cashier
+15,00647,Teppanyaki Chef
+4,00648,Server
+10,00649,Server
+4,00650,Host/Hostess
+3,00651,Cashier
+9,00652,Host/Hostess
+4,00653,Host/Hostess
+6,00654,Server
+8,00655,Sushi Chef
+15,00656,Cashier
+12,00657,Cashier
+7,00658,Host/Hostess
+8,00659,Server
+10,00660,Server
+13,00661,Cashier
+4,00662,Sushi Preparer
+4,00663,Teppanyaki Chef
+13,00664,Sushi Chef
+8,00665,Host/Hostess
+12,00666,Sushi Chef
+5,00667,Sushi Preparer
+4,00668,Sushi Preparer
+8,00669,Dishwasher
+4,00670,Sushi Preparer
+12,00671,Host/Hostess
+3,00672,Sushi Chef
+13,00673,Sushi Chef
+12,00674,Sushi Preparer
+9,00675,Dishwasher
+1,00676,Server
+6,00677,Teppanyaki Chef
+3,00678,Dishwasher
+2,00679,Cashier
+4,00680,Dishwasher
+7,00681,Sushi Preparer
+4,00682,Server
+15,00683,Host/Hostess
+3,00684,Server
+6,00685,Teppanyaki Chef
+13,00686,Sushi Chef
+1,00687,Teppanyaki Chef
+10,00688,Sushi Chef
+7,00689,Host/Hostess
+1,00690,Sushi Chef
+1,00691,Teppanyaki Chef
+10,00692,Sushi Chef
+11,00693,Sushi Preparer
+8,00694,Sushi Chef
+12,00695,Sushi Preparer
+5,00696,Server
+7,00697,Host/Hostess
+10,00698,Dishwasher
+8,00699,Sushi Preparer
+7,00700,Teppanyaki Chef
+11,00701,Sushi Preparer
+7,00702,Dishwasher
+1,00703,Sushi Chef
+10,00704,Sushi Preparer
+15,00705,Sushi Chef
+2,00706,Dishwasher
+1,00707,Sushi Chef
+3,00708,Teppanyaki Chef
+1,00709,Teppanyaki Chef
+12,00710,Server
+2,00711,Server
+3,00712,Cashier
+12,00713,Dishwasher
+12,00714,Host/Hostess
+11,00715,Dishwasher
+2,00716,Sushi Preparer
+1,00717,Cashier
+8,00718,Server
+4,00719,Sushi Chef
+12,00720,Teppanyaki Chef
+13,00721,Sushi Preparer
+4,00722,Server
+2,00723,Server
+15,00724,Sushi Chef
+9,00725,Cashier
+7,00726,Server
+2,00727,Dishwasher
+9,00728,Cashier
+1,00729,Teppanyaki Chef
+2,00730,Sushi Preparer
+7,00731,Host/Hostess
+11,00732,Sushi Chef
+1,00733,Sushi Chef
+8,00734,Host/Hostess
+7,00735,Host/Hostess
+15,00736,Sushi Chef
+2,00737,Cashier
+4,00738,Dishwasher
+2,00739,Sushi Preparer
+15,00740,Dishwasher
+8,00741,Sushi Chef
+7,00742,Teppanyaki Chef
+1,00743,Sushi Chef
+5,00744,Teppanyaki Chef
+2,00745,Dishwasher
+7,00746,Teppanyaki Chef
+7,00747,Dishwasher
+14,00748,Dishwasher
+12,00749,Cashier
+10,00750,Sushi Chef
+12,00751,Sushi Chef
+14,00752,Teppanyaki Chef
+6,00753,Sushi Chef
+9,00754,Server
+10,00755,Dishwasher
+2,00756,Sushi Chef
+12,00757,Cashier
+8,00758,Cashier
+11,00759,Sushi Chef
+5,00760,Host/Hostess
+2,00761,Sushi Preparer
+8,00762,Cashier
+5,00763,Teppanyaki Chef
+13,00764,Server
+13,00765,Host/Hostess
+5,00766,Cashier
+10,00767,Teppanyaki Chef
+10,00768,Server
+7,00769,Host/Hostess
+15,00770,Sushi Preparer
+5,00771,Sushi Preparer
+11,00772,Sushi Preparer
+15,00773,Dishwasher
+6,00774,Cashier
+6,00775,Sushi Chef
+3,00776,Server
+5,00777,Sushi Chef
+7,00778,Server
+4,00779,Teppanyaki Chef
+1,00780,Dishwasher
+14,00781,Dishwasher
+14,00782,Cashier
+3,00783,Host/Hostess
+15,00784,Host/Hostess
+5,00785,Sushi Chef
+4,00786,Host/Hostess
+13,00787,Sushi Chef
+5,00788,Host/Hostess
+1,00789,Host/Hostess
+7,00790,Dishwasher
+9,00791,Sushi Chef
+4,00792,Dishwasher
+14,00793,Sushi Chef
+3,00794,Sushi Preparer
+7,00795,Dishwasher
+3,00796,Server
+10,00797,Dishwasher
+6,00798,Sushi Chef
+2,00799,Server
+3,00800,Sushi Chef
+8,00801,Cashier
+8,00802,Sushi Chef
+7,00803,Sushi Preparer
+6,00804,Teppanyaki Chef
+12,00805,Sushi Preparer
+13,00806,Host/Hostess
+8,00807,Host/Hostess
+13,00808,Server
+10,00809,Server
+7,00810,Teppanyaki Chef
+12,00811,Dishwasher
+8,00812,Teppanyaki Chef
+4,00813,Cashier
+7,00814,Teppanyaki Chef
+14,00815,Teppanyaki Chef
+9,00816,Cashier
+2,00817,Dishwasher
+8,00818,Server
+7,00819,Cashier
+12,00820,Server
+6,00821,Sushi Chef
+7,00822,Teppanyaki Chef
+7,00823,Cashier
+15,00824,Teppanyaki Chef
+5,00825,Teppanyaki Chef
+4,00826,Sushi Chef
+6,00827,Sushi Preparer
+1,00828,Cashier
+4,00829,Cashier
+9,00830,Cashier
+7,00831,Sushi Preparer
+13,00832,Server
+8,00833,Dishwasher
+10,00834,Host/Hostess
+8,00835,Cashier
+11,00836,Host/Hostess
+2,00837,Teppanyaki Chef
+12,00838,Sushi Chef
+13,00839,Host/Hostess
+6,00840,Sushi Chef
+7,00841,Sushi Chef
+1,00842,Server
+1,00843,Host/Hostess
+14,00844,Sushi Preparer
+5,00845,Server
+1,00846,Dishwasher
+9,00847,Sushi Preparer
+12,00848,Sushi Preparer
+1,00849,Sushi Chef
+2,00850,Sushi Chef
+6,00851,Cashier
+11,00852,Server
+2,00853,Sushi Preparer
+2,00854,Cashier
+6,00855,Dishwasher
+11,00856,Sushi Preparer
+14,00857,Sushi Preparer
+7,00858,Dishwasher
+4,00859,Sushi Preparer
+7,00860,Cashier
+3,00861,Server
+11,00862,Sushi Chef
+11,00863,Sushi Chef
+4,00864,Cashier
+11,00865,Dishwasher
+9,00866,Sushi Preparer
+10,00867,Cashier
+5,00868,Teppanyaki Chef
+12,00869,Cashier
+6,00870,Dishwasher
+2,00871,Host/Hostess
+13,00872,Teppanyaki Chef
+14,00873,Server
+7,00874,Sushi Preparer
+6,00875,Server
+14,00876,Cashier
+9,00877,Teppanyaki Chef
+1,00878,Sushi Preparer
+13,00879,Host/Hostess
+6,00880,Cashier
+3,00881,Sushi Preparer
+12,00882,Cashier
+4,00883,Teppanyaki Chef
+8,00884,Cashier
+1,00885,Host/Hostess
+1,00886,Server
+14,00887,Teppanyaki Chef
+11,00888,Sushi Preparer
+8,00889,Cashier
+14,00890,Dishwasher
+5,00891,Sushi Chef
+12,00892,Cashier
+12,00893,Sushi Preparer
+12,00894,Dishwasher
+12,00895,Host/Hostess
+6,00896,Teppanyaki Chef
+7,00897,Cashier
+8,00898,Sushi Chef
+14,00899,Cashier
+8,00900,Server
+3,00901,Sushi Chef
+15,00902,Host/Hostess
+13,00903,Sushi Preparer
+11,00904,Sushi Preparer
+4,00905,Teppanyaki Chef
+2,00906,Dishwasher
+8,00907,Sushi Preparer
+7,00908,Dishwasher
+15,00909,Sushi Preparer
+2,00910,Host/Hostess
+2,00911,Server
+3,00912,Sushi Preparer
+11,00913,Server
+6,00914,Dishwasher
+15,00915,Sushi Chef
+8,00916,Sushi Chef
+11,00917,Sushi Chef
+1,00918,Dishwasher
+13,00919,Cashier
+12,00920,Host/Hostess
+1,00921,Server
+4,00922,Dishwasher
+13,00923,Host/Hostess
+7,00924,Host/Hostess
+13,00925,Cashier
+14,00926,Sushi Preparer
+9,00927,Cashier
+4,00928,Dishwasher
+1,00929,Cashier
+2,00930,Sushi Preparer
+5,00931,Cashier
+6,00932,Sushi Preparer
+3,00933,Host/Hostess
+1,00934,Server
+11,00935,Sushi Preparer
+10,00936,Server
+9,00937,Sushi Chef
+11,00938,Sushi Preparer
+6,00939,Sushi Preparer
+13,00940,Sushi Chef
+3,00941,Dishwasher
+4,00942,Sushi Preparer
+5,00943,Sushi Chef
+7,00944,Server
+10,00945,Cashier
+6,00946,Server
+12,00947,Server
+1,00948,Server
+15,00949,Dishwasher
+14,00950,Teppanyaki Chef
+6,00951,Cashier
+13,00952,Dishwasher
+3,00953,Server
+4,00954,Server
+2,00955,Cashier
+14,00956,Teppanyaki Chef
+1,00957,Teppanyaki Chef
+5,00958,Cashier
+7,00959,Sushi Chef
+11,00960,Host/Hostess
+2,00961,Teppanyaki Chef
+11,00962,Dishwasher
+15,00963,Sushi Chef
+8,00964,Host/Hostess
+2,00965,Dishwasher
+10,00966,Sushi Chef
+12,00967,Server
+8,00968,Server
+6,00969,Teppanyaki Chef
+1,00970,Host/Hostess
+10,00971,Sushi Chef
+11,00972,Server
+8,00973,Server
+9,00974,Server
+3,00975,Cashier
+13,00976,Sushi Chef
+3,00977,Server
+2,00978,Cashier
+8,00979,Teppanyaki Chef
+7,00980,Server
+14,00981,Server
+7,00982,Cashier
+7,00983,Sushi Chef
+2,00984,Dishwasher
+8,00985,Server
+3,00986,Sushi Preparer
+6,00987,Sushi Preparer
+8,00988,Sushi Chef
+7,00989,Teppanyaki Chef
+13,00990,Sushi Preparer
+8,00991,Dishwasher
+9,00992,Cashier
+9,00993,Teppanyaki Chef
+11,00994,Teppanyaki Chef
+15,00995,Teppanyaki Chef
+1,00996,Teppanyaki Chef
+8,00997,Sushi Preparer
+13,00998,Server
+7,00999,Sushi Preparer
+3,01000,Sushi Chef
+4,01001,Sushi Preparer
+2,01002,Cashier
+13,01003,Sushi Preparer
+1,01004,Sushi Preparer
+11,01005,Sushi Chef
+10,01006,Sushi Preparer
+5,01007,Host/Hostess
+6,01008,Host/Hostess
+8,01009,Sushi Chef
+11,01010,Server
+9,01011,Cashier
+7,01012,Dishwasher
+6,01013,Host/Hostess
+5,01014,Cashier
+3,01015,Host/Hostess
+5,01016,Sushi Chef
+14,01017,Teppanyaki Chef
+11,01018,Sushi Chef
+2,01019,Cashier
+4,01020,Host/Hostess
+5,01021,Teppanyaki Chef
+15,01022,Dishwasher
+10,01023,Sushi Preparer
+6,01024,Sushi Preparer
+2,01025,Dishwasher
+12,01026,Host/Hostess
+3,01027,Dishwasher
+6,01028,Sushi Chef
+13,01029,Server
+5,01030,Sushi Chef
+15,01031,Host/Hostess
+13,01032,Cashier
+13,01033,Host/Hostess
+15,01034,Sushi Preparer
+1,01035,Server
+6,01036,Cashier
+9,01037,Sushi Preparer
+14,01038,Dishwasher
+3,01039,Dishwasher
+4,01040,Cashier
+7,01041,Sushi Preparer
+11,01042,Sushi Chef
+2,01043,Sushi Preparer
+1,01044,Sushi Preparer
+15,01045,Teppanyaki Chef
+4,01046,Dishwasher
+9,01047,Sushi Preparer
+11,01048,Teppanyaki Chef
+4,01049,Host/Hostess
+4,01050,Sushi Preparer
+1,01051,Server
+14,01052,Host/Hostess
+3,01053,Dishwasher
+5,01054,Dishwasher
+6,01055,Dishwasher
+14,01056,Sushi Chef
+6,01057,Sushi Preparer
+8,01058,Sushi Preparer
+15,01059,Dishwasher
+10,01060,Server
+7,01061,Sushi Preparer
+4,01062,Sushi Chef
+5,01063,Teppanyaki Chef
+2,01064,Server
+4,01065,Sushi Chef
+8,01066,Dishwasher
+14,01067,Server
+4,01068,Dishwasher
+5,01069,Host/Hostess
+13,01070,Sushi Preparer
+5,01071,Sushi Preparer
+4,01072,Sushi Chef
+4,01073,Cashier
+12,01074,Sushi Chef
+7,01075,Sushi Preparer
+11,01076,Teppanyaki Chef
+8,01077,Dishwasher
+9,01078,Cashier
+13,01079,Server
+9,01080,Dishwasher
+14,01081,Cashier
+9,01082,Dishwasher
+8,01083,Sushi Chef
+12,01084,Teppanyaki Chef
+12,01085,Sushi Chef
+3,01086,Host/Hostess
+4,01087,Server
+13,01088,Dishwasher
+13,01089,Cashier
+2,01090,Sushi Preparer
+15,01091,Server
+3,01092,Host/Hostess
+2,01093,Dishwasher
+14,01094,Sushi Preparer
+13,01095,Server
+4,01096,Host/Hostess
+7,01097,Server
+1,01098,Sushi Preparer
+12,01099,Host/Hostess
+3,01100,Cashier
+12,01101,Sushi Preparer
+12,01102,Host/Hostess
+8,01103,Dishwasher
+13,01104,Cashier
+1,01105,Sushi Chef
+7,01106,Host/Hostess
+7,01107,Dishwasher
+15,01108,Cashier
+13,01109,Cashier
+15,01110,Sushi Preparer
+13,01111,Server
+9,01112,Sushi Preparer
+1,01113,Sushi Chef
+3,01114,Sushi Preparer
+7,01115,Cashier
+11,01116,Sushi Preparer
+14,01117,Cashier
+12,01118,Teppanyaki Chef
+6,01119,Dishwasher
+10,01120,Host/Hostess
+12,01121,Server
+7,01122,Host/Hostess
+14,01123,Dishwasher
+13,01124,Cashier
+8,01125,Sushi Preparer
+6,01126,Server
+5,01127,Cashier
+9,01128,Teppanyaki Chef
+11,01129,Server
+7,01130,Teppanyaki Chef
+13,01131,Dishwasher
+7,01132,Cashier
+15,01133,Server
+14,01134,Sushi Preparer
+6,01135,Server
+5,01136,Teppanyaki Chef
+13,01137,Host/Hostess
+2,01138,Dishwasher
+8,01139,Sushi Chef
+5,01140,Cashier
+15,01141,Host/Hostess
+5,01142,Teppanyaki Chef
+5,01143,Sushi Preparer
+3,01144,Dishwasher
+4,01145,Server
+4,01146,Dishwasher
+5,01147,Server
+10,01148,Server
+6,01149,Sushi Chef
+2,01150,Host/Hostess
+4,01151,Cashier
+9,01152,Sushi Preparer
+3,01153,Cashier
+10,01154,Sushi Preparer
+3,01155,Teppanyaki Chef
+3,01156,Server
+13,01157,Dishwasher
+3,01158,Sushi Chef
+11,01159,Host/Hostess
+2,01160,Sushi Preparer
+6,01161,Cashier
+10,01162,Sushi Chef
+9,01163,Cashier
+7,01164,Sushi Chef
+8,01165,Server
+9,01166,Host/Hostess
+6,01167,Dishwasher
+7,01168,Sushi Chef
+5,01169,Sushi Chef
+5,01170,Sushi Preparer
+4,01171,Teppanyaki Chef
+11,01172,Sushi Preparer
+4,01173,Sushi Preparer
+8,01174,Dishwasher
+14,01175,Server
+9,01176,Sushi Chef
+11,01177,Cashier
+2,01178,Host/Hostess
+6,01179,Sushi Chef
+2,01180,Dishwasher
+13,01181,Teppanyaki Chef
+15,01182,Sushi Chef
+14,01183,Teppanyaki Chef
+1,01184,Teppanyaki Chef
+5,01185,Server
+4,01186,Sushi Chef
+4,01187,Dishwasher
+2,01188,Cashier
+3,01189,Dishwasher
+3,01190,Cashier
+7,01191,Host/Hostess
+6,01192,Server
+13,01193,Cashier
+4,01194,Dishwasher
+5,01195,Host/Hostess
+2,01196,Host/Hostess
+14,01197,Server
+13,01198,Cashier
+1,01199,Teppanyaki Chef
+3,01200,Cashier
+6,01201,Server
+9,01202,Dishwasher
+5,01203,Sushi Preparer
+13,01204,Cashier
+1,01205,Server
+14,01206,Sushi Preparer
+15,01207,Server
+7,01208,Teppanyaki Chef
+5,01209,Dishwasher
+10,01210,Dishwasher
+1,01211,Teppanyaki Chef
+8,01212,Sushi Preparer
+15,01213,Dishwasher
+12,01214,Host/Hostess
+1,01215,Sushi Chef
+12,01216,Cashier
+9,01217,Cashier
+2,01218,Cashier
+15,01219,Host/Hostess
+13,01220,Dishwasher
+14,01221,Teppanyaki Chef
+4,01222,Cashier
+7,01223,Teppanyaki Chef
+9,01224,Host/Hostess
+8,01225,Sushi Chef
+5,01226,Dishwasher
+4,01227,Dishwasher
+10,01228,Host/Hostess
+4,01229,Teppanyaki Chef
+12,01230,Dishwasher
+1,01231,Host/Hostess
+11,01232,Server
+5,01233,Host/Hostess
+1,01234,Dishwasher
+4,01235,Dishwasher
+9,01236,Teppanyaki Chef
+1,01237,Sushi Preparer
+9,01238,Cashier
+4,01239,Sushi Chef
+1,01240,Host/Hostess
+14,01241,Host/Hostess
+5,01242,Server
+12,01243,Sushi Preparer
+8,01244,Server
+12,01245,Cashier
+9,01246,Sushi Preparer
+3,01247,Teppanyaki Chef
+13,01248,Server
+3,01249,Sushi Chef
+5,01250,Sushi Chef
+13,01251,Server
+11,01252,Teppanyaki Chef
+5,01253,Host/Hostess
+6,01254,Cashier
+10,01255,Sushi Chef
+8,01256,Server
+10,01257,Host/Hostess
+1,01258,Host/Hostess
+12,01259,Host/Hostess
+12,01260,Teppanyaki Chef
+12,01261,Server
+3,01262,Cashier
+5,01263,Dishwasher
+13,01264,Dishwasher
+9,01265,Teppanyaki Chef
+8,01266,Sushi Preparer
+7,01267,Cashier
+15,01268,Sushi Preparer
+15,01269,Dishwasher
+11,01270,Cashier
+1,01271,Server
+1,01272,Sushi Preparer
+15,01273,Teppanyaki Chef
+10,01274,Cashier
+3,01275,Teppanyaki Chef
+1,01276,Cashier
+10,01277,Dishwasher
+8,01278,Sushi Chef
+3,01279,Server
+3,01280,Dishwasher
+9,01281,Sushi Chef
+11,01282,Teppanyaki Chef
+10,01283,Dishwasher
+4,01284,Sushi Preparer
+7,01285,Dishwasher
+8,01286,Cashier
+5,01287,Dishwasher
+4,01288,Sushi Preparer
+6,01289,Sushi Preparer
+8,01290,Sushi Chef
+10,01291,Cashier
+1,01292,Dishwasher
+13,01293,Host/Hostess
+12,01294,Sushi Preparer
+5,01295,Sushi Chef
+11,01296,Dishwasher
+5,01297,Server
+1,01298,Dishwasher
+6,01299,Sushi Preparer
+13,01300,Host/Hostess
+3,01301,Teppanyaki Chef
+9,01302,Dishwasher
+12,01303,Host/Hostess
+4,01304,Host/Hostess
+1,01305,Dishwasher
+10,01306,Dishwasher
+6,01307,Host/Hostess
+15,01308,Sushi Chef
+3,01309,Host/Hostess
+12,01310,Server
+14,01311,Cashier
+12,01312,Sushi Preparer
+13,01313,Server
+1,01314,Server
+1,01315,Host/Hostess
+15,01316,Server
+15,01317,Server
+13,01318,Host/Hostess
+7,01319,Dishwasher
+12,01320,Cashier
+6,01321,Server
+11,01322,Dishwasher
+3,01323,Server
+11,01324,Sushi Chef
+10,01325,Sushi Chef
+12,01326,Teppanyaki Chef
+14,01327,Teppanyaki Chef
+3,01328,Sushi Preparer
+14,01329,Server
+15,01330,Sushi Chef
+15,01331,Cashier
+1,01332,Teppanyaki Chef
+12,01333,Teppanyaki Chef
+7,01334,Teppanyaki Chef
+4,01335,Server
+13,01336,Teppanyaki Chef
+14,01337,Sushi Preparer
+10,01338,Host/Hostess
+6,01339,Host/Hostess
+1,01340,Server
+8,01341,Sushi Preparer
+5,01342,Sushi Chef
+5,01343,Sushi Chef
+10,01344,Server
+11,01345,Dishwasher
+15,01346,Teppanyaki Chef
+14,01347,Host/Hostess
+2,01348,Sushi Preparer
+5,01349,Teppanyaki Chef
+12,01350,Cashier
+7,01351,Dishwasher
+12,01352,Sushi Preparer
+4,01353,Cashier
+14,01354,Sushi Chef
+3,01355,Sushi Chef
+13,01356,Dishwasher
+13,01357,Sushi Chef
+10,01358,Cashier
+12,01359,Host/Hostess
+13,01360,Dishwasher
+8,01361,Cashier
+12,01362,Host/Hostess
+13,01363,Cashier
+6,01364,Sushi Preparer
+9,01365,Teppanyaki Chef
+11,01366,Teppanyaki Chef
+9,01367,Server
+6,01368,Sushi Chef
+12,01369,Cashier
+8,01370,Sushi Preparer
+14,01371,Host/Hostess
+9,01372,Sushi Chef
+10,01373,Host/Hostess
+8,01374,Server
+2,01375,Cashier
+14,01376,Teppanyaki Chef
+7,01377,Server
+4,01378,Sushi Chef
+1,01379,Sushi Chef
+9,01380,Server
+11,01381,Host/Hostess
+2,01382,Sushi Preparer
+12,01383,Dishwasher
+5,01384,Sushi Preparer
+6,01385,Sushi Preparer
+4,01386,Teppanyaki Chef
+1,01387,Host/Hostess
+14,01388,Sushi Preparer
+7,01389,Teppanyaki Chef
+13,01390,Teppanyaki Chef
+15,01391,Dishwasher
+11,01392,Host/Hostess
+8,01393,Dishwasher
+10,01394,Teppanyaki Chef
+10,01395,Cashier
+11,01396,Teppanyaki Chef
+3,01397,Server
+7,01398,Dishwasher
+6,01399,Host/Hostess
+8,01400,Sushi Chef
+9,01401,Server
+13,01402,Sushi Chef
+12,01403,Sushi Preparer
+6,01404,Teppanyaki Chef
+2,01405,Cashier
+7,01406,Sushi Chef
+8,01407,Host/Hostess
+3,01408,Server
+5,01409,Teppanyaki Chef
+15,01410,Server
+6,01411,Teppanyaki Chef
+4,01412,Teppanyaki Chef
+10,01413,Host/Hostess
+4,01414,Sushi Preparer
+3,01415,Cashier
+9,01416,Sushi Chef
+10,01417,Cashier
+8,01418,Host/Hostess
+10,01419,Cashier
+13,01420,Sushi Chef
+1,01421,Server
+3,01422,Sushi Preparer
+11,01423,Server
+12,01424,Host/Hostess
+9,01425,Server
+4,01426,Host/Hostess
+9,01427,Server
+6,01428,Sushi Preparer
+12,01429,Dishwasher
+9,01430,Dishwasher
+11,01431,Host/Hostess
+8,01432,Dishwasher
+1,01433,Cashier
+4,01434,Cashier
+4,01435,Sushi Chef
+7,01436,Cashier
+8,01437,Teppanyaki Chef
+5,01438,Dishwasher
+5,01439,Host/Hostess
+15,01440,Cashier
+3,01441,Host/Hostess
+8,01442,Server
+15,01443,Server
+5,01444,Dishwasher
+8,01445,Host/Hostess
+12,01446,Server
+10,01447,Teppanyaki Chef
+5,01448,Host/Hostess
+9,01449,Dishwasher
+10,01450,Teppanyaki Chef
+12,01451,Dishwasher
+10,01452,Sushi Chef
+15,01453,Dishwasher
+14,01454,Cashier
+1,01455,Sushi Preparer
+13,01456,Cashier
+3,01457,Sushi Chef
+2,01458,Sushi Preparer
+6,01459,Host/Hostess
+15,01460,Host/Hostess
+15,01461,Host/Hostess
+4,01462,Teppanyaki Chef
+14,01463,Host/Hostess
+3,01464,Sushi Preparer
+1,01465,Server
+4,01466,Sushi Chef
+2,01467,Dishwasher
+13,01468,Cashier
+12,01469,Host/Hostess
+10,01470,Server
+15,01471,Host/Hostess
+11,01472,Dishwasher
+12,01473,Sushi Chef
+12,01474,Server
+12,01475,Teppanyaki Chef
+5,01476,Host/Hostess
+9,01477,Sushi Chef
+7,01478,Teppanyaki Chef
+6,01479,Host/Hostess
+14,01480,Cashier
+1,01481,Host/Hostess
+11,01482,Host/Hostess
+9,01483,Cashier
+13,01484,Server
+14,01485,Sushi Preparer
+7,01486,Server
+13,01487,Dishwasher
+13,01488,Dishwasher
+9,01489,Sushi Preparer
+12,01490,Teppanyaki Chef
+1,01491,Cashier
+4,01492,Server
+15,01493,Sushi Preparer
+4,01494,Server
+5,01495,Teppanyaki Chef
+10,01496,Server
+3,01497,Sushi Preparer
+7,01498,Server
+6,01499,Dishwasher
+14,01500,Sushi Chef
+11,01501,Teppanyaki Chef
+3,01502,Sushi Preparer
+6,01503,Teppanyaki Chef
+10,01504,Server
+15,01505,Dishwasher
+5,01506,Sushi Chef
+2,01507,Host/Hostess
+6,01508,Teppanyaki Chef
+7,01509,Dishwasher
+14,01510,Cashier
+2,01511,Server
+8,01512,Cashier
+2,01513,Host/Hostess
+9,01514,Host/Hostess
+14,01515,Cashier
+2,01516,Sushi Chef
+13,01517,Host/Hostess
+4,01518,Server
+4,01519,Sushi Chef
+15,01520,Host/Hostess
+2,01521,Cashier
+11,01522,Sushi Chef
+6,01523,Host/Hostess
+12,01524,Dishwasher
+13,01525,Dishwasher
+1,01526,Host/Hostess
+10,01527,Sushi Chef
+7,01528,Sushi Preparer
+4,01529,Server
+3,01530,Dishwasher
+4,01531,Host/Hostess
+4,01532,Dishwasher
+1,01533,Host/Hostess
+9,01534,Host/Hostess
+1,01535,Cashier
+13,01536,Server
+7,01537,Server
+10,01538,Teppanyaki Chef
+2,01539,Sushi Preparer
+7,01540,Server
+15,01541,Cashier
+5,01542,Sushi Chef
+5,01543,Cashier
+15,01544,Sushi Chef
+3,01545,Host/Hostess
+14,01546,Host/Hostess
+15,01547,Teppanyaki Chef
+2,01548,Host/Hostess
+7,01549,Sushi Preparer
+3,01550,Dishwasher
+14,01551,Server
+6,01552,Cashier
+2,01553,Server
+6,01554,Dishwasher
+6,01555,Teppanyaki Chef
+10,01556,Teppanyaki Chef
+14,01557,Sushi Preparer
+13,01558,Teppanyaki Chef
+2,01559,Sushi Preparer
+2,01560,Dishwasher
+14,01561,Cashier
+2,01562,Teppanyaki Chef
+5,01563,Dishwasher
+7,01564,Cashier
+6,01565,Server
+3,01566,Sushi Chef
+9,01567,Sushi Chef
+14,01568,Cashier
+13,01569,Server
+15,01570,Cashier
+15,01571,Sushi Chef
+10,01572,Teppanyaki Chef
+6,01573,Server
+13,01574,Sushi Chef
+5,01575,Host/Hostess
+12,01576,Dishwasher
+10,01577,Teppanyaki Chef
+5,01578,Dishwasher
+1,01579,Sushi Preparer
+15,01580,Server
+12,01581,Host/Hostess
+1,01582,Sushi Chef
+10,01583,Host/Hostess
+13,01584,Dishwasher
+13,01585,Sushi Preparer
+7,01586,Cashier
+11,01587,Sushi Chef
+7,01588,Cashier
+11,01589,Host/Hostess
+14,01590,Cashier
+2,01591,Dishwasher
+5,01592,Sushi Chef
+12,01593,Host/Hostess
+3,01594,Server
+3,01595,Sushi Chef
+11,01596,Server
+12,01597,Cashier
+14,01598,Server
+15,01599,Server
+10,01600,Server
+7,01601,Server
+15,01602,Server
+2,01603,Cashier
+5,01604,Host/Hostess
+2,01605,Teppanyaki Chef
+3,01606,Teppanyaki Chef
+13,01607,Host/Hostess
+2,01608,Dishwasher
+2,01609,Dishwasher
+12,01610,Teppanyaki Chef
+10,01611,Sushi Chef
+9,01612,Teppanyaki Chef
+3,01613,Teppanyaki Chef
+10,01614,Host/Hostess
+3,01615,Cashier
+10,01616,Sushi Preparer
+1,01617,Server
+13,01618,Server
+14,01619,Teppanyaki Chef
+4,01620,Sushi Preparer
+3,01621,Dishwasher
+9,01622,Server
+3,01623,Teppanyaki Chef
+13,01624,Dishwasher
+14,01625,Host/Hostess
+9,01626,Cashier
+2,01627,Sushi Chef
+13,01628,Sushi Chef
+9,01629,Server
+2,01630,Server
+13,01631,Sushi Preparer
+9,01632,Server
+14,01633,Sushi Preparer
+10,01634,Server
+12,01635,Host/Hostess
+8,01636,Server
+1,01637,Host/Hostess
+2,01638,Sushi Preparer
+7,01639,Sushi Chef
+8,01640,Teppanyaki Chef
+10,01641,Dishwasher
+11,01642,Sushi Chef
+4,01643,Server
+13,01644,Cashier
+11,01645,Dishwasher
+5,01646,Dishwasher
+7,01647,Teppanyaki Chef
+7,01648,Dishwasher
+11,01649,Sushi Chef
+2,01650,Dishwasher
+4,01651,Cashier
+9,01652,Teppanyaki Chef
+12,01653,Cashier
+8,01654,Server
+6,01655,Sushi Preparer
+15,01656,Teppanyaki Chef
+11,01657,Teppanyaki Chef
+13,01658,Server
+13,01659,Server
+13,01660,Sushi Preparer
+6,01661,Sushi Chef
+9,01662,Cashier
+8,01663,Sushi Chef
+8,01664,Host/Hostess
+2,01665,Dishwasher
+2,01666,Server
+10,01667,Server
+1,01668,Teppanyaki Chef
+15,01669,Dishwasher
+9,01670,Sushi Preparer
+6,01671,Cashier
+13,01672,Sushi Chef
+13,01673,Sushi Chef
+12,01674,Host/Hostess
+5,01675,Dishwasher
+8,01676,Dishwasher
+14,01677,Cashier
+12,01678,Host/Hostess
+10,01679,Sushi Preparer
+10,01680,Dishwasher
+9,01681,Server
+3,01682,Sushi Chef
+12,01683,Teppanyaki Chef
+8,01684,Host/Hostess
+13,01685,Cashier
+10,01686,Cashier
+15,01687,Sushi Preparer
+15,01688,Sushi Chef
+1,01689,Host/Hostess
+11,01690,Sushi Preparer
+3,01691,Dishwasher
+9,01692,Cashier
+15,01693,Cashier
+1,01694,Server
+5,01695,Teppanyaki Chef
+3,01696,Sushi Chef
+5,01697,Sushi Chef
+14,01698,Teppanyaki Chef
+9,01699,Cashier
+1,01700,Cashier
+5,01701,Sushi Chef
+11,01702,Teppanyaki Chef
+1,01703,Server
+1,01704,Sushi Chef
+2,01705,Host/Hostess
+10,01706,Teppanyaki Chef
+6,01707,Cashier
+8,01708,Sushi Chef
+10,01709,Teppanyaki Chef
+5,01710,Cashier
+9,01711,Sushi Chef
+11,01712,Server
+15,01713,Host/Hostess
+12,01714,Cashier
+2,01715,Cashier
+3,01716,Dishwasher
+13,01717,Dishwasher
+1,01718,Server
+2,01719,Server
+3,01720,Sushi Chef
+11,01721,Cashier
+8,01722,Host/Hostess
+7,01723,Dishwasher
+7,01724,Server
+10,01725,Cashier
+11,01726,Dishwasher
+8,01727,Teppanyaki Chef
+10,01728,Sushi Chef
+11,01729,Dishwasher
+14,01730,Host/Hostess
+11,01731,Sushi Chef
+3,01732,Dishwasher
+11,01733,Cashier
+15,01734,Server
+13,01735,Sushi Chef
+2,01736,Dishwasher
+2,01737,Dishwasher
+6,01738,Dishwasher
+7,01739,Server
+7,01740,Sushi Chef
+15,01741,Teppanyaki Chef
+9,01742,Sushi Preparer
+11,01743,Teppanyaki Chef
+4,01744,Dishwasher
+1,01745,Sushi Chef
+13,01746,Teppanyaki Chef
+11,01747,Host/Hostess
+1,01748,Host/Hostess
+2,01749,Server
+13,01750,Host/Hostess
+12,01751,Dishwasher
+14,01752,Cashier
+6,01753,Cashier
+9,01754,Sushi Chef
+13,01755,Dishwasher
+13,01756,Server
+4,01757,Teppanyaki Chef
+8,01758,Teppanyaki Chef
+4,01759,Dishwasher
+15,01760,Host/Hostess
+15,01761,Cashier
+11,01762,Cashier
+12,01763,Teppanyaki Chef
+3,01764,Cashier
+13,01765,Sushi Preparer
+6,01766,Server
+5,01767,Sushi Preparer
+3,01768,Server
+1,01769,Sushi Preparer
+6,01770,Teppanyaki Chef
+2,01771,Host/Hostess
+15,01772,Cashier
+3,01773,Server
+12,01774,Cashier
+5,01775,Teppanyaki Chef
+4,01776,Sushi Chef
+7,01777,Cashier
+6,01778,Server
+8,01779,Server
+3,01780,Sushi Preparer
+10,01781,Sushi Preparer
+10,01782,Sushi Chef
+14,01783,Server
+5,01784,Server
+10,01785,Host/Hostess
+3,01786,Teppanyaki Chef
+14,01787,Cashier
+6,01788,Teppanyaki Chef
+11,01789,Sushi Preparer
+9,01790,Cashier
+3,01791,Server
+2,01792,Dishwasher
+14,01793,Teppanyaki Chef
+15,01794,Sushi Preparer
+4,01795,Sushi Preparer
+3,01796,Cashier
+1,01797,Cashier
+13,01798,Host/Hostess
+11,01799,Host/Hostess
+11,01800,Cashier
+10,01801,Host/Hostess
+13,01802,Dishwasher
+2,01803,Sushi Chef
+15,01804,Host/Hostess
+10,01805,Cashier
+9,01806,Host/Hostess
+2,01807,Cashier
+9,01808,Dishwasher
+9,01809,Sushi Chef
+6,01810,Sushi Chef
+11,01811,Sushi Preparer
+14,01812,Cashier
+2,01813,Teppanyaki Chef
+1,01814,Sushi Chef
+5,01815,Sushi Preparer
+11,01816,Host/Hostess
+15,01817,Cashier
+9,01818,Sushi Preparer
+15,01819,Dishwasher
+12,01820,Host/Hostess
+6,01821,Dishwasher
+12,01822,Server
+11,01823,Server
+15,01824,Sushi Preparer
+10,01825,Teppanyaki Chef
+7,01826,Sushi Chef
+2,01827,Sushi Preparer
+15,01828,Host/Hostess
+6,01829,Teppanyaki Chef
+8,01830,Cashier
+8,01831,Cashier
+2,01832,Sushi Preparer
+15,01833,Sushi Preparer
+2,01834,Dishwasher
+6,01835,Cashier
+11,01836,Dishwasher
+2,01837,Sushi Preparer
+6,01838,Sushi Chef
+3,01839,Server
+2,01840,Teppanyaki Chef
+6,01841,Host/Hostess
+5,01842,Sushi Preparer
+1,01843,Teppanyaki Chef
+7,01844,Dishwasher
+6,01845,Cashier
+12,01846,Dishwasher
+7,01847,Teppanyaki Chef
+12,01848,Sushi Chef
+11,01849,Sushi Chef
+11,01850,Sushi Preparer
+3,01851,Sushi Preparer
+1,01852,Sushi Chef
+14,01853,Dishwasher
+13,01854,Dishwasher
+4,01855,Host/Hostess
+2,01856,Host/Hostess
+3,01857,Dishwasher
+15,01858,Sushi Chef
+7,01859,Dishwasher
+8,01860,Cashier
+12,01861,Server
+10,01862,Host/Hostess
+11,01863,Cashier
+6,01864,Host/Hostess
+3,01865,Sushi Chef
+11,01866,Cashier
+5,01867,Host/Hostess
+2,01868,Host/Hostess
+14,01869,Server
+3,01870,Host/Hostess
+13,01871,Server
+9,01872,Server
+8,01873,Cashier
+9,01874,Sushi Preparer
+12,01875,Server
+4,01876,Dishwasher
+12,01877,Sushi Chef
+3,01878,Cashier
+1,01879,Server
+14,01880,Server
+14,01881,Dishwasher
+15,01882,Sushi Preparer
+8,01883,Teppanyaki Chef
+6,01884,Dishwasher
+11,01885,Sushi Preparer
+14,01886,Server
+9,01887,Host/Hostess
+3,01888,Sushi Preparer
+13,01889,Host/Hostess
+1,01890,Sushi Preparer
+12,01891,Sushi Preparer
+14,01892,Server
+2,01893,Sushi Chef
+4,01894,Server
+11,01895,Cashier
+2,01896,Host/Hostess
+12,01897,Host/Hostess
+1,01898,Server
+1,01899,Server
+9,01900,Sushi Preparer
+9,01901,Server
+14,01902,Host/Hostess
+6,01903,Sushi Chef
+15,01904,Cashier
+6,01905,Host/Hostess
+1,01906,Server
+3,01907,Teppanyaki Chef
+10,01908,Sushi Chef
+15,01909,Cashier
+10,01910,Cashier
+14,01911,Sushi Preparer
+2,01912,Dishwasher
+4,01913,Teppanyaki Chef
+7,01914,Sushi Chef
+2,01915,Host/Hostess
+9,01916,Sushi Chef
+12,01917,Host/Hostess
+2,01918,Sushi Chef
+9,01919,Teppanyaki Chef
+4,01920,Teppanyaki Chef
+5,01921,Teppanyaki Chef
+5,01922,Sushi Chef
+8,01923,Dishwasher
+9,01924,Sushi Chef
+15,01925,Host/Hostess
+12,01926,Sushi Chef
+10,01927,Host/Hostess
+12,01928,Host/Hostess
+12,01929,Sushi Preparer
+13,01930,Cashier
+8,01931,Dishwasher
+2,01932,Sushi Preparer
+15,01933,Sushi Chef
+10,01934,Cashier
+10,01935,Sushi Chef
+15,01936,Teppanyaki Chef
+9,01937,Server
+8,01938,Dishwasher
+15,01939,Dishwasher
+10,01940,Dishwasher
+11,01941,Sushi Chef
+9,01942,Dishwasher
+14,01943,Dishwasher
+3,01944,Dishwasher
+4,01945,Dishwasher
+6,01946,Sushi Chef
+12,01947,Cashier
+3,01948,Dishwasher
+3,01949,Server
+1,01950,Server
+6,01951,Server
+8,01952,Dishwasher
+9,01953,Sushi Chef
+1,01954,Cashier
+13,01955,Sushi Chef
+8,01956,Sushi Chef
+7,01957,Dishwasher
+5,01958,Cashier
+10,01959,Sushi Chef
+6,01960,Sushi Preparer
+11,01961,Sushi Preparer
+3,01962,Dishwasher
+1,01963,Sushi Preparer
+4,01964,Sushi Chef
+10,01965,Sushi Chef
+11,01966,Host/Hostess
+4,01967,Host/Hostess
+4,01968,Teppanyaki Chef
+1,01969,Sushi Chef
+1,01970,Sushi Chef
+8,01971,Server
+15,01972,Host/Hostess
+3,01973,Dishwasher
+15,01974,Dishwasher
+1,01975,Host/Hostess
+6,01976,Cashier
+3,01977,Teppanyaki Chef
+9,01978,Cashier
+9,01979,Sushi Chef
+3,01980,Cashier
+15,01981,Dishwasher
+12,01982,Host/Hostess
+11,01983,Server
+2,01984,Host/Hostess
+7,01985,Teppanyaki Chef
+13,01986,Dishwasher
+9,01987,Cashier
+5,01988,Sushi Preparer
+9,01989,Teppanyaki Chef
+11,01990,Teppanyaki Chef
+2,01991,Cashier
+2,01992,Dishwasher
+12,01993,Cashier
+6,01994,Host/Hostess
+11,01995,Cashier
+15,01996,Server
+12,01997,Host/Hostess
+2,01998,Sushi Chef
+4,01999,Dishwasher
+10,02000,Sushi Preparer
+8,02001,Sushi Chef
+1,02002,Cashier
+11,02003,Dishwasher
+8,02004,Teppanyaki Chef
+5,02005,Host/Hostess
+6,02006,Cashier
+3,02007,Server
+10,02008,Host/Hostess
+9,02009,Teppanyaki Chef
+9,02010,Cashier
+10,02011,Teppanyaki Chef
+9,02012,Cashier
+1,02013,Server
+11,02014,Dishwasher
+1,02015,Cashier
+12,02016,Sushi Chef
+7,02017,Host/Hostess
+13,02018,Server
+3,02019,Teppanyaki Chef
+4,02020,Server
+7,02021,Teppanyaki Chef
+11,02022,Sushi Chef
+9,02023,Server
+13,02024,Cashier
+4,02025,Server
+4,02026,Server
+9,02027,Dishwasher
+12,02028,Sushi Preparer
+13,02029,Teppanyaki Chef
+14,02030,Sushi Chef
+7,02031,Server
+1,02032,Dishwasher
+4,02033,Dishwasher
+13,02034,Host/Hostess
+14,02035,Sushi Chef
+9,02036,Sushi Preparer
+15,02037,Sushi Preparer
+9,02038,Host/Hostess
+5,02039,Teppanyaki Chef
+4,02040,Dishwasher
+7,02041,Sushi Preparer
+1,02042,Dishwasher
+9,02043,Sushi Preparer
+10,02044,Sushi Preparer
+8,02045,Sushi Preparer
+1,02046,Sushi Chef
+7,02047,Cashier
+11,02048,Server
+12,02049,Host/Hostess
+10,02050,Server
+3,02051,Cashier
+12,02052,Dishwasher
+3,02053,Sushi Chef
+8,02054,Teppanyaki Chef
+15,02055,Sushi Chef
+11,02056,Cashier
+6,02057,Sushi Preparer
+13,02058,Dishwasher
+1,02059,Sushi Preparer
+13,02060,Cashier
+8,02061,Cashier
+3,02062,Sushi Chef
+4,02063,Cashier
+4,02064,Sushi Chef
+8,02065,Server
+4,02066,Sushi Chef
+15,02067,Sushi Preparer
+9,02068,Teppanyaki Chef
+5,02069,Host/Hostess
+8,02070,Sushi Preparer
+5,02071,Teppanyaki Chef
+10,02072,Dishwasher
+1,02073,Cashier
+10,02074,Teppanyaki Chef
+12,02075,Sushi Preparer
+5,02076,Dishwasher
+8,02077,Host/Hostess
+2,02078,Server
+5,02079,Host/Hostess
+7,02080,Sushi Preparer
+9,02081,Teppanyaki Chef
+4,02082,Sushi Chef
+8,02083,Server
+2,02084,Teppanyaki Chef
+11,02085,Cashier
+6,02086,Dishwasher
+10,02087,Sushi Preparer
+2,02088,Dishwasher
+5,02089,Sushi Chef
+2,02090,Cashier
+7,02091,Dishwasher
+12,02092,Sushi Preparer
+2,02093,Sushi Preparer
+4,02094,Sushi Chef
+5,02095,Host/Hostess
+7,02096,Host/Hostess
+8,02097,Host/Hostess
+14,02098,Server
+7,02099,Sushi Chef
+3,02100,Dishwasher
+2,02101,Dishwasher
+9,02102,Sushi Preparer
+5,02103,Cashier
+15,02104,Server
+14,02105,Sushi Chef
+5,02106,Cashier
+13,02107,Server
+15,02108,Teppanyaki Chef
+7,02109,Cashier
+3,02110,Host/Hostess
+3,02111,Host/Hostess
+13,02112,Sushi Chef
+13,02113,Sushi Preparer
+15,02114,Server
+1,02115,Cashier
+12,02116,Sushi Preparer
+11,02117,Cashier
+4,02118,Sushi Preparer
+11,02119,Teppanyaki Chef
+1,02120,Dishwasher
+10,02121,Host/Hostess
+13,02122,Teppanyaki Chef
+12,02123,Host/Hostess
+7,02124,Teppanyaki Chef
+12,02125,Cashier
+5,02126,Server
+12,02127,Dishwasher
+10,02128,Host/Hostess
+3,02129,Sushi Chef
+7,02130,Host/Hostess
+11,02131,Sushi Chef
+14,02132,Host/Hostess
+1,02133,Teppanyaki Chef
+8,02134,Sushi Chef
+3,02135,Sushi Chef
+8,02136,Sushi Chef
+11,02137,Teppanyaki Chef
+5,02138,Sushi Preparer
+6,02139,Server
+12,02140,Sushi Chef
+15,02141,Sushi Preparer
+12,02142,Sushi Chef
+8,02143,Teppanyaki Chef
+9,02144,Server
+6,02145,Sushi Chef
+14,02146,Sushi Preparer
+2,02147,Cashier
+4,02148,Sushi Preparer
+8,02149,Sushi Chef
+9,02150,Sushi Chef
+1,02151,Dishwasher
+3,02152,Host/Hostess
+11,02153,Host/Hostess
+10,02154,Sushi Chef
+11,02155,Teppanyaki Chef
+14,02156,Sushi Preparer
+7,02157,Sushi Chef
+8,02158,Teppanyaki Chef
+15,02159,Cashier
+10,02160,Host/Hostess
+12,02161,Teppanyaki Chef
+12,02162,Teppanyaki Chef
+10,02163,Dishwasher
+2,02164,Host/Hostess
+15,02165,Teppanyaki Chef
+2,02166,Host/Hostess
+7,02167,Server
+5,02168,Sushi Preparer
+14,02169,Server
+2,02170,Sushi Preparer
+14,02171,Teppanyaki Chef
+6,02172,Server
+15,02173,Host/Hostess
+9,02174,Host/Hostess
+11,02175,Sushi Preparer
+15,02176,Teppanyaki Chef
+9,02177,Cashier
+4,02178,Sushi Preparer
+2,02179,Dishwasher
+6,02180,Sushi Chef
+2,02181,Server
+4,02182,Sushi Preparer
+10,02183,Dishwasher
+2,02184,Cashier
+14,02185,Teppanyaki Chef
+6,02186,Sushi Preparer
+5,02187,Sushi Chef
+8,02188,Cashier
+15,02189,Sushi Chef
+12,02190,Sushi Chef
+14,02191,Host/Hostess
+12,02192,Dishwasher
+4,02193,Server
+13,02194,Sushi Chef
+2,02195,Host/Hostess
+5,02196,Cashier
+7,02197,Teppanyaki Chef
+6,02198,Server
+1,02199,Cashier
+8,02200,Dishwasher
+11,02201,Teppanyaki Chef
+10,02202,Server
+8,02203,Sushi Chef
+7,02204,Host/Hostess
+4,02205,Server
+8,02206,Dishwasher
+14,02207,Sushi Preparer
+6,02208,Dishwasher
+6,02209,Host/Hostess
+7,02210,Dishwasher
+13,02211,Dishwasher
+1,02212,Cashier
+13,02213,Dishwasher
+7,02214,Cashier
+8,02215,Host/Hostess
+14,02216,Dishwasher
+1,02217,Server
+4,02218,Host/Hostess
+1,02219,Sushi Preparer
+11,02220,Host/Hostess
+9,02221,Dishwasher
+11,02222,Dishwasher
+9,02223,Sushi Chef
+7,02224,Teppanyaki Chef
+14,02225,Cashier
+2,02226,Host/Hostess
+8,02227,Teppanyaki Chef
+15,02228,Cashier
+3,02229,Cashier
+4,02230,Sushi Chef
+9,02231,Cashier
+10,02232,Sushi Preparer
+13,02233,Cashier
+9,02234,Dishwasher
+5,02235,Dishwasher
+2,02236,Server
+5,02237,Host/Hostess
+4,02238,Teppanyaki Chef
+6,02239,Teppanyaki Chef
+11,02240,Cashier
+10,02241,Server
+3,02242,Sushi Preparer
+3,02243,Cashier
+13,02244,Sushi Chef
+8,02245,Teppanyaki Chef
+11,02246,Teppanyaki Chef
+11,02247,Host/Hostess
+13,02248,Cashier
+13,02249,Sushi Preparer
+12,02250,Cashier
+11,02251,Teppanyaki Chef
+12,02252,Server
+7,02253,Dishwasher
+13,02254,Teppanyaki Chef
+14,02255,Dishwasher
+6,02256,Dishwasher
+15,02257,Dishwasher
+12,02258,Cashier
+8,02259,Sushi Preparer
+9,02260,Teppanyaki Chef
+6,02261,Dishwasher
+3,02262,Host/Hostess
+5,02263,Teppanyaki Chef
+12,02264,Sushi Chef
+9,02265,Teppanyaki Chef
+10,02266,Sushi Chef
+6,02267,Teppanyaki Chef
+15,02268,Sushi Chef
+13,02269,Dishwasher
+3,02270,Server
+3,02271,Host/Hostess
+11,02272,Teppanyaki Chef
+10,02273,Host/Hostess
+2,02274,Sushi Chef
+10,02275,Dishwasher
+4,02276,Server
+2,02277,Sushi Preparer
+10,02278,Dishwasher
+2,02279,Sushi Chef
+15,02280,Cashier
+4,02281,Teppanyaki Chef
+10,02282,Dishwasher
+9,02283,Sushi Preparer
+15,02284,Server
+2,02285,Server
+5,02286,Cashier
+6,02287,Server
+7,02288,Host/Hostess
+3,02289,Cashier
+7,02290,Cashier
+13,02291,Host/Hostess
+12,02292,Host/Hostess
+10,02293,Sushi Chef
+7,02294,Teppanyaki Chef
+8,02295,Sushi Chef
+14,02296,Host/Hostess
+14,02297,Cashier
+5,02298,Sushi Chef
+7,02299,Dishwasher
+4,02300,Host/Hostess
+12,02301,Cashier
+7,02302,Sushi Chef
+10,02303,Dishwasher
+13,02304,Host/Hostess
+4,02305,Sushi Chef
+13,02306,Host/Hostess
+1,02307,Sushi Preparer
+13,02308,Teppanyaki Chef
+13,02309,Dishwasher
+9,02310,Cashier
+5,02311,Sushi Chef
+10,02312,Dishwasher
+7,02313,Server
+2,02314,Host/Hostess
+7,02315,Sushi Chef
+3,02316,Sushi Preparer
+1,02317,Cashier
+11,02318,Sushi Preparer
+15,02319,Host/Hostess
+11,02320,Sushi Chef
+12,02321,Teppanyaki Chef
+6,02322,Sushi Preparer
+8,02323,Sushi Preparer
+4,02324,Dishwasher
+4,02325,Sushi Preparer
+13,02326,Cashier
+13,02327,Teppanyaki Chef
+11,02328,Host/Hostess
+1,02329,Sushi Chef
+6,02330,Dishwasher
+5,02331,Teppanyaki Chef
+2,02332,Teppanyaki Chef
+7,02333,Teppanyaki Chef
+3,02334,Host/Hostess
+9,02335,Sushi Chef
+1,02336,Dishwasher
+13,02337,Cashier
+9,02338,Teppanyaki Chef
+6,02339,Sushi Chef
+1,02340,Sushi Preparer
+13,02341,Host/Hostess
+2,02342,Teppanyaki Chef
+1,02343,Sushi Preparer
+8,02344,Cashier
+15,02345,Cashier
+14,02346,Server
+6,02347,Teppanyaki Chef
+2,02348,Cashier
+5,02349,Sushi Preparer
+4,02350,Sushi Preparer
+14,02351,Host/Hostess
+15,02352,Teppanyaki Chef
+6,02353,Cashier
+13,02354,Sushi Preparer
+14,02355,Server
+10,02356,Sushi Chef
+4,02357,Sushi Preparer
+9,02358,Sushi Chef
+11,02359,Dishwasher
+7,02360,Host/Hostess
+12,02361,Dishwasher
+5,02362,Teppanyaki Chef
+12,02363,Host/Hostess
+10,02364,Sushi Preparer
+12,02365,Cashier
+11,02366,Sushi Preparer
+2,02367,Cashier
+11,02368,Cashier
+5,02369,Sushi Chef
+8,02370,Server
+11,02371,Cashier
+2,02372,Sushi Preparer
+6,02373,Sushi Chef
+11,02374,Cashier
+12,02375,Sushi Preparer
+2,02376,Dishwasher
+8,02377,Sushi Chef
+3,02378,Sushi Preparer
+12,02379,Sushi Chef
+9,02380,Teppanyaki Chef
+5,02381,Server
+7,02382,Server
+12,02383,Host/Hostess
+12,02384,Server
+2,02385,Dishwasher
+10,02386,Sushi Preparer
+11,02387,Dishwasher
+5,02388,Sushi Preparer
+3,02389,Teppanyaki Chef
+4,02390,Teppanyaki Chef
+2,02391,Cashier
+8,02392,Dishwasher
+2,02393,Teppanyaki Chef
+12,02394,Dishwasher
+14,02395,Teppanyaki Chef
+13,02396,Sushi Preparer
+13,02397,Host/Hostess
+4,02398,Sushi Preparer
+7,02399,Teppanyaki Chef
+3,02400,Cashier
+10,02401,Sushi Preparer
+8,02402,Dishwasher
+8,02403,Server
+2,02404,Cashier
+3,02405,Sushi Chef
+12,02406,Sushi Preparer
+9,02407,Sushi Chef
+6,02408,Sushi Preparer
+6,02409,Dishwasher
+5,02410,Cashier
+9,02411,Teppanyaki Chef
+10,02412,Server
+8,02413,Server
+13,02414,Sushi Preparer
+6,02415,Host/Hostess
+12,02416,Sushi Preparer
+10,02417,Dishwasher
+4,02418,Host/Hostess
+3,02419,Host/Hostess
+8,02420,Sushi Chef
+3,02421,Teppanyaki Chef
+2,02422,Dishwasher
+8,02423,Cashier
+2,02424,Sushi Chef
+6,02425,Sushi Chef
+3,02426,Server
+13,02427,Sushi Preparer
+5,02428,Host/Hostess
+10,02429,Host/Hostess
+3,02430,Host/Hostess
+4,02431,Sushi Preparer
+15,02432,Sushi Preparer
+11,02433,Sushi Chef
+15,02434,Host/Hostess
+2,02435,Host/Hostess
+15,02436,Cashier
+2,02437,Server
+15,02438,Teppanyaki Chef
+4,02439,Dishwasher
+12,02440,Sushi Chef
+14,02441,Teppanyaki Chef
+1,02442,Sushi Chef
+11,02443,Host/Hostess
+5,02444,Host/Hostess
+6,02445,Server
+14,02446,Sushi Preparer
+5,02447,Dishwasher
+10,02448,Cashier
+14,02449,Cashier
+10,02450,Dishwasher
+6,02451,Sushi Preparer
+5,02452,Host/Hostess
+7,02453,Host/Hostess
+8,02454,Dishwasher
+2,02455,Dishwasher
+3,02456,Sushi Chef
+15,02457,Teppanyaki Chef
+4,02458,Host/Hostess
+3,02459,Teppanyaki Chef
+1,02460,Server
+7,02461,Server
+15,02462,Dishwasher
+7,02463,Dishwasher
+4,02464,Sushi Preparer
+10,02465,Host/Hostess
+14,02466,Sushi Chef
+8,02467,Dishwasher
+11,02468,Sushi Chef
+12,02469,Sushi Preparer
+1,02470,Server
+11,02471,Sushi Preparer
+10,02472,Cashier
+8,02473,Sushi Preparer
+15,02474,Teppanyaki Chef
+7,02475,Sushi Chef
+5,02476,Dishwasher
+1,02477,Cashier
+8,02478,Sushi Preparer
+11,02479,Sushi Preparer
+10,02480,Dishwasher
+15,02481,Host/Hostess
+3,02482,Server
+9,02483,Dishwasher
+11,02484,Server
+4,02485,Teppanyaki Chef
+12,02486,Cashier
+6,02487,Sushi Chef
+3,02488,Cashier
+10,02489,Host/Hostess
+4,02490,Host/Hostess
+3,02491,Teppanyaki Chef
+14,02492,Dishwasher
+15,02493,Host/Hostess
+11,02494,Sushi Chef
+9,02495,Sushi Preparer
+7,02496,Teppanyaki Chef
+13,02497,Teppanyaki Chef
+4,02498,Server
+15,02499,Teppanyaki Chef
+13,02500,Sushi Preparer
+9,02501,Sushi Preparer
+6,02502,Server
+11,02503,Sushi Chef
+4,02504,Server
+10,02505,Host/Hostess
+2,02506,Sushi Chef
+9,02507,Sushi Preparer
+12,02508,Dishwasher
+10,02509,Sushi Preparer
+3,02510,Sushi Chef
+2,02511,Host/Hostess
+6,02512,Sushi Chef
+1,02513,Sushi Preparer
+4,02514,Sushi Preparer
+3,02515,Dishwasher
+9,02516,Teppanyaki Chef
+9,02517,Host/Hostess
+14,02518,Sushi Preparer
+3,02519,Server
+5,02520,Sushi Preparer
+1,02521,Server
+11,02522,Cashier
+1,02523,Cashier
+12,02524,Sushi Preparer
+3,02525,Server
+6,02526,Cashier
+11,02527,Teppanyaki Chef
+11,02528,Cashier
+5,02529,Cashier
+13,02530,Teppanyaki Chef
+1,02531,Teppanyaki Chef
+14,02532,Server
+9,02533,Dishwasher
+14,02534,Dishwasher
+9,02535,Cashier
+9,02536,Server
+15,02537,Teppanyaki Chef
+2,02538,Sushi Chef
+15,02539,Teppanyaki Chef
+14,02540,Server
+5,02541,Host/Hostess
+6,02542,Teppanyaki Chef
+3,02543,Teppanyaki Chef
+13,02544,Server
+3,02545,Cashier
+10,02546,Dishwasher
+6,02547,Teppanyaki Chef
+3,02548,Host/Hostess
+11,02549,Server
+3,02550,Cashier
+3,02551,Cashier
+12,02552,Sushi Chef
+2,02553,Sushi Chef
+2,02554,Teppanyaki Chef
+11,02555,Teppanyaki Chef
+15,02556,Sushi Chef
+4,02557,Server
+9,02558,Sushi Chef
+13,02559,Teppanyaki Chef
+8,02560,Sushi Preparer
+5,02561,Teppanyaki Chef
+1,02562,Cashier
+3,02563,Host/Hostess
+8,02564,Host/Hostess
+2,02565,Dishwasher
+2,02566,Sushi Preparer
+9,02567,Host/Hostess
+8,02568,Dishwasher
+4,02569,Dishwasher
+7,02570,Cashier
+3,02571,Sushi Chef
+15,02572,Sushi Chef
+3,02573,Host/Hostess
+10,02574,Teppanyaki Chef
+6,02575,Host/Hostess
+15,02576,Host/Hostess
+15,02577,Teppanyaki Chef
+10,02578,Cashier
+15,02579,Sushi Preparer
+13,02580,Sushi Chef
+9,02581,Sushi Chef
+12,02582,Host/Hostess
+8,02583,Sushi Chef
+13,02584,Dishwasher
+3,02585,Server
+13,02586,Sushi Chef
+3,02587,Server
+10,02588,Host/Hostess
+7,02589,Teppanyaki Chef
+8,02590,Cashier
+14,02591,Server
+3,02592,Sushi Preparer
+7,02593,Sushi Preparer
+15,02594,Server
+10,02595,Sushi Chef
+10,02596,Cashier
+5,02597,Sushi Preparer
+12,02598,Host/Hostess
+14,02599,Dishwasher
+1,02600,Server
+1,02601,Teppanyaki Chef
+2,02602,Cashier
+12,02603,Host/Hostess
+2,02604,Teppanyaki Chef
+10,02605,Server
+5,02606,Sushi Preparer
+5,02607,Sushi Preparer
+1,02608,Sushi Chef
+3,02609,Teppanyaki Chef
+13,02610,Dishwasher
+13,02611,Cashier
+12,02612,Host/Hostess
+11,02613,Dishwasher
+3,02614,Sushi Preparer
+7,02615,Host/Hostess
+4,02616,Server
+9,02617,Sushi Preparer
+14,02618,Teppanyaki Chef
+4,02619,Dishwasher
+13,02620,Teppanyaki Chef
+4,02621,Sushi Chef
+11,02622,Dishwasher
+15,02623,Sushi Chef
+4,02624,Server
+15,02625,Dishwasher
+3,02626,Host/Hostess
+15,02627,Server
+10,02628,Teppanyaki Chef
+13,02629,Server
+15,02630,Server
+1,02631,Sushi Preparer
+1,02632,Sushi Chef
+4,02633,Sushi Preparer
+1,02634,Cashier
+14,02635,Teppanyaki Chef
+9,02636,Host/Hostess
+6,02637,Sushi Preparer
+11,02638,Dishwasher
+8,02639,Server
+8,02640,Server
+4,02641,Cashier
+14,02642,Teppanyaki Chef
+8,02643,Cashier
+5,02644,Server
+1,02645,Dishwasher
+6,02646,Dishwasher
+2,02647,Host/Hostess
+15,02648,Cashier
+6,02649,Dishwasher
+12,02650,Sushi Chef
+12,02651,Teppanyaki Chef
+3,02652,Server
+7,02653,Teppanyaki Chef
+5,02654,Server
+2,02655,Sushi Chef
+14,02656,Cashier
+10,02657,Sushi Chef
+13,02658,Dishwasher
+4,02659,Cashier
+14,02660,Sushi Chef
+13,02661,Sushi Chef
+11,02662,Sushi Preparer
+15,02663,Sushi Chef
+4,02664,Cashier
+12,02665,Sushi Preparer
+10,02666,Host/Hostess
+7,02667,Sushi Chef
+7,02668,Server
+7,02669,Sushi Preparer
+9,02670,Server
+12,02671,Sushi Preparer
+15,02672,Sushi Chef
+6,02673,Sushi Preparer
+2,02674,Sushi Chef
+14,02675,Dishwasher
+11,02676,Host/Hostess
+8,02677,Sushi Chef
+10,02678,Sushi Chef
+8,02679,Teppanyaki Chef
+8,02680,Dishwasher
+4,02681,Host/Hostess
+7,02682,Host/Hostess
+3,02683,Dishwasher
+7,02684,Cashier
+7,02685,Cashier
+13,02686,Server
+11,02687,Cashier
+5,02688,Server
+9,02689,Host/Hostess
+8,02690,Dishwasher
+6,02691,Dishwasher
+4,02692,Sushi Chef
+9,02693,Host/Hostess
+10,02694,Dishwasher
+12,02695,Sushi Chef
+15,02696,Dishwasher
+3,02697,Cashier
+3,02698,Teppanyaki Chef
+9,02699,Cashier
+15,02700,Teppanyaki Chef
+4,02701,Sushi Preparer
+1,02702,Cashier
+8,02703,Teppanyaki Chef
+13,02704,Dishwasher
+10,02705,Sushi Preparer
+11,02706,Server
+10,02707,Host/Hostess
+2,02708,Teppanyaki Chef
+10,02709,Dishwasher
+4,02710,Sushi Chef
+9,02711,Host/Hostess
+4,02712,Cashier
+5,02713,Teppanyaki Chef
+2,02714,Server
+7,02715,Dishwasher
+6,02716,Teppanyaki Chef
+1,02717,Dishwasher
+12,02718,Dishwasher
+7,02719,Dishwasher
+9,02720,Dishwasher
+8,02721,Host/Hostess
+5,02722,Server
+1,02723,Host/Hostess
+9,02724,Sushi Chef
+4,02725,Host/Hostess
+12,02726,Sushi Chef
+5,02727,Sushi Chef
+13,02728,Cashier
+1,02729,Host/Hostess
+11,02730,Dishwasher
+14,02731,Dishwasher
+12,02732,Cashier
+7,02733,Server
+13,02734,Server
+10,02735,Dishwasher
+3,02736,Sushi Preparer
+3,02737,Dishwasher
+10,02738,Cashier
+11,02739,Host/Hostess
+13,02740,Host/Hostess
+5,02741,Sushi Chef
+12,02742,Dishwasher
+1,02743,Host/Hostess
+13,02744,Server
+7,02745,Sushi Chef
+15,02746,Sushi Preparer
+13,02747,Server
+13,02748,Dishwasher
+9,02749,Sushi Chef
+3,02750,Teppanyaki Chef
+2,02751,Teppanyaki Chef
+8,02752,Sushi Chef
+12,02753,Host/Hostess
+11,02754,Host/Hostess
+8,02755,Sushi Preparer
+14,02756,Host/Hostess
+1,02757,Sushi Preparer
+1,02758,Teppanyaki Chef
+6,02759,Host/Hostess
+14,02760,Cashier
+13,02761,Cashier
+14,02762,Sushi Preparer
+15,02763,Teppanyaki Chef
+8,02764,Server
+4,02765,Host/Hostess
+14,02766,Host/Hostess
+8,02767,Server
+5,02768,Host/Hostess
+7,02769,Host/Hostess
+3,02770,Sushi Preparer
+8,02771,Teppanyaki Chef
+7,02772,Host/Hostess
+4,02773,Teppanyaki Chef
+15,02774,Host/Hostess
+11,02775,Teppanyaki Chef
+7,02776,Cashier
+15,02777,Cashier
+1,02778,Host/Hostess
+9,02779,Sushi Preparer
+2,02780,Sushi Chef
+7,02781,Cashier
+12,02782,Sushi Chef
+8,02783,Host/Hostess
+2,02784,Sushi Chef
+14,02785,Sushi Chef
+9,02786,Cashier
+15,02787,Dishwasher
+6,02788,Cashier
+6,02789,Dishwasher
+14,02790,Sushi Preparer
+7,02791,Sushi Chef
+12,02792,Server
+9,02793,Cashier
+4,02794,Cashier
+7,02795,Server
+12,02796,Server
+10,02797,Server
+5,02798,Sushi Preparer
+13,02799,Sushi Preparer
+14,02800,Cashier
+1,02801,Server
+4,02802,Sushi Chef
+11,02803,Cashier
+14,02804,Server
+2,02805,Teppanyaki Chef
+5,02806,Sushi Chef
+15,02807,Sushi Preparer
+10,02808,Teppanyaki Chef
+11,02809,Dishwasher
+1,02810,Teppanyaki Chef
+11,02811,Cashier
+3,02812,Sushi Chef
+5,02813,Sushi Chef
+13,02814,Server
+8,02815,Sushi Chef
+2,02816,Teppanyaki Chef
+10,02817,Teppanyaki Chef
+6,02818,Server
+7,02819,Host/Hostess
+5,02820,Dishwasher
+6,02821,Sushi Chef
+6,02822,Cashier
+12,02823,Host/Hostess
+14,02824,Dishwasher
+8,02825,Teppanyaki Chef
+2,02826,Cashier
+14,02827,Teppanyaki Chef
+7,02828,Cashier
+8,02829,Dishwasher
+13,02830,Cashier
+7,02831,Dishwasher
+11,02832,Sushi Chef
+11,02833,Sushi Preparer
+5,02834,Teppanyaki Chef
+13,02835,Teppanyaki Chef
+6,02836,Host/Hostess
+10,02837,Server
+2,02838,Cashier
+10,02839,Dishwasher
+15,02840,Cashier
+9,02841,Cashier
+12,02842,Sushi Preparer
+11,02843,Dishwasher
+4,02844,Sushi Chef
+3,02845,Sushi Chef
+12,02846,Sushi Chef
+4,02847,Host/Hostess
+1,02848,Host/Hostess
+8,02849,Cashier
+10,02850,Host/Hostess
+4,02851,Teppanyaki Chef
+4,02852,Dishwasher
+5,02853,Server
+12,02854,Server
+1,02855,Host/Hostess
+10,02856,Teppanyaki Chef
+15,02857,Sushi Preparer
+3,02858,Cashier
+13,02859,Host/Hostess
+11,02860,Dishwasher
+2,02861,Server
+3,02862,Server
+3,02863,Teppanyaki Chef
+3,02864,Cashier
+9,02865,Dishwasher
+8,02866,Host/Hostess
+7,02867,Cashier
+12,02868,Sushi Chef
+5,02869,Sushi Chef
+9,02870,Sushi Preparer
+6,02871,Server
+12,02872,Dishwasher
+2,02873,Cashier
+3,02874,Teppanyaki Chef
+1,02875,Sushi Chef
+2,02876,Sushi Preparer
+4,02877,Server
+13,02878,Server
+6,02879,Teppanyaki Chef
+8,02880,Host/Hostess
+12,02881,Sushi Chef
+12,02882,Teppanyaki Chef
+7,02883,Sushi Chef
+11,02884,Dishwasher
+8,02885,Sushi Chef
+13,02886,Sushi Preparer
+6,02887,Cashier
+4,02888,Teppanyaki Chef
+4,02889,Server
+9,02890,Host/Hostess
+7,02891,Dishwasher
+14,02892,Dishwasher
+6,02893,Sushi Preparer
+7,02894,Sushi Chef
+14,02895,Dishwasher
+15,02896,Sushi Chef
+3,02897,Sushi Chef
+3,02898,Teppanyaki Chef
+8,02899,Teppanyaki Chef
+3,02900,Server
+6,02901,Teppanyaki Chef
+10,02902,Dishwasher
+14,02903,Server
+12,02904,Teppanyaki Chef
+8,02905,Dishwasher
+7,02906,Sushi Preparer
+8,02907,Server
+4,02908,Teppanyaki Chef
+2,02909,Cashier
+3,02910,Server
+2,02911,Sushi Preparer
+15,02912,Teppanyaki Chef
+14,02913,Server
+6,02914,Cashier
+14,02915,Cashier
+2,02916,Sushi Preparer
+4,02917,Cashier
+15,02918,Sushi Chef
+14,02919,Host/Hostess
+11,02920,Server
+12,02921,Host/Hostess
+15,02922,Sushi Chef
+6,02923,Dishwasher
+15,02924,Host/Hostess
+3,02925,Sushi Preparer
+11,02926,Teppanyaki Chef
+3,02927,Server
+14,02928,Host/Hostess
+8,02929,Sushi Preparer
+4,02930,Server
+5,02931,Cashier
+10,02932,Teppanyaki Chef
+6,02933,Sushi Preparer
+14,02934,Sushi Chef
+8,02935,Sushi Chef
+10,02936,Cashier
+7,02937,Cashier
+6,02938,Cashier
+15,02939,Dishwasher
+2,02940,Sushi Preparer
+3,02941,Sushi Preparer
+14,02942,Sushi Chef
+12,02943,Server
+6,02944,Server
+5,02945,Cashier
+2,02946,Sushi Chef
+14,02947,Sushi Chef
+5,02948,Sushi Chef
+10,02949,Teppanyaki Chef
+7,02950,Cashier
+14,02951,Dishwasher
+1,02952,Sushi Chef
+5,02953,Dishwasher
+12,02954,Server
+2,02955,Teppanyaki Chef
+7,02956,Sushi Preparer
+1,02957,Sushi Chef
+13,02958,Teppanyaki Chef
+9,02959,Dishwasher
+3,02960,Dishwasher
+10,02961,Server
+2,02962,Dishwasher
+14,02963,Dishwasher
+8,02964,Sushi Chef
+12,02965,Sushi Preparer
+1,02966,Sushi Chef
+7,02967,Sushi Chef
+4,02968,Sushi Preparer
+12,02969,Sushi Chef
+7,02970,Dishwasher
+14,02971,Sushi Preparer
+4,02972,Sushi Preparer
+11,02973,Teppanyaki Chef
+4,02974,Host/Hostess
+4,02975,Sushi Preparer
+3,02976,Sushi Chef
+10,02977,Server
+12,02978,Dishwasher
+14,02979,Teppanyaki Chef
+6,02980,Sushi Chef
+12,02981,Sushi Chef
+9,02982,Teppanyaki Chef
+1,02983,Host/Hostess
+10,02984,Server
+6,02985,Cashier
+15,02986,Server
+8,02987,Teppanyaki Chef
+5,02988,Sushi Chef
+10,02989,Host/Hostess
+7,02990,Dishwasher
+6,02991,Server
+7,02992,Sushi Chef
+9,02993,Sushi Chef
+3,02994,Teppanyaki Chef
+9,02995,Server
+7,02996,Sushi Chef
+8,02997,Server
+10,02998,Cashier
+15,02999,Cashier
+7,03000,Host/Hostess
+1,03001,Cashier
+1,03002,Host/Hostess
+4,03003,Cashier
+8,03004,Server
+12,03005,Sushi Chef
+5,03006,Dishwasher
+14,03007,Sushi Chef
+2,03008,Host/Hostess
+14,03009,Sushi Chef
+12,03010,Host/Hostess
+5,03011,Teppanyaki Chef
+14,03012,Server
+9,03013,Cashier
+12,03014,Dishwasher
+3,03015,Dishwasher
+14,03016,Dishwasher
+12,03017,Server
+13,03018,Sushi Preparer
+5,03019,Sushi Preparer
+6,03020,Host/Hostess
+14,03021,Dishwasher
+3,03022,Host/Hostess
+3,03023,Sushi Chef
+5,03024,Sushi Chef
+1,03025,Sushi Preparer
+7,03026,Host/Hostess
+12,03027,Host/Hostess
+7,03028,Sushi Chef
+8,03029,Sushi Chef
+6,03030,Sushi Chef
+1,03031,Teppanyaki Chef
+8,03032,Sushi Chef
+11,03033,Server
+1,03034,Cashier
+8,03035,Sushi Chef
+3,03036,Dishwasher
+14,03037,Dishwasher
+10,03038,Server
+11,03039,Teppanyaki Chef
+8,03040,Teppanyaki Chef
+7,03041,Cashier
+7,03042,Cashier
+3,03043,Host/Hostess
+10,03044,Cashier
+12,03045,Sushi Preparer
+8,03046,Sushi Chef
+9,03047,Host/Hostess
+12,03048,Sushi Chef
+5,03049,Cashier
+4,03050,Dishwasher
+8,03051,Sushi Chef
+13,03052,Server
+13,03053,Teppanyaki Chef
+10,03054,Teppanyaki Chef
+13,03055,Sushi Chef
+9,03056,Dishwasher
+12,03057,Server
+15,03058,Sushi Chef
+6,03059,Dishwasher
+3,03060,Host/Hostess
+7,03061,Teppanyaki Chef
+13,03062,Sushi Chef
+6,03063,Teppanyaki Chef
+11,03064,Server
+6,03065,Cashier
+12,03066,Dishwasher
+15,03067,Dishwasher
+15,03068,Server
+14,03069,Cashier
+14,03070,Teppanyaki Chef
+9,03071,Dishwasher
+14,03072,Sushi Preparer
+1,03073,Sushi Preparer
+1,03074,Server
+1,03075,Sushi Chef
+11,03076,Sushi Chef
+8,03077,Sushi Preparer
+5,03078,Dishwasher
+15,03079,Cashier
+14,03080,Server
+13,03081,Teppanyaki Chef
+2,03082,Teppanyaki Chef
+3,03083,Server
+2,03084,Sushi Chef
+14,03085,Teppanyaki Chef
+5,03086,Dishwasher
+2,03087,Sushi Chef
+3,03088,Teppanyaki Chef
+2,03089,Host/Hostess
+7,03090,Server
+1,03091,Dishwasher
+5,03092,Sushi Chef
+14,03093,Sushi Chef
+9,03094,Teppanyaki Chef
+6,03095,Cashier
+10,03096,Server
+9,03097,Sushi Preparer
+3,03098,Host/Hostess
+2,03099,Cashier
+3,03100,Server
+6,03101,Host/Hostess
+12,03102,Cashier
+10,03103,Cashier
+4,03104,Cashier
+6,03105,Sushi Preparer
+7,03106,Server
+14,03107,Teppanyaki Chef
+5,03108,Sushi Preparer
+11,03109,Server
+5,03110,Host/Hostess
+14,03111,Sushi Chef
+6,03112,Cashier
+1,03113,Server
+12,03114,Server
+10,03115,Server
+15,03116,Sushi Preparer
+15,03117,Host/Hostess
+13,03118,Dishwasher
+10,03119,Sushi Chef
+8,03120,Server
+12,03121,Server
+1,03122,Teppanyaki Chef
+8,03123,Sushi Preparer
+3,03124,Server
+5,03125,Server
+7,03126,Dishwasher
+9,03127,Server
+8,03128,Cashier
+3,03129,Cashier
+8,03130,Dishwasher
+12,03131,Cashier
+6,03132,Cashier
+14,03133,Sushi Preparer
+3,03134,Sushi Preparer
+5,03135,Sushi Chef
+1,03136,Host/Hostess
+11,03137,Teppanyaki Chef
+2,03138,Cashier
+4,03139,Cashier
+4,03140,Server
+14,03141,Server
+3,03142,Cashier
+1,03143,Cashier
+7,03144,Dishwasher
+5,03145,Sushi Preparer
+15,03146,Server
+1,03147,Dishwasher
+12,03148,Dishwasher
+15,03149,Server
+2,03150,Sushi Preparer
+4,03151,Server
+3,03152,Dishwasher
+7,03153,Host/Hostess
+1,03154,Sushi Preparer
+7,03155,Server
+2,03156,Sushi Preparer
+6,03157,Server
+10,03158,Cashier
+4,03159,Server
+6,03160,Cashier
+7,03161,Sushi Chef
+3,03162,Host/Hostess
+6,03163,Teppanyaki Chef
+10,03164,Sushi Chef
+7,03165,Cashier
+6,03166,Host/Hostess
+6,03167,Cashier
+8,03168,Teppanyaki Chef
+11,03169,Server
+11,03170,Sushi Chef
+10,03171,Server
+7,03172,Server
+6,03173,Teppanyaki Chef
+5,03174,Dishwasher
+6,03175,Sushi Chef
+6,03176,Sushi Preparer
+14,03177,Host/Hostess
+2,03178,Server
+13,03179,Sushi Chef
+2,03180,Host/Hostess
+2,03181,Host/Hostess
+11,03182,Teppanyaki Chef
+14,03183,Server
+2,03184,Teppanyaki Chef
+15,03185,Server
+13,03186,Server
+5,03187,Sushi Chef
+4,03188,Cashier
+4,03189,Sushi Preparer
+13,03190,Sushi Preparer
+15,03191,Cashier
+7,03192,Sushi Preparer
+14,03193,Host/Hostess
+12,03194,Host/Hostess
+7,03195,Teppanyaki Chef
+10,03196,Sushi Chef
+1,03197,Sushi Chef
+9,03198,Teppanyaki Chef
+5,03199,Cashier
+2,03200,Server
+9,03201,Dishwasher
+14,03202,Teppanyaki Chef
+14,03203,Dishwasher
+5,03204,Teppanyaki Chef
+7,03205,Sushi Preparer
+6,03206,Cashier
+15,03207,Server
+2,03208,Server
+13,03209,Dishwasher
+11,03210,Sushi Preparer
+15,03211,Cashier
+3,03212,Host/Hostess
+3,03213,Cashier
+14,03214,Dishwasher
+11,03215,Sushi Preparer
+5,03216,Dishwasher
+10,03217,Cashier
+11,03218,Server
+8,03219,Sushi Chef
+14,03220,Server
+14,03221,Sushi Chef
+14,03222,Sushi Preparer
+4,03223,Sushi Preparer
+6,03224,Sushi Chef
+13,03225,Sushi Preparer
+13,03226,Dishwasher
+5,03227,Host/Hostess
+5,03228,Server
+5,03229,Cashier
+3,03230,Dishwasher
+3,03231,Sushi Preparer
+6,03232,Cashier
+14,03233,Dishwasher
+8,03234,Teppanyaki Chef
+13,03235,Host/Hostess
+10,03236,Teppanyaki Chef
+2,03237,Dishwasher
+6,03238,Sushi Chef
+15,03239,Sushi Preparer
+6,03240,Host/Hostess
+5,03241,Dishwasher
+5,03242,Teppanyaki Chef
+7,03243,Cashier
+7,03244,Host/Hostess
+3,03245,Server
+7,03246,Cashier
+7,03247,Cashier
+10,03248,Sushi Preparer
+11,03249,Dishwasher
+2,03250,Host/Hostess
+6,03251,Sushi Chef
+11,03252,Sushi Preparer
+9,03253,Sushi Chef
+3,03254,Sushi Chef
+11,03255,Host/Hostess
+6,03256,Server
+8,03257,Dishwasher
+3,03258,Teppanyaki Chef
+13,03259,Sushi Chef
+2,03260,Teppanyaki Chef
+1,03261,Dishwasher
+2,03262,Server
+6,03263,Cashier
+2,03264,Host/Hostess
+6,03265,Dishwasher
+8,03266,Sushi Chef
+4,03267,Cashier
+9,03268,Host/Hostess
+7,03269,Host/Hostess
+13,03270,Host/Hostess
+13,03271,Server
+8,03272,Sushi Chef
+15,03273,Server
+9,03274,Cashier
+7,03275,Cashier
+8,03276,Sushi Chef
+15,03277,Sushi Chef
+11,03278,Sushi Chef
+3,03279,Teppanyaki Chef
+6,03280,Teppanyaki Chef
+3,03281,Sushi Chef
+12,03282,Server
+13,03283,Sushi Preparer
+8,03284,Cashier
+12,03285,Sushi Chef
+7,03286,Teppanyaki Chef
+7,03287,Server
+6,03288,Host/Hostess
+6,03289,Teppanyaki Chef
+13,03290,Dishwasher
+7,03291,Cashier
+6,03292,Teppanyaki Chef
+8,03293,Teppanyaki Chef
+15,03294,Server
+5,03295,Dishwasher
+7,03296,Sushi Chef
+11,03297,Server
+1,03298,Host/Hostess
+11,03299,Sushi Chef
+1,03300,Sushi Chef
+1,03301,Sushi Preparer
+13,03302,Server
+4,03303,Teppanyaki Chef
+1,03304,Host/Hostess
+13,03305,Cashier
+12,03306,Sushi Preparer
+10,03307,Host/Hostess
+6,03308,Server
+9,03309,Cashier
+14,03310,Sushi Preparer
+12,03311,Sushi Preparer
+14,03312,Server
+3,03313,Sushi Chef
+15,03314,Sushi Chef
+3,03315,Server
+9,03316,Server
+3,03317,Sushi Chef
+14,03318,Sushi Chef
+10,03319,Teppanyaki Chef
+6,03320,Sushi Preparer
+3,03321,Cashier
+12,03322,Host/Hostess
+15,03323,Sushi Preparer
+2,03324,Cashier
+10,03325,Server
+6,03326,Host/Hostess
+8,03327,Cashier
+5,03328,Host/Hostess
+15,03329,Teppanyaki Chef
+4,03330,Sushi Chef
+2,03331,Dishwasher
+12,03332,Host/Hostess
+6,03333,Host/Hostess
+3,03334,Teppanyaki Chef
+1,03335,Sushi Chef
+14,03336,Dishwasher
+11,03337,Sushi Chef
+10,03338,Server
+9,03339,Sushi Preparer
+2,03340,Host/Hostess
+8,03341,Cashier
+1,03342,Sushi Preparer
+14,03343,Sushi Chef
+2,03344,Host/Hostess
+4,03345,Server
+12,03346,Sushi Preparer
+11,03347,Server
+3,03348,Teppanyaki Chef
+6,03349,Sushi Chef
+6,03350,Cashier
+14,03351,Dishwasher
+6,03352,Host/Hostess
+9,03353,Cashier
+6,03354,Sushi Preparer
+14,03355,Sushi Preparer
+15,03356,Sushi Chef
+14,03357,Host/Hostess
+7,03358,Dishwasher
+10,03359,Cashier
+4,03360,Sushi Preparer
+2,03361,Sushi Preparer
+4,03362,Sushi Preparer
+9,03363,Teppanyaki Chef
+10,03364,Host/Hostess
+8,03365,Sushi Chef
+13,03366,Cashier
+9,03367,Sushi Preparer
+12,03368,Teppanyaki Chef
+8,03369,Server
+4,03370,Sushi Preparer
+3,03371,Cashier
+11,03372,Dishwasher
+9,03373,Sushi Preparer
+12,03374,Host/Hostess
+7,03375,Dishwasher
+15,03376,Cashier
+1,03377,Dishwasher
+4,03378,Sushi Chef
+3,03379,Sushi Preparer
+9,03380,Sushi Preparer
+7,03381,Server
+10,03382,Sushi Preparer
+4,03383,Sushi Preparer
+3,03384,Sushi Preparer
+14,03385,Dishwasher
+4,03386,Sushi Chef
+12,03387,Teppanyaki Chef
+15,03388,Host/Hostess
+15,03389,Cashier
+10,03390,Teppanyaki Chef
+9,03391,Server
+1,03392,Dishwasher
+10,03393,Dishwasher
+13,03394,Dishwasher
+13,03395,Cashier
+8,03396,Sushi Preparer
+5,03397,Server
+10,03398,Teppanyaki Chef
+11,03399,Host/Hostess
+9,03400,Sushi Preparer
+5,03401,Host/Hostess
+7,03402,Cashier
+12,03403,Sushi Preparer
+14,03404,Sushi Chef
+10,03405,Sushi Preparer
+6,03406,Host/Hostess
+12,03407,Server
+1,03408,Sushi Chef
+9,03409,Host/Hostess
+14,03410,Teppanyaki Chef
+12,03411,Cashier
+3,03412,Cashier
+11,03413,Cashier
+13,03414,Server
+9,03415,Server
+3,03416,Cashier
+12,03417,Server
+15,03418,Sushi Chef
+3,03419,Teppanyaki Chef
+6,03420,Teppanyaki Chef
+12,03421,Server
+6,03422,Host/Hostess
+5,03423,Sushi Preparer
+8,03424,Dishwasher
+6,03425,Sushi Chef
+14,03426,Teppanyaki Chef
+7,03427,Host/Hostess
+8,03428,Dishwasher
+4,03429,Sushi Preparer
+13,03430,Sushi Preparer
+7,03431,Sushi Chef
+11,03432,Dishwasher
+14,03433,Host/Hostess
+5,03434,Teppanyaki Chef
+3,03435,Teppanyaki Chef
+13,03436,Teppanyaki Chef
+14,03437,Server
+5,03438,Cashier
+10,03439,Sushi Chef
+9,03440,Sushi Chef
+9,03441,Dishwasher
+1,03442,Server
+7,03443,Sushi Chef
+5,03444,Teppanyaki Chef
+6,03445,Sushi Chef
+6,03446,Dishwasher
+3,03447,Dishwasher
+12,03448,Sushi Preparer
+13,03449,Sushi Preparer
+11,03450,Sushi Preparer
+7,03451,Sushi Preparer
+5,03452,Cashier
+10,03453,Cashier
+13,03454,Sushi Preparer
+13,03455,Sushi Chef
+13,03456,Teppanyaki Chef
+1,03457,Sushi Chef
+9,03458,Sushi Chef
+8,03459,Sushi Preparer
+7,03460,Cashier
+13,03461,Sushi Preparer
+2,03462,Sushi Chef
+4,03463,Server
+11,03464,Dishwasher
+8,03465,Cashier
+5,03466,Sushi Chef
+2,03467,Dishwasher
+12,03468,Dishwasher
+2,03469,Server
+4,03470,Teppanyaki Chef
+6,03471,Cashier
+1,03472,Host/Hostess
+9,03473,Cashier
+5,03474,Teppanyaki Chef
+7,03475,Server
+9,03476,Server
+11,03477,Sushi Chef
+1,03478,Sushi Preparer
+2,03479,Dishwasher
+12,03480,Dishwasher
+4,03481,Host/Hostess
+4,03482,Host/Hostess
+5,03483,Host/Hostess
+14,03484,Cashier
+6,03485,Sushi Preparer
+2,03486,Cashier
+15,03487,Cashier
+1,03488,Sushi Preparer
+10,03489,Teppanyaki Chef
+11,03490,Server
+9,03491,Cashier
+12,03492,Dishwasher
+5,03493,Teppanyaki Chef
+6,03494,Host/Hostess
+11,03495,Dishwasher
+1,03496,Cashier
+4,03497,Dishwasher
+1,03498,Server
+7,03499,Teppanyaki Chef
+1,03500,Server
+5,03501,Host/Hostess
+2,03502,Dishwasher
+10,03503,Dishwasher
+2,03504,Cashier
+5,03505,Cashier
+14,03506,Host/Hostess
+8,03507,Dishwasher
+9,03508,Teppanyaki Chef
+15,03509,Dishwasher
+9,03510,Server
+14,03511,Sushi Chef
+12,03512,Teppanyaki Chef
+2,03513,Dishwasher
+13,03514,Dishwasher
+13,03515,Sushi Preparer
+5,03516,Host/Hostess
+11,03517,Server
+5,03518,Host/Hostess
+8,03519,Teppanyaki Chef
+2,03520,Host/Hostess
+2,03521,Host/Hostess
+7,03522,Cashier
+8,03523,Dishwasher
+12,03524,Teppanyaki Chef
+8,03525,Server
+10,03526,Cashier
+12,03527,Cashier
+13,03528,Server
+13,03529,Sushi Preparer
+8,03530,Sushi Preparer
+1,03531,Server
+8,03532,Sushi Preparer
+6,03533,Host/Hostess
+12,03534,Cashier
+1,03535,Sushi Preparer
+12,03536,Sushi Preparer
+6,03537,Teppanyaki Chef
+3,03538,Sushi Chef
+13,03539,Sushi Preparer
+8,03540,Sushi Chef
+3,03541,Host/Hostess
+15,03542,Server
+10,03543,Dishwasher
+3,03544,Teppanyaki Chef
+1,03545,Teppanyaki Chef
+3,03546,Sushi Preparer
+5,03547,Host/Hostess
+3,03548,Sushi Chef
+9,03549,Sushi Preparer
+8,03550,Sushi Preparer
+9,03551,Host/Hostess
+11,03552,Dishwasher
+9,03553,Teppanyaki Chef
+14,03554,Sushi Chef
+8,03555,Cashier
+2,03556,Cashier
+10,03557,Sushi Chef
+13,03558,Host/Hostess
+2,03559,Server
+3,03560,Host/Hostess
+9,03561,Sushi Preparer
+5,03562,Sushi Chef
+7,03563,Dishwasher
+15,03564,Sushi Preparer
+4,03565,Server
+11,03566,Server
+1,03567,Dishwasher
+15,03568,Sushi Chef
+2,03569,Host/Hostess
+12,03570,Server
+15,03571,Cashier
+1,03572,Server
+5,03573,Sushi Preparer
+14,03574,Cashier
+15,03575,Sushi Preparer
+9,03576,Dishwasher
+13,03577,Sushi Preparer
+11,03578,Host/Hostess
+6,03579,Sushi Preparer
+5,03580,Server
+9,03581,Dishwasher
+10,03582,Host/Hostess
+9,03583,Dishwasher
+3,03584,Cashier
+13,03585,Host/Hostess
+7,03586,Dishwasher
+15,03587,Server
+13,03588,Dishwasher
+14,03589,Cashier
+10,03590,Host/Hostess
+14,03591,Host/Hostess
+12,03592,Teppanyaki Chef
+5,03593,Server
+6,03594,Dishwasher
+4,03595,Sushi Chef
+9,03596,Sushi Chef
+13,03597,Dishwasher
+10,03598,Host/Hostess
+13,03599,Sushi Chef
+6,03600,Dishwasher
+3,03601,Sushi Chef
+14,03602,Sushi Preparer
+12,03603,Host/Hostess
+1,03604,Sushi Preparer
+6,03605,Dishwasher
+12,03606,Dishwasher
+14,03607,Dishwasher
+15,03608,Server
+14,03609,Cashier
+1,03610,Dishwasher
+12,03611,Server
+5,03612,Dishwasher
+7,03613,Cashier
+8,03614,Host/Hostess
+11,03615,Cashier
+2,03616,Server
+9,03617,Sushi Preparer
+13,03618,Teppanyaki Chef
+14,03619,Dishwasher
+13,03620,Server
+4,03621,Host/Hostess
+15,03622,Host/Hostess
+5,03623,Teppanyaki Chef
+2,03624,Host/Hostess
+4,03625,Server
+9,03626,Cashier
+4,03627,Teppanyaki Chef
+11,03628,Dishwasher
+2,03629,Sushi Chef
+1,03630,Host/Hostess
+13,03631,Cashier
+5,03632,Teppanyaki Chef
+2,03633,Sushi Preparer
+9,03634,Sushi Chef
+8,03635,Server
+10,03636,Cashier
+14,03637,Cashier
+3,03638,Dishwasher
+2,03639,Cashier
+13,03640,Host/Hostess
+6,03641,Sushi Preparer
+2,03642,Host/Hostess
+3,03643,Sushi Preparer
+6,03644,Sushi Chef
+1,03645,Teppanyaki Chef
+11,03646,Dishwasher
+1,03647,Sushi Chef
+1,03648,Host/Hostess
+6,03649,Sushi Chef
+7,03650,Sushi Preparer
+5,03651,Sushi Preparer
+1,03652,Dishwasher
+13,03653,Host/Hostess
+1,03654,Sushi Chef
+4,03655,Dishwasher
+4,03656,Server
+3,03657,Dishwasher
+5,03658,Teppanyaki Chef
+12,03659,Sushi Preparer
+7,03660,Sushi Preparer
+6,03661,Host/Hostess
+15,03662,Sushi Preparer
+12,03663,Cashier
+14,03664,Sushi Preparer
+7,03665,Cashier
+9,03666,Host/Hostess
+7,03667,Cashier
+12,03668,Sushi Chef
+12,03669,Dishwasher
+5,03670,Teppanyaki Chef
+5,03671,Cashier
+10,03672,Host/Hostess
+3,03673,Sushi Preparer
+15,03674,Sushi Preparer
+14,03675,Teppanyaki Chef
+6,03676,Cashier
+7,03677,Server
+8,03678,Cashier
+10,03679,Sushi Preparer
+12,03680,Teppanyaki Chef
+9,03681,Dishwasher
+11,03682,Host/Hostess
+12,03683,Server
+12,03684,Dishwasher
+1,03685,Teppanyaki Chef
+9,03686,Dishwasher
+2,03687,Teppanyaki Chef
+9,03688,Teppanyaki Chef
+2,03689,Teppanyaki Chef
+2,03690,Server
+12,03691,Host/Hostess
+9,03692,Sushi Preparer
+8,03693,Sushi Chef
+14,03694,Server
+4,03695,Dishwasher
+8,03696,Sushi Chef
+9,03697,Cashier
+7,03698,Sushi Preparer
+11,03699,Cashier
+14,03700,Sushi Chef
+2,03701,Sushi Chef
+13,03702,Dishwasher
+6,03703,Sushi Chef
+15,03704,Sushi Preparer
+1,03705,Cashier
+8,03706,Server
+4,03707,Host/Hostess
+15,03708,Teppanyaki Chef
+13,03709,Cashier
+15,03710,Sushi Preparer
+7,03711,Sushi Chef
+1,03712,Dishwasher
+1,03713,Teppanyaki Chef
+4,03714,Server
+12,03715,Host/Hostess
+3,03716,Server
+8,03717,Host/Hostess
+6,03718,Server
+15,03719,Dishwasher
+11,03720,Cashier
+14,03721,Sushi Preparer
+7,03722,Host/Hostess
+7,03723,Dishwasher
+1,03724,Teppanyaki Chef
+13,03725,Sushi Preparer
+2,03726,Host/Hostess
+14,03727,Host/Hostess
+3,03728,Server
+15,03729,Server
+8,03730,Teppanyaki Chef
+15,03731,Cashier
+15,03732,Teppanyaki Chef
+13,03733,Dishwasher
+2,03734,Sushi Chef
+7,03735,Sushi Chef
+15,03736,Teppanyaki Chef
+11,03737,Dishwasher
+6,03738,Server
+4,03739,Host/Hostess
+11,03740,Teppanyaki Chef
+1,03741,Cashier
+14,03742,Dishwasher
+11,03743,Teppanyaki Chef
+7,03744,Sushi Chef
+11,03745,Server
+15,03746,Host/Hostess
+9,03747,Host/Hostess
+9,03748,Sushi Preparer
+15,03749,Dishwasher
+11,03750,Dishwasher
+7,03751,Cashier
+13,03752,Dishwasher
+8,03753,Cashier
+8,03754,Sushi Preparer
+5,03755,Sushi Chef
+4,03756,Server
+3,03757,Host/Hostess
+7,03758,Sushi Preparer
+1,03759,Teppanyaki Chef
+11,03760,Sushi Chef
+15,03761,Host/Hostess
+4,03762,Sushi Preparer
+7,03763,Dishwasher
+4,03764,Host/Hostess
+11,03765,Dishwasher
+11,03766,Sushi Chef
+15,03767,Teppanyaki Chef
+14,03768,Server
+9,03769,Host/Hostess
+6,03770,Server
+7,03771,Teppanyaki Chef
+12,03772,Server
+4,03773,Sushi Preparer
+11,03774,Sushi Chef
+13,03775,Dishwasher
+9,03776,Dishwasher
+15,03777,Sushi Chef
+3,03778,Sushi Preparer
+4,03779,Sushi Chef
+13,03780,Sushi Chef
+3,03781,Teppanyaki Chef
+3,03782,Sushi Preparer
+2,03783,Host/Hostess
+3,03784,Dishwasher
+8,03785,Dishwasher
+15,03786,Host/Hostess
+6,03787,Dishwasher
+14,03788,Cashier
+15,03789,Cashier
+7,03790,Teppanyaki Chef
+6,03791,Cashier
+12,03792,Sushi Preparer
+2,03793,Sushi Chef
+8,03794,Sushi Preparer
+10,03795,Teppanyaki Chef
+11,03796,Teppanyaki Chef
+13,03797,Teppanyaki Chef
+11,03798,Teppanyaki Chef
+3,03799,Sushi Preparer
+14,03800,Sushi Preparer
+2,03801,Dishwasher
+6,03802,Sushi Chef
+12,03803,Sushi Chef
+14,03804,Teppanyaki Chef
+2,03805,Host/Hostess
+4,03806,Host/Hostess
+1,03807,Sushi Preparer
+4,03808,Host/Hostess
+3,03809,Host/Hostess
+14,03810,Dishwasher
+7,03811,Cashier
+4,03812,Server
+15,03813,Sushi Chef
+10,03814,Dishwasher
+4,03815,Sushi Preparer
+7,03816,Dishwasher
+15,03817,Cashier
+3,03818,Teppanyaki Chef
+7,03819,Host/Hostess
+8,03820,Sushi Preparer
+13,03821,Sushi Chef
+10,03822,Sushi Preparer
+14,03823,Server
+8,03824,Cashier
+14,03825,Dishwasher
+8,03826,Teppanyaki Chef
+14,03827,Cashier
+14,03828,Sushi Preparer
+13,03829,Sushi Preparer
+13,03830,Cashier
+13,03831,Dishwasher
+7,03832,Teppanyaki Chef
+12,03833,Sushi Chef
+15,03834,Sushi Preparer
+15,03835,Dishwasher
+3,03836,Dishwasher
+7,03837,Sushi Preparer
+7,03838,Sushi Chef
+3,03839,Host/Hostess
+15,03840,Cashier
+11,03841,Sushi Chef
+12,03842,Sushi Preparer
+6,03843,Teppanyaki Chef
+11,03844,Host/Hostess
+6,03845,Teppanyaki Chef
+4,03846,Cashier
+6,03847,Sushi Preparer
+10,03848,Server
+14,03849,Sushi Chef
+7,03850,Dishwasher
+9,03851,Sushi Chef
+9,03852,Server
+4,03853,Teppanyaki Chef
+8,03854,Sushi Chef
+11,03855,Dishwasher
+15,03856,Teppanyaki Chef
+4,03857,Cashier
+12,03858,Host/Hostess
+1,03859,Sushi Chef
+10,03860,Sushi Preparer
+8,03861,Teppanyaki Chef
+8,03862,Sushi Chef
+11,03863,Host/Hostess
+2,03864,Sushi Chef
+6,03865,Dishwasher
+11,03866,Server
+15,03867,Dishwasher
+4,03868,Server
+2,03869,Dishwasher
+13,03870,Server
+6,03871,Teppanyaki Chef
+13,03872,Host/Hostess
+15,03873,Dishwasher
+2,03874,Teppanyaki Chef
+2,03875,Sushi Chef
+9,03876,Sushi Preparer
+5,03877,Cashier
+2,03878,Host/Hostess
+9,03879,Cashier
+12,03880,Sushi Preparer
+10,03881,Sushi Preparer
+4,03882,Host/Hostess
+2,03883,Dishwasher
+1,03884,Server
+1,03885,Cashier
+6,03886,Sushi Chef
+1,03887,Dishwasher
+1,03888,Teppanyaki Chef
+7,03889,Host/Hostess
+3,03890,Dishwasher
+15,03891,Cashier
+4,03892,Dishwasher
+6,03893,Server
+10,03894,Sushi Chef
+13,03895,Teppanyaki Chef
+14,03896,Teppanyaki Chef
+14,03897,Server
+12,03898,Cashier
+3,03899,Dishwasher
+15,03900,Dishwasher
+9,03901,Sushi Chef
+10,03902,Cashier
+11,03903,Cashier
+12,03904,Sushi Preparer
+8,03905,Cashier
+14,03906,Cashier
+6,03907,Server
+7,03908,Teppanyaki Chef
+3,03909,Cashier
+14,03910,Sushi Preparer
+14,03911,Server
+2,03912,Cashier
+7,03913,Sushi Chef
+7,03914,Sushi Chef
+5,03915,Teppanyaki Chef
+10,03916,Server
+3,03917,Sushi Chef
+6,03918,Server
+13,03919,Teppanyaki Chef
+15,03920,Server
+15,03921,Teppanyaki Chef
+4,03922,Dishwasher
+13,03923,Server
+1,03924,Server
+15,03925,Cashier
+10,03926,Dishwasher
+8,03927,Server
+15,03928,Teppanyaki Chef
+7,03929,Sushi Chef
+14,03930,Sushi Preparer
+6,03931,Host/Hostess
+13,03932,Host/Hostess
+4,03933,Sushi Preparer
+4,03934,Dishwasher
+1,03935,Sushi Chef
+5,03936,Dishwasher
+11,03937,Sushi Preparer
+6,03938,Server
+9,03939,Sushi Chef
+14,03940,Teppanyaki Chef
+9,03941,Cashier
+4,03942,Sushi Chef
+15,03943,Teppanyaki Chef
+3,03944,Host/Hostess
+2,03945,Dishwasher
+5,03946,Server
+10,03947,Cashier
+11,03948,Cashier
+5,03949,Dishwasher
+10,03950,Teppanyaki Chef
+8,03951,Sushi Preparer
+4,03952,Cashier
+2,03953,Cashier
+7,03954,Sushi Preparer
+12,03955,Host/Hostess
+15,03956,Host/Hostess
+14,03957,Teppanyaki Chef
+8,03958,Teppanyaki Chef
+4,03959,Host/Hostess
+5,03960,Sushi Preparer
+14,03961,Sushi Chef
+2,03962,Teppanyaki Chef
+15,03963,Host/Hostess
+11,03964,Sushi Preparer
+13,03965,Sushi Chef
+15,03966,Dishwasher
+9,03967,Sushi Preparer
+3,03968,Teppanyaki Chef
+12,03969,Dishwasher
+10,03970,Server
+8,03971,Dishwasher
+15,03972,Teppanyaki Chef
+10,03973,Host/Hostess
+5,03974,Teppanyaki Chef
+1,03975,Host/Hostess
+7,03976,Host/Hostess
+9,03977,Cashier
+10,03978,Server
+13,03979,Dishwasher
+11,03980,Sushi Preparer
+10,03981,Host/Hostess
+1,03982,Dishwasher
+5,03983,Sushi Preparer
+8,03984,Server
+11,03985,Server
+15,03986,Sushi Preparer
+12,03987,Dishwasher
+13,03988,Server
+9,03989,Sushi Chef
+9,03990,Sushi Preparer
+6,03991,Cashier
+14,03992,Teppanyaki Chef
+6,03993,Dishwasher
+10,03994,Sushi Chef
+6,03995,Teppanyaki Chef
+8,03996,Host/Hostess
+2,03997,Server
+5,03998,Sushi Chef
+2,03999,Host/Hostess
+3,04000,Teppanyaki Chef
+1,04001,Sushi Chef
+1,04002,Cashier
+8,04003,Host/Hostess
+2,04004,Dishwasher
+14,04005,Cashier
+7,04006,Teppanyaki Chef
+9,04007,Host/Hostess
+6,04008,Host/Hostess
+9,04009,Cashier
+13,04010,Dishwasher
+1,04011,Cashier
+6,04012,Server
+1,04013,Cashier
+13,04014,Teppanyaki Chef
+3,04015,Cashier
+7,04016,Server
+5,04017,Cashier
+13,04018,Sushi Chef
+2,04019,Cashier
+2,04020,Sushi Chef
+14,04021,Host/Hostess
+7,04022,Dishwasher
+5,04023,Host/Hostess
+5,04024,Host/Hostess
+5,04025,Sushi Chef
+2,04026,Sushi Preparer
+2,04027,Sushi Chef
+12,04028,Server
+15,04029,Host/Hostess
+10,04030,Server
+12,04031,Sushi Preparer
+15,04032,Teppanyaki Chef
+14,04033,Dishwasher
+6,04034,Server
+2,04035,Cashier
+2,04036,Dishwasher
+12,04037,Teppanyaki Chef
+7,04038,Sushi Chef
+9,04039,Dishwasher
+3,04040,Host/Hostess
+3,04041,Server
+12,04042,Dishwasher
+1,04043,Cashier
+6,04044,Sushi Chef
+13,04045,Dishwasher
+13,04046,Cashier
+12,04047,Sushi Chef
+6,04048,Teppanyaki Chef
+12,04049,Teppanyaki Chef
+5,04050,Server
+3,04051,Sushi Chef
+2,04052,Teppanyaki Chef
+6,04053,Teppanyaki Chef
+15,04054,Cashier
+8,04055,Dishwasher
+10,04056,Host/Hostess
+10,04057,Sushi Preparer
+9,04058,Cashier
+14,04059,Server
+8,04060,Cashier
+4,04061,Sushi Chef
+15,04062,Sushi Chef
+8,04063,Cashier
+14,04064,Teppanyaki Chef
+13,04065,Sushi Preparer
+4,04066,Server
+12,04067,Sushi Chef
+12,04068,Server
+2,04069,Sushi Chef
+13,04070,Host/Hostess
+11,04071,Server
+5,04072,Server
+6,04073,Host/Hostess
+7,04074,Cashier
+4,04075,Sushi Preparer
+9,04076,Sushi Chef
+13,04077,Cashier
+13,04078,Sushi Preparer
+15,04079,Sushi Preparer
+8,04080,Cashier
+3,04081,Cashier
+4,04082,Sushi Preparer
+12,04083,Host/Hostess
+1,04084,Sushi Chef
+12,04085,Teppanyaki Chef
+9,04086,Sushi Chef
+11,04087,Host/Hostess
+13,04088,Cashier
+9,04089,Sushi Preparer
+8,04090,Dishwasher
+10,04091,Dishwasher
+5,04092,Sushi Chef
+7,04093,Server
+8,04094,Sushi Preparer
+3,04095,Host/Hostess
+11,04096,Sushi Preparer
+11,04097,Teppanyaki Chef
+1,04098,Host/Hostess
+7,04099,Teppanyaki Chef
+3,04100,Sushi Chef
+9,04101,Teppanyaki Chef
+5,04102,Host/Hostess
+1,04103,Server
+2,04104,Server
+5,04105,Cashier
+5,04106,Sushi Chef
+7,04107,Sushi Chef
+15,04108,Cashier
+8,04109,Teppanyaki Chef
+10,04110,Sushi Preparer
+12,04111,Host/Hostess
+7,04112,Dishwasher
+5,04113,Sushi Preparer
+10,04114,Dishwasher
+5,04115,Dishwasher
+4,04116,Host/Hostess
+1,04117,Sushi Chef
+7,04118,Sushi Chef
+4,04119,Server
+6,04120,Sushi Preparer
+4,04121,Sushi Chef
+6,04122,Sushi Preparer
+7,04123,Host/Hostess
+1,04124,Dishwasher
+1,04125,Teppanyaki Chef
+14,04126,Teppanyaki Chef
+14,04127,Host/Hostess
+4,04128,Sushi Chef
+5,04129,Cashier
+13,04130,Host/Hostess
+14,04131,Sushi Preparer
+7,04132,Sushi Chef
+4,04133,Sushi Chef
+11,04134,Server
+1,04135,Sushi Preparer
+12,04136,Sushi Chef
+7,04137,Cashier
+8,04138,Dishwasher
+9,04139,Host/Hostess
+14,04140,Server
+12,04141,Sushi Chef
+4,04142,Dishwasher
+11,04143,Sushi Preparer
+11,04144,Dishwasher
+13,04145,Sushi Chef
+12,04146,Sushi Preparer
+10,04147,Sushi Preparer
+11,04148,Teppanyaki Chef
+14,04149,Teppanyaki Chef
+11,04150,Server
+12,04151,Sushi Chef
+8,04152,Host/Hostess
+8,04153,Sushi Preparer
+8,04154,Sushi Preparer
+12,04155,Host/Hostess
+8,04156,Teppanyaki Chef
+11,04157,Cashier
+7,04158,Server
+15,04159,Teppanyaki Chef
+1,04160,Sushi Chef
+5,04161,Cashier
+2,04162,Cashier
+9,04163,Dishwasher
+15,04164,Sushi Preparer
+15,04165,Sushi Chef
+2,04166,Sushi Chef
+11,04167,Cashier
+8,04168,Host/Hostess
+4,04169,Host/Hostess
+9,04170,Cashier
+5,04171,Teppanyaki Chef
+1,04172,Sushi Preparer
+2,04173,Dishwasher
+12,04174,Teppanyaki Chef
+13,04175,Sushi Preparer
+12,04176,Sushi Preparer
+6,04177,Sushi Chef
+6,04178,Sushi Preparer
+4,04179,Host/Hostess
+13,04180,Sushi Chef
+12,04181,Cashier
+2,04182,Dishwasher
+6,04183,Server
+9,04184,Sushi Chef
+2,04185,Sushi Chef
+3,04186,Host/Hostess
+13,04187,Dishwasher
+15,04188,Sushi Preparer
+2,04189,Teppanyaki Chef
+12,04190,Teppanyaki Chef
+9,04191,Host/Hostess
+2,04192,Server
+11,04193,Sushi Preparer
+12,04194,Dishwasher
+8,04195,Host/Hostess
+10,04196,Sushi Chef
+3,04197,Sushi Chef
+12,04198,Host/Hostess
+11,04199,Sushi Preparer
+13,04200,Server
+11,04201,Host/Hostess
+13,04202,Host/Hostess
+7,04203,Cashier
+4,04204,Dishwasher
+13,04205,Sushi Chef
+11,04206,Sushi Chef
+9,04207,Server
+6,04208,Cashier
+10,04209,Dishwasher
+5,04210,Server
+10,04211,Cashier
+15,04212,Sushi Preparer
+11,04213,Sushi Chef
+4,04214,Server
+4,04215,Host/Hostess
+5,04216,Cashier
+1,04217,Cashier
+9,04218,Dishwasher
+2,04219,Server
+5,04220,Sushi Preparer
+3,04221,Teppanyaki Chef
+9,04222,Dishwasher
+13,04223,Sushi Preparer
+14,04224,Server
+5,04225,Server
+9,04226,Dishwasher
+7,04227,Cashier
+8,04228,Server
+4,04229,Sushi Preparer
+14,04230,Sushi Preparer
+6,04231,Cashier
+7,04232,Host/Hostess
+6,04233,Server
+9,04234,Cashier
+12,04235,Sushi Preparer
+1,04236,Cashier
+1,04237,Sushi Chef
+7,04238,Dishwasher
+2,04239,Server
+1,04240,Cashier
+14,04241,Sushi Chef
+1,04242,Sushi Preparer
+3,04243,Sushi Preparer
+3,04244,Server
+9,04245,Dishwasher
+15,04246,Host/Hostess
+3,04247,Sushi Preparer
+11,04248,Teppanyaki Chef
+1,04249,Dishwasher
+13,04250,Dishwasher
+3,04251,Teppanyaki Chef
+7,04252,Server
+1,04253,Sushi Chef
+11,04254,Host/Hostess
+7,04255,Sushi Preparer
+3,04256,Teppanyaki Chef
+7,04257,Server
+8,04258,Host/Hostess
+2,04259,Teppanyaki Chef
+12,04260,Server
+10,04261,Server
+10,04262,Sushi Preparer
+8,04263,Sushi Preparer
+7,04264,Teppanyaki Chef
+6,04265,Host/Hostess
+1,04266,Dishwasher
+2,04267,Cashier
+9,04268,Host/Hostess
+2,04269,Teppanyaki Chef
+2,04270,Sushi Chef
+14,04271,Cashier
+7,04272,Dishwasher
+10,04273,Sushi Chef
+4,04274,Server
+14,04275,Teppanyaki Chef
+15,04276,Teppanyaki Chef
+5,04277,Dishwasher
+7,04278,Server
+3,04279,Sushi Chef
+1,04280,Server
+12,04281,Host/Hostess
+1,04282,Teppanyaki Chef
+3,04283,Sushi Chef
+3,04284,Sushi Preparer
+9,04285,Cashier
+6,04286,Teppanyaki Chef
+10,04287,Teppanyaki Chef
+7,04288,Dishwasher
+6,04289,Teppanyaki Chef
+8,04290,Sushi Preparer
+5,04291,Host/Hostess
+1,04292,Dishwasher
+1,04293,Teppanyaki Chef
+2,04294,Dishwasher
+7,04295,Dishwasher
+5,04296,Sushi Chef
+3,04297,Cashier
+11,04298,Sushi Chef
+9,04299,Cashier
+4,04300,Cashier
+14,04301,Teppanyaki Chef
+12,04302,Host/Hostess
+5,04303,Server
+6,04304,Host/Hostess
+7,04305,Host/Hostess
+13,04306,Dishwasher
+10,04307,Dishwasher
+15,04308,Sushi Preparer
+9,04309,Sushi Preparer
+2,04310,Server
+4,04311,Server
+4,04312,Dishwasher
+11,04313,Dishwasher
+1,04314,Sushi Chef
+7,04315,Sushi Chef
+11,04316,Dishwasher
+6,04317,Host/Hostess
+12,04318,Server
+11,04319,Server
+9,04320,Server
+6,04321,Host/Hostess
+12,04322,Sushi Chef
+7,04323,Cashier
+7,04324,Dishwasher
+12,04325,Cashier
+1,04326,Cashier
+15,04327,Cashier
+5,04328,Cashier
+8,04329,Sushi Preparer
+8,04330,Sushi Chef
+12,04331,Sushi Chef
+10,04332,Sushi Chef
+3,04333,Cashier
+3,04334,Sushi Preparer
+2,04335,Cashier
+12,04336,Dishwasher
+8,04337,Cashier
+8,04338,Host/Hostess
+1,04339,Server
+14,04340,Sushi Preparer
+13,04341,Teppanyaki Chef
+12,04342,Sushi Chef
+7,04343,Sushi Preparer
+9,04344,Teppanyaki Chef
+5,04345,Sushi Chef
+14,04346,Server
+4,04347,Dishwasher
+11,04348,Cashier
+8,04349,Cashier
+5,04350,Host/Hostess
+8,04351,Sushi Preparer
+7,04352,Cashier
+4,04353,Server
+9,04354,Sushi Preparer
+5,04355,Server
+12,04356,Server
+8,04357,Server
+7,04358,Sushi Chef
+8,04359,Server
+3,04360,Host/Hostess
+6,04361,Teppanyaki Chef
+12,04362,Host/Hostess
+12,04363,Server
+4,04364,Server
+11,04365,Host/Hostess
+12,04366,Sushi Chef
+14,04367,Sushi Preparer
+11,04368,Dishwasher
+10,04369,Host/Hostess
+11,04370,Dishwasher
+1,04371,Sushi Preparer
+6,04372,Dishwasher
+9,04373,Host/Hostess
+6,04374,Server
+11,04375,Sushi Preparer
+4,04376,Teppanyaki Chef
+13,04377,Cashier
+8,04378,Server
+15,04379,Server
+6,04380,Dishwasher
+2,04381,Sushi Preparer
+14,04382,Sushi Chef
+8,04383,Cashier
+13,04384,Server
+10,04385,Sushi Chef
+1,04386,Teppanyaki Chef
+3,04387,Teppanyaki Chef
+1,04388,Dishwasher
+9,04389,Server
+1,04390,Sushi Preparer
+5,04391,Dishwasher
+13,04392,Sushi Preparer
+5,04393,Host/Hostess
+2,04394,Dishwasher
+15,04395,Sushi Chef
+5,04396,Teppanyaki Chef
+12,04397,Server
+11,04398,Sushi Chef
+4,04399,Server
+13,04400,Host/Hostess
+6,04401,Server
+3,04402,Sushi Preparer
+15,04403,Sushi Preparer
+2,04404,Cashier
+8,04405,Server
+15,04406,Host/Hostess
+12,04407,Server
+4,04408,Sushi Chef
+13,04409,Sushi Preparer
+8,04410,Teppanyaki Chef
+15,04411,Host/Hostess
+5,04412,Sushi Preparer
+3,04413,Server
+6,04414,Sushi Preparer
+12,04415,Teppanyaki Chef
+5,04416,Dishwasher
+13,04417,Dishwasher
+7,04418,Teppanyaki Chef
+6,04419,Sushi Chef
+12,04420,Teppanyaki Chef
+4,04421,Dishwasher
+11,04422,Host/Hostess
+14,04423,Dishwasher
+10,04424,Cashier
+3,04425,Sushi Preparer
+11,04426,Dishwasher
+1,04427,Host/Hostess
+7,04428,Host/Hostess
+12,04429,Sushi Preparer
+13,04430,Cashier
+2,04431,Sushi Preparer
+10,04432,Sushi Preparer
+3,04433,Teppanyaki Chef
+9,04434,Cashier
+11,04435,Host/Hostess
+11,04436,Sushi Preparer
+10,04437,Server
+3,04438,Cashier
+1,04439,Sushi Preparer
+4,04440,Sushi Preparer
+12,04441,Sushi Chef
+12,04442,Dishwasher
+6,04443,Sushi Chef
+14,04444,Dishwasher
+7,04445,Cashier
+6,04446,Sushi Chef
+14,04447,Server
+3,04448,Sushi Chef
+8,04449,Cashier
+13,04450,Sushi Chef
+14,04451,Sushi Preparer
+15,04452,Sushi Preparer
+14,04453,Sushi Preparer
+10,04454,Host/Hostess
+6,04455,Host/Hostess
+5,04456,Sushi Chef
+7,04457,Cashier
+8,04458,Sushi Chef
+13,04459,Server
+5,04460,Sushi Chef
+9,04461,Host/Hostess
+2,04462,Server
+10,04463,Cashier
+2,04464,Host/Hostess
+2,04465,Host/Hostess
+8,04466,Dishwasher
+12,04467,Cashier
+13,04468,Sushi Chef
+10,04469,Host/Hostess
+14,04470,Server
+13,04471,Sushi Chef
+9,04472,Sushi Chef
+2,04473,Dishwasher
+8,04474,Cashier
+3,04475,Server
+12,04476,Cashier
+7,04477,Sushi Preparer
+8,04478,Sushi Preparer
+9,04479,Sushi Preparer
+15,04480,Sushi Preparer
+8,04481,Cashier
+14,04482,Sushi Preparer
+6,04483,Sushi Preparer
+1,04484,Sushi Chef
+8,04485,Dishwasher
+2,04486,Cashier
+3,04487,Host/Hostess
+9,04488,Server
+7,04489,Cashier
+1,04490,Sushi Chef
+5,04491,Teppanyaki Chef
+14,04492,Server
+14,04493,Sushi Preparer
+15,04494,Sushi Preparer
+11,04495,Sushi Chef
+9,04496,Sushi Preparer
+4,04497,Teppanyaki Chef
+11,04498,Host/Hostess
+15,04499,Server
+11,04500,Cashier
+1,04501,Sushi Chef
+1,04502,Server
+14,04503,Host/Hostess
+6,04504,Sushi Preparer
+1,04505,Host/Hostess
+7,04506,Host/Hostess
+9,04507,Cashier
+8,04508,Dishwasher
+8,04509,Server
+6,04510,Sushi Preparer
+13,04511,Host/Hostess
+9,04512,Sushi Preparer
+7,04513,Sushi Preparer
+3,04514,Sushi Chef
+9,04515,Server
+15,04516,Cashier
+15,04517,Sushi Chef
+3,04518,Sushi Chef
+11,04519,Sushi Preparer
+15,04520,Sushi Preparer
+6,04521,Sushi Chef
+15,04522,Cashier
+4,04523,Sushi Preparer
+1,04524,Cashier
+6,04525,Sushi Preparer
+14,04526,Dishwasher
+6,04527,Server
+11,04528,Teppanyaki Chef
+11,04529,Dishwasher
+10,04530,Server
+9,04531,Sushi Chef
+8,04532,Sushi Chef
+2,04533,Host/Hostess
+7,04534,Sushi Preparer
+6,04535,Cashier
+13,04536,Host/Hostess
+6,04537,Host/Hostess
+5,04538,Server
+13,04539,Sushi Preparer
+14,04540,Host/Hostess
+6,04541,Sushi Preparer
+6,04542,Sushi Preparer
+12,04543,Sushi Chef
+10,04544,Host/Hostess
+6,04545,Sushi Chef
+14,04546,Server
+4,04547,Server
+5,04548,Teppanyaki Chef
+12,04549,Sushi Preparer
+15,04550,Host/Hostess
+2,04551,Cashier
+9,04552,Teppanyaki Chef
+11,04553,Host/Hostess
+8,04554,Host/Hostess
+12,04555,Host/Hostess
+12,04556,Cashier
+4,04557,Host/Hostess
+14,04558,Cashier
+12,04559,Host/Hostess
+14,04560,Host/Hostess
+2,04561,Sushi Preparer
+5,04562,Server
+8,04563,Host/Hostess
+5,04564,Dishwasher
+1,04565,Dishwasher
+9,04566,Host/Hostess
+4,04567,Dishwasher
+7,04568,Host/Hostess
+9,04569,Sushi Preparer
+6,04570,Host/Hostess
+8,04571,Cashier
+12,04572,Dishwasher
+10,04573,Server
+5,04574,Teppanyaki Chef
+11,04575,Sushi Chef
+10,04576,Dishwasher
+12,04577,Dishwasher
+10,04578,Dishwasher
+15,04579,Sushi Chef
+1,04580,Teppanyaki Chef
+1,04581,Dishwasher
+4,04582,Teppanyaki Chef
+11,04583,Dishwasher
+10,04584,Dishwasher
+13,04585,Sushi Preparer
+13,04586,Host/Hostess
+13,04587,Server
+10,04588,Dishwasher
+5,04589,Dishwasher
+7,04590,Teppanyaki Chef
+15,04591,Sushi Chef
+6,04592,Sushi Chef
+12,04593,Dishwasher
+7,04594,Sushi Preparer
+1,04595,Sushi Preparer
+5,04596,Sushi Chef
+6,04597,Server
+2,04598,Dishwasher
+14,04599,Sushi Preparer
+7,04600,Cashier
+12,04601,Teppanyaki Chef
+11,04602,Dishwasher
+4,04603,Host/Hostess
+15,04604,Sushi Chef
+15,04605,Teppanyaki Chef
+8,04606,Sushi Preparer
+9,04607,Sushi Chef
+15,04608,Teppanyaki Chef
+11,04609,Host/Hostess
+14,04610,Dishwasher
+13,04611,Sushi Chef
+8,04612,Host/Hostess
+6,04613,Cashier
+9,04614,Dishwasher
+10,04615,Cashier
+4,04616,Dishwasher
+2,04617,Host/Hostess
+10,04618,Teppanyaki Chef
+10,04619,Sushi Chef
+9,04620,Host/Hostess
+13,04621,Dishwasher
+6,04622,Host/Hostess
+15,04623,Server
+14,04624,Dishwasher
+14,04625,Sushi Chef
+15,04626,Sushi Preparer
+8,04627,Server
+6,04628,Sushi Chef
+13,04629,Host/Hostess
+11,04630,Dishwasher
+12,04631,Server
+11,04632,Server
+1,04633,Cashier
+11,04634,Dishwasher
+4,04635,Dishwasher
+12,04636,Sushi Preparer
+8,04637,Sushi Preparer
+15,04638,Sushi Chef
+11,04639,Cashier
+15,04640,Sushi Chef
+6,04641,Host/Hostess
+6,04642,Sushi Chef
+14,04643,Dishwasher
+7,04644,Sushi Preparer
+9,04645,Dishwasher
+6,04646,Dishwasher
+13,04647,Dishwasher
+15,04648,Teppanyaki Chef
+12,04649,Sushi Preparer
+4,04650,Host/Hostess
+13,04651,Teppanyaki Chef
+9,04652,Teppanyaki Chef
+13,04653,Sushi Chef
+3,04654,Sushi Chef
+12,04655,Sushi Chef
+4,04656,Dishwasher
+6,04657,Teppanyaki Chef
+2,04658,Sushi Preparer
+4,04659,Sushi Chef
+5,04660,Server
+4,04661,Server
+15,04662,Host/Hostess
+8,04663,Teppanyaki Chef
+11,04664,Teppanyaki Chef
+14,04665,Sushi Preparer
+12,04666,Teppanyaki Chef
+15,04667,Sushi Preparer
+14,04668,Server
+15,04669,Dishwasher
+7,04670,Host/Hostess
+4,04671,Teppanyaki Chef
+3,04672,Sushi Preparer
+14,04673,Server
+6,04674,Sushi Preparer
+7,04675,Teppanyaki Chef
+12,04676,Host/Hostess
+10,04677,Server
+9,04678,Sushi Preparer
+6,04679,Sushi Preparer
+15,04680,Sushi Preparer
+10,04681,Sushi Chef
+7,04682,Cashier
+6,04683,Sushi Chef
+1,04684,Sushi Preparer
+9,04685,Host/Hostess
+10,04686,Cashier
+7,04687,Sushi Chef
+12,04688,Host/Hostess
+13,04689,Host/Hostess
+7,04690,Sushi Preparer
+5,04691,Sushi Chef
+6,04692,Dishwasher
+8,04693,Dishwasher
+7,04694,Sushi Chef
+13,04695,Sushi Preparer
+15,04696,Server
+12,04697,Host/Hostess
+4,04698,Cashier
+11,04699,Server
+15,04700,Sushi Chef
+1,04701,Host/Hostess
+12,04702,Host/Hostess
+10,04703,Cashier
+3,04704,Sushi Preparer
+8,04705,Sushi Preparer
+8,04706,Sushi Preparer
+9,04707,Host/Hostess
+6,04708,Sushi Chef
+3,04709,Sushi Preparer
+11,04710,Teppanyaki Chef
+3,04711,Teppanyaki Chef
+9,04712,Sushi Chef
+1,04713,Sushi Preparer
+15,04714,Sushi Chef
+8,04715,Server
+8,04716,Host/Hostess
+7,04717,Cashier
+7,04718,Cashier
+5,04719,Dishwasher
+2,04720,Dishwasher
+4,04721,Cashier
+6,04722,Sushi Preparer
+11,04723,Dishwasher
+8,04724,Dishwasher
+2,04725,Host/Hostess
+4,04726,Dishwasher
+14,04727,Sushi Chef
+2,04728,Sushi Preparer
+12,04729,Host/Hostess
+3,04730,Sushi Chef
+6,04731,Host/Hostess
+5,04732,Server
+13,04733,Sushi Chef
+8,04734,Cashier
+10,04735,Sushi Chef
+8,04736,Server
+6,04737,Sushi Chef
+13,04738,Teppanyaki Chef
+3,04739,Sushi Chef
+8,04740,Sushi Chef
+10,04741,Teppanyaki Chef
+7,04742,Sushi Chef
+14,04743,Server
+14,04744,Teppanyaki Chef
+13,04745,Host/Hostess
+15,04746,Cashier
+10,04747,Sushi Chef
+1,04748,Host/Hostess
+5,04749,Sushi Preparer
+8,04750,Sushi Preparer
+14,04751,Cashier
+11,04752,Sushi Chef
+12,04753,Dishwasher
+14,04754,Sushi Preparer
+5,04755,Host/Hostess
+9,04756,Teppanyaki Chef
+5,04757,Sushi Chef
+15,04758,Dishwasher
+15,04759,Server
+14,04760,Teppanyaki Chef
+8,04761,Sushi Chef
+10,04762,Dishwasher
+3,04763,Server
+7,04764,Dishwasher
+5,04765,Sushi Preparer
+11,04766,Sushi Chef
+6,04767,Dishwasher
+14,04768,Dishwasher
+6,04769,Dishwasher
+14,04770,Sushi Preparer
+14,04771,Sushi Preparer
+1,04772,Cashier
+1,04773,Host/Hostess
+12,04774,Teppanyaki Chef
+10,04775,Sushi Preparer
+14,04776,Host/Hostess
+9,04777,Cashier
+5,04778,Dishwasher
+5,04779,Host/Hostess
+7,04780,Dishwasher
+8,04781,Teppanyaki Chef
+8,04782,Teppanyaki Chef
+8,04783,Sushi Preparer
+9,04784,Dishwasher
+13,04785,Sushi Preparer
+7,04786,Sushi Chef
+11,04787,Sushi Chef
+5,04788,Cashier
+5,04789,Sushi Preparer
+10,04790,Host/Hostess
+6,04791,Server
+14,04792,Sushi Chef
+1,04793,Sushi Preparer
+9,04794,Server
+14,04795,Cashier
+13,04796,Server
+15,04797,Teppanyaki Chef
+6,04798,Sushi Chef
+10,04799,Server
+9,04800,Sushi Preparer
+14,04801,Host/Hostess
+8,04802,Server
+2,04803,Dishwasher
+14,04804,Host/Hostess
+12,04805,Sushi Preparer
+6,04806,Teppanyaki Chef
+11,04807,Sushi Chef
+6,04808,Server
+7,04809,Cashier
+7,04810,Sushi Chef
+12,04811,Teppanyaki Chef
+13,04812,Sushi Preparer
+2,04813,Server
+13,04814,Sushi Chef
+11,04815,Teppanyaki Chef
+11,04816,Host/Hostess
+8,04817,Server
+4,04818,Dishwasher
+2,04819,Host/Hostess
+4,04820,Server
+3,04821,Sushi Preparer
+14,04822,Cashier
+8,04823,Dishwasher
+12,04824,Host/Hostess
+8,04825,Teppanyaki Chef
+8,04826,Sushi Chef
+9,04827,Sushi Preparer
+11,04828,Server
+7,04829,Host/Hostess
+2,04830,Sushi Chef
+7,04831,Sushi Preparer
+13,04832,Dishwasher
+12,04833,Server
+14,04834,Server
+14,04835,Sushi Chef
+4,04836,Sushi Chef
+13,04837,Server
+3,04838,Cashier
+13,04839,Teppanyaki Chef
+14,04840,Host/Hostess
+2,04841,Teppanyaki Chef
+12,04842,Host/Hostess
+12,04843,Cashier
+6,04844,Teppanyaki Chef
+13,04845,Sushi Preparer
+7,04846,Sushi Chef
+15,04847,Host/Hostess
+15,04848,Sushi Preparer
+14,04849,Sushi Preparer
+12,04850,Sushi Chef
+4,04851,Sushi Chef
+11,04852,Sushi Preparer
+1,04853,Sushi Chef
+3,04854,Host/Hostess
+13,04855,Teppanyaki Chef
+13,04856,Host/Hostess
+7,04857,Teppanyaki Chef
+11,04858,Sushi Chef
+2,04859,Teppanyaki Chef
+14,04860,Cashier
+7,04861,Sushi Chef
+3,04862,Sushi Chef
+1,04863,Teppanyaki Chef
+14,04864,Sushi Preparer
+2,04865,Host/Hostess
+4,04866,Dishwasher
+14,04867,Server
+3,04868,Teppanyaki Chef
+5,04869,Sushi Preparer
+7,04870,Teppanyaki Chef
+13,04871,Sushi Chef
+15,04872,Teppanyaki Chef
+8,04873,Sushi Preparer
+15,04874,Teppanyaki Chef
+3,04875,Server
+10,04876,Server
+10,04877,Sushi Preparer
+13,04878,Host/Hostess
+4,04879,Dishwasher
+5,04880,Host/Hostess
+11,04881,Sushi Preparer
+12,04882,Dishwasher
+7,04883,Cashier
+5,04884,Dishwasher
+11,04885,Host/Hostess
+3,04886,Host/Hostess
+11,04887,Sushi Chef
+3,04888,Sushi Preparer
+7,04889,Cashier
+3,04890,Sushi Preparer
+15,04891,Server
+12,04892,Host/Hostess
+4,04893,Sushi Chef
+8,04894,Cashier
+11,04895,Dishwasher
+5,04896,Cashier
+2,04897,Server
+11,04898,Cashier
+11,04899,Host/Hostess
+11,04900,Cashier
+12,04901,Server
+12,04902,Sushi Preparer
+1,04903,Teppanyaki Chef
+15,04904,Sushi Chef
+1,04905,Server
+7,04906,Host/Hostess
+14,04907,Host/Hostess
+11,04908,Dishwasher
+4,04909,Sushi Preparer
+1,04910,Server
+7,04911,Dishwasher
+8,04912,Teppanyaki Chef
+4,04913,Dishwasher
+11,04914,Server
+2,04915,Server
+14,04916,Cashier
+1,04917,Sushi Chef
+11,04918,Cashier
+13,04919,Sushi Preparer
+14,04920,Cashier
+15,04921,Dishwasher
+5,04922,Sushi Chef
+6,04923,Server
+5,04924,Host/Hostess
+14,04925,Host/Hostess
+8,04926,Dishwasher
+2,04927,Sushi Preparer
+2,04928,Teppanyaki Chef
+8,04929,Cashier
+10,04930,Sushi Chef
+11,04931,Sushi Preparer
+13,04932,Host/Hostess
+11,04933,Sushi Chef
+13,04934,Dishwasher
+10,04935,Sushi Chef
+15,04936,Host/Hostess
+1,04937,Host/Hostess
+9,04938,Cashier
+13,04939,Sushi Preparer
+11,04940,Teppanyaki Chef
+12,04941,Teppanyaki Chef
+14,04942,Host/Hostess
+2,04943,Sushi Chef
+8,04944,Server
+12,04945,Dishwasher
+8,04946,Sushi Preparer
+8,04947,Dishwasher
+6,04948,Sushi Chef
+15,04949,Server
+1,04950,Host/Hostess
+12,04951,Teppanyaki Chef
+2,04952,Dishwasher
+2,04953,Dishwasher
+13,04954,Dishwasher
+6,04955,Sushi Chef
+5,04956,Sushi Chef
+5,04957,Sushi Preparer
+4,04958,Cashier
+6,04959,Sushi Preparer
+13,04960,Sushi Preparer
+6,04961,Sushi Preparer
+11,04962,Dishwasher
+8,04963,Dishwasher
+12,04964,Sushi Preparer
+9,04965,Sushi Chef
+8,04966,Teppanyaki Chef
+1,04967,Cashier
+13,04968,Server
+11,04969,Host/Hostess
+6,04970,Dishwasher
+14,04971,Dishwasher
+9,04972,Server
+12,04973,Server
+5,04974,Host/Hostess
+15,04975,Sushi Chef
+7,04976,Sushi Chef
+14,04977,Host/Hostess
+4,04978,Sushi Preparer
+2,04979,Server
+1,04980,Cashier
+8,04981,Host/Hostess
+7,04982,Host/Hostess
+9,04983,Server
+9,04984,Sushi Chef
+11,04985,Sushi Chef
+15,04986,Cashier
+7,04987,Sushi Chef
+6,04988,Sushi Preparer
+5,04989,Server
+2,04990,Server
+5,04991,Cashier
+8,04992,Cashier
+5,04993,Sushi Chef
+11,04994,Sushi Preparer
+14,04995,Teppanyaki Chef
+2,04996,Host/Hostess
+7,04997,Cashier
+9,04998,Cashier
+10,04999,Teppanyaki Chef
+15,05000,Host/Hostess

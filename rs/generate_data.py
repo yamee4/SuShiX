@@ -26,6 +26,22 @@ def generate_employee(num_employees):
         employees.append([empID, first_name, last_name, birth_date, gender, salary, branch_manager])
     return employees
 
+def work_history(emp):
+    work_history = []
+    for employee in emp:
+        branch_id = random.randint(1, 15)
+        start_date = random_date(employee[3], datetime(2020, 1, 1))
+        end_date = None
+        work_history.append([employee[0], start_date, end_date, branch_id])
+    return work_history
+
+def station_employees(work_history):
+    station_employees = []
+    for employee in work_history:
+        branch_id = employee[3]
+        station_id = random.choice(["Sushi Chef", "Teppanyaki Chef", "Sushi Preparer", "Server", "Dishwasher", "Cashier", "Host/Hostess"])
+        station_employees.append([branch_id, employee[0], station_id])
+    return station_employees
 
 def generate_customers(num_customers):
     customers = []
@@ -49,15 +65,15 @@ def generate_online_customers(customers):
             online_customers.append([customer[0], password])
     return online_customers
 
-def generate_customer_members(customers):
+def generate_customer_members(customers, emp):
     customer_members = []
     for customer in customers:
         if customer[6] == 1:
             member_card = f"MC{random.randint(10000, 99999)}"
             created_date = random_date(datetime(2015, 1, 1), datetime(2024, 1, 1))
-            support_emp = f"E{random.randint(1, 100):05d}"
+            support_emp = random.choice([employee[0] for employee in emp])
             rank = random.choice(["MEMBER", "SILVER", "GOLD"])
-            points = random.randint(0, 10000)
+            points = random.randint(0, 100)
             acquired_rank_date = created_date + timedelta(days=random.randint(30, 365))
             customer_members.append([customer[0], member_card, created_date, support_emp, rank, points, acquired_rank_date])
     return customer_members
@@ -65,11 +81,11 @@ def generate_customer_members(customers):
 def generate_order_tickets(customers, emp):
     order_tickets = []
     ticket_types = ["ONL", "PRE", "STD"]
-    for customer in customers:
-        ticket_id = f"TKT{random.randint(10000, 99999):07d}"
+    for i, customer in enumerate(customers):
+        ticket_id = f"TKT{i+1:07d}"
         ticket_type = random.choice(ticket_types)
-        branch_id = random.randint(1, 50)
-        emp_id = random.choice(emp)
+        branch_id = random.randint(1, 15)
+        emp_id = random.choice([employee[0] for employee in emp])
         discount = 0
         total_price = 0
         created_date = random_date(datetime(2020, 1, 1), datetime(2024, 1, 1))
@@ -80,7 +96,7 @@ def generate_standard_order_tickets(order_tickets, emp):
     standard_tickets = []
     for ticket in filter(lambda x: x[1] == "STD", order_tickets):
         table_name = f"Table{random.randint(1, 100)}"
-        support_employee = random.choice(emp)
+        support_employee = random.choice([employee[0] for employee in emp])
         standard_tickets.append([ticket[0], table_name, support_employee])
     return standard_tickets
 
@@ -110,6 +126,18 @@ def generate_ticket_details(order_tickets, ticket_type):
         ticket_details.append([ticket[0], dish_id, order_time, quantity, price])
     return ticket_details
 
+def feedbacks_ticket(tickets):
+    feedbacks = []
+    for ticket in tickets:
+        feedbacktotal = 0
+        feedbackservice = random.randint(1, 10)
+        feedbacksfood = random.randint(1, 10)
+        feedbacksprices = random.randint(1, 10)
+        feedbackslocation = random.randint(1, 10)
+        feedbacksnote = f"Note for {ticket[0]}"
+        feedbacks.append([ticket[0], feedbacktotal, feedbackservice, feedbacksfood, feedbacksprices, feedbackslocation, feedbacksnote])
+    return feedbacks
+
 def save_to_csv(filename, data, headers):
     with open(filename, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
@@ -120,7 +148,7 @@ def save_to_csv(filename, data, headers):
 employees = generate_employee(5000)
 customers = generate_customers(100000)
 online_customers = generate_online_customers(customers)
-customer_members = generate_customer_members(customers)
+customer_members = generate_customer_members(customers, employees)
 order_tickets = generate_order_tickets(customers, employees)
 standard_tickets = generate_standard_order_tickets(order_tickets, employees)
 pre_tickets = generate_pre_order_tickets(order_tickets)
@@ -128,6 +156,9 @@ online_tickets = generate_online_tickets(order_tickets)
 online_ticket_details = generate_ticket_details(order_tickets, "ONL")
 pre_order_ticket_details = generate_ticket_details(order_tickets, "PRE")
 standard_order_ticket_details = generate_ticket_details(order_tickets, "STD")
+workHistory = work_history(employees)
+feedbacks = feedbacks_ticket(order_tickets)
+station_emp = station_employees(workHistory)
 
 # Save to CSV
 save_to_csv("CUSTOMER.csv", customers, ["CCCD", "CustomerFirstName", "CustomerLastName", "PhoneNumber", "Email", "Gender", "isMember", "isRegistered"])
@@ -140,3 +171,7 @@ save_to_csv("ONLINE_TICKET.csv", online_tickets, ["OTicketID"])
 save_to_csv("ONLINE_TICKET_DETAIL.csv", online_ticket_details, ["OTicketID", "DishID", "OrderTime", "Quantity", "Price"])
 save_to_csv("PRE_ORDER_TICKET_DETAIL.csv", pre_order_ticket_details, ["PTicketID", "DishID", "OrderTime", "Quantity", "Price"])
 save_to_csv("STANDARD_ORDER_DETAIL.csv", standard_order_ticket_details, ["SOTicketID", "DishID", "OrderTime", "Quantity", "Price"])
+save_to_csv("EMPLOYEE.csv", employees, ["EmpID", "EmpFirstName", "EmpLastName", "EmpBirthDate", "EmpGender", "Salary", "BranchManager"])
+save_to_csv("WORK_HISTORY.csv", workHistory, ["EmpID", "StartDate", "EndDate", "BranchID"])
+save_to_csv("FEEDBACK.csv", feedbacks, ["TicketID", "FeedbackTotal", "FeedbackService", "FeedbackFood", "FeedbackPrices", "FeedbackLocation", "FeedbackNote"])
+save_to_csv("STATION_EMPLOYEE.csv", station_emp, ["BranchID", "EmpID", "StationID"])
