@@ -76,6 +76,35 @@
                 </div>
                 
     </section>
+
+    <section class="py-3">
+        <div class="row">
+            <div class="col">
+                <div class="dropdown">
+                    <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="triggerId"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        STORES
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                        {{#each branches}}
+                            <a class="dropdown-item" href="#">{{BranchName}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col">
+                <button type="button" class="btn btn-primary">RESERVATION</button>
+            </div>
+        </div>
+    </section>
     
     <section class="py-3">
         <div class="row">

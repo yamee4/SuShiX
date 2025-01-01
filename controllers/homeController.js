@@ -1,13 +1,25 @@
+const { sequelize } = require("../models");
+
 let controller = {};
 
-controller.showHome = (req, res) => {
+controller.init = async (req, res, next) => {
+    next();
+};
+
+controller.showHome = async (req, res) => {
     const user = req.session.user;
+
+    const branches = await sequelize.query(
+        `SELECT BranchID, BranchName FROM BRANCH`,
+        { type: sequelize.QueryTypes.SELECT }
+    );
 
     if (!user) {
         res.render("index", {
             layout: "layout",
             title: "Home",
             name: "Home",
+            branches,
         });
         return;
     }
@@ -33,6 +45,7 @@ controller.showHome = (req, res) => {
         layout,
         title: "Home",
         name: "Home",
+        branches,
     });
 };
 

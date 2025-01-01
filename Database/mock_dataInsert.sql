@@ -151,6 +151,4 @@ delete from CUSTOMER_MEMBER
 delete from EMPLOYEE
 delete from CUSTOMER
 
-select * from CUSTOMER_MEMBER
-SELECT * FROM ORDER_TICKET
-
+=
