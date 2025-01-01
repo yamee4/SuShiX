@@ -21,8 +21,15 @@ BEGIN
 			RETURN
 		END
 
-		INSERT INTO STATION_EMPLOYEE VALUES(@toBranchID, @EmpID, @transferPosition);	
-		INSERT INTO WORK_HISTORY VALUES(@EmpID, getdate(), NULL, @toBranchID);
+		DECLARE @oldBranch int;
+		select @oldBranch = BranchID
+		from WORK_HISTORY
+		where EmpID = @EmpID
+
+
+		UPDATE WORK_HISTORY set EndDate = GETDATE() WHERE EmpID = @EmpID and BranchID = @oldBranch
+		UPDATE STATION_EMPLOYEE set BranchID = @toBranchID where EmpID = @EmpID
+		INSERT INTO WORK_HISTORY VALUES (@EmpID, GETDATE(), NULL, @toBranchID)
 	END TRY
 	BEGIN CATCH
 		PRINT(N'Lỗi:' + ERROR_MESSAGE());
@@ -138,7 +145,9 @@ CREATE OR ALTER PROCEDURE usp_ADD_EMPLOYEE
 	@EmpLastName nvarchar(20),
 	@EmpDOB datetime,
 	@EmpGender nvarchar(3),
-	@Salary int
+	@Salary int,
+	@StationName nvarchar(20),
+	@BranchID int
 AS
 BEGIN
 	BEGIN TRY
@@ -146,9 +155,16 @@ BEGIN
 
 		select @temp = cast(max(cast(EmpID as int)) + 1 as char(5))
 		from EMPLOYEE
-		set @EmpID = replicate('0', 5 - len(@temp)) + @temp
+		if @temp is null 
+			begin
+				set @EmpID = '00001'
+			end
+		else 
+			set @EmpID = replicate('0', 5 - len(@temp)) + @temp
 
 		INSERT INTO EMPLOYEE VALUES(@EmpID, @EmpFirstName, @EmpLastName, @EmpDOB, @EmpGender, @Salary, NULL)
+		INSERT INTO WORK_HISTORY VALUES (@EmpID, GETDATE(), NULL, @BranchID)
+		INSERT INTO STATION_EMPLOYEE VALUES (@BranchID, @EmpID, @StationName)
 	END TRY
 
 	BEGIN CATCH

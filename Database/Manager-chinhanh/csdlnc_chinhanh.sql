@@ -200,7 +200,45 @@ BEGIN
 	WHERE ot.EmpID = @EmpID
 END
 
+GO
+CREATE OR ALTER PROCEDURE usp_GetHighestEmpScoreBranch
+    @startDate DATE,
+    @endDate DATE
+AS
+BEGIN
+    WITH EmployeeFeedbackScores AS (
+        SELECT 
+            br.BranchName AS branchName,
+            e.EmpFirstName + ' ' + e.EmpLastName AS Employee,
+            AVG(fb.FeedbackService) AS AvgFeedbackScore
+        FROM BRANCH br LEFT JOIN STATION_EMPLOYEE se ON br.BranchID = se.BranchID
+					   JOIN EMPLOYEE e ON e.EmpID = se.EmpID
+					   JOIN ORDER_TICKET od ON od.EmpID = se.EmpID
+					   JOIN FEEDBACK_TICKET fb ON od.TicketID = fb.TicketID
+        WHERE od.CreatedDate BETWEEN @startDate AND @endDate
+        GROUP BY br.BranchID, br.BranchName, e.EmpFirstName, e.EmpLastName
+    ),
+
+    MaxFeedbackScores AS (
+        SELECT 
+            MAX(AvgFeedbackScore) AS MaxAvgFeedbackScore
+        FROM 
+            EmployeeFeedbackScores
+    )
+    SELECT 
+        ef.branchName,
+        ef.Employee,
+        ef.AvgFeedbackScore AS N'Điểm đánh giá trung bình cao nhất'
+    FROM 
+        EmployeeFeedbackScores ef
+    JOIN 
+        MaxFeedbackScores mf
+     ON ef.AvgFeedbackScore = mf.MaxAvgFeedbackScore;
+END
+
 -- exec usp_GetEmpServiceScore 'EMP02'
+
+--exec usp_GetHighestEmpScoreBranch '2024-1-1', '2024-2-1' 
 
 --------------------------TÌM KIẾM EMPLOYEE ĐANG LÀM TRONG 1 CHI NHÁNH-----------------------------------------
 
@@ -344,7 +382,12 @@ BEGIN
 	select @temp = cast(max(cast(substring(TicketID, 4, len(TicketID) - 3) as int)) + 1 as char(10))
 	from ORDER_TICKET
 	where TicketID like 'TKT%'
-	set @TicketID = 'TKT' + REPLICATE('0', 4 - len(@temp)) + @temp
+	if @temp = ''
+		begin 
+			set @TicketID = 'TKT' + '0001'
+		end
+	else
+		set @TicketID = 'TKT' + REPLICATE('0', 4 - len(@temp)) + @temp
 
     INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID)
     VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID)
@@ -432,6 +475,8 @@ BEGIN
 		DELETE ORDER_TICKET
 		WHERE TicketID = @TicketID
 	END
+
+	DELETE FEEDBACK_TICKET where TicketID = @TicketID
 
 END
 
