@@ -3,7 +3,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT EMPLOYEE
@@ -11,7 +12,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 
@@ -20,7 +22,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT ONLINE_CUSTOMER
@@ -28,7 +31,17 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
+);
+
+BULK INSERT CUSTOMER_LOG
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\CUSTOMER_LOG.csv'
+WITH (
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT WORK_HISTORY
@@ -36,7 +49,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT STATION_EMPLOYEE
@@ -44,7 +58,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 
@@ -53,7 +68,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT STANDARD_ORDER_TICKET
@@ -61,7 +77,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT PRE_ORDER_TICKET
@@ -69,7 +86,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT ONLINE_TICKET
@@ -77,7 +95,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT ONLINE_TICKET_DETAIL
@@ -85,7 +104,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT PRE_ORDER_TICKET_DETAIL
@@ -93,7 +113,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT STANDARD_ORDER_DETAIL
@@ -101,7 +122,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
 BULK INSERT FEEDBACK_TICKET
@@ -109,7 +131,8 @@ FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nh
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
-    FIRSTROW = 2
+    FIRSTROW = 2,
+	CHECK_CONSTRAINTS
 );
 
  --delete from FEEDBACK_TICKET

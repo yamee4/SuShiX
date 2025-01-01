@@ -207,10 +207,8 @@ controller.CheckOut = async (req, res) => {
                         numberOfCustomer: NumberOfCustomer,
                         preOrderNote: PreOrderNote,
                         tableName: TableName,
-                        DSTicket: dsdonhang // Pass the array of order items,
                     },
-                    type: sequelize.QueryTypes.INSERT,
-                    raw: true,
+                    type: sequelize.QueryTypes.RAW,
                 }
             );
 
