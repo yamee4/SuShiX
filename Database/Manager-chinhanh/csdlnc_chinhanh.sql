@@ -381,7 +381,6 @@ BEGIN
 	declare @temp char(10)
 	select @temp = cast(max(cast(substring(TicketID, 4, len(TicketID) - 3) as int)) + 1 as char(10))
 	from ORDER_TICKET
-	where TicketID like 'TKT%'
 	if @temp is null
 		begin 
 			set @TicketID = 'TKT' + '0000001'
