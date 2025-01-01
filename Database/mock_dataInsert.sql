@@ -1,5 +1,5 @@
 BULK INSERT CUSTOMER
-FROM 'D:\Nhom3_ADB\rs\CUSTOMER.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\CUSTOMER.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -7,7 +7,7 @@ WITH (
 );
 
 BULK INSERT EMPLOYEE
-FROM 'D:\Nhom3_ADB\rs\EMPLOYEE.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\EMPLOYEE.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -16,7 +16,7 @@ WITH (
 
 
 BULK INSERT CUSTOMER_MEMBER
-FROM 'D:\Nhom3_ADB\rs\CUSTOMER_MEMBER.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\CUSTOMER_MEMBER.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -24,7 +24,7 @@ WITH (
 );
 
 BULK INSERT ONLINE_CUSTOMER
-FROM 'D:\Nhom3_ADB\rs\ONLINE_CUSTOMER.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\ONLINE_CUSTOMER.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -32,7 +32,7 @@ WITH (
 );
 
 BULK INSERT WORK_HISTORY
-FROM 'D:\Nhom3_ADB\rs\WORK_HISTORY.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\WORK_HISTORY.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -40,7 +40,7 @@ WITH (
 );
 
 BULK INSERT STATION_EMPLOYEE
-FROM 'D:\Nhom3_ADB\rs\STATION_EMPLOYEE.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\STATION_EMPLOYEE.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -49,7 +49,7 @@ WITH (
 
 
 BULK INSERT ORDER_TICKET
-FROM 'D:\Nhom3_ADB\rs\ORDER_TICKET.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\ORDER_TICKET.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -57,7 +57,7 @@ WITH (
 );
 
 BULK INSERT STANDARD_ORDER_TICKET
-FROM 'D:\Nhom3_ADB\rs\STANDARD_ORDER_TICKET.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\STANDARD_ORDER_TICKET.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -65,7 +65,7 @@ WITH (
 );
 
 BULK INSERT PRE_ORDER_TICKET
-FROM 'D:\Nhom3_ADB\rs\PRE_ORDER_TICKET.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\PRE_ORDER_TICKET.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -73,7 +73,7 @@ WITH (
 );
 
 BULK INSERT ONLINE_TICKET
-FROM 'D:\Nhom3_ADB\rs\ONLINE_TICKET.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\ONLINE_TICKET.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -81,7 +81,7 @@ WITH (
 );
 
 BULK INSERT ONLINE_TICKET_DETAIL
-FROM 'D:\Nhom3_ADB\rs\ONLINE_TICKET_DETAIL.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\ONLINE_TICKET_DETAIL.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -89,7 +89,7 @@ WITH (
 );
 
 BULK INSERT PRE_ORDER_TICKET_DETAIL
-FROM 'D:\Nhom3_ADB\rs\PRE_ORDER_TICKET_DETAIL.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\PRE_ORDER_TICKET_DETAIL.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -97,7 +97,7 @@ WITH (
 );
 
 BULK INSERT STANDARD_ORDER_DETAIL
-FROM 'D:\Nhom3_ADB\rs\STANDARD_ORDER_DETAIL.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\STANDARD_ORDER_DETAIL.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
@@ -105,26 +105,26 @@ WITH (
 );
 
 BULK INSERT FEEDBACK_TICKET
-FROM 'D:\Nhom3_ADB\rs\FEEDBACK.csv'
+FROM 'D:\hcmus_full_courses\The_3rd_Year\The_1st_Semester\Advanced_DB\Project\Nhom3_ADB\rs\FEEDBACK.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
     FIRSTROW = 2
 );
 
-delete from FEEDBACK_TICKET
-delete from STANDARD_ORDER_DETAIL
-delete from PRE_ORDER_TICKET_DETAIL
-delete from ONLINE_TICKET_DETAIL
-delete from STANDARD_ORDER_TICKET
-delete from PRE_ORDER_TICKET
-delete from ONLINE_TICKET
-delete from ORDER_TICKET
-delete from WORK_HISTORY
-delete from STATION_EMPLOYEE
-delete from ONLINE_CUSTOMER
-delete from CUSTOMER_MEMBER
-delete from EMPLOYEE
-delete from CUSTOMER
+ --delete from FEEDBACK_TICKET
+ --delete from STANDARD_ORDER_DETAIL
+ --delete from PRE_ORDER_TICKET_DETAIL
+ --delete from ONLINE_TICKET_DETAIL
+ --delete from STANDARD_ORDER_TICKET
+ --delete from PRE_ORDER_TICKET
+ --delete from ONLINE_TICKET
+ --delete from ORDER_TICKET
+ --delete from WORK_HISTORY
+ --delete from STATION_EMPLOYEE
+ --delete from ONLINE_CUSTOMER
+ --delete from CUSTOMER_MEMBER
+ --delete from EMPLOYEE
+ --delete from CUSTOMER
 
-select * from ORDER_TICKET
+-- select * from ORDER_TICKET
