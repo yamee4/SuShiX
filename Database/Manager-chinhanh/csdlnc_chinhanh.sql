@@ -306,7 +306,7 @@ CREATE OR ALTER PROCEDURE usp_ADD_DETAIL_ORDER
     @TicketID char(10)
 AS
 BEGIN
-    DECLARE cur CURSOR FOR
+    DECLARE cur1 CURSOR FOR
         SELECT DishID, OrderTime, Quantity, Price
         FROM @DSDonHang
 
@@ -322,9 +322,9 @@ BEGIN
 	WHERE TicketID =@TicketID
 
 
-    OPEN cur
+    OPEN cur1
 
-    FETCH NEXT FROM cur INTO @DishID, @OrderTime, @Quantity, @Price
+    FETCH NEXT FROM cur1 INTO @DishID, @OrderTime, @Quantity, @Price
 
     WHILE @@FETCH_STATUS = 0
     BEGIN
@@ -347,12 +347,12 @@ BEGIN
 		END
 
         -- Fetch the next row
-        FETCH NEXT FROM cur INTO @DishID, @OrderTime, @Quantity, @Price
+        FETCH NEXT FROM cur1 INTO @DishID, @OrderTime, @Quantity, @Price
     END
 
     -- Close and deallocate the cursor
-    CLOSE cur
-    DEALLOCATE cur
+    CLOSE cur1
+    DEALLOCATE cur1
 END
 
 ----------------------------HÀM CHÍNH TẠO 1 ORDER TICKET VÀ TẠO ĐƠN HÀNG CÓ LOẠI ORDER TƯƠNG ỨNG INPUT VÀ THÊM DỮ LIỆU MỖI SẢN PHẨM TƯƠNG ỨNG-------------------------------------------
@@ -382,12 +382,14 @@ BEGIN
 	select @temp = cast(max(cast(substring(TicketID, 4, len(TicketID) - 3) as int)) + 1 as char(10))
 	from ORDER_TICKET
 	where TicketID like 'TKT%'
-	if @temp = ''
+	if @temp is null
 		begin 
-			set @TicketID = 'TKT' + '0001'
+			set @TicketID = 'TKT' + '0000001'
 		end
 	else
-		set @TicketID = 'TKT' + REPLICATE('0', 4 - len(@temp)) + @temp
+		set @TicketID = 'TKT' + REPLICATE('0', 7 - len(@temp)) + @temp
+
+	print(@temp)
 
     INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID)
     VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID)
@@ -868,6 +870,64 @@ END
 
 -------------------------------------------------------------------
 GO
+
+-- ------------------------- HIỂN THỊ ĐƠN HÀNG ONLINE CỦA 1 KH ------------------------
+CREATE OR ALTER PROC  usp_HienThiDonHangOnline
+	@CCCD char(10)
+AS
+BEGIN
+
+SELECT otd.*
+FROM ORDER_TICKET o
+JOIN ONLINE_TICKET ot 
+ON o.TicketID = ot.OTicketID
+JOIN ONLINE_TICKET_DETAIL otd
+ON ot.OTicketID = otd.OTicketID
+WHERE o.CCCD = @CCCD
+
+END
+GO
+
+-- ------------------------ HIỂN THỊ THỰC ĐƠN CHI NHÁNH ----------------------------
+CREATE OR ALTER PROC usp_ThucDonChiNhanh
+	@BranchID int
+AS
+BEGIN
+
+SELECT d.*
+FROM MENU_DETAIL md
+JOIN BRANCH b 
+ON md.BranchID = b.BranchID
+JOIN DISH d
+ON md.DishID = d.DishID
+WHERE b.BranchID = @BranchID AND md.isServing = 1
+	
+END
+GO
+
+-- ------------------------ HIỂN THỊ COMBO CHI NHÁNH ----------------------------
+CREATE OR ALTER PROC usp_HienThiComBoChiNhanh
+	@BranchID int
+AS
+BEGIN
+
+SELECT b.BranchID, b.BranchName, c.ComboID, dc.DishID, d.DishName
+FROM BRANCH b
+JOIN AREA a
+ON a.AreaName = b.AreaName
+JOIN DISH_MENU dm
+ON a.MenuID = dm.MenuID 
+JOIN COMBO c
+ON dm.DishID = c.ComboID
+JOIN DISH_COMBO dc
+ON dc.ComboID = c.ComboID
+JOIN DISH d
+ON d.DishID = dc.DishID
+WHERE b.BranchID = @BranchID AND dm.inMenu = 1;
+
+END
+
+
 
 
 

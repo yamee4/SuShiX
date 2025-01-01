@@ -262,3 +262,17 @@ END
 --exec usp_ADD_EMPLOYEE 'EMP99', 'a', 'a', '1-1-1', 'Nam', 100000
 --exec usp_Update_Employee 'EMP99', 'b', 'a', '1-1-1', 'Nam', 100000, NULL
 --exec usp_Delete_Employee 'EMP99'
+
+----------------------- Lịch sử làm việc nhân viên --------------------------
+CREATE OR ALTER PROC  usp_LichSuLamViecNhanVien
+	@EmpID char(5)
+AS
+BEGIN
+	SELECT e.EmpID, e.EmpFirstName, e.EmpLastName, b.BranchID, b.BranchName, w.StartDate, w.EndDate
+	FROM EMPLOYEE e
+	JOIN WORK_HISTORY w 
+	ON e.EmpID = w.EmpID
+	JOIN BRANCH b
+	ON b.BranchID = w.BranchID
+	WHERE e.EmpID = @EmpID
+END
