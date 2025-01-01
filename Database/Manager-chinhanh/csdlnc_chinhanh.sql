@@ -157,14 +157,14 @@ BEGIN
 END;
 GO
 
--------------------------KIỂU DỮ LIỆU DẠNG BẢNG LƯU TRỮ DANH SÁCH MÓN HÀNG TRONG 1 ORDER------------------------------------------
+-------------------------BẢNG LƯU TRỮ DANH SÁCH MÓN HÀNG TRONG 1 ORDER------------------------------------------
 
-CREATE TYPE DSTicket AS TABLE
+CREATE TABLE DSDONHANG
 (
-	DishID int UNIQUE,
-	OrderTime datetime UNIQUE,
+	DishID int,
+	OrderTime datetime,
 	Quantity int,
-	Price int
+	Price bigint
 )
 
 -------------------------TÍNH DOANH THU 1 CHI NHÁNH CỤ THỂ TỪ NGÀY X ĐẾN NGÀY Y------------------------------------------
@@ -302,13 +302,12 @@ END
 --------------------------HÀM HỖ TRỢ ADD DỮ LIỆU TỪNG MÓN HÀNG TRONG ORDER VÀO BẢNG CÓ LOẠI ORDER TƯƠNG ỨNG-----------------------------------------
 GO
 CREATE OR ALTER PROCEDURE usp_ADD_DETAIL_ORDER 
-    @DSDonHang DSTicket READONLY,
     @TicketID char(10)
 AS
 BEGIN
     DECLARE cur1 CURSOR FOR
         SELECT DishID, OrderTime, Quantity, Price
-        FROM @DSDonHang
+        FROM DSDONHANG
 
     DECLARE @DishID int,
             @OrderTime datetime,
@@ -353,6 +352,7 @@ BEGIN
     -- Close and deallocate the cursor
     CLOSE cur1
     DEALLOCATE cur1
+	DELETE FROM DSDONHANG
 END
 
 ----------------------------HÀM CHÍNH TẠO 1 ORDER TICKET VÀ TẠO ĐƠN HÀNG CÓ LOẠI ORDER TƯƠNG ỨNG INPUT VÀ THÊM DỮ LIỆU MỖI SẢN PHẨM TƯƠNG ỨNG-------------------------------------------
@@ -413,7 +413,7 @@ BEGIN
         PRINT(N'Thêm thành công order')
     END
 
-	EXEC usp_ADD_DETAIL_ORDER @DSDonHang, @TicketID
+	EXEC usp_ADD_DETAIL_ORDER @TicketID
 
 	IF 1 = (SELECT isMember FROM CUSTOMER WHERE CCCD = @CCCD)
 	BEGIN 
@@ -928,7 +928,14 @@ WHERE b.BranchID = @BranchID AND dm.inMenu = 1;
 END
 
 
+select * from DSDONHANG
+select * from ORDER_TICKET
+select * from ONLINE_TICKET
+select * from ONLINE_TICKET_DETAIL
 
+delete from ONLINE_TICKET_DETAIL where OTicketID =  'TKT0000022'
+delete from ONLINE_TICKET where OTicketID =  'TKT0000022'
+delete from ORDER_TICKET where TicketID =  'TKT0000022'
 
 
 

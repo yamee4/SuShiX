@@ -142,7 +142,7 @@ controller.searchDish = async (req, res) => {
 
 controller.CheckOut = async (req, res) => {
     const cartItems = req.body.cartItems; // Array of cart items sent from the frontend
-    const userInfo = req.session.user; 
+    const userInfo = req.session.user; // User information stored in the session
 
     if (!cartItems || cartItems.length === 0) {
         return res.status(400).json({ message: "Cart is empty." });
@@ -151,53 +151,46 @@ controller.CheckOut = async (req, res) => {
     try {
        if (userInfo.role === 'customer') {
 
-        const dsdonhang = cartItems.map(item => ({
+        const cartInsert = cartItems.map(item => ({
             DishID: item.id,
-            OrderTime: fn('GETDATE'),  // This will be replaced by the actual function in the query
             Quantity: item.quantity,
             Price: item.price,
         }));
-        
-        await sequelize.query(`
-            CREATE TABLE ##DSTicket (
-                DishID INT,
-                OrderTime DATETIME,
-                Quantity INT,
-                Price INT
-            );
-        `);
-        
-        const values = dsdonhang
-        .map(() => '(?, GETDATE(), ?, ?)')
-        .join(', '); // Generate placeholders for all rows
 
-        const replacements = dsdonhang.flatMap(item => [item.DishID, item.Quantity, item.Price]); // Flattened array of all replacements
+        console.log(cartInsert);
+
+        for (const item of cartInsert) {
+            await sequelize.query(
+                `INSERT INTO DSDONHANG (DishID, OrderTime, Quantity, Price) VALUES (:DishID, GETDATE(), :Quantity, :Price)`,
+                {
+                    replacements: {
+                        DishID: item.DishID,
+                        Quantity: item.Quantity,
+                        Price: item.Price,
+                    },
+                    type: sequelize.QueryTypes.INSERT,
+                }
+            );
+        }
+
+        const cccd = userInfo.id;
+        const TicketType = 'ONL';
+        const BranchID = null;
+        const EmpID = null;
+        const NumberOfCustomer = 0;
+        const PreOrderNote  = '';
+        const TableName = '';
+
 
         await sequelize.query(
-            `INSERT INTO ##DSTicket (DishID, OrderTime, Quantity, Price) VALUES ${values}`,
-            {
-                    replacements,
-                    type: sequelize.QueryTypes.INSERT,
-            }
-        );  
-
-            const cccd = userInfo.id;
-            const TicketType = 'ONL';
-            const BranchID = null;
-            const EmpID = null;
-            const NumberOfCustomer = 0;
-            const PreOrderNote  = '';
-            const TableName = '';
-
-            const result = await sequelize.query(
-                `EXEC [dbo].[usp_ADD_ORDER_TICKET ]
-                    @CCCD = :cccd,
-                    @TicketType = :ticketType,
-                    @BranchID = :branchID,
-                    @EmpID = :empID,
-                    @NumberOfCustomer = :numberOfCustomer,
-                    @PreOrderNote = :preOrderNote,
-                    @TableName = :tableName`,
+            `EXEC [dbo].[usp_ADD_ORDER_TICKET]
+            @CCCD = :cccd,
+            @TicketType = :ticketType,
+            @BranchID = :branchID,
+            @EmpID = :empID,
+            @NumberOfCustomer = :numberOfCustomer,
+            @PreOrderNote = :preOrderNote,
+            @TableName = :tableName`,
                 {
                     replacements: {
                         cccd,
@@ -208,11 +201,9 @@ controller.CheckOut = async (req, res) => {
                         preOrderNote: PreOrderNote,
                         tableName: TableName,
                     },
-                    type: sequelize.QueryTypes.RAW,
+                    type: sequelize.QueryTypes.INSERT,
                 }
             );
-
-            await sequelize.query(`DROP TABLE ##DSTicket`);
 
             return res.json({ message: "Order processed successfully." });
         } 

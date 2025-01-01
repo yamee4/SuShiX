@@ -93,6 +93,7 @@
          };
          // Add item to cart
          addToCart(item);
+         //displayCart();
      }
  });
 
@@ -169,7 +170,8 @@ async function checkout() {
         }
     } catch (error) {
         console.error("Error during checkout:", error);
-        alert("An error occurred during checkout.");
+        alert("Error from menu.js.");
     }
+    displayCart();
 }
 
