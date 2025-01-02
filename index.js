@@ -7,6 +7,7 @@ const { createPagination } = require("express-handlebars-paginate");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const Handlebars = require("handlebars");
+const moment = require("moment");
 
 const port = 3000;
 
@@ -29,6 +30,22 @@ app.engine(
         },
         helpers: {
             createPagination,
+            getFirstLetter: function (name) {
+                return name.charAt(0).toUpperCase();
+            },
+
+            getRandomColor: function () {
+                const letters = "0123456789ABCDEF";
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            },
+
+            formatDate: function (date) {
+                return moment(date).format("DD/MM/YYYY");
+            },
         },
     })
 );

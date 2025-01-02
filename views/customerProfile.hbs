@@ -1,7 +1,7 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
                         {{#if username}}
@@ -20,37 +20,38 @@
                         {{/if}}
                         <h5 class="card-title">{{username}}</h5>
                         <p class="card-text">Role: {{role}}</p>
+                        <p class="card-text">Gender: {{Gender}}</p>
                     </div>
                 </div>
             </div>
-            {{!-- <div class="col-md-8">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">
-                            <strong>Employee Information</strong></h5>
+                        <h5 class="card-title">Customer Information</h5>
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">ID</th>
+                                    <th scope="col">CCCD</th>
                                     <th scope="col">FullName</th>
-                                    <th scope="col">BirthDate</th>
-                                    <th scope="col">Salary</th>
-                                    <th scope="col">BranchManager</th>
+                                    <th scope="col">PhoneNumber</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Member Registered</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{EmpID}}</td>
-                                    <td>{{EmpFirstName}} {{EmpLastName}}</td>
-                                    <td>{{formatDate EmpBirthDate}}</td>
-                                    <td>{{Salary}}</td>
-                                    <td>{{BranchManager}}</td>
+                                    <td scope="col">{{CCCD}}</td>
+                                    <td scope="col">{{CustomerFirstName}}
+                                        {{CustomerLastName}}</td>
+                                    <td scope="col">{{PhoneNumber}}</td>
+                                    <td scope="col">{{Email}}</td>
+                                    <td scope="col">{{isMember}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
 </body>
