@@ -93,11 +93,10 @@
          };
          // Add item to cart
          addToCart(item);
-         //displayCart();
      }
  });
 
-
+    // Event listener for the checkout button
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', function (e) {
         e.preventDefault();
@@ -129,6 +128,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 async function checkout() {
     const cartItems = []; // Array to store cart data
     const cartElements = document.querySelectorAll("#cart-items li");
+    const tableID = document.getElementById('table').value;
 
     cartElements.forEach(item => {
         const id = item.dataset.id;
@@ -140,12 +140,12 @@ async function checkout() {
     });
 
     try {
-        const response = await fetch("/menu/checkout", {
+        const response = await fetch("/menuEmp/checkout", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ cartItems }),
+            body: JSON.stringify({ cartItems, tableID }),
         });
 
         const data = await response.json();
@@ -159,8 +159,7 @@ async function checkout() {
             alert(`Error: ${data.message}`);
         }
     } catch (error) {
-        console.error("Error during checkout:", error);
-        alert("Error from menu.js.");
+        alert("An error occurred while processing the order.");
     }
     displayCart();
 }

@@ -45,7 +45,7 @@ controller.showPage = async (req, res) => {
         const user = req.session.user;
 
         if (!user) {
-            res.render('menu', {
+            res.render('menuEmp', {
                 layout: 'layout',
                 title: 'Menu',
                 name: 'Menu',
@@ -72,7 +72,7 @@ controller.showPage = async (req, res) => {
         }
 
         // Render the menu view with the appropriate layout
-        res.render('menu', {
+        res.render('menuEmp', {
             layout,
             title: 'Menu',
             name: 'Menu',
@@ -106,7 +106,7 @@ controller.searchDish = async (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('menu', {
+        res.render('menuEmp', {
             layout: 'layout',
             title: 'Menu',
             name: 'Menu',
@@ -131,7 +131,7 @@ controller.searchDish = async (req, res) => {
             layout = 'layout';
     }
 
-    res.render('menu', {
+    res.render('menuEmp', {
         layout,
         title: 'Menu',
         name: 'Menu',
@@ -142,7 +142,12 @@ controller.searchDish = async (req, res) => {
 
 controller.CheckOut = async (req, res) => {
     const cartItems = req.body.cartItems; // Array of cart items sent from the frontend
+    const tableID = req.body.tableID;
     const userInfo = req.session.user; // User information stored in the session
+
+    if (!tableID) {
+        return res.status(401).json({ message: "Table name is required." });
+    }
 
     if (!cartItems || cartItems.length === 0) {
         return res.status(400).json({ message: "Cart is empty." });
@@ -169,13 +174,24 @@ controller.CheckOut = async (req, res) => {
             );
         }
 
-        const cccd = userInfo.id;
-        const TicketType = 'ONL';
-        const BranchID = null;
-        const EmpID = null;
+        const cccd = null;
+        const TicketType = 'STD';
+        const EmpID = userInfo.id;
+        const BranchResult = await sequelize.query(
+            `SELECT br.BranchID 
+             FROM BRANCH br JOIN STATION_EMPLOYEE em ON br.BranchID = em.BranchID
+             WHERE em.EmpID = :empID`,
+            {
+                replacements: { empID: EmpID },
+                type: sequelize.QueryTypes.SELECT,
+            }
+        );
+        
+        const BranchID = BranchResult[0]?.BranchID; // Extract BranchID value from the result
+
         const NumberOfCustomer = 0;
         const PreOrderNote  = '';
-        const TableName = '';
+        const TableName = tableID || '';
 
 
         await sequelize.query(

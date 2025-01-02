@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {showPage, init, searchDish, CheckOut} = require('../controllers/menuController');
+const {showPage, init, searchDish, CheckOut} = require('../controllers/menuEmpController');
 const { isAuthenticate } = require('../middlewares/auth');
 
 
