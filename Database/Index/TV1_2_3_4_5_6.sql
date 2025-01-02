@@ -93,4 +93,11 @@ exec usp_GetHighestEmpScoreBranch
 SET STATISTICS TIME OFF;
 go
 
+-- Optional
+CREATE NONCLUSTERED INDEX IDX_ORDER_TICKET_CreateDate
+ON Order_Ticket (CreatedDate)
+go
 
+drop index IDX_ORDER_TICKET_CreateDate
+ON Order_Ticket
+go
