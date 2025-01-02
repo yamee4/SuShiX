@@ -938,4 +938,33 @@ WHERE b.BranchID = @BranchID AND dm.inMenu = 1;
 
 END
 
+<<<<<<< Updated upstream
 select * from ORDER_TICKET
+=======
+create or alter proc usp_UpdateOrderTicket
+	@TicketID char(10),
+	@SupportEmp char(5),
+	@CCCD char(10)
+as
+begin
+	begin TRY
+	if not exists (select 1 from ORDER_TICKET where ticketID = @ticketID)
+	begin
+		raiserror(N'Không tồn tại đơn này', 16,1);
+		return
+	end
+
+	update ORDER_TICKET 
+	set EmpID = @SupportEmp
+	where ticketID = @TicketID and EmpID is null
+
+	update ORDER_TICKET 
+	set CCCD = @CCCD
+	where ticketID = @TicketID and CCCD is null
+	end TRY
+	begin CATCH
+	print(N'Lỗi:' + ERROR_MESSAGE());
+	return
+	end catch
+end
+>>>>>>> Stashed changes
