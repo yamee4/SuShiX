@@ -31,8 +31,7 @@ begin
 	declare @newMemberCardNumber char(10), @temp char(10)
 	select @temp = cast(max(cast(substring(MemberCardNumber, 3, len(membercardnumber) - 2) as int)) + 1 as char(10))
 	from CUSTOMER_MEMBER
-	where MemberCardNumber like 'MC%'
-	set @newMemberCardNumber = 'MC' + REPLICATE('0', 4 - len(@temp)) + @temp
+	set @newMemberCardNumber = 'MC' + REPLICATE('0', 5 - len(@temp)) + @temp
 
 	print(N'Thành công')
 	print(N'Mã nhân viên mới: ' + @newMemberCardNumber)

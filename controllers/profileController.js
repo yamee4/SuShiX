@@ -1,163 +1,77 @@
-const { SELECT } = require("sequelize/lib/query-types");
 const { sequelize } = require("../models");
 
-let controller = {};
+const controller = {};
 
 controller.showProfile = async (req, res) => {
     const user = req.session.user;
-
     if (!user) {
-        res.render("profile", {
+        return res.render("profile/default", {
             layout: "layout",
-            title: "Home",
-            name: "Home",
+            title: "Profile"
         });
-        return;
     }
 
-    let { id, username, usertype, role } = user;
+    try {
+        const { id, username, usertype, role } = user;
+        let profileData = { layout: "layout", title: "Profile", username, role };
 
-    console.log(user);
-
-    let layout;
-    switch (role) {
-        case "employee":
-            layout = user.usertype != null ? "manager" : "emp";
-            try {
+        switch (role) {
+            case "employee": {
                 const employeeInfo = await controller.getEmployeeInfo(id);
-
-                let {
-                    EmpID,
-                    EmpFirstName,
-                    EmpLastName,
-                    EmpBirthDate,
-                    EmpGender,
-                    Salary,
-                    BranchManager,
-                } = employeeInfo;
-
-                res.render("employeeProfile", {
-                    layout,
-                    title: "Home",
-                    name: "Home",
-                    username: username,
-                    role: role,
-                    EmpID: EmpID,
-                    EmpFirstName: EmpFirstName,
-                    EmpLastName: EmpLastName,
-                    EmpBirthDate: EmpBirthDate,
-                    EmpGender: EmpGender,
-                    Salary: Salary,
-                    BranchManager: BranchManager,
-                });
-            } catch (error) {
-                console.error(error);
-                res.render("error", {
-                    error: "An error occurred while fetching employee information",
-                });
+                profileData = {
+                    ...profileData,
+                    layout: usertype ? "manager" : "emp",
+                    ...employeeInfo
+                };
+                return res.render("profile/employee", profileData);
             }
-            break;
-        case "customer":
-            layout = "customer";
-            try {
+            case "customer": {
                 const customerInfo = await controller.getCustomerInfo(id);
-
-                let {
-                    CCCD,
-                    CustomerFirstName,
-                    CustomerLastName,
-                    PhoneNumber,
-                    Email,
-                    Gender,
-                    isMember,
-                    isRegistered,
-                } = customerInfo;
-
-                res.render("customerProfile", {
-                    layout,
-                    title: "Home",
-                    name: "Home",
-                    username: username,
-                    role: role,
-                    CCCD: CCCD,
-                    CustomerFirstName: CustomerFirstName,
-                    CustomerLastName: CustomerLastName,
-                    PhoneNumber: PhoneNumber,
-                    Email: Email,
-                    Gender: Gender,
-                    isMember: isMember,
-                    isRegistered: isRegistered,
-                });
-            } catch (error) {
-                console.error(error);
-                res.render("error", {
-                    error: "An error occurred while fetching employee information",
-                });
+                profileData = {
+                    ...profileData,
+                    layout: "customer",
+                    ...customerInfo
+                };
+                return res.render("profile/customer", profileData);
             }
-            break;
-        case "admin":
-            layout = "admin";
-            username = "Admin";
-            res.render("profile", {
-                layout,
-                title: "Home",
-                name: "Home",
-                username: username,
-                role: role,
-            });
-            break;
-        default:
-            layout = "layout";
-            res.render("profile", {
-                layout,
-                title: "Home",
-                name: "Home",
-                username: username,
-                role: role,
-            });
+            case "admin":
+                return res.render("profile/admin", {
+                    ...profileData,
+                    layout: "admin",
+                    username: "Admin"
+                });
+            default:
+                return res.render("profile/default", profileData);
+        }
+    } catch (error) {
+        console.error("Profile fetch error:", error);
+        res.status(500).render("error", { 
+            error: "Failed to load profile information" 
+        });
     }
 };
 
-module.exports = controller;
-
+// Helper methods remain the same
 controller.getEmployeeInfo = async (EmpID) => {
-    try {
-        const results = await sequelize.query(
-            "SELECT * FROM Employee WHERE EmpID = :EmpID",
-            {
-                replacements: {
-                    EmpID,
-                },
-                type: sequelize.QueryTypes.SELECT,
-            }
-        );
-        return results[0];
-    } catch (error) {
-        console.error(error);
-        throw new Error(
-            "An error occurred while fetching employee information"
-        );
-    }
+    const results = await sequelize.query(
+        "SELECT * FROM Employee WHERE EmpID = :EmpID",
+        {
+            replacements: { EmpID },
+            type: sequelize.QueryTypes.SELECT
+        }
+    );
+    return results[0];
 };
 
 controller.getCustomerInfo = async (CCCD) => {
-    try {
-        const results = await sequelize.query(
-            "select * from CUSTOMER where CCCD = :CCCD",
-            {
-                replacements: {
-                    CCCD,
-                },
-                type: sequelize.QueryTypes.SELECT,
-            }
-        );
-        return results[0];
-    } catch (error) {
-        console.error(error);
-        throw new Error(
-            "An error occurred while fetching customer information"
-        );
-    }
+    const results = await sequelize.query(
+        "SELECT * FROM CUSTOMER WHERE CCCD = :CCCD",
+        {
+            replacements: { CCCD },
+            type: sequelize.QueryTypes.SELECT
+        }
+    );
+    return results[0];
 };
 
 module.exports = controller;
