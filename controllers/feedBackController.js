@@ -33,8 +33,8 @@ controller.showFeedBackForm = async (req, res) => {
 
     res.render('feedback', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Feedback',
+        name: 'Feedback',
     });
 };
 

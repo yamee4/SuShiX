@@ -7,7 +7,7 @@ go
 
 -- INDEX THEM
 CREATE INDEX idx_order_ticket_cccd ON ORDER_TICKET(CCCD);
-
+drop index idx_order_ticket_cccd on ORDER_TICKET
 
 --TV8: Xem thông tin nhân viên hiện tại và lịch sử làm việc tại chi nhánh.
 SET STATISTICS TIME ON;
@@ -32,6 +32,7 @@ go
 CREATE INDEX idx_menu_detail_branchid_isserving ON MENU_DETAIL(BranchID, isServing); 
 GO
 
+DROP INDEX idx_menu_detail_branchid_isserving ON MENU_DETAIL
 
 --TV10: Hiển thị chi tiết các món ăn trong từng combo tại một chi nhánh.
 SET STATISTICS TIME ON;
@@ -44,3 +45,7 @@ go
 CREATE INDEX idx_branch_areaname ON BRANCH(AreaName);
 CREATE INDEX idx_area_menuid ON AREA(MenuID);
 CREATE INDEX idx_dish_menu_inmenu ON DISH_MENU(inMenu); 
+
+DROP INDEX idx_branch_areaname ON BRANCH;
+DROP INDEX idx_area_menuid ON AREA;
+DROP INDEX idx_dish_menu_inmenu ON DISH_MENU;

@@ -33,8 +33,8 @@ controller.showBranchRevenue = async (req, res) => {
 
     res.render('branchRevenue', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Branch Revenue',
+        name: 'Branch Revenue',
     });
 }
 
