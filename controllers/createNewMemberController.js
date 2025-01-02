@@ -5,7 +5,7 @@ controller.showCreateNewMember = async (req, res) => {
     const user = req.session.user;
 
     // Determine layout based on user role
-    let layout = 'layout'; // Default layout
+    let layout;
     if (user) {
         const { role, usertype } = user;
         switch (role) {
@@ -31,6 +31,7 @@ controller.showCreateNewMember = async (req, res) => {
 
 controller.insertNewMember = async (req, res) => {
     const { MCCCD, CardNumber, CreateDate, SupportEmp } = req.body;
+    const user = req.session.user;
 
     try {
         // Execute the stored procedure to add a new member
@@ -46,10 +47,28 @@ controller.insertNewMember = async (req, res) => {
             }
         );
 
+
+        // Determine layout based on user role
+        let layout;
+        if (user) {
+            const { role, usertype } = user;
+            switch (role) {
+                case 'employee':
+                    layout = usertype ? 'manager' : 'emp';
+                    break;
+                case 'customer':
+                    layout = 'customer';
+                    break;
+                case 'admin':
+                    layout = 'admin';
+                    break;
+            }
+        }
+
         // Check if there is a success message
         if (results.length > 0 && results[0].SuccessMessage) {
             res.render("createNewMember", {
-                layout: "layout",
+                layout,
                 title: "Create New Member",
                 name: "Create New Member",
                 successMessage: results[0].SuccessMessage,
@@ -57,7 +76,7 @@ controller.insertNewMember = async (req, res) => {
         } else {
             // If no success message, handle it as an error
             res.render("createNewMember", {
-                layout: "layout",
+                layout,
                 title: "Create New Member",
                 name: "Create New Member",
                 error: 'Failed to create new member. Please try again.',
@@ -66,7 +85,7 @@ controller.insertNewMember = async (req, res) => {
     } catch (error) {
         console.error('Error executing stored procedure:', error);
         res.render("createNewMember", {
-            layout: "layout",
+            layout,
             title: "Create New Member",
             name: "Create New Member",
             error: error.message || 'Failed to create new member. Please try again.',

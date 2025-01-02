@@ -8,8 +8,8 @@ controller.showCompRevenue = async (req, res) => {
     if (!user) {
         res.render('compRevenue', {
             layout: 'layout',
-            title: 'Home',
-            name: 'Home',
+            title: 'Company Revenue',
+            name: 'Company Revenue',
         });
         return;
     }
@@ -40,6 +40,7 @@ controller.showCompRevenue = async (req, res) => {
 
 controller.getCompRevenue = async (req, res) => {
     const {startDate, endDate } = req.body;
+    const user = req.session.user;
     try {
         const results = await sequelize.query(
             `EXEC [dbo].[usp_GetCompanyRevenue]
@@ -51,9 +52,33 @@ controller.getCompRevenue = async (req, res) => {
             }
         );
 
-        console.log(results);
 
-        // Render the view with results
+        if (!user) {
+            res.render('compRevenue', {
+                layout: 'layout',
+                title: 'Company Revenue',
+                name: 'Company Revenue',
+            });
+            return;
+        }
+
+        const { role } = user;
+
+        let layout;
+        switch (role) {
+            case 'employee':
+                layout = user.usertype != null ? 'manager' : 'emp';
+                break;
+            case 'customer':
+                layout = 'customer';
+                break;
+            case 'admin':
+                layout = 'admin';
+                break;
+            default:
+                layout = 'layout';
+        }
+
         res.render("compRevenue", {
             layout: "layout",
             title: "Company Revenue",
