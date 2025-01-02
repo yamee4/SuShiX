@@ -137,6 +137,7 @@ async function checkout() {
     const cartItems = []; // Array to store cart data
     const cartElements = document.querySelectorAll("#cart-items li");
 
+    // Collect cart items
     cartElements.forEach(item => {
         const id = item.dataset.id;
         const name = item.dataset.name;
@@ -146,13 +147,27 @@ async function checkout() {
         cartItems.push({ id, name, quantity, price });
     });
 
+    // Get branch ID from the dropdown
+    const branchDropdown = document.getElementById("branchDropdown");
+    const branchID = branchDropdown.dataset.id;
+
+    // Get additional inputs
+    const numberOfCustomers = document.getElementById("NumberofCustomer").value;
+    const preOrderNote = document.getElementById("PreOrderNote").value;
+
     try {
-        const response = await fetch("/menu/checkout", {
+        // Send data to the server
+        const response = await fetch("/bookTable", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ cartItems }),
+            body: JSON.stringify({
+                branchID,
+                numberOfCustomers,
+                preOrderNote,
+                cartItems,
+            }),
         });
 
         const data = await response.json();
@@ -169,6 +184,7 @@ async function checkout() {
         console.error("Error during checkout:", error);
         alert("Error from menu.js.");
     }
+
     displayCart();
 }
 

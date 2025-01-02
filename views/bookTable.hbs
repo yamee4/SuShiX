@@ -20,7 +20,8 @@
                         <a
                             class="dropdown-item"
                             href="#"
-                            onclick="event.preventDefault(); document.getElementById('branchDropdown').innerText = '{{BranchName}}, {{BranchAddress}}';"
+                            data-id="{{BranchID}}"
+                            onclick="event.preventDefault(); document.getElementById('branchDropdown').innerText = '{{BranchName}}, {{BranchAddress}}'; document.getElementById('branchDropdown').dataset.id = '{{BranchID}}';"
                         >
                             {{BranchName}}, {{BranchAddress}}
                         </a>
