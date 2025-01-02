@@ -33,8 +33,8 @@ controller.showCompRevenue = async (req, res) => {
 
     res.render('compRevenue', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Company Revenue',
+        name: 'Company Revenue',
     });
 }
 

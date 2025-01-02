@@ -540,26 +540,44 @@ END
 
 GO
 CREATE OR ALTER PROCEDURE usp_ADD_MEMBER_CUSTOMER
-	@MCCCD char(10),
-	@CardNumber char(10),
-	@CreateDate datetime,
-	@SupportEmp char(5)
+    @MCCCD char(10),
+    @CardNumber char(10),
+    @CreateDate datetime,
+    @SupportEmp char(5)
 AS
 BEGIN
-	BEGIN TRY 
-	IF NOT EXISTS(SELECT 1 FROM CUSTOMER WHERE CCCD = @MCCCD)
-	BEGIN
-		RAISERROR(N'Khách hàng này chưa có thông tin', 16,1);
-		RETURN;
-	END
-	INSERT INTO CUSTOMER_MEMBER VALUES(@MCCCD, @CardNumber, @CreateDate, @SupportEmp, 'MEMBER', 0, @CreateDate)
-	END TRY
-	BEGIN CATCH
-	PRINT(N'Lỗi:' + ERROR_MESSAGE());
-	END CATCH
+    BEGIN TRY 
+        -- Check if the customer exists
+        IF NOT EXISTS(SELECT 1 FROM CUSTOMER WHERE CCCD = @MCCCD)
+        BEGIN
+            RAISERROR(N'Khách hàng này chưa có thông tin', 16, 1);
+            RETURN;
+        END
+
+        -- Check if the support employee exists
+        IF NOT EXISTS(SELECT 1 FROM EMPLOYEE WHERE EmpID = @SupportEmp)
+        BEGIN
+            RAISERROR(N'Nhập sai nhân viên tạo member card', 16, 1);
+            RETURN;
+        END
+
+        -- Insert the new member
+        INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate)
+        VALUES (@MCCCD, @CardNumber, @CreateDate, @SupportEmp, 'MEMBER', 0, @CreateDate);
+        
+        -- Optionally, you can return a success message
+        SELECT 'Member card created successfully' AS SuccessMessage;
+
+    END TRY
+    BEGIN CATCH
+        -- Capture the error and return it
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        SET @ErrorMessage = ERROR_MESSAGE();
+        RAISERROR(@ErrorMessage, 16, 1);
+    END CATCH
 END
 
--- exec usp_ADD_MEMBER_CUSTOMER '1111111111', 'MC0006', '2024-12-13', 'EMP01'
+-- exec usp_ADD_MEMBER_CUSTOMER '0000000006', 'MC0006', '2024-12-13', '00001'
 
 ----------------------------XÓA THẺ MEMBER ---------------------------------------
 GO 
@@ -587,7 +605,7 @@ BEGIN
 	END CATCH
 END
 
--- exec usp_DELETE_MEMBER_CARD '1111111111'
+-- exec usp_DELETE_MEMBER_CARD '0000000006'
 
 -------------------------------XÓA TÀI KHOẢN ONLINE------------------------------------
 

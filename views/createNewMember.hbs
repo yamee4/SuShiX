@@ -1,0 +1,37 @@
+<body>
+    <div class="container">
+        <h1>{{name}}</h1>
+        
+        <form id="createMemberForm" method="POST" action="/createNewMember">
+            <div class="mb-3">
+                <label for="MCCCD" class="form-label">MCCCD:</label>
+                <input type="text" id="MCCCD" name="MCCCD" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="CardNumber" class="form-label">Card Number:</label>
+                <input type="text" id="CardNumber" name="CardNumber" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="CreateDate" class="form-label">Create Date:</label>
+                <input type="date" id="CreateDate" name="CreateDate" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="SupportEmp" class="form-label">Support Employee:</label>
+                <input type="text" id="SupportEmp" name="SupportEmp" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Member</button>
+        </form>
+
+        {{#if successMessage}}
+            <div class="alert alert-success mt-3" role="alert">
+                {{successMessage}}
+            </div>
+        {{/if}}
+
+        {{#if error}}
+            <div class="alert alert-danger mt-3" role="alert">
+                {{error}}
+            </div>
+        {{/if}}
+    </div>
+</body>
