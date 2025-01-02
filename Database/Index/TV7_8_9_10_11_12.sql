@@ -46,6 +46,102 @@ CREATE INDEX idx_branch_areaname ON BRANCH(AreaName);
 CREATE INDEX idx_area_menuid ON AREA(MenuID);
 CREATE INDEX idx_dish_menu_inmenu ON DISH_MENU(inMenu); 
 
-DROP INDEX idx_branch_areaname ON BRANCH;
-DROP INDEX idx_area_menuid ON AREA;
-DROP INDEX idx_dish_menu_inmenu ON DISH_MENU;
+--TV11: Lấy danh sách các phiếu đặt món được tạo trong 1 khoảng thời gian.
+
+CREATE OR ALTER PROC usp_LayDanhSachPhieuDatMon
+AS
+BEGIN
+	SELECT * 
+	FROM ORDER_TICKET 
+	WHERE CreatedDate BETWEEN '2023-01-01' AND '2023-12-31' 
+		AND BranchID = 1;
+
+END
+
+
+EXEC usp_LayDanhSachPhieuDatMon
+
+CREATE INDEX IDX_OrderTicket_BranchDate
+ON ORDER_TICKET (BranchID, CreatedDate)
+INCLUDE (TicketType, CCCD, EmpID, Discount, TotalPrice);
+
+--TV12: Lấy danh sách các chi nhánh mà ở đó có phiếu đặt món được tạo ra trong 1 khoang thoi gian.
+CREATE OR ALTER PROC usp_LayDanhSachChiNhanhCoPhieuDatMon
+AS
+BEGIN
+	SELECT b.BranchName
+	FROM BRANCH b
+	WHERE EXISTS (
+		SELECT 1 
+		FROM ORDER_TICKET o
+		WHERE o.BranchID = b.BranchID
+			AND o.CreatedDate > '2024-01-01'
+);
+
+END
+
+EXEC usp_LayDanhSachChiNhanhCoPhieuDatMon
+
+CREATE INDEX IDX_OrderTicket_BranchDate2 
+ON ORDER_TICKET(BranchID, CreatedDate);
+
+DROP INDEX ORDER_TICKET.IDX_OrderTicket_BranchDate2
+DROP INDEX ORDER_TICKET.IDX_OrderTicket_BranchDate
+
+--TV13
+CREATE OR ALTER PROCEDURE usp_TaoPhieuDatMon
+    @TicketID CHAR(10),
+    @TicketType CHAR(3),
+    @BranchID INT,
+    @CCCD CHAR(10),
+    @EmpID CHAR(5),
+    @Discount INT,
+    @TotalPrice BIGINT,
+    @CreatedDate DATETIME
+AS
+BEGIN
+	IF NOT EXISTS (SELECT 1 FROM BRANCH WHERE BranchID = @BranchID)
+    BEGIN
+		RAISERROR('BranchID không tồn tại.', 16, 1);
+        RETURN;
+    END
+    IF NOT EXISTS (SELECT 1 FROM CUSTOMER WHERE CCCD = @CCCD)
+    BEGIN
+		RAISERROR('CCCD không tồn tại.', 16, 1);
+        RETURN;
+    END
+    IF NOT EXISTS (SELECT 1 FROM EMPLOYEE WHERE EmpID = @EmpID)
+    BEGIN
+		RAISERROR('EmpID không tồn tại.', 16, 1);
+        RETURN;
+    END
+
+    INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID, Discount, TotalPrice, CreatedDate)
+    VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID, @Discount, @TotalPrice, @CreatedDate);
+
+
+    PRINT N'Order Ticket đã được tạo thành công.';
+END;
+
+
+DECLARE @Counter INT = 1;
+DECLARE @TICKET_ID_SAMPLE VARCHAR(10);
+
+WHILE @Counter <= 1000
+BEGIN
+	SET @TICKET_ID_SAMPLE = 'TICKET69' + CAST(@Counter AS VARCHAR(10))
+    EXEC usp_TaoPhieuDatMon
+        @TicketID = @TICKET_ID_SAMPLE,
+        @TicketType = 'PRE',
+        @BranchID = 2,
+        @CCCD = '0000000001',
+        @EmpID = '00001',
+        @Discount = 10,
+        @TotalPrice = 500000,
+        @CreatedDate = '2024-12-31 12:30:00';
+
+    SET @Counter = @Counter + 1;
+END;
+
+CREATE INDEX IDX_OrderTicket_BranchDate3 
+ON ORDER_TICKET(TicketID, BranchID);
