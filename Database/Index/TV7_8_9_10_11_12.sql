@@ -86,7 +86,6 @@ CREATE INDEX IDX_OrderTicket_BranchDate2
 ON ORDER_TICKET(BranchID, CreatedDate);
 
 DROP INDEX ORDER_TICKET.IDX_OrderTicket_BranchDate2
-DROP INDEX ORDER_TICKET.IDX_OrderTicket_BranchDate
 
 --TV13
 CREATE OR ALTER PROCEDURE usp_TaoPhieuDatMon
@@ -143,5 +142,5 @@ BEGIN
     SET @Counter = @Counter + 1;
 END;
 
-CREATE INDEX IDX_OrderTicket_BranchDate3 
+CREATE INDEX IDX_OrderTicket_BranchID
 ON ORDER_TICKET(TicketID, BranchID);
