@@ -937,3 +937,5 @@ ON d.DishID = dc.DishID
 WHERE b.BranchID = @BranchID AND dm.inMenu = 1;
 
 END
+
+select * from ORDER_TICKET
