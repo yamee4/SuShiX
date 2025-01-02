@@ -93,19 +93,10 @@
          };
          // Add item to cart
          addToCart(item);
+         //displayCart();
      }
  });
 
-//  function checkout() {
-//      if (cart.length === 0) {
-//          alert('Your cart is empty!');
-//      } else {
-//          alert('Checkout successful!');
-//          cart = [];
-//          localStorage.removeItem('cart');
-//          displayCart();
-//      }
-// }
 
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', function (e) {
@@ -169,7 +160,8 @@ async function checkout() {
         }
     } catch (error) {
         console.error("Error during checkout:", error);
-        alert("An error occurred during checkout.");
+        alert("Error from menu.js.");
     }
+    displayCart();
 }
 

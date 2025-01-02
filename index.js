@@ -7,6 +7,7 @@ const { createPagination } = require("express-handlebars-paginate");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const Handlebars = require("handlebars");
+const moment = require("moment");
 
 const port = 3000;
 
@@ -29,6 +30,22 @@ app.engine(
         },
         helpers: {
             createPagination,
+            getFirstLetter: function (name) {
+                return name.charAt(0).toUpperCase();
+            },
+
+            getRandomColor: function () {
+                const letters = "0123456789ABCDEF";
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            },
+
+            formatDate: function (date) {
+                return moment(date).format("DD/MM/YYYY");
+            },
         },
     })
 );
@@ -73,6 +90,18 @@ Handlebars.registerHelper("formatDate", function (date) {
     return new Date(date).toLocaleDateString(); // Example date formatting
 });
 
+Handlebars.registerHelper('firstChar', function(str) {
+    return str ? str.charAt(0) : '?';
+});
+
+Handlebars.registerHelper('formatDate', function(date) {
+    return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+});
+
 //middleware lay thong tin user da dang nhap
 app.use((req, res, next) => {
     res.locals.user = req.session.user;
@@ -84,6 +113,7 @@ app.get("/", (req, res) => res.redirect("/home"));
 
 app.use("/home", require("./routes/homeRouter"));
 app.use("/menu", require("./routes/menuRouter"));
+app.use("/menuEmp", require("./routes/menuEmpRouter"));
 
 app.use("/signin", require("./routes/signinRouter"));
 app.use("/signup", require("./routes/signupRouter"));
@@ -93,6 +123,10 @@ app.use("/empScore", require("./routes/empScoreRouter"));
 app.use("/searchEmp", require("./routes/searchEmpRouter"));
 app.use("/compRevenue", require("./routes/compRevenueRouter"));
 app.use("/dishRevenue", require("./routes/dishRevenueRouter"));
+app.use("/createNewMember", require("./routes/createNewMemberRouter"));
+app.use("/updateMemberCard", require("./routes/updateMemberCardRouter"))
+app.use("/bookTable", require("./routes/bookTableRouter"));
+
 
 app.use("/feedback", require("./routes/feedBackRouter"));
 app.use("/cardRecover", require("./routes/cardRecoveryRouter"));

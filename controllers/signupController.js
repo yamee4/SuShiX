@@ -6,10 +6,10 @@ controller.showPage = (req, res) => {
     const user = req.session.user;
 
     if (!user) {
-        res.render('index', {
+        res.render('signup', {
             layout: 'layout',
-            title: 'Home',
-            name: 'Home',
+            title: 'Sign Up',
+            name: 'sign up',
         });
         return;
     }
@@ -33,8 +33,8 @@ controller.showPage = (req, res) => {
 
     res.render('signup', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Sign Up',
+        name: 'Sign Up',
     });
 };
 

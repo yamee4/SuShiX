@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const {showHome, logout} = require('../controllers/homeController');
+const {showHome, logout, init} = require('../controllers/homeController');
+
+router.use('/', init);
 
 router.get('/', showHome);
 

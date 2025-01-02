@@ -9,8 +9,8 @@ controller.showBranchRevenue = async (req, res) => {
     if (!user) {
         res.render('branchRevenue', {
             layout: 'layout',
-            title: 'Home',
-            name: 'Home',
+            title: 'Branch Revenue',
+            name: 'Branch Revenue',
         });
         return;
     }
@@ -33,13 +33,15 @@ controller.showBranchRevenue = async (req, res) => {
 
     res.render('branchRevenue', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Branch Revenue',
+        name: 'Branch Revenue',
     });
 }
 
 controller.getBranchRevenue = async (req, res) => {
     const { branchID, startDate, endDate } = req.body;
+    const user = req.session.user;
+
     try {
         const results = await sequelize.query(
             `EXEC [dbo].[usp_GetBranchRevenue]
@@ -52,15 +54,29 @@ controller.getBranchRevenue = async (req, res) => {
             }
         );
 
+        const { role } = user;
 
-        // Render the view with results
-        res.render("branchRevenue", {
-            layout: "layout",
-            title: "Branch Revenue",
-            name: "Branch Revenue",
+        switch (role) {
+            case 'employee':
+                layout = user.usertype != null ? 'manager' : 'emp';
+                break;
+            case 'customer':
+                layout = 'customer';
+                break;
+            case 'admin':
+                layout = 'admin';
+                break;
+            default:
+                layout = 'layout';
+        }
+
+        res.render('branchRevenue', {
+            layout,
+            title: 'Branch Revenue',
+            name: 'Branch Revenue',
             results: results,
-            branchID: branchID,
         });
+
     } catch (error) {
         console.error('Error executing stored procedure:', error);
         res.render("branchRevenue", {

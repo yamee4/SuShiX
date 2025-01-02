@@ -4,7 +4,7 @@
 GO
 CREATE OR ALTER TRIGGER TR_CalculateTotalScore
 ON FEEDBACK_TICKET
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
     DECLARE @InsertedID CHAR(10);
@@ -24,7 +24,7 @@ GO
 GO
 CREATE OR ALTER TRIGGER TR_UpdateOrderDiscount
 ON ORDER_TICKET
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
 	DECLARE @TicketID CHAR(10), @Discount INT, @TotalPrice BIGINT;
@@ -59,7 +59,7 @@ END
 GO
 CREATE OR ALTER TRIGGER trg_UpdateTotalPriceOnlineTicket
 ON ONLINE_TICKET_DETAIL
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
     DECLARE @OTicketID CHAR(10);
@@ -92,7 +92,7 @@ GO
 -----------------------------------------------PRE ORDER TICKET---------------------------------------------------------------
 CREATE OR ALTER TRIGGER trg_UpdateTotalPricePreOrder
 ON PRE_ORDER_TICKET_DETAIL
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
     DECLARE @PTicketID CHAR(10);
@@ -126,7 +126,7 @@ GO
 -----------------------------------------------STANDARD TICKET---------------------------------------------------------------
 CREATE OR ALTER TRIGGER trg_UpdateStandardOrderTotalPrice
 ON STANDARD_ORDER_DETAIL
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
     DECLARE @SOTicketID CHAR(10);
@@ -157,14 +157,14 @@ BEGIN
 END;
 GO
 
--------------------------KIỂU DỮ LIỆU DẠNG BẢNG LƯU TRỮ DANH SÁCH MÓN HÀNG TRONG 1 ORDER------------------------------------------
+-------------------------BẢNG LƯU TRỮ DANH SÁCH MÓN HÀNG TRONG 1 ORDER------------------------------------------
 
-CREATE TYPE DSTicket AS TABLE
+CREATE TABLE DSDONHANG
 (
-	DishID int UNIQUE,
-	OrderTime datetime UNIQUE,
+	DishID int,
+	OrderTime datetime,
 	Quantity int,
-	Price int
+	Price bigint
 )
 
 -------------------------TÍNH DOANH THU 1 CHI NHÁNH CỤ THỂ TỪ NGÀY X ĐẾN NGÀY Y------------------------------------------
@@ -200,7 +200,45 @@ BEGIN
 	WHERE ot.EmpID = @EmpID
 END
 
+GO
+CREATE OR ALTER PROCEDURE usp_GetHighestEmpScoreBranch
+    @startDate DATE,
+    @endDate DATE
+AS
+BEGIN
+    WITH EmployeeFeedbackScores AS (
+        SELECT 
+            br.BranchName AS branchName,
+            e.EmpFirstName + ' ' + e.EmpLastName AS Employee,
+            AVG(fb.FeedbackService) AS AvgFeedbackScore
+        FROM BRANCH br LEFT JOIN STATION_EMPLOYEE se ON br.BranchID = se.BranchID
+					   JOIN EMPLOYEE e ON e.EmpID = se.EmpID
+					   JOIN ORDER_TICKET od ON od.EmpID = se.EmpID
+					   JOIN FEEDBACK_TICKET fb ON od.TicketID = fb.TicketID
+        WHERE od.CreatedDate BETWEEN @startDate AND @endDate
+        GROUP BY br.BranchID, br.BranchName, e.EmpFirstName, e.EmpLastName
+    ),
+
+    MaxFeedbackScores AS (
+        SELECT 
+            MAX(AvgFeedbackScore) AS MaxAvgFeedbackScore
+        FROM 
+            EmployeeFeedbackScores
+    )
+    SELECT 
+        ef.branchName,
+        ef.Employee,
+        ef.AvgFeedbackScore AS N'Điểm đánh giá trung bình cao nhất'
+    FROM 
+        EmployeeFeedbackScores ef
+    JOIN 
+        MaxFeedbackScores mf
+     ON ef.AvgFeedbackScore = mf.MaxAvgFeedbackScore;
+END
+
 -- exec usp_GetEmpServiceScore 'EMP02'
+
+--exec usp_GetHighestEmpScoreBranch '2024-1-1', '2024-2-1' 
 
 --------------------------TÌM KIẾM EMPLOYEE ĐANG LÀM TRONG 1 CHI NHÁNH-----------------------------------------
 
@@ -264,13 +302,12 @@ END
 --------------------------HÀM HỖ TRỢ ADD DỮ LIỆU TỪNG MÓN HÀNG TRONG ORDER VÀO BẢNG CÓ LOẠI ORDER TƯƠNG ỨNG-----------------------------------------
 GO
 CREATE OR ALTER PROCEDURE usp_ADD_DETAIL_ORDER 
-    @DSDonHang DSTicket READONLY,
     @TicketID char(10)
 AS
 BEGIN
-    DECLARE cur CURSOR FOR
+    DECLARE cur1 CURSOR FOR
         SELECT DishID, OrderTime, Quantity, Price
-        FROM @DSDonHang
+        FROM DSDONHANG
 
     DECLARE @DishID int,
             @OrderTime datetime,
@@ -281,12 +318,12 @@ BEGIN
 
 	SELECT @OrderType = TicketType
 	FROM ORDER_TICKET 
-	WHERE TicketID =@TicketID
+	WHERE TicketID = @TicketID
 
 
-    OPEN cur
+    OPEN cur1
 
-    FETCH NEXT FROM cur INTO @DishID, @OrderTime, @Quantity, @Price
+    FETCH NEXT FROM cur1 INTO @DishID, @OrderTime, @Quantity, @Price
 
     WHILE @@FETCH_STATUS = 0
     BEGIN
@@ -309,12 +346,12 @@ BEGIN
 		END
 
         -- Fetch the next row
-        FETCH NEXT FROM cur INTO @DishID, @OrderTime, @Quantity, @Price
+        FETCH NEXT FROM cur1 INTO @DishID, @OrderTime, @Quantity, @Price
     END
 
     -- Close and deallocate the cursor
-    CLOSE cur
-    DEALLOCATE cur
+    CLOSE cur1
+    DEALLOCATE cur1
 END
 
 ----------------------------HÀM CHÍNH TẠO 1 ORDER TICKET VÀ TẠO ĐƠN HÀNG CÓ LOẠI ORDER TƯƠNG ỨNG INPUT VÀ THÊM DỮ LIỆU MỖI SẢN PHẨM TƯƠNG ỨNG-------------------------------------------
@@ -327,8 +364,7 @@ CREATE OR ALTER PROCEDURE usp_ADD_ORDER_TICKET
 	@EmpID char(5),
 	@NumberOfCustomer int,
 	@PreOrderNote nvarchar(100),
-	@TableName nvarchar(30),
-	@DSDonHang DSTicket READONLY
+	@TableName nvarchar(30)
 AS
 BEGIN
 	BEGIN TRY
@@ -343,8 +379,13 @@ BEGIN
 	declare @temp char(10)
 	select @temp = cast(max(cast(substring(TicketID, 4, len(TicketID) - 3) as int)) + 1 as char(10))
 	from ORDER_TICKET
-	where TicketID like 'TKT%'
-	set @TicketID = 'TKT' + REPLICATE('0', 4 - len(@temp)) + @temp
+	if @temp is null
+		begin 
+			set @TicketID = 'TKT' + '0000001'
+		end
+	else
+		set @TicketID = 'TKT' + REPLICATE('0', 7 - len(@temp)) + @temp
+
 
     INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID)
     VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID)
@@ -368,7 +409,7 @@ BEGIN
         PRINT(N'Thêm thành công order')
     END
 
-	EXEC usp_ADD_DETAIL_ORDER @DSDonHang, @TicketID
+	EXEC usp_ADD_DETAIL_ORDER @TicketID
 
 	IF 1 = (SELECT isMember FROM CUSTOMER WHERE CCCD = @CCCD)
 	BEGIN 
@@ -432,6 +473,8 @@ BEGIN
 		DELETE ORDER_TICKET
 		WHERE TicketID = @TicketID
 	END
+
+	DELETE FEEDBACK_TICKET where TicketID = @TicketID
 
 END
 
@@ -497,26 +540,44 @@ END
 
 GO
 CREATE OR ALTER PROCEDURE usp_ADD_MEMBER_CUSTOMER
-	@MCCCD char(10),
-	@CardNumber char(10),
-	@CreateDate datetime,
-	@SupportEmp char(5)
+    @MCCCD char(10),
+    @CardNumber char(10),
+    @CreateDate datetime,
+    @SupportEmp char(5)
 AS
 BEGIN
-	BEGIN TRY 
-	IF NOT EXISTS(SELECT 1 FROM CUSTOMER WHERE CCCD = @MCCCD)
-	BEGIN
-		RAISERROR(N'Khách hàng này chưa có thông tin', 16,1);
-		RETURN;
-	END
-	INSERT INTO CUSTOMER_MEMBER VALUES(@MCCCD, @CardNumber, @CreateDate, @SupportEmp, 'MEMBER', 0, @CreateDate)
-	END TRY
-	BEGIN CATCH
-	PRINT(N'Lỗi:' + ERROR_MESSAGE());
-	END CATCH
+    BEGIN TRY 
+        -- Check if the customer exists
+        IF NOT EXISTS(SELECT 1 FROM CUSTOMER WHERE CCCD = @MCCCD)
+        BEGIN
+            RAISERROR(N'Khách hàng này chưa có thông tin', 16, 1);
+            RETURN;
+        END
+
+        -- Check if the support employee exists
+        IF NOT EXISTS(SELECT 1 FROM EMPLOYEE WHERE EmpID = @SupportEmp)
+        BEGIN
+            RAISERROR(N'Nhập sai nhân viên tạo member card', 16, 1);
+            RETURN;
+        END
+
+        -- Insert the new member
+        INSERT INTO CUSTOMER_MEMBER (MCCCD, MemberCardNumber, CreatedDate, SupportEmp, MemberCardRank, MemberCardPoints, MemberCardAcquiredRankDate)
+        VALUES (@MCCCD, @CardNumber, @CreateDate, @SupportEmp, 'MEMBER', 0, @CreateDate);
+        
+        -- Optionally, you can return a success message
+        SELECT 'Member card created successfully' AS SuccessMessage;
+
+    END TRY
+    BEGIN CATCH
+        -- Capture the error and return it
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        SET @ErrorMessage = ERROR_MESSAGE();
+        RAISERROR(@ErrorMessage, 16, 1);
+    END CATCH
 END
 
--- exec usp_ADD_MEMBER_CUSTOMER '1111111111', 'MC0006', '2024-12-13', 'EMP01'
+-- exec usp_ADD_MEMBER_CUSTOMER '0000000006', 'MC0006', '2024-12-13', '00001'
 
 ----------------------------XÓA THẺ MEMBER ---------------------------------------
 GO 
@@ -544,7 +605,7 @@ BEGIN
 	END CATCH
 END
 
--- exec usp_DELETE_MEMBER_CARD '1111111111'
+-- exec usp_DELETE_MEMBER_CARD '0000000006'
 
 -------------------------------XÓA TÀI KHOẢN ONLINE------------------------------------
 
@@ -711,7 +772,8 @@ GO
 CREATE OR ALTER PROCEDURE usp_ACCUMULATE_POINTS
     @CCCD CHAR(10),
     @STARTDATE DATETIME,
-    @ENDDATE DATETIME
+    @ENDDATE DATETIME,
+    @POINT INT OUTPUT  -- Add an output parameter
 AS
 BEGIN
     BEGIN TRY
@@ -721,16 +783,12 @@ BEGIN
             RETURN;
         END
 
-        DECLARE @POINT INT;
-
         SELECT @POINT = ISNULL(SUM(ODT.TotalPrice)/100000, 0)
-		FROM ORDER_TICKET ODT
-		WHERE 
-        ODT.CreatedDate >= @STARTDATE
-		AND ODT.CreatedDate <= @ENDDATE
-        AND ODT.CCCD = @CCCD
-
-        RETURN @POINT
+        FROM ORDER_TICKET ODT
+        WHERE 
+            ODT.CreatedDate >= @STARTDATE
+            AND ODT.CreatedDate <= @ENDDATE
+            AND ODT.CCCD = @CCCD
 
     END TRY
     BEGIN CATCH
@@ -765,7 +823,7 @@ BEGIN
 	SET @NextYearDate = DATEADD(year, 1, @GetRankDate)
 
 	DECLARE @aYearPoint int
-	SET @aYearPoint = dbo.usp_ACCUMULATE_POINTS(@CCCD, @Today, @NextYearDate);
+	EXEC usp_ACCUMULATE_POINTS @CCCD, @Today, @NextYearDate, @aYearPoint;
 
 
 	IF (@CurrentRank = 'MEMBER')
@@ -824,3 +882,86 @@ END
 -------------------------------------------------------------------
 GO
 
+-- ------------------------- HIỂN THỊ ĐƠN HÀNG ONLINE CỦA 1 KH ------------------------
+CREATE OR ALTER PROC  usp_HienThiDonHangOnline
+	@CCCD char(10)
+AS
+BEGIN
+
+SELECT otd.*
+FROM ORDER_TICKET o
+JOIN ONLINE_TICKET ot 
+ON o.TicketID = ot.OTicketID
+JOIN ONLINE_TICKET_DETAIL otd
+ON ot.OTicketID = otd.OTicketID
+WHERE o.CCCD = @CCCD
+
+END
+GO
+
+-- ------------------------ HIỂN THỊ THỰC ĐƠN CHI NHÁNH ----------------------------
+CREATE OR ALTER PROC usp_ThucDonChiNhanh
+	@BranchID int
+AS
+BEGIN
+
+SELECT d.*
+FROM MENU_DETAIL md
+JOIN BRANCH b 
+ON md.BranchID = b.BranchID
+JOIN DISH d
+ON md.DishID = d.DishID
+WHERE b.BranchID = @BranchID AND md.isServing = 1
+	
+END
+GO
+
+-- ------------------------ HIỂN THỊ COMBO CHI NHÁNH ----------------------------
+CREATE OR ALTER PROC usp_HienThiComBoChiNhanh
+	@BranchID int
+AS
+BEGIN
+
+SELECT b.BranchID, b.BranchName, c.ComboID, dc.DishID, d.DishName
+FROM BRANCH b
+JOIN AREA a
+ON a.AreaName = b.AreaName
+JOIN DISH_MENU dm
+ON a.MenuID = dm.MenuID 
+JOIN COMBO c
+ON dm.DishID = c.ComboID
+JOIN DISH_COMBO dc
+ON dc.ComboID = c.ComboID
+JOIN DISH d
+ON d.DishID = dc.DishID
+WHERE b.BranchID = @BranchID AND dm.inMenu = 1;
+
+END
+
+go
+create or alter proc usp_UpdateOrderTicket
+	@TicketID char(10),
+	@SupportEmp char(5),
+	@CCCD char(10)
+as
+begin
+	begin TRY
+	if not exists (select 1 from ORDER_TICKET where ticketID = @ticketID)
+	begin
+		raiserror(N'Không tồn tại đơn này', 16,1);
+		return
+	end
+
+	update ORDER_TICKET 
+	set EmpID = @SupportEmp
+	where ticketID = @TicketID and EmpID is null
+
+	update ORDER_TICKET 
+	set CCCD = @CCCD
+	where ticketID = @TicketID and CCCD is null
+	end TRY
+	begin CATCH
+	print(N'Lỗi:' + ERROR_MESSAGE());
+	return
+	end catch
+end

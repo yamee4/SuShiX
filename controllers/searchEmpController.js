@@ -33,8 +33,8 @@ controller.showSearchEmp = async (req, res) => {
 
     res.render('searchEmp', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Employee Searcher',
+        name: 'Employee Searcher',
     });
 }
 

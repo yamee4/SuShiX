@@ -8,8 +8,8 @@ controller.showCardRecoverForm = async (req, res) => {
     if (!user) {
         res.render('card_recover', {
             layout: 'layout',
-            title: 'Home',
-            name: 'Home',
+            title: 'Card Recovery',
+            name: 'Card Recovery',
         });
         return;
     }
@@ -33,13 +33,14 @@ controller.showCardRecoverForm = async (req, res) => {
 
     res.render('card_recover', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Card Recovery',
+        name: 'Card Recovery',
     });
 };
 
 controller.replaceMemberCard = async (req, res) => {
     const { citizenId, issuedDate, EmpID } = req.body;
+    const user = req.session.user;
 
     try {
         const results = await sequelize.query(
@@ -56,15 +57,31 @@ controller.replaceMemberCard = async (req, res) => {
                 type: sequelize.QueryTypes.INSERT,
             }
         );
-
-        // Render the view with results
-        res.render("card_recover", {
-            layout: "layout",
-            title: "Card Recovery Form",
-            name: "Card Recovery Form",
-            results: "1",
-            citizenId: citizenId,
+    
+        const { role } = user;
+    
+        let layout;
+        switch (role) {
+            case 'employee':
+                layout = user.usertype != null ? 'manager' : 'emp';
+                break;
+            case 'customer':
+                layout = 'customer';
+                break;
+            case 'admin':
+                layout = 'admin';
+                break;
+            default:
+                layout = 'layout';
+        }
+    
+        res.render('card_recover', {
+            layout,
+            title: 'Card Recovery',
+            name: 'Card Recovery',
+            message: 'Replace Member Card successful!',
         });
+
     } catch (error) {
         console.error("Error executing stored procedure:", error);
         res.render("card_recover", {

@@ -1,0 +1,56 @@
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        {{#if username}}
+                            <div
+                                class="avatar"
+                                style="background-color: {{getRandomColor}};"
+                            >
+                                {{getFirstLetter username}}
+                            </div>
+                        {{else}}
+                            <img
+                                src="https://via.placeholder.com/150"
+                                alt="User"
+                                class="img-fluid rounded-circle mb-3"
+                            />
+                        {{/if}}
+                        <h5 class="card-title">{{username}}</h5>
+                        <p class="card-text">Role: {{role}}</p>
+                        <p class="card-text">Gender: {{EmpGender}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Employee Information</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">FullName</th>
+                                    <th scope="col">BirthDate</th>
+                                    <th scope="col">Salary</th>
+                                    <th scope="col">BranchManager</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{EmpID}}</td>
+                                    <td>{{EmpFirstName}} {{EmpLastName}}</td>
+                                    <td>{{formatDate EmpBirthDate}}</td>
+                                    <td>{{Salary}}</td>
+                                    <td>{{BranchManager}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

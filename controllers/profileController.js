@@ -1,39 +1,77 @@
-let contoller = {}
+const { sequelize } = require("../models");
 
-contoller.showProfile = (req, res) => {
+const controller = {};
+
+controller.showProfile = async (req, res) => {
     const user = req.session.user;
-
     if (!user) {
-        res.render('profile', {
-            layout: 'layout',
-            title: 'Home',
-            name: 'Home',
+        return res.render("profile/default", {
+            layout: "layout",
+            title: "Profile"
         });
-        return;
     }
 
-    const { role } = user;
+    try {
+        const { id, username, usertype, role } = user;
+        let profileData = { layout: "layout", title: "Profile", username, role };
 
-    let layout;
-    switch (role) {
-        case 'employee':
-            layout = user.usertype != null ? 'manager' : 'emp';
-            break;
-        case 'customer':
-            layout = 'customer';
-            break;
-        case 'admin':
-            layout = 'admin';
-            break;
-        default:
-            layout = 'layout';
+        switch (role) {
+            case "employee": {
+                const employeeInfo = await controller.getEmployeeInfo(id);
+                profileData = {
+                    ...profileData,
+                    layout: usertype ? "manager" : "emp",
+                    ...employeeInfo
+                };
+                return res.render("profile/employee", profileData);
+            }
+            case "customer": {
+                const customerInfo = await controller.getCustomerInfo(id);
+                profileData = {
+                    ...profileData,
+                    layout: "customer",
+                    ...customerInfo
+                };
+                return res.render("profile/customer", profileData);
+            }
+            case "admin":
+                return res.render("profile/admin", {
+                    ...profileData,
+                    layout: "admin",
+                    username: "Admin"
+                });
+            default:
+                return res.render("profile/default", profileData);
+        }
+    } catch (error) {
+        console.error("Profile fetch error:", error);
+        res.status(500).render("error", { 
+            error: "Failed to load profile information" 
+        });
     }
-
-    res.render('profile', {
-        layout,
-        title: 'Home',
-        name: 'Home',
-    });
 };
 
-module.exports = contoller;
+// Helper methods remain the same
+controller.getEmployeeInfo = async (EmpID) => {
+    const results = await sequelize.query(
+        "SELECT * FROM Employee WHERE EmpID = :EmpID",
+        {
+            replacements: { EmpID },
+            type: sequelize.QueryTypes.SELECT
+        }
+    );
+    return results[0];
+};
+
+controller.getCustomerInfo = async (CCCD) => {
+    const results = await sequelize.query(
+        "SELECT * FROM CUSTOMER WHERE CCCD = :CCCD",
+        {
+            replacements: { CCCD },
+            type: sequelize.QueryTypes.SELECT
+        }
+    );
+    return results[0];
+};
+
+module.exports = controller;
