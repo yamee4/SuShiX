@@ -50,3 +50,18 @@ begin
 		(@DishName is null or DishName like '%' + @DishName + '%')
 end
 
+create or alter proc usp_SearchBySection
+	@DishSection nvarchar(20)
+as
+begin
+	if @DishSection = 'All'
+	begin
+		select DishID, DishName, DishSection, CurrentPrice, DeliveryAvailable
+		from DISH 
+		return
+	end
+	select DishID, DishName, DishSection, CurrentPrice, DeliveryAvailable
+	from DISH
+	where DishSection = @DishSection
+end
+

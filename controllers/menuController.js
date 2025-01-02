@@ -140,6 +140,63 @@ controller.searchDish = async (req, res) => {
 
 };
 
+controller.searchBySection = async (req, res) => {
+    const { DishSection } = req.body;
+    console.log("Selected Dish Section:", DishSection);
+    
+    let limit = 5;
+    let page = isNaN(req.query.page) ? 1 : parseInt(req.query.page);
+    let offset = (page - 1) * limit;
+    page = isNaN(page) ? 1 : parseInt(page);
+    let layout;
+
+    let dishes = await sequelize.query(
+        `EXEC [dbo].[usp_SearchBySection]
+            @DishSection = :DishSection`,
+        {
+            replacements: { DishSection },
+            type: sequelize.QueryTypes.SELECT,
+        }
+    );
+
+
+    const user = req.session.user;
+
+    if (!user) {
+        res.render('menu', {
+            layout: 'layout',
+            title: 'Menu',
+            name: 'Menu',
+            dishes,
+        });
+        return;
+    }
+
+    const { role } = user;
+
+    switch (role) {
+        case 'employee':
+            layout = user.usertype != null ? 'manager' : 'emp';
+            break;
+        case 'customer':
+            layout = 'customer';
+            break;
+        case 'admin':
+            layout = 'admin';
+            break;
+        default:
+            layout = 'layout';
+    }
+
+    res.render('menu', {
+        layout,
+        title: 'Menu',
+        name: 'Menu',
+        dishes,
+    });
+
+};
+
 controller.CheckOut = async (req, res) => {
     const cartItems = req.body.cartItems; // Array of cart items sent from the frontend
     const userInfo = req.session.user; // User information stored in the session

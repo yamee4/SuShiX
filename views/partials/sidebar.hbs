@@ -11,17 +11,28 @@
         <!-- Sidebar item -->
     <div class="blog__sidebar__item">
         <h4>DISH SECTION</h4>
-        <ul>
-            <li><a href="#">All</a></li>
-            <li><a href="#">Appetizer</a></li>
-            <li><a href="#">Sushi</a></li>
-            <li><a href="#">Sashimi</a></li>
-            <li><a href="#">Nigiri</a></li>
-            <li><a href="#">Soup</a></li>
-            <li><a href="#">Drinks</a></li>
-            <li><a href="#">Dessert</a></li>
-        </ul>
+            <form id="dishSectionForm" method="POST" action="/menu/searchBySection">
+                <div class="mb-3">
+                    <label for="dishSection" class="form-label">Select a Dish Section:</label>
+                    <select id="dishSection" name="DishSection" class="form-select" required>
+                        <option value="">-- Select an option --</option>
+                        <option value="all">All</option>
+                        <option value="sushi">Sushi</option>
+                        <option value="sashimi">Sashimi</option>
+                        <option value="nigiri">Nigiri</option>
+                        <option value="appetizer">Appetizer</option>
+                        <option value="soup">Soup</option>
+                        <option value="noodle">Noodle</option>
+                        <option value="combo">Combo</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="drink">Drink</option>
+                        <option value="tempura">Tempura</option>
+                        <option value="grilled">Grilled</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
     </div>
 </div>
-
+    
 <script src="/js/sidebar.js"></script>
