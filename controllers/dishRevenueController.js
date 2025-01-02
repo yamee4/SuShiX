@@ -8,8 +8,8 @@ controller.showDishRevenue = async (req, res) => {
     if (!user) {
         res.render('dishRevenue', {
             layout: 'layout',
-            title: 'Home',
-            name: 'Home',
+            title: 'Dish Revenue',
+            name: 'Dish Revenue',
         });
         return;
     }
@@ -40,6 +40,8 @@ controller.showDishRevenue = async (req, res) => {
 
 controller.getDishRevenue = async (req, res) => {
     const {startDate, endDate } = req.body;
+    const user = req.session.user;
+    
     try {
         const results = await sequelize.query(
             `EXEC [dbo].[usp_CalculateStandardOrderRevenue]
@@ -71,9 +73,26 @@ controller.getDishRevenue = async (req, res) => {
             }
         );
 
+        const { role } = user;
+
+        let layout;
+        switch (role) {
+            case 'employee':
+                layout = user.usertype != null ? 'manager' : 'emp';
+                break;
+            case 'customer':
+                layout = 'customer';
+                break;
+            case 'admin':
+                layout = 'admin';
+                break;
+            default:
+                layout = 'layout';
+        }
+
         // Render the view with results
         res.render("dishRevenue", {
-            layout: "layout",
+            layout,
             title: "Dish Revenue",
             name: "Dish Revenue",
             results: results,

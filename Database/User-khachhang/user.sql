@@ -50,6 +50,7 @@ begin
 		(@DishName is null or DishName like '%' + @DishName + '%')
 end
 
+go
 create or alter proc usp_SearchBySection
 	@DishSection nvarchar(20)
 as
@@ -65,3 +66,6 @@ begin
 	where DishSection = @DishSection
 end
 
+
+select * from ORDER_TICKET
+select * from CUSTOMER_MEMBER
