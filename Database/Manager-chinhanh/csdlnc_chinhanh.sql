@@ -4,7 +4,7 @@
 GO
 CREATE OR ALTER TRIGGER TR_CalculateTotalScore
 ON FEEDBACK_TICKET
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
     DECLARE @InsertedID CHAR(10);
@@ -24,7 +24,7 @@ GO
 GO
 CREATE OR ALTER TRIGGER TR_UpdateOrderDiscount
 ON ORDER_TICKET
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
 	DECLARE @TicketID CHAR(10), @Discount INT, @TotalPrice BIGINT;
@@ -59,7 +59,7 @@ END
 GO
 CREATE OR ALTER TRIGGER trg_UpdateTotalPriceOnlineTicket
 ON ONLINE_TICKET_DETAIL
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
     DECLARE @OTicketID CHAR(10);
@@ -92,7 +92,7 @@ GO
 -----------------------------------------------PRE ORDER TICKET---------------------------------------------------------------
 CREATE OR ALTER TRIGGER trg_UpdateTotalPricePreOrder
 ON PRE_ORDER_TICKET_DETAIL
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
     DECLARE @PTicketID CHAR(10);
@@ -126,7 +126,7 @@ GO
 -----------------------------------------------STANDARD TICKET---------------------------------------------------------------
 CREATE OR ALTER TRIGGER trg_UpdateStandardOrderTotalPrice
 ON STANDARD_ORDER_DETAIL
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
     DECLARE @SOTicketID CHAR(10);
