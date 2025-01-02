@@ -318,7 +318,7 @@ BEGIN
 
 	SELECT @OrderType = TicketType
 	FROM ORDER_TICKET 
-	WHERE TicketID =@TicketID
+	WHERE TicketID = @TicketID
 
 
     OPEN cur1
@@ -352,7 +352,6 @@ BEGIN
     -- Close and deallocate the cursor
     CLOSE cur1
     DEALLOCATE cur1
-	DELETE FROM DSDONHANG
 END
 
 ----------------------------HÀM CHÍNH TẠO 1 ORDER TICKET VÀ TẠO ĐƠN HÀNG CÓ LOẠI ORDER TƯƠNG ỨNG INPUT VÀ THÊM DỮ LIỆU MỖI SẢN PHẨM TƯƠNG ỨNG-------------------------------------------
@@ -365,8 +364,7 @@ CREATE OR ALTER PROCEDURE usp_ADD_ORDER_TICKET
 	@EmpID char(5),
 	@NumberOfCustomer int,
 	@PreOrderNote nvarchar(100),
-	@TableName nvarchar(30),
-	@DSDonHang DSTicket READONLY
+	@TableName nvarchar(30)
 AS
 BEGIN
 	BEGIN TRY
@@ -925,16 +923,3 @@ ON d.DishID = dc.DishID
 WHERE b.BranchID = @BranchID AND dm.inMenu = 1;
 
 END
-
-
-select * from DSDONHANG
-select * from ORDER_TICKET
-select * from ONLINE_TICKET
-select * from ONLINE_TICKET_DETAIL
-
-delete from ONLINE_TICKET_DETAIL where OTicketID =  'TKT0000022'
-delete from ONLINE_TICKET where OTicketID =  'TKT0000022'
-delete from ORDER_TICKET where TicketID =  'TKT0000022'
-
-
-
