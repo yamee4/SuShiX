@@ -33,9 +33,6 @@ begin
 	from CUSTOMER_MEMBER
 	set @newMemberCardNumber = 'MC' + REPLICATE('0', 5 - len(@temp)) + @temp
 
-	print(@temp)
-	print(@temp)
-
 	print(N'Thành công')
 	print(N'Mã nhân viên mới: ' + @newMemberCardNumber)
 
