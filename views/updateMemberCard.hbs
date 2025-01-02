@@ -1,0 +1,25 @@
+<body>
+    <div class="container">
+        <h1>{{name}}</h1>
+        
+        <form id="updateMemberForm" method="POST" action="/updateMemberCard">
+            <div class="mb-3">
+                <label for="CCCD" class="form-label">CCCD:</label>
+                <input type="text" id="CCCD" name="CCCD" class="form-control" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        {{#if successMessage}}
+            <div class="alert alert-success mt-3" role="alert">
+                {{successMessage}}
+            </div>
+        {{/if}}
+
+        {{#if error}}
+            <div class="alert alert-danger mt-3" role="alert">
+                {{error}}
+            </div>
+        {{/if}}
+    </div>
+</body>

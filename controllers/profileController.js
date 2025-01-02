@@ -31,8 +31,8 @@ contoller.showProfile = (req, res) => {
 
     res.render('profile', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Profile',
+        name: 'Profile',
     });
 };
 

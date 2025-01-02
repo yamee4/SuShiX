@@ -33,8 +33,8 @@ controller.showEmpScore = async (req, res) => {
 
     res.render('empScore', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Employee Score',
+        name: 'Employee Score',
     });
 }
 

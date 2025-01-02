@@ -33,8 +33,8 @@ controller.showCardRecoverForm = async (req, res) => {
 
     res.render('card_recover', {
         layout,
-        title: 'Home',
-        name: 'Home',
+        title: 'Card Recovery',
+        name: 'Card Recovery',
     });
 };
 

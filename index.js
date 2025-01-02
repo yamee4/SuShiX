@@ -94,7 +94,10 @@ app.use("/empScore", require("./routes/empScoreRouter"));
 app.use("/searchEmp", require("./routes/searchEmpRouter"));
 app.use("/compRevenue", require("./routes/compRevenueRouter"));
 app.use("/dishRevenue", require("./routes/dishRevenueRouter"));
+app.use("/createNewMember", require("./routes/createNewMemberRouter"));
+app.use("/updateMemberCard", require("./routes/updateMemberCardRouter"))
 app.use("/bookTable", require("./routes/bookTableRouter"));
+
 
 app.use("/feedback", require("./routes/feedBackRouter"));
 app.use("/cardRecover", require("./routes/cardRecoveryRouter"));
