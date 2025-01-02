@@ -9,7 +9,7 @@ controller.init = async (req, res, next) => {
 controller.showForm = async (req, res) => {
     const user = req.session.user;
     const branches = await sequelize.query("SELECT * FROM BRANCH", { type: sequelize.QueryTypes.SELECT });
-    const dishes = await sequelize.query("SELECT TOP10 * FROM DISH", { type: sequelize.QueryTypes.SELECT });
+    const dishes = await sequelize.query("SELECT TOP 15 * FROM DISH", { type: sequelize.QueryTypes.SELECT });
 
     if (!user) {
         res.render("bookTable", {
