@@ -388,7 +388,6 @@ BEGIN
 	else
 		set @TicketID = 'TKT' + REPLICATE('0', 7 - len(@temp)) + @temp
 
-	print(@temp)
 
     INSERT INTO ORDER_TICKET (TicketID, TicketType, BranchID, CCCD, EmpID)
     VALUES (@TicketID, @TicketType, @BranchID, @CCCD, @EmpID)
