@@ -216,9 +216,9 @@ controller.CheckOut = async (req, res) => {
                     type: sequelize.QueryTypes.INSERT,
                 }
             );
-            console.log("Order processed successfully.");
-            await sequelize.query('DELETE FROM DSDONHANG');
-            return res.json({ message: "Order processed successfully." })
+        console.log("Order processed successfully.");
+        await sequelize.query('DELETE FROM DSDONHANG');
+        return res.json({ message: "Order processed successfully." })
     } catch (error) {
         console.error("Error during checkout:", error);
         res.status(500).json({ message: "An error occurred while processing the order." });

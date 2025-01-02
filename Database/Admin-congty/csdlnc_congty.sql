@@ -264,6 +264,7 @@ END
 --exec usp_Delete_Employee 'EMP99'
 
 ----------------------- Lịch sử làm việc nhân viên --------------------------
+go
 CREATE OR ALTER PROC  usp_LichSuLamViecNhanVien
 	@EmpID char(5)
 AS
