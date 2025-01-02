@@ -938,9 +938,10 @@ WHERE b.BranchID = @BranchID AND dm.inMenu = 1;
 
 END
 
-<<<<<<< Updated upstream
+---Updated upstream
 select * from ORDER_TICKET
-=======
+----
+go
 create or alter proc usp_UpdateOrderTicket
 	@TicketID char(10),
 	@SupportEmp char(5),
@@ -967,4 +968,4 @@ begin
 	return
 	end catch
 end
->>>>>>> Stashed changes
+

@@ -217,6 +217,7 @@ controller.CheckOut = async (req, res) => {
     }));
 
     try {
+        await sequelize.query('DELETE FROM DSDONHANG');
         for (const item of cartInsert) {
             await sequelize.query(
                 `INSERT INTO DSDONHANG (DishID, OrderTime, Quantity, Price) VALUES (:DishID, GETDATE(), :Quantity, :Price)`,
@@ -274,7 +275,6 @@ controller.CheckOut = async (req, res) => {
                 }
             );
         console.log("Order processed successfully.");
-        await sequelize.query('DELETE FROM DSDONHANG');
         return res.json({ message: "Order processed successfully." })
     } catch (error) {
         console.error("Error during checkout:", error);
