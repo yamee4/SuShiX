@@ -772,7 +772,8 @@ GO
 CREATE OR ALTER PROCEDURE usp_ACCUMULATE_POINTS
     @CCCD CHAR(10),
     @STARTDATE DATETIME,
-    @ENDDATE DATETIME
+    @ENDDATE DATETIME,
+    @POINT INT OUTPUT  -- Add an output parameter
 AS
 BEGIN
     BEGIN TRY
@@ -782,16 +783,12 @@ BEGIN
             RETURN;
         END
 
-        DECLARE @POINT INT;
-
         SELECT @POINT = ISNULL(SUM(ODT.TotalPrice)/100000, 0)
-		FROM ORDER_TICKET ODT
-		WHERE 
-        ODT.CreatedDate >= @STARTDATE
-		AND ODT.CreatedDate <= @ENDDATE
-        AND ODT.CCCD = @CCCD
-
-        RETURN @POINT
+        FROM ORDER_TICKET ODT
+        WHERE 
+            ODT.CreatedDate >= @STARTDATE
+            AND ODT.CreatedDate <= @ENDDATE
+            AND ODT.CCCD = @CCCD
 
     END TRY
     BEGIN CATCH
@@ -826,7 +823,7 @@ BEGIN
 	SET @NextYearDate = DATEADD(year, 1, @GetRankDate)
 
 	DECLARE @aYearPoint int
-	SET @aYearPoint = dbo.usp_ACCUMULATE_POINTS(@CCCD, @Today, @NextYearDate);
+	EXEC usp_ACCUMULATE_POINTS @CCCD, @Today, @NextYearDate, @aYearPoint;
 
 
 	IF (@CurrentRank = 'MEMBER')
@@ -940,5 +937,3 @@ ON d.DishID = dc.DishID
 WHERE b.BranchID = @BranchID AND dm.inMenu = 1;
 
 END
-
-select * from ORDER_TICKET

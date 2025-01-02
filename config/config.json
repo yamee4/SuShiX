@@ -2,6 +2,8 @@
     "development": {
         "username": "huy2",
         "password": "1234",
+        "username": "Dinhzitduck",
+        "password": "dinhzitduck",
         "database": "Nhom3_ADB",
         "host": "localhost",
         "dialect": "mssql"
