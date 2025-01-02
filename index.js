@@ -90,6 +90,18 @@ Handlebars.registerHelper("formatDate", function (date) {
     return new Date(date).toLocaleDateString(); // Example date formatting
 });
 
+Handlebars.registerHelper('firstChar', function(str) {
+    return str ? str.charAt(0) : '?';
+});
+
+Handlebars.registerHelper('formatDate', function(date) {
+    return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+});
+
 //middleware lay thong tin user da dang nhap
 app.use((req, res, next) => {
     res.locals.user = req.session.user;

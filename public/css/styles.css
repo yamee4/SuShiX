@@ -608,3 +608,104 @@ input[type="number"] {
 .text-orange {
     color: #ff5722; /* Set the text color to orange */
 }
+
+.profile-card {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 72px;
+    margin: 0 auto 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.profile-card h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.profile-card h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: currentColor;
+    border-radius: 3px;
+}
+
+.profile-info {
+    display: grid;
+    gap: 1rem;
+    text-align: left;
+}
+
+.profile-info p {
+    margin: 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #495057;
+    border: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+
+.profile-info p:hover {
+    background: #f1f3f5;
+}
+
+.profile-info strong {
+    display: inline-block;
+    width: 130px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        margin: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .avatar {
+        width: 120px;
+        height: 120px;
+        font-size: 56px;
+    }
+    
+    .profile-info strong {
+        width: 100px;
+    }
+}
