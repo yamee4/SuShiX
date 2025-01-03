@@ -3,13 +3,36 @@
         {{firstChar CustomerFirstName}}
     </div>
     <h2>Customer Profile</h2>
-    <div class="profile-info">
-        <p><strong>CCCD:</strong> {{CCCD}}</p>
-        <p><strong>Name:</strong> {{CustomerFirstName}} {{CustomerLastName}}</p>
-        <p><strong>Phone:</strong> {{PhoneNumber}}</p>
-        <p><strong>Email:</strong> {{Email}}</p>
-        <p><strong>Gender:</strong> {{Gender}}</p>
-        <p><strong>Member:</strong> {{isMember}}</p>
-        <p><strong>Registered:</strong> {{isRegistered}}</p>
-    </div>
+        <div class="row">
+                <div class="col">
+                    <div class="profile-info">
+                        <p><strong>CCCD:</strong> {{CCCD}}</p>
+                        <p><strong>Name:</strong> {{CustomerFirstName}} {{CustomerLastName}}</p>
+                        <p><strong>Phone:</strong> {{PhoneNumber}}</p>
+                        <p><strong>Email:</strong> {{Email}}</p>
+                        <p><strong>Gender:</strong> {{Gender}}</p>
+                        <p><strong>Member:</strong> {{isMember}}</p>
+                        <p><strong>Registered:</strong> {{isRegistered}}</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <table>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Support Employee</th>
+                            <th>Order Date</th>
+                            <th>Discount</th>
+                            <th>Order Total</th>
+                        </tr>
+                        <tr>
+                            <td>{{TicketID}}</td>
+                            <td>{{EmpID}}</td>
+                            <td>{{CreatedDate}}</td>
+                            <td>{{Discount}}</td>
+                            <td>{{TotalPrice}}</td>
+                        </tr>
+                    </table>
+                </div>
+        </div>
 </div>

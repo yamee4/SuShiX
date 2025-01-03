@@ -1,3 +1,4 @@
+const e = require("express");
 const { sequelize } = require("../models");
 
 const controller = {};
@@ -18,19 +19,23 @@ controller.showProfile = async (req, res) => {
         switch (role) {
             case "employee": {
                 const employeeInfo = await controller.getEmployeeInfo(id);
+                const employeeOrders = await controller.getEmployeeOrders(id);
                 profileData = {
                     ...profileData,
                     layout: usertype ? "manager" : "emp",
-                    ...employeeInfo
+                    ...employeeInfo,
+                    ...employeeOrders
                 };
                 return res.render("profile/employee", profileData);
             }
             case "customer": {
                 const customerInfo = await controller.getCustomerInfo(id);
+                const bills = await controller.getCustomerBill(id);
                 profileData = {
                     ...profileData,
                     layout: "customer",
-                    ...customerInfo
+                    ...customerInfo,
+                    ...bills
                 };
                 return res.render("profile/customer", profileData);
             }
@@ -73,5 +78,33 @@ controller.getCustomerInfo = async (CCCD) => {
     );
     return results[0];
 };
+
+controller.getCustomerBill = async (CCCD) => {
+    const results = await sequelize.query(
+        `   SELECT TicketID , EmpID, CreatedDate, TotalPrice, Discount
+            FROM ORDER_TICKET 
+            WHERE CCCD = :CCCD
+            ORDER BY CreatedDate DESC`,
+        {
+            replacements: { CCCD },
+            type: sequelize.QueryTypes.SELECT
+        }
+    );
+    return results[0];
+}
+
+controller.getEmployeeOrders = async (EmpID) => {
+    const results = await sequelize.query(
+        `   SELECT TicketID, CCCD, CreatedDate, TotalPrice, Discount
+            FROM ORDER_TICKET
+            WHERE EmpID = :EmpID
+            ORDER BY CreatedDate DESC`,
+        {
+            replacements: { EmpID },
+            type: sequelize.QueryTypes.SELECT
+        }
+    );
+    return results[0];
+}
 
 module.exports = controller;
