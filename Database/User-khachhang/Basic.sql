@@ -112,3 +112,6 @@ BEGIN
 END;
 
 go
+
+delete from ONLINE_CUSTOMER where OCCCD = '1200000000'
+delete from CUSTOMER where CCCD = '1200000000'

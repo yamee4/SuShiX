@@ -45,11 +45,13 @@ controller.signUp = async (req, res) => {
         firstname,
         lastname, 
         gender,
-        phonenumber,
+        phone,
         email,
         password } = req.body;
+        
 
     const sanitizeInput = (value) => (value === undefined || value === '') ? null : value;
+    console.log (req.body);
 
         // Sanitize inputs
     const sanitizedInputs = {
@@ -58,7 +60,7 @@ controller.signUp = async (req, res) => {
         firstname: sanitizeInput(firstname),
         lastname: sanitizeInput(lastname),
         gender: sanitizeInput(gender),
-        phonenumber: sanitizeInput(phonenumber),
+        phonenumber: sanitizeInput(phone),
         email: sanitizeInput(email),
         password: sanitizeInput(password),
     };
