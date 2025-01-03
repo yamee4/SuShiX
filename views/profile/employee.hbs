@@ -1,33 +1,42 @@
-<div class="profile-card">
-    <div class="avatar" style="background-color: #000000;">
-        {{firstChar EmpFirstName}}
+<div class="flex-container">
+    <!-- Employee Profile Container -->
+    <div class="profile-card">
+        <div class="avatar" style="background-color: #000000;">
+            {{firstChar EmpFirstName}}
+        </div>
+        <h2>Employee Profile</h2>
+        <div class="profile-info">
+            <p><strong>ID:</strong> {{EmpID}}</p>
+            <p><strong>Name:</strong> {{EmpFirstName}} {{EmpLastName}}</p>
+            <p><strong>Birth Date:</strong> {{formatDate EmpBirthDate}}</p>
+            <p><strong>Gender:</strong> {{EmpGender}}</p>
+            <p><strong>Salary:</strong> {{Salary}}</p>
+            <p><strong>Manager:</strong> {{BranchManager}}</p>
+        </div>
     </div>
-    <h2>Employee Profile</h2>
-    <div class="profile-info">
-        <p><strong>ID:</strong> {{EmpID}}</p>
-        <p><strong>Name:</strong> {{EmpFirstName}} {{EmpLastName}}</p>
-        <p><strong>Birth Date:</strong> {{formatDate EmpBirthDate}}</p>
-        <p><strong>Gender:</strong> {{EmpGender}}</p>
-        <p><strong>Salary:</strong> {{Salary}}</p>
-        <p><strong>Manager:</strong> {{BranchManager}}</p>
-    </div>
-</div>
 
-<div>
-    <table>
-        <tr>
-            <th>Order ID</th>
-            <th>Customer ID</th>
-            <th>Order Date</th>
-            <th>Discount</th>
-            <th>Order Total</th>
-        </tr>
-        <tr>
-            <td>{{TicketID}}</td>
-            <td>{{CCCD}}</td>
-            <td>{{CreatedDate}}</td>
-            <td>{{Discount}}</td>
-            <td>{{TotalPrice}}</td>
-        </tr>
-    </table>
+    <!-- Order Table Container -->
+    <div class="order-table-container">
+        <h3>Order Details</h3>
+        <table class="order-table"> <!-- Add the class here -->
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer ID</th>
+                    <th>Order Date</th>
+                    <th>Discount</th>
+                    <th>Order Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{TicketID}}</td>
+                    <td>{{CCCD}}</td>
+                    <td>{{formatDate CreatedDate}}</td>
+                    <td>{{Discount}}</td>
+                    <td>{{TotalPrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

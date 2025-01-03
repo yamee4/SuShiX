@@ -1,38 +1,43 @@
-<div class="profile-card">
-    <div class="avatar" style="background-color: #2196F3;">
-        {{firstChar CustomerFirstName}}
-    </div>
-    <h2>Customer Profile</h2>
-        <div class="row">
-                <div class="col">
-                    <div class="profile-info">
-                        <p><strong>CCCD:</strong> {{CCCD}}</p>
-                        <p><strong>Name:</strong> {{CustomerFirstName}} {{CustomerLastName}}</p>
-                        <p><strong>Phone:</strong> {{PhoneNumber}}</p>
-                        <p><strong>Email:</strong> {{Email}}</p>
-                        <p><strong>Gender:</strong> {{Gender}}</p>
-                        <p><strong>Member:</strong> {{isMember}}</p>
-                        <p><strong>Registered:</strong> {{isRegistered}}</p>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <table>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Support Employee</th>
-                            <th>Order Date</th>
-                            <th>Discount</th>
-                            <th>Order Total</th>
-                        </tr>
-                        <tr>
-                            <td>{{TicketID}}</td>
-                            <td>{{EmpID}}</td>
-                            <td>{{CreatedDate}}</td>
-                            <td>{{Discount}}</td>
-                            <td>{{TotalPrice}}</td>
-                        </tr>
-                    </table>
-                </div>
+<div class="flex-container">
+    <!-- Profile Information Container -->
+    <div class="profile-info-container">
+        <div class="avatar" style="background-color: #2196F3;">
+            {{firstChar CustomerFirstName}}
         </div>
+        <h2>Customer Profile</h2>
+        <div class="profile-info">
+            <p><strong>CCCD:</strong> {{CCCD}}</p>
+            <p><strong>Name:</strong> {{CustomerFirstName}} {{CustomerLastName}}</p>
+            <p><strong>Phone:</strong> {{PhoneNumber}}</p>
+            <p><strong>Email:</strong> {{Email}}</p>
+            <p><strong>Gender:</strong> {{Gender}}</p>
+            <p><strong>Member:</strong> {{isMember}}</p>
+            <p><strong>Registered:</strong> {{isRegistered}}</p>
+        </div>
+    </div>
+
+    <!-- Order Table Container -->
+    <div class="order-table-container">
+        <h3>Order Details</h3>
+        <table class="order-table"> <!-- Add the class here -->
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Support Employee</th>
+                    <th>Order Date</th>
+                    <th>Discount</th>
+                    <th>Order Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{TicketID}}</td>
+                    <td>{{EmpID}}</td>
+                    <td>{{formatDate CreatedDate}}</td>
+                    <td>{{Discount}}</td>
+                    <td>{{TotalPrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

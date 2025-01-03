@@ -710,3 +710,118 @@ input[type="number"] {
         width: 100px;
     }
 }
+
+@media (max-width: 768px) {
+    .profile-card .row {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+}
+
+.flex-container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers the containers horizontally */
+    align-items: flex-start; /* Aligns items at the start */
+    flex-wrap: wrap; /* Allows wrapping of items */
+}
+
+.profile-info-container,
+.order-table-container {
+    flex: 0 0 45%; /* Set a base width of 45% for each container */
+    margin: 10px; /* Adds space around each container */
+    padding: 15px; /* Padding for better appearance */
+    background: #f8f9fa; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-width: 500px; /* Optional: Set a maximum width for each container */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.profile-info-container:hover,
+.order-table-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Slightly lift the container on hover */
+}
+
+.profile-info-container h2 {
+    text-align: center; /* Centers the profile text */
+}
+
+/* Specific styles for the order table */
+.order-table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+.order-table th, 
+.order-table td {
+    padding: 10px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Light border for table cells */
+}
+
+.order-table th {
+    background-color: #f2f2f2; /* Light background for table header */
+}
+
+.order-table tbody tr:hover {
+    background-color: #f9f9f9; /* Highlight row on hover */
+}
+
+.flex-container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers the containers horizontally */
+    align-items: flex-start; /* Aligns items at the start */
+    flex-wrap: wrap; /* Allows wrapping of items */
+}
+
+.profile-card {
+    flex: 0 0 45%; /* Set a base width of 45% for the profile card */
+    margin: 10px; /* Adds space around the container */
+    padding: 15px; /* Padding for better appearance */
+    background: #f8f9fa; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-width: 500px; /* Optional: Set a maximum width for the container */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.order-table-container {
+    flex: 0 0 45%; /* Set a base width of 45% for the order table container */
+    margin: 10px; /* Adds space around the container */
+    padding: 15px; /* Padding for better appearance */
+    background: #f8f9fa; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-width: 500px; /* Optional: Set a maximum width for the container */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.profile-card:hover,
+.order-table-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Slightly lift the container on hover */
+}
+
+.profile-card h2 {
+    text-align: center; /* Centers the profile text */
+}
+
+.order-table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+.order-table th, 
+.order-table td {
+    padding: 10px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Light border for table cells */
+}
+
+.order-table th {
+    background-color: #f2f2f2; /* Light background for table header */
+}
+
+.order-table tbody tr:hover {
+    background-color: #f9f9f9; /* Highlight row on hover */
+}
