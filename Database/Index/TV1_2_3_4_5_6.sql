@@ -3,8 +3,8 @@ go
 
 --TV1: Thêm một đơn hàng mới cho khách hàng
 SET STATISTICS TIME ON;
-declare @DSDH DSTicket
-insert into @DSDH values 
+delete from DSDONHANG
+insert into DSDONHANG values 
 (1, GETDATE(), 1, 50000),
 (2, '2025/1/2', 1, 60000)
 exec dbo.usp_ADD_ORDER_TICKET 
@@ -14,8 +14,7 @@ exec dbo.usp_ADD_ORDER_TICKET
 	@EmpID = '00001',
 	@NumberOfCustomer = 3,
 	@PreOrderNote = N'Nothing',
-	@TableName = N'Table 1',
-	@DSDonHang = @DSDH
+	@TableName = N'Table 1'
 SET STATISTICS TIME OFF;
 go
 

@@ -47,7 +47,7 @@ CREATE INDEX idx_area_menuid ON AREA(MenuID);
 CREATE INDEX idx_dish_menu_inmenu ON DISH_MENU(inMenu); 
 
 --TV11: Lấy danh sách các phiếu đặt món được tạo trong 1 khoảng thời gian.
-
+go
 CREATE OR ALTER PROC usp_LayDanhSachPhieuDatMon
 AS
 BEGIN
@@ -66,6 +66,7 @@ ON ORDER_TICKET (BranchID, CreatedDate)
 INCLUDE (TicketType, CCCD, EmpID, Discount, TotalPrice);
 
 --TV12: Lấy danh sách các chi nhánh mà ở đó có phiếu đặt món được tạo ra trong 1 khoang thoi gian.
+go
 CREATE OR ALTER PROC usp_LayDanhSachChiNhanhCoPhieuDatMon
 AS
 BEGIN
@@ -88,6 +89,7 @@ ON ORDER_TICKET(BranchID, CreatedDate);
 DROP INDEX ORDER_TICKET.IDX_OrderTicket_BranchDate2
 
 --TV13
+go
 CREATE OR ALTER PROCEDURE usp_TaoPhieuDatMon
     @TicketID CHAR(10),
     @TicketType CHAR(3),
