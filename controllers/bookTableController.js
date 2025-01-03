@@ -94,9 +94,7 @@ controller.bookTable = async (req, res) => {
             );
         }
 
-        const cccd = userInfo.id;
         const TicketType = 'PRE';
-        const EmpID = null;
         const BranchResult = await sequelize.query(
             `SELECT BranchID FROM BRANCH WHERE BranchID = :branchID`,
             {
@@ -110,6 +108,15 @@ controller.bookTable = async (req, res) => {
         const NumberOfCustomer = numberOfCustomers;
         const PreOrderNote  =  preOrderNote;
         const TableName = null;
+
+        let cccd = null;
+        let EmpID = null;
+
+        if (userInfo.role === "customer") {
+            cccd = userInfo.id;
+        } else if (userInfo.role === "employee") {
+            EmpID = userInfo.id;
+        }
 
 
         await sequelize.query(

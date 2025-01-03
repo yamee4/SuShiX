@@ -30,6 +30,7 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each bills}}
                 <tr>
                     <td>{{TicketID}}</td>
                     <td>{{EmpID}}</td>
@@ -37,6 +38,7 @@
                     <td>{{Discount}}</td>
                     <td>{{TotalPrice}}</td>
                 </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>

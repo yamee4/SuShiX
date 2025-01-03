@@ -225,4 +225,4 @@ INSERT INTO STATION (StationName, StationSalary) VALUES ('Cashier', 8500000);
 INSERT INTO STATION (StationName, StationSalary) VALUES ('Host/Hostess', 7500000);
 
 
-select * from BRANCH
+select * from ORDER_TICKET

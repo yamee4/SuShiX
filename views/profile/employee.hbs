@@ -29,6 +29,7 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each employeeOrders}}
                 <tr>
                     <td>{{TicketID}}</td>
                     <td>{{CCCD}}</td>
@@ -36,6 +37,7 @@
                     <td>{{Discount}}</td>
                     <td>{{TotalPrice}}</td>
                 </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>

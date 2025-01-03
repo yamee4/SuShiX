@@ -24,7 +24,7 @@ controller.showProfile = async (req, res) => {
                     ...profileData,
                     layout: usertype ? "manager" : "emp",
                     ...employeeInfo,
-                    ...employeeOrders
+                    employeeOrders
                 };
                 return res.render("profile/employee", profileData);
             }
@@ -35,7 +35,7 @@ controller.showProfile = async (req, res) => {
                     ...profileData,
                     layout: "customer",
                     ...customerInfo,
-                    ...bills
+                    bills
                 };
                 return res.render("profile/customer", profileData);
             }
@@ -81,7 +81,7 @@ controller.getCustomerInfo = async (CCCD) => {
 
 controller.getCustomerBill = async (CCCD) => {
     const results = await sequelize.query(
-        `   SELECT TicketID , EmpID, CreatedDate, TotalPrice, Discount
+        `   SELECT TOP 10 TicketID , EmpID, CreatedDate, TotalPrice, Discount
             FROM ORDER_TICKET 
             WHERE CCCD = :CCCD
             ORDER BY CreatedDate DESC`,
@@ -90,12 +90,12 @@ controller.getCustomerBill = async (CCCD) => {
             type: sequelize.QueryTypes.SELECT
         }
     );
-    return results[0];
+    return results;
 }
 
 controller.getEmployeeOrders = async (EmpID) => {
     const results = await sequelize.query(
-        `   SELECT TicketID, CCCD, CreatedDate, TotalPrice, Discount
+        `   SELECT TOP 10 TicketID, CCCD, CreatedDate, TotalPrice, Discount
             FROM ORDER_TICKET
             WHERE EmpID = :EmpID
             ORDER BY CreatedDate DESC`,
@@ -104,7 +104,7 @@ controller.getEmployeeOrders = async (EmpID) => {
             type: sequelize.QueryTypes.SELECT
         }
     );
-    return results[0];
+    return results;
 }
 
 module.exports = controller;
