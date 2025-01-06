@@ -36,7 +36,7 @@ where SOTicketID = 'TKT0100003'
 SET STATISTICS TIME ON;
 exec dbo.usp_ADD_EMPLOYEE 
 	@EmpFirstName = N'Nguyễn Chí',
-	@EmpLastName = N'Tèo',
+	@EmpLastName = N'Huy',
 	@EmpDOB = '1999/1/1',
 	@EmpGender = 'Nam',
 	@Salary = 5000000,

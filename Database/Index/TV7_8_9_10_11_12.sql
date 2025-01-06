@@ -144,5 +144,6 @@ BEGIN
     SET @Counter = @Counter + 1;
 END;
 
+
 CREATE INDEX IDX_OrderTicket_BranchID
 ON ORDER_TICKET(TicketID, BranchID);
